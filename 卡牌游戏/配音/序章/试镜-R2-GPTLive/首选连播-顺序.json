@@ -1,0 +1,50 @@
+[
+  {
+    "person": "塔莉",
+    "id": "序-06",
+    "voice": "gleam",
+    "source": "塔莉-序-06-gleam.mp3"
+  },
+  {
+    "person": "塔莉",
+    "id": "序-07",
+    "voice": "gleam",
+    "source": "塔莉-序-07-gleam.mp3"
+  },
+  {
+    "person": "雅娜",
+    "id": "序-10",
+    "voice": "willow",
+    "source": "雅娜-序-10-willow.mp3"
+  },
+  {
+    "person": "雅娜",
+    "id": "序-56",
+    "voice": "willow",
+    "source": "雅娜-序-56-willow.mp3"
+  },
+  {
+    "person": "法比娅",
+    "id": "序-33",
+    "voice": "juni",
+    "source": "法比娅-序-33-juni.mp3"
+  },
+  {
+    "person": "法比娅",
+    "id": "序-63",
+    "voice": "juni",
+    "source": "法比娅-序-63-juni.mp3"
+  },
+  {
+    "person": "诺曼",
+    "id": "序-04",
+    "voice": "meridian",
+    "source": "诺曼-序-04-meridian.mp3"
+  },
+  {
+    "person": "诺曼",
+    "id": "序-47",
+    "voice": "meridian",
+    "source": "诺曼-序-47-meridian.mp3"
+  }
+]

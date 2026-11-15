@@ -1,0 +1,2044 @@
+[
+  {
+    "id": "序-01",
+    "file": "序-01.mp3",
+    "voice": "vesper",
+    "source_wav": "原始录音/序-01-take1.wav",
+    "raw_sha256": "29e6ab8bd7754a15889ad41f457bbb0a20a1f2f4a2281b0130b04633ec7212ef",
+    "sha256": "b449cf047a8123007efdff360c46303b1bbed70802ef083ec8d7ee7208144e60",
+    "seconds": 4.818167,
+    "lufs": -16.08,
+    "true_peak_db": -2.4,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.29,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.08,
+        "true_peak_db": -2.4
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Candidate Seven. Name the guard. Then name the move.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-02",
+    "file": "序-02.mp3",
+    "voice": "vesper",
+    "source_wav": "原始录音/序-02-take1.wav",
+    "raw_sha256": "78944abf68bd211245de1aad5f6ee1b6c34be1729df8ec7ac42f33186b941f12",
+    "sha256": "3e8eb6d98dd1e2f49209c8647eb24eac88ae7a327ade6b8dd29646ef6ba8681c",
+    "seconds": 2.367792,
+    "lufs": -16.06,
+    "true_peak_db": -2.39,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -18.17,
+        "true_peak_db": -2.45
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.28,
+        "true_peak_db": -2.4
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.06,
+        "true_peak_db": -2.39
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " The sand's almost gone, Number Seven.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-03",
+    "file": "序-03.mp3",
+    "voice": "vesper",
+    "source_wav": "原始录音/序-03-take1.wav",
+    "raw_sha256": "c8cb976251d8de7433bf3641ea2f14970a3ae2ce7f5b81d1968e12935d9a17d8",
+    "sha256": "3f075862e7b2585bf51fa7819d9a976e3c35163d00c0f8f45839d7f047de381e",
+    "seconds": 2.579,
+    "lufs": -16.17,
+    "true_peak_db": -2.37,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -19.4,
+        "true_peak_db": -2.45
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.64,
+        "true_peak_db": -2.38
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.17,
+        "true_peak_db": -2.37
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "Time's up. You still haven't named it.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-04",
+    "file": "序-04.mp3",
+    "voice": "vesper",
+    "source_wav": "原始录音/序-04-selected.wav",
+    "raw_sha256": "e21771aa68c5a3c000b6609739b7897bd2f0a362b7a3690389be493a10f064f2",
+    "sha256": "40896a29a2278ad8b3445845412b9ca0d98c9486fdaee7d1147171bbccd8c348",
+    "seconds": 5.011083,
+    "lufs": -16.22,
+    "true_peak_db": -2.32,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.77,
+        "true_peak_db": -2.39
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.22,
+        "true_peak_db": -2.32
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "According to the rules, anyone that slow to see the answer is unfit to carry the banner.",
+    "transcript_match": true,
+    "reused_audition": true
+  },
+  {
+    "id": "序-05",
+    "file": "序-05.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-05-take1.wav",
+    "raw_sha256": "062838f75b90175a8aa4347d3b6de57840254d93b95189a2288ac5e2149e3f33",
+    "sha256": "d4b230b444b4ac5c4912b6c1972ad29c1d288500bdf1e61097b25ad9345e3cdf",
+    "seconds": 5.276167,
+    "lufs": -15.76,
+    "true_peak_db": -2.44,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -15.76,
+        "true_peak_db": -2.44
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " This is 'the rock that doesn't dig into you when you sit down'... Too long! Let's call it 'Comfy'!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-06",
+    "file": "序-06.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-06-selected.wav",
+    "raw_sha256": "13010094e2739cd01bed811f7a2fa31b3698ec39e3f1c98e32d65449773d4eec",
+    "sha256": "476f4846850e130edbf84f6b64ee52938f829257c71e137955a8cf27073a10e3",
+    "seconds": 5.403708,
+    "lufs": -16.09,
+    "true_peak_db": -2.31,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.5,
+        "true_peak_db": -2.41
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.09,
+        "true_peak_db": -2.31
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Wait—wait a second! I thought you were just a patch of fog... You're a person!",
+    "transcript_match": true,
+    "reused_audition": true
+  },
+  {
+    "id": "序-07",
+    "file": "序-07.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-07-selected.wav",
+    "raw_sha256": "5169dcaad4dbd493066a207ff7d11e0c070b416a117e6d448e83e0e97b872851",
+    "sha256": "c263c13f9032518f367b19a48743182661b3e1a07e6f091006dbda34b964c8a4",
+    "seconds": 5.449958,
+    "lufs": -16.24,
+    "true_peak_db": -2.42,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.24,
+        "true_peak_db": -2.42
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " The Registry Academy threw out all my tags. So I wrote a whole new bagful.",
+    "transcript_match": true,
+    "reused_audition": true
+  },
+  {
+    "id": "序-08",
+    "file": "序-08.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-08-take1.wav",
+    "raw_sha256": "27d1b58ff5bd7a38ff194ef93c6a36586fe0f089e30832a19d1060cd58cca8de",
+    "sha256": "68fefc3b9c18043160c14065e7308a1d7fad57b4fc8cbbd7dbffaddaacc89beb",
+    "seconds": 4.808042,
+    "lufs": -16.05,
+    "true_peak_db": -2.4,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.49,
+        "true_peak_db": -2.44
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.05,
+        "true_peak_db": -2.4
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " It moved. During the exam... were you watching the guard the whole time?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-09",
+    "file": "序-09.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-09-take1.wav",
+    "raw_sha256": "3d708c23be45923e1a9471aeced47d0105ff59135c8cc2612ab6c03a0922631a",
+    "sha256": "21379161ad92a9356e02fdfdf9755f75196c5526f9f76df4368ea254e2baef6b",
+    "seconds": 6.499833,
+    "lufs": -16.15,
+    "true_peak_db": -2.33,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.36,
+        "true_peak_db": -2.41
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.39,
+        "true_peak_db": -2.33
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.35,
+        "true_peak_db": -2.33
+      },
+      {
+        "iteration": 3,
+        "lufs": -16.15,
+        "true_peak_db": -2.33
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " That explains it. The ones on pages twelve and three are the same guard. I said that myself, back then.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-10",
+    "file": "序-10.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-10-selected.wav",
+    "raw_sha256": "aa25b7cf53401bac036c52d0945c93418688b034f7389d86e5d9580085f8f695",
+    "sha256": "4a91d069268da461f71fbda8031b01024688adbc787192a051432774e227cb24",
+    "seconds": 4.365375,
+    "lufs": -16.07,
+    "true_peak_db": -2.36,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.37,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.07,
+        "true_peak_db": -2.36
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " I'm Jana. That's Tally. We were both politely shown the door.",
+    "transcript_match": true,
+    "reused_audition": true
+  },
+  {
+    "id": "序-11",
+    "file": "序-11.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-11-take1.wav",
+    "raw_sha256": "d25d1ee50edc09cf46ffb6e41c51f0a7c439add47156975b5b46492129c1d5e5",
+    "sha256": "3742ac62ebbf03be47ced6374cffc3f14f9a99495424422bac72b08b79faab28",
+    "seconds": 3.005667,
+    "lufs": -16.05,
+    "true_peak_db": -2.37,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.49,
+        "true_peak_db": -2.44
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.05,
+        "true_peak_db": -2.37
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Welcome aboard! I'll make your name tag later—",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-12",
+    "file": "序-12.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-12-take1.wav",
+    "raw_sha256": "0a243b416e52208e877ae360a2dd16f50e5923ae18e78565c4acf9f41d35a5ca",
+    "sha256": "e0319411944dd42c9a844f2a4811ad02918a1fc447319be6c0192141371b5851",
+    "seconds": 3.361958,
+    "lufs": -16.16,
+    "true_peak_db": -2.4,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.16,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.16,
+        "true_peak_db": -2.4
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " The one from the exam? It followed you out?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-13",
+    "file": "序-13.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-13-take1.wav",
+    "raw_sha256": "2f1f24bbd45ea2bb1b9129f8a807ff41433286e28d6a418d3e57c1f6554f3765",
+    "sha256": "dfec73d8230c96cdeb3a10ec4ab1fca922a42b81d1ae62c98c5d5fbd1cb2a9e4",
+    "seconds": 3.812083,
+    "lufs": -16.1,
+    "true_peak_db": -2.32,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.31,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.3,
+        "true_peak_db": -2.31
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.1,
+        "true_peak_db": -2.32
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " I'll help you remember the names later. You've already noticed its hands.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-14",
+    "file": "序-14.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-14-take1.wav",
+    "raw_sha256": "ed65e2d7b4aa592d07d01b018df23b86113f35e3652dfc6c4dc3b7434aaba111",
+    "sha256": "ba927e8d0b01aa71baea7d07289b840aa7f438a1d0d78dfa5e3cb49e54df73c8",
+    "seconds": 3.346458,
+    "lufs": -16.17,
+    "true_peak_db": -2.38,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.0,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.55,
+        "true_peak_db": -2.39
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.17,
+        "true_peak_db": -2.38
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Sit down. Before we fight it, let's understand it.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-15",
+    "file": "序-15.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-15-take1.wav",
+    "raw_sha256": "9bd359e4dc24e21720c0ac702529b3abb1e00debe373c084a36e7e1a8926f691",
+    "sha256": "a99b36730050f909c71062990a5ce576d8946fef1b2336a1efbbc7eed9c93569",
+    "seconds": 3.790208,
+    "lufs": -16.06,
+    "true_peak_db": -2.34,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.53,
+        "true_peak_db": -2.44
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.06,
+        "true_peak_db": -2.34
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Why are its hands longer now? Did the number change?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-16",
+    "file": "序-16.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-16-take1.wav",
+    "raw_sha256": "8aba31345d73bff9bed0defd9f50322e57d6b2420d843920079b78ffe9f74946",
+    "sha256": "550049ba892d240ed710a01ca7d8b04f6104fef7055139022ad79217d9fcee9b",
+    "seconds": 2.386042,
+    "lufs": -16.13,
+    "true_peak_db": -2.32,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -20.63,
+        "true_peak_db": -2.45
+      },
+      {
+        "iteration": 1,
+        "lufs": -17.48,
+        "true_peak_db": -2.35
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.61,
+        "true_peak_db": -2.31
+      },
+      {
+        "iteration": 3,
+        "lufs": -16.28,
+        "true_peak_db": -2.33
+      },
+      {
+        "iteration": 4,
+        "lufs": -16.13,
+        "true_peak_db": -2.32
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Don't name it. Look at its hands.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-17",
+    "file": "序-17.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-17-take1.wav",
+    "raw_sha256": "b8beef9d03f3ab9b72ffe20529010d61968afdeec3cb9452f72d8c8c7075d294",
+    "sha256": "6dc387c654678202cb6450426bd208ec710a71afe772f3a0447a040f9bd39d35",
+    "seconds": 10.061125,
+    "lufs": -16.19,
+    "true_peak_db": -2.36,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.85,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.19,
+        "true_peak_db": -2.36
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " There's a blade in your pack: the arithmetic geometric mean inequality. It has three sockets. Fill all three before you strike.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-18",
+    "file": "序-18.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-18-take1.wav",
+    "raw_sha256": "4df1f97e5b53aa102f40a7fbb5ad05e16b41e3377cf95816672e71f66e34189b",
+    "sha256": "957d504d71ae4cfc5ac56625a6343104b22d1a069099b9497889dd834ab0c39d",
+    "seconds": 7.189917,
+    "lufs": -16.16,
+    "true_peak_db": -2.3,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.5,
+        "true_peak_db": -2.39
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.42,
+        "true_peak_db": -2.32
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.16,
+        "true_peak_db": -2.3
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " You have two Focus points for this layer. Enough to check two things. Look first.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-19",
+    "file": "序-19.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-19-take1.wav",
+    "raw_sha256": "ad57188d999494ca3dc30f64b6b9539c120a1b8c6c5286366cfab4ee7c8780da",
+    "sha256": "9c0868a8e472c1809cf3d6e09c78ea9991f9adc0d538a20b21f5c5c2cffd6d27",
+    "seconds": 2.261417,
+    "lufs": -16.05,
+    "true_peak_db": -2.29,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -18.13,
+        "true_peak_db": -2.46
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.31,
+        "true_peak_db": -2.3
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.05,
+        "true_peak_db": -2.29
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Look at what? Its two hands?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-20",
+    "file": "序-20.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-20-take1.wav",
+    "raw_sha256": "8690de4c83207d593dca916253334415b258a135dbb22a85d7aa1079e7d9edb1",
+    "sha256": "ea778bbdc1f9118ee8c0e48dbcc54944c4f88df750c25eb3f9d82bfbd9001403",
+    "seconds": 6.932167,
+    "lufs": -16.17,
+    "true_peak_db": -2.22,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.44,
+        "true_peak_db": -2.37
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.66,
+        "true_peak_db": -2.22
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.32,
+        "true_peak_db": -2.22
+      },
+      {
+        "iteration": 3,
+        "lufs": -16.17,
+        "true_peak_db": -2.22
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " At its feet, it says X is greater than zero. Both hands are positive. The positive socket is filled.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-21",
+    "file": "序-21.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-21-take1.wav",
+    "raw_sha256": "de2e046041889a7b48503ad1148083bbc1f56a844cb3e090a646045950637372",
+    "sha256": "6944841b075c8e20e7cec5ba561efd4419bf4d9d0ca78b0ec33e606a98e6c012",
+    "seconds": 6.850583,
+    "lufs": -16.16,
+    "true_peak_db": -2.32,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.66,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.16,
+        "true_peak_db": -2.32
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "Multiply them and you get twenty-five. That doesn't change with X. The constant socket is filled too.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-22",
+    "file": "序-22.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-22-take1.wav",
+    "raw_sha256": "637430aff04f1ecc2137283b53efe8173dd8201bf4e0eec669cd0b6b725bf4c1",
+    "sha256": "b055e43ba9710bde254e1955895f03218d2ee1e2c7079b04d92dfd017fabea72",
+    "seconds": 1.398,
+    "lufs": -15.98,
+    "true_peak_db": -2.95,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.42,
+        "true_peak_db": -3.37
+      },
+      {
+        "iteration": 1,
+        "lufs": -15.98,
+        "true_peak_db": -2.95
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "One layer's off!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-23",
+    "file": "序-23.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-23-take1.wav",
+    "raw_sha256": "07f1d5e1ff05faafd0ac88736ca10b9aaeaf96a564a499503d501868a46e130f",
+    "sha256": "c23110beabb7a5cf797a8873c61825303883d639ede111355c7b33a45b34e69e",
+    "seconds": 4.235417,
+    "lufs": -16.05,
+    "true_peak_db": -2.4,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.84,
+        "true_peak_db": -2.44
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.05,
+        "true_peak_db": -2.4
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " We still need equal. Can the two hands be the same length?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-24",
+    "file": "序-24.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-24-take1.wav",
+    "raw_sha256": "9885f7f04e8be65a4362664d72d3ab42c2b63629f2074f586072a56be5fbcff5",
+    "sha256": "83b3e77117ec610515e12adff344fc2ee4df28c8527445b7d5b9cb3773858254",
+    "seconds": 5.198125,
+    "lufs": -16.25,
+    "true_peak_db": -2.1,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.15,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.64,
+        "true_peak_db": -2.13
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.34,
+        "true_peak_db": -2.13
+      },
+      {
+        "iteration": 3,
+        "lufs": -16.25,
+        "true_peak_db": -2.1
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " X equals five. That's within the allowed range. All three sockets are filled.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-25",
+    "file": "序-25.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-25-take1.wav",
+    "raw_sha256": "3c1d59c3f0afdef0cf96734aebee58c780d081441e885011a9f90583c79ba98f",
+    "sha256": "929a5bc26c8b8a2008f90cd0d027a5b9421e9e4339a41c3152cc1231eef74f25",
+    "seconds": 2.762167,
+    "lufs": -16.22,
+    "true_peak_db": -2.38,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -18.63,
+        "true_peak_db": -2.46
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.22,
+        "true_peak_db": -2.38
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "Did you see that? Both hands are the same length!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-26",
+    "file": "序-26.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-26-take1.wav",
+    "raw_sha256": "5ea938b9680719321e2823e413a9ef69ecb057189971691d9ee7a1435dfd7b52",
+    "sha256": "a0a72023754be97b7763a09e6cb377bba89c69747f51114b75bfbd642880885a",
+    "seconds": 2.389375,
+    "lufs": -16.15,
+    "true_peak_db": -2.21,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -18.16,
+        "true_peak_db": -2.47
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.38,
+        "true_peak_db": -2.22
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.15,
+        "true_peak_db": -2.21
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " It's still there! It's about to hit back!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-27",
+    "file": "序-27.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-27-take1.wav",
+    "raw_sha256": "57ffe2b26095f4e95da270183b3dc4848dc87441214be46dadad6a7fefc204b3",
+    "sha256": "e2f5e76d7ff3c5b1050f8a5dddf4bb621c8f2fca54ea705a7d65934d448f6319",
+    "seconds": 3.922292,
+    "lufs": -16.16,
+    "true_peak_db": -2.41,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.16,
+        "true_peak_db": -2.41
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "It's gone! It's gone! And you didn't use a single hint!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-28",
+    "file": "序-28.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-28-take2.wav",
+    "raw_sha256": "6f7783f11735c351bb6ae2d2bb848484633ce1f7dbe3afb673c08c718eb5651b",
+    "sha256": "d59a240e2f1df3db206adbf5f478fe0b1f70bdb257864cd1ce9a8fad33de0a5d",
+    "seconds": 5.252333,
+    "lufs": -15.99,
+    "true_peak_db": -2.75,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -15.69,
+        "true_peak_db": -2.44
+      },
+      {
+        "iteration": 1,
+        "lufs": -15.99,
+        "true_peak_db": -2.75
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "Two hands again? Why is this one wrapped in bandages?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-29",
+    "file": "序-29.mp3",
+    "voice": "vesper",
+    "source_wav": "原始录音/序-29-take1.wav",
+    "raw_sha256": "1ed4305cdd34ce350b795b8bedc5954248f47c7c123d823005121884ddabb6e5",
+    "sha256": "c94c3578bc32e9fbc22862ecf7d1d05e632414d11833e05432ad50b6f9c8f874",
+    "seconds": 10.573292,
+    "lufs": -16.2,
+    "true_peak_db": -2.22,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.24,
+        "true_peak_db": -2.4
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.49,
+        "true_peak_db": -2.21
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.2,
+        "true_peak_db": -2.22
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " The Registry Academy sent me to clear the wilds. Stand aside. Page three of the Register: the Product Guard.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-30",
+    "file": "序-30.mp3",
+    "voice": "vesper",
+    "source_wav": "原始录音/序-30-take1.wav",
+    "raw_sha256": "dbe78b6b58831bc1ccd8b9613609ad4f9db9d388d0ceb1195794416508d8a57c",
+    "sha256": "24ed118a624463d1206cd405e95b7909dff0477c2add3af8cd6fa3cef02e0ee0",
+    "seconds": 3.942625,
+    "lufs": -16.12,
+    "true_peak_db": -2.38,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.59,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.12,
+        "true_peak_db": -2.38
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Its name tells you which move to use. What are you staring at?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-31",
+    "file": "序-31.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-31-take1.wav",
+    "raw_sha256": "c09291b618c93d34e073c7f97db06d02fe41cbb0e63fc0ec4dc7bc0327804e94",
+    "sha256": "4d49e14a14ba82ddd74a3f63f821c09fa48db1abbe265314d7cb3fdac1426e88",
+    "seconds": 3.564625,
+    "lufs": -16.23,
+    "true_peak_db": -2.34,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.22,
+        "true_peak_db": -2.41
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.23,
+        "true_peak_db": -2.34
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " He's got the name right. He just doesn't know what's under the cloth.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-32",
+    "file": "序-32.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-32-take1.wav",
+    "raw_sha256": "a315883fd521cb2b5634e3913feee556edce2a6e2d2423c4164de70ba060b4f2",
+    "sha256": "257ed3b63905a95b5e8585be8f4122288d4c31ce1215c0036d00610f364114f4",
+    "seconds": 4.628917,
+    "lufs": -16.03,
+    "true_peak_db": -2.43,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.03,
+        "true_peak_db": -2.43
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " I've been behind that rock, watching that cloth for a while now.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-33",
+    "file": "序-33.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-33-selected.wav",
+    "raw_sha256": "0b43667da6f6ec6563cd9a768ee9933b9124bf36dd0da03b560fd910ff5ff03a",
+    "sha256": "107da008bdeec958a9aa0be6450e8677f0b36d27449eb37a235be08e7cd73dec",
+    "seconds": 8.560042,
+    "lufs": -16.13,
+    "true_peak_db": -2.28,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.21,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.13,
+        "true_peak_db": -2.28
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "I'm Fabia.If something's missing... I'll make it.If you need that in a fight, send me.",
+    "transcript_match": true,
+    "reused_audition": true
+  },
+  {
+    "id": "序-34",
+    "file": "序-34.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-34-take1.wav",
+    "raw_sha256": "332b807d09cc8da4b37b7bdb425a17ae8f3906b75576a42c4205680ec66269ab",
+    "sha256": "1b8ed47a30c5c77e2b210f2651e8ad85a1d32ad9401379e15359de905515fcb4",
+    "seconds": 4.064208,
+    "lufs": -16.17,
+    "true_peak_db": -2.36,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.91,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.17,
+        "true_peak_db": -2.36
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "Don't send anyone in yet. First, look at what you can see on it.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-35",
+    "file": "序-35.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-35-take1.wav",
+    "raw_sha256": "d8f40285650ea89ac22dc138cddacfaf2ba037357e1c42b79b684b9cee513783",
+    "sha256": "b79340c13798a68d34eb22651c2833d904312e9a92d04afa8844ca6bb89f1a5c",
+    "seconds": 5.416125,
+    "lufs": -16.09,
+    "true_peak_db": -2.43,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.09,
+        "true_peak_db": -2.43
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " The cloth's off. Underneath is X minus one, all in one piece.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-36",
+    "file": "序-36.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-36-take1.wav",
+    "raw_sha256": "43cc845271a950d75c7e157709ecf473fea1b82863357cf1116d04d10b72c9fc",
+    "sha256": "59a045412f59c617ea124779b702afdb4c39abe28182bc96448db6b9430d6bf6",
+    "seconds": 3.91075,
+    "lufs": -16.23,
+    "true_peak_db": -2.15,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.94,
+        "true_peak_db": -2.41
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.23,
+        "true_peak_db": -2.15
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " One whole piece! Leave that to me. I'll bundle it up!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-37",
+    "file": "序-37.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-37-take1.wav",
+    "raw_sha256": "b112a754f59a52f847f95351251f2662570d907dea9367d8739f987ac62fcd43",
+    "sha256": "5c1942e3f692d33bce8921e1da62df5e60178cf71b66bd0fc2a904aaa7484b41",
+    "seconds": 3.301042,
+    "lufs": -16.0,
+    "true_peak_db": -2.37,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.49,
+        "true_peak_db": -2.55
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.0,
+        "true_peak_db": -2.37
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "X and that piece... they're only one apart.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-38",
+    "file": "序-38.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-38-take1.wav",
+    "raw_sha256": "a9bd23070166febab1e4051c91c1b9ff5f371ed05adca490f1036d07a4024aad",
+    "sha256": "c24298b19246f213b91df684af3ac68b572921794e20f04976b8a71284f45c8d",
+    "seconds": 4.06375,
+    "lufs": -16.21,
+    "true_peak_db": -2.37,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.92,
+        "true_peak_db": -2.44
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.21,
+        "true_peak_db": -2.37
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Both hands are positive. You can fill the positive socket on your equipment.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-39",
+    "file": "序-39.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-39-take1.wav",
+    "raw_sha256": "f3c68577c79b92ed72aa8f058bea751318b2e293baf1a52afbbea510bec9b94c",
+    "sha256": "7e2aab1cec5f6d2a83890ada27f3d0888de0bb5a2bdb3d7f540dc97a64715372",
+    "seconds": 5.405333,
+    "lufs": -16.25,
+    "true_peak_db": -2.35,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.92,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.25,
+        "true_peak_db": -2.35
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Now we can see it. Who will you send? Attach your reason to her.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-40",
+    "file": "序-40.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-40-take1.wav",
+    "raw_sha256": "74910c773884ff2efc7fa734f821e9c9f4a27eb39fa785aaa7f688e18d2cf1db",
+    "sha256": "04395905beb04824e458c719a93ae76c685238758b6b3771b6b611f109702b33",
+    "seconds": 5.378375,
+    "lufs": -16.23,
+    "true_peak_db": -2.28,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.24,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.23,
+        "true_peak_db": -2.28
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " I've seen this one before. Multiply one hand by the other, and you get a constant.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-41",
+    "file": "序-41.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-41-take1.wav",
+    "raw_sha256": "0f987087f7d6231e5ce898b41287486f792c561f89b971797af5e3da84bb099c",
+    "sha256": "102cdb87325113cb590c3885c128a3edb32a1861565cd3fad53ab38c312d61f5",
+    "seconds": 2.668542,
+    "lufs": -15.99,
+    "true_peak_db": -2.4,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.48,
+        "true_peak_db": -2.78
+      },
+      {
+        "iteration": 1,
+        "lufs": -15.99,
+        "true_peak_db": -2.4
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Next time something's missing... call me.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-42",
+    "file": "序-42.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-42-take1.wav",
+    "raw_sha256": "01c026b6509c13de6f1446443f49b904b6f00fbd9146935d99495ccc694cb3a3",
+    "sha256": "eaa30557cfbcd0ece25b7546132137fbc898b9ea5ba435b6eb5129e16310f012",
+    "seconds": 2.230125,
+    "lufs": -16.17,
+    "true_peak_db": -2.31,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -19.26,
+        "true_peak_db": -2.45
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.53,
+        "true_peak_db": -2.33
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.17,
+        "true_peak_db": -2.31
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Next time! You have to pick me next time!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-43",
+    "file": "序-43.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-43-take1.wav",
+    "raw_sha256": "b58071321dc8edccb457cfd88fef4ae83f74a4c74d8b0256811cf420d6383a8d",
+    "sha256": "ff402868a16ac59fe29933915b9d647df48d50ef2b1bb7a77a2b6ffc06423f62",
+    "seconds": 6.391583,
+    "lufs": -16.08,
+    "true_peak_db": -2.33,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.12,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.27,
+        "true_peak_db": -2.32
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.08,
+        "true_peak_db": -2.33
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Its outer covering is broken. Before you strike, ask those three questions on the blade.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-44",
+    "file": "序-44.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-44-take1.wav",
+    "raw_sha256": "4b980788ae8c084b8a4b3c0b26208a62176ca2edd2b205ef87c3a779fc6850a5",
+    "sha256": "b2d39387bb6026a67d7f90805b93435ef7ba10783d6231418ab559b6d5a76c6b",
+    "seconds": 4.621792,
+    "lufs": -16.14,
+    "true_peak_db": -2.33,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.41,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.14,
+        "true_peak_db": -2.33
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "T equals three. That's within the allowed range. All three sockets are filled.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-45",
+    "file": "序-45.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-45-take1.wav",
+    "raw_sha256": "5e074b8fcb1fccd286114b210318c8c713daeeb3a70fdd47c0df5bdc484bb102",
+    "sha256": "51472bc82d8631305c647cd44566186adeb3a58e36453f16797f2a1f5c371c73",
+    "seconds": 2.4095,
+    "lufs": -16.03,
+    "true_peak_db": -2.35,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.07,
+        "true_peak_db": -2.4
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.03,
+        "true_peak_db": -2.35
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "See that? Bundle it up! Snap!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-46",
+    "file": "序-46.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-46-take1.wav",
+    "raw_sha256": "f3068379eb4dae5cc2ffc1b0e26a3dd0ca0e6e2995a0f13686d0ca40084e8fa7",
+    "sha256": "001a51f58ceb75a8ea3cc1726d743d811a2b240a938a55b9a2dfd00eae4f91b3",
+    "seconds": 3.026417,
+    "lufs": -16.09,
+    "true_peak_db": -2.23,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.49,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.27,
+        "true_peak_db": -2.36
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.09,
+        "true_peak_db": -2.23
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " It's still there... It's about to hit back.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-47",
+    "file": "序-47.mp3",
+    "voice": "vesper",
+    "source_wav": "原始录音/序-47-selected.wav",
+    "raw_sha256": "49866599df0f3a3506347652ebbb1e70dceeec458e1359641af8f5c417a12a70",
+    "sha256": "8fb5484f7002e3dfacd8df4a3d3712f869530650bb4e1c0dfb7d789c8b854375",
+    "seconds": 4.581417,
+    "lufs": -16.14,
+    "true_peak_db": -2.38,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.48,
+        "true_peak_db": -2.4
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.14,
+        "true_peak_db": -2.38
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " It missed? But the Register... this is exactly the move it calls for.",
+    "transcript_match": true,
+    "reused_audition": true
+  },
+  {
+    "id": "序-48",
+    "file": "序-48.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-48-take1.wav",
+    "raw_sha256": "c57fca9bf6868942f57f783c1a0c1dc48f70d537e1670681d806c8da9d4c8ef6",
+    "sha256": "fe5cad67e785ca8d7b27191beba90fd3b08d1c43bde06be8fecbb6bf74d8d589",
+    "seconds": 8.134583,
+    "lufs": -16.22,
+    "true_peak_db": -2.22,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.6,
+        "true_peak_db": -2.36
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.67,
+        "true_peak_db": -2.23
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.36,
+        "true_peak_db": -2.2
+      },
+      {
+        "iteration": 3,
+        "lufs": -16.22,
+        "true_peak_db": -2.22
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Under the cloth, it's X minus one. But the other hand is X. Multiply those, and the product isn't constant.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-49",
+    "file": "序-49.mp3",
+    "voice": "vesper",
+    "source_wav": "原始录音/序-49-take1.wav",
+    "raw_sha256": "3751e10fa5b1a8221ee4d0df8c442b1e988405895f26cb2c28476b887b1163c7",
+    "sha256": "c26253d58a4da5afc1caeacac90783f3425d88238074dedefd36dca6082d7d07",
+    "seconds": 4.039917,
+    "lufs": -16.23,
+    "true_peak_db": -2.3,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.98,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.23,
+        "true_peak_db": -2.3
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Just luck. On the next page, I won't misread it again.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-50",
+    "file": "序-50.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-50-take1.wav",
+    "raw_sha256": "f5c66f7dd1849528081719de2352ca597269d7e5493c9cc5da67ff168afd24e0",
+    "sha256": "b7dc7a80943d673f2fcdbee4d8ab11953529cff8e5d1203aaa39ea7d6b01a947",
+    "seconds": 6.602417,
+    "lufs": -16.18,
+    "true_peak_db": -2.32,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.1,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.18,
+        "true_peak_db": -2.32
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " You were the one who saw through that cloth. I just stood beside you... and added the missing one.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-51",
+    "file": "序-51.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-51-take1.wav",
+    "raw_sha256": "1bc3c820137f9af4055623b57b10a5eeb16b4209fe685d8cc03a68fd7b73d96b",
+    "sha256": "2e997fc23a9401e26585f00376752b2b80d9ce061f4ff987e79d4acffcacfd7f",
+    "seconds": 4.955833,
+    "lufs": -16.22,
+    "true_peak_db": -2.42,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.22,
+        "true_peak_db": -2.42
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Both hands are underground... Can yesterday's blade still cut it?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-52",
+    "file": "序-52.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-52-take1.wav",
+    "raw_sha256": "ebfe14c2d37e76bde767f8f1dccfad5dd85470da222c408a5f602d28d0860bf8",
+    "sha256": "9aa3027dd54bf73d840fe0ec74659f6f524fc0edbbaa2da6c8bd2123a8e0de06",
+    "seconds": 4.184292,
+    "lufs": -16.03,
+    "true_peak_db": -2.31,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.72,
+        "true_peak_db": -2.46
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.03,
+        "true_peak_db": -2.31
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Pick me today! Fabia got to go yesterday. It's my turn now, isn't it?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-53",
+    "file": "序-53.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-53-take1.wav",
+    "raw_sha256": "8ed2d79e9c6f9672e7ebdf975795ef3197cecc9e6d958bdea051f4c0803aaa3b",
+    "sha256": "4df77e24575a86375bb52debd586a7d7c016a3ffeeabb07189b58b93e6f1719e",
+    "seconds": 3.121958,
+    "lufs": -16.1,
+    "true_peak_db": -2.27,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.51,
+        "true_peak_db": -2.44
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.1,
+        "true_peak_db": -2.27
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " If anything's missing today... I'm here.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-54",
+    "file": "序-54.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-54-take1.wav",
+    "raw_sha256": "c7dabe09f559f6c5e8597fad4fcf0177bef1a63237650e4f39a595c6baeeb31d",
+    "sha256": "2f87e617758bb0c481a0cc35b48875e03375d6272a9258671e5ec67d31083c23",
+    "seconds": 3.721958,
+    "lufs": -16.1,
+    "true_peak_db": -2.32,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.74,
+        "true_peak_db": -2.41
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.37,
+        "true_peak_db": -2.31
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.1,
+        "true_peak_db": -2.32
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " One night later, it's standing differently. Do you still recognize it?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-55",
+    "file": "序-55.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-55-take1.wav",
+    "raw_sha256": "d311a14ab5e4330e9fdca427a66c57f2d3bd9d412b104b052298c37742d42fe7",
+    "sha256": "474ef5106c41fe05723cbbc47696fd9b03a70b312acca499b5aee5d2540e95e1",
+    "seconds": 3.287917,
+    "lufs": -16.12,
+    "true_peak_db": -2.34,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.68,
+        "true_peak_db": -2.41
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.12,
+        "true_peak_db": -2.34
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Two hands! Just like yesterday. Can we cut it straight away?",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-56",
+    "file": "序-56.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-56-selected.wav",
+    "raw_sha256": "bc23d5e4bc4a7bd6c15e7b463cb832f25fbca75f1bdac977dc9076924717965e",
+    "sha256": "111442fa033485d19f6f9cd27d6ed151e41044d99080ece69807c81070b23471",
+    "seconds": 4.403792,
+    "lufs": -16.13,
+    "true_peak_db": -2.35,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.82,
+        "true_peak_db": -2.34
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.39,
+        "true_peak_db": -2.34
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.13,
+        "true_peak_db": -2.35
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " X is less than zero. Both hands are negative... They won't fit the positive socket.",
+    "transcript_match": true,
+    "reused_audition": true
+  },
+  {
+    "id": "序-57",
+    "file": "序-57.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-57-take1.wav",
+    "raw_sha256": "46d5af9264510d94ffa628c9fdb543e30872c9c4c7446a7a14d2883df3af1d9e",
+    "sha256": "46b561f5e13eb9965c0bc55dafc77a7532342cbd9dd87c73b4dceb2748e1b64a",
+    "seconds": 5.644167,
+    "lufs": -16.08,
+    "true_peak_db": -2.31,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.98,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.32,
+        "true_peak_db": -2.33
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.08,
+        "true_peak_db": -2.31
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Their product is still nine. The hands are negative... but the product's positive.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-58",
+    "file": "序-58.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-58-take1.wav",
+    "raw_sha256": "9f0a1ab1cf35e726c911a63971e04f1cb9eb89b66beee4062b748f98ec5dd296",
+    "sha256": "ecbdb2bb6acc694c87afc905f2753f408635ee359cd00c3d58101e6bf6544f9e",
+    "seconds": 5.401958,
+    "lufs": -16.15,
+    "true_peak_db": -2.29,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.74,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.15,
+        "true_peak_db": -2.29
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "The hands are negative. We can't use the blade. Who will you send? Attach your reason to her.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-59",
+    "file": "序-59.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-59-take1.wav",
+    "raw_sha256": "eb27de2d9993655e452546e62ba61552c2c1c7f5e7a79e612dbbd84c7f7ac657",
+    "sha256": "22b1414fc310f9c19220b1436f6945cabb751e67ea154bad679d7ebe6d0ea019",
+    "seconds": 8.855833,
+    "lufs": -16.14,
+    "true_peak_db": -2.27,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.54,
+        "true_peak_db": -2.41
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.14,
+        "true_peak_db": -2.27
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " A different form, but the same problem. First, look at negative X, and negative nine divided by X.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-60",
+    "file": "序-60.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-60-take1.wav",
+    "raw_sha256": "06804d6ebaa1a509c8c70ce93b4ed58b10c6d371c96b60512df37187d2f77875",
+    "sha256": "8a7c07aba158c5ddca095bd3c105db49c1d187120ee7a82dfdc858abebda645b",
+    "seconds": 1.786875,
+    "lufs": -16.12,
+    "true_peak_db": -2.34,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.33,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.12,
+        "true_peak_db": -2.34
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " They've flipped! They're positive now!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-61",
+    "file": "序-61.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-61-take1.wav",
+    "raw_sha256": "7d5ad1ffd71da4fe2906f2cc3a2aa8256e418917b88137fc6569273b51161d91",
+    "sha256": "52c940c520391d4893b79462d95c03903d71af1a36a1dcb2aa6a95f0581e6c34",
+    "seconds": 4.462417,
+    "lufs": -16.14,
+    "true_peak_db": -2.33,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.99,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.26,
+        "true_peak_db": -2.32
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.14,
+        "true_peak_db": -2.33
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " We still need the equal socket. After you strike, remember to flip it back.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-62",
+    "file": "序-62.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-62-take1.wav",
+    "raw_sha256": "6abc5ff3c8fc2c5a63b643580b2e6e36d37c844422f7ec24430d3758f8fdc0f2",
+    "sha256": "c45a292ac6e3e883009ec7a629479105e4112700d0ddf29529e5a3bff84fef40",
+    "seconds": 6.018958,
+    "lufs": -16.23,
+    "true_peak_db": -2.08,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.02,
+        "true_peak_db": -2.4
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.23,
+        "true_peak_db": -2.08
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " X equals negative three. That's within the allowed range. All three sockets are filled.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-63",
+    "file": "序-63.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-63-selected.wav",
+    "raw_sha256": "03192988c156eefa4badc2e079c870aa7317a22a281e57997713a672a742a5e3",
+    "sha256": "cd3bf0d832602fc88406e42c3f8a3975405f7198855c789dade4511b22872073",
+    "seconds": 5.734292,
+    "lufs": -16.14,
+    "true_peak_db": -2.36,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.66,
+        "true_peak_db": -2.41
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.14,
+        "true_peak_db": -2.36
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "Multiply by negative one... and the direction flips. So we need the maximum.",
+    "transcript_match": true,
+    "reused_audition": true
+  },
+  {
+    "id": "序-64",
+    "file": "序-64.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-64-take1.wav",
+    "raw_sha256": "6ba2cf9e9f8ea125af1759e035574fbe1192d9fd5db87744321f3d47c256cfb5",
+    "sha256": "cf96833a910bb22d4bc1b631b7ef88b0237ad5ddf9c57dcc00c8297029b20908",
+    "seconds": 3.737083,
+    "lufs": -16.07,
+    "true_peak_db": -2.42,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.07,
+        "true_peak_db": -2.42
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "Flip it, cut it, flip it back! Snap!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-65",
+    "file": "序-65.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-65-take1.wav",
+    "raw_sha256": "4969090f1319329f1e8d2f6e183dc7bae58479b07d105a3944b5144c6f886224",
+    "sha256": "1bba7875446f08c72f78cb68740601f4e4eb6f52636481f6bd96c912de6a26d1",
+    "seconds": 7.799125,
+    "lufs": -16.04,
+    "true_peak_db": -2.28,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.28,
+        "true_peak_db": -2.43
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.04,
+        "true_peak_db": -2.28
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " A day later, in a different form... and you still recognized it. This blade is yours now.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-66",
+    "file": "序-66.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-66-take2.wav",
+    "raw_sha256": "9eae2046d1f4415c02e65b0662b131c0774c138fd033c33d04be007de27f40e0",
+    "sha256": "3103597ab5bb08eb4c75456db93e3c04acfba73628998c29665be7cc4d14aea8",
+    "seconds": 3.615,
+    "lufs": -16.08,
+    "true_peak_db": -2.37,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.63,
+        "true_peak_db": -2.4
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.08,
+        "true_peak_db": -2.37
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " We've finally got a proper weapon in the pack! I'll give it a name—",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-67",
+    "file": "序-67.mp3",
+    "voice": "willow",
+    "source_wav": "原始录音/序-67-take1.wav",
+    "raw_sha256": "9bf24f9f9ec2739dd151aa1768975050290e8a5aa098cbf580c44ab2fa787321",
+    "sha256": "be280b739a407d24e67a340179dd0c643b1b605893b4be19acb67815dae9405d",
+    "seconds": 1.262708,
+    "lufs": -16.04,
+    "true_peak_db": -2.38,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.68,
+        "true_peak_db": -2.45
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.33,
+        "true_peak_db": -2.38
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.04,
+        "true_peak_db": -2.38
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": "It already has a name.",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-68",
+    "file": "序-68.mp3",
+    "voice": "gleam",
+    "source_wav": "原始录音/序-68-take1.wav",
+    "raw_sha256": "f369f4234ecac28f446217a3b8b9e7786ce2d30a6a49ebc145203d9332e9918e",
+    "sha256": "8786ad93bdc199cdd2a6d11a1d1af58e95991877285c0667f12f23d238f3b97a",
+    "seconds": 1.555667,
+    "lufs": -16.1,
+    "true_peak_db": -2.37,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -16.89,
+        "true_peak_db": -2.44
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.1,
+        "true_peak_db": -2.37
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Then I'll give it another one!",
+    "transcript_match": true,
+    "reused_audition": false
+  },
+  {
+    "id": "序-69",
+    "file": "序-69.mp3",
+    "voice": "quartz",
+    "source_wav": "原始录音/序-69-take2.wav",
+    "raw_sha256": "61e8736c04bb83804814f6898bdeb11c5e2ef72a6689cb5f20b7bb4a77049d84",
+    "sha256": "b10fe71693d2ccb56f85e54a3bf6171900e7ef4e2bd284d3558be95fca4de2b6",
+    "seconds": 3.781708,
+    "lufs": -16.1,
+    "true_peak_db": -2.22,
+    "mastering_passes": [
+      {
+        "iteration": 0,
+        "lufs": -17.05,
+        "true_peak_db": -2.42
+      },
+      {
+        "iteration": 1,
+        "lufs": -16.34,
+        "true_peak_db": -2.22
+      },
+      {
+        "iteration": 2,
+        "lufs": -16.27,
+        "true_peak_db": -2.22
+      },
+      {
+        "iteration": 3,
+        "lufs": -16.1,
+        "true_peak_db": -2.22
+      }
+    ],
+    "loudness_ok": true,
+    "decode_ok": true,
+    "transcript": " Here's your compass. Which path shall we take first?",
+    "transcript_match": true,
+    "reused_audition": false
+  }
+]

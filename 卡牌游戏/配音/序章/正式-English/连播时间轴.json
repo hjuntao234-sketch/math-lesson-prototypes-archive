@@ -1,0 +1,416 @@
+[
+  {
+    "id": "序-01",
+    "person": "诺曼",
+    "start_seconds": 0.0,
+    "end_seconds": 4.8181666666666665
+  },
+  {
+    "id": "序-02",
+    "person": "诺曼",
+    "start_seconds": 5.368166666666666,
+    "end_seconds": 7.7359583333333335
+  },
+  {
+    "id": "序-03",
+    "person": "诺曼",
+    "start_seconds": 8.285958333333333,
+    "end_seconds": 10.864958333333334
+  },
+  {
+    "id": "序-04",
+    "person": "诺曼",
+    "start_seconds": 11.414958333333333,
+    "end_seconds": 16.426041666666666
+  },
+  {
+    "id": "序-05",
+    "person": "塔莉",
+    "start_seconds": 16.976041666666667,
+    "end_seconds": 22.252208333333332
+  },
+  {
+    "id": "序-06",
+    "person": "塔莉",
+    "start_seconds": 22.802208333333333,
+    "end_seconds": 28.205916666666667
+  },
+  {
+    "id": "序-07",
+    "person": "塔莉",
+    "start_seconds": 28.755916666666668,
+    "end_seconds": 34.205875
+  },
+  {
+    "id": "序-08",
+    "person": "雅娜",
+    "start_seconds": 34.755875,
+    "end_seconds": 39.563916666666664
+  },
+  {
+    "id": "序-09",
+    "person": "雅娜",
+    "start_seconds": 40.11391666666667,
+    "end_seconds": 46.61375
+  },
+  {
+    "id": "序-10",
+    "person": "雅娜",
+    "start_seconds": 47.16375,
+    "end_seconds": 51.529125
+  },
+  {
+    "id": "序-11",
+    "person": "塔莉",
+    "start_seconds": 52.079125,
+    "end_seconds": 55.08479166666667
+  },
+  {
+    "id": "序-12",
+    "person": "塔莉",
+    "start_seconds": 55.634791666666665,
+    "end_seconds": 58.99675
+  },
+  {
+    "id": "序-13",
+    "person": "雅娜",
+    "start_seconds": 59.54675,
+    "end_seconds": 63.35883333333334
+  },
+  {
+    "id": "序-14",
+    "person": "雅娜",
+    "start_seconds": 63.908833333333334,
+    "end_seconds": 67.25529166666666
+  },
+  {
+    "id": "序-15",
+    "person": "塔莉",
+    "start_seconds": 68.35529166666667,
+    "end_seconds": 72.1455
+  },
+  {
+    "id": "序-16",
+    "person": "雅娜",
+    "start_seconds": 72.6955,
+    "end_seconds": 75.08154166666667
+  },
+  {
+    "id": "序-17",
+    "person": "雅娜",
+    "start_seconds": 76.18154166666666,
+    "end_seconds": 86.24266666666666
+  },
+  {
+    "id": "序-18",
+    "person": "雅娜",
+    "start_seconds": 86.79266666666666,
+    "end_seconds": 93.98258333333334
+  },
+  {
+    "id": "序-19",
+    "person": "塔莉",
+    "start_seconds": 94.53258333333333,
+    "end_seconds": 96.794
+  },
+  {
+    "id": "序-20",
+    "person": "雅娜",
+    "start_seconds": 97.344,
+    "end_seconds": 104.27616666666667
+  },
+  {
+    "id": "序-21",
+    "person": "雅娜",
+    "start_seconds": 104.82616666666667,
+    "end_seconds": 111.67675
+  },
+  {
+    "id": "序-22",
+    "person": "塔莉",
+    "start_seconds": 112.22675,
+    "end_seconds": 113.62475
+  },
+  {
+    "id": "序-23",
+    "person": "雅娜",
+    "start_seconds": 114.17475,
+    "end_seconds": 118.41016666666667
+  },
+  {
+    "id": "序-24",
+    "person": "雅娜",
+    "start_seconds": 118.96016666666667,
+    "end_seconds": 124.15829166666667
+  },
+  {
+    "id": "序-25",
+    "person": "塔莉",
+    "start_seconds": 124.70829166666667,
+    "end_seconds": 127.47045833333334
+  },
+  {
+    "id": "序-26",
+    "person": "塔莉",
+    "start_seconds": 128.02045833333332,
+    "end_seconds": 130.40983333333332
+  },
+  {
+    "id": "序-27",
+    "person": "塔莉",
+    "start_seconds": 131.50983333333335,
+    "end_seconds": 135.432125
+  },
+  {
+    "id": "序-28",
+    "person": "塔莉",
+    "start_seconds": 136.532125,
+    "end_seconds": 141.78445833333333
+  },
+  {
+    "id": "序-29",
+    "person": "诺曼",
+    "start_seconds": 142.33445833333334,
+    "end_seconds": 152.90775
+  },
+  {
+    "id": "序-30",
+    "person": "诺曼",
+    "start_seconds": 153.45775,
+    "end_seconds": 157.400375
+  },
+  {
+    "id": "序-31",
+    "person": "雅娜",
+    "start_seconds": 157.950375,
+    "end_seconds": 161.515
+  },
+  {
+    "id": "序-32",
+    "person": "法比娅",
+    "start_seconds": 162.065,
+    "end_seconds": 166.69391666666667
+  },
+  {
+    "id": "序-33",
+    "person": "法比娅",
+    "start_seconds": 167.24391666666668,
+    "end_seconds": 175.80395833333333
+  },
+  {
+    "id": "序-34",
+    "person": "雅娜",
+    "start_seconds": 176.90395833333332,
+    "end_seconds": 180.96816666666666
+  },
+  {
+    "id": "序-35",
+    "person": "雅娜",
+    "start_seconds": 181.51816666666667,
+    "end_seconds": 186.93429166666667
+  },
+  {
+    "id": "序-36",
+    "person": "塔莉",
+    "start_seconds": 187.48429166666668,
+    "end_seconds": 191.39504166666666
+  },
+  {
+    "id": "序-37",
+    "person": "法比娅",
+    "start_seconds": 191.94504166666667,
+    "end_seconds": 195.24608333333333
+  },
+  {
+    "id": "序-38",
+    "person": "雅娜",
+    "start_seconds": 195.79608333333334,
+    "end_seconds": 199.85983333333334
+  },
+  {
+    "id": "序-39",
+    "person": "雅娜",
+    "start_seconds": 200.40983333333332,
+    "end_seconds": 205.81516666666667
+  },
+  {
+    "id": "序-40",
+    "person": "雅娜",
+    "start_seconds": 206.36516666666665,
+    "end_seconds": 211.74354166666666
+  },
+  {
+    "id": "序-41",
+    "person": "法比娅",
+    "start_seconds": 212.29354166666667,
+    "end_seconds": 214.96208333333334
+  },
+  {
+    "id": "序-42",
+    "person": "塔莉",
+    "start_seconds": 215.51208333333332,
+    "end_seconds": 217.74220833333334
+  },
+  {
+    "id": "序-43",
+    "person": "雅娜",
+    "start_seconds": 218.29220833333332,
+    "end_seconds": 224.68379166666668
+  },
+  {
+    "id": "序-44",
+    "person": "雅娜",
+    "start_seconds": 225.23379166666666,
+    "end_seconds": 229.85558333333333
+  },
+  {
+    "id": "序-45",
+    "person": "塔莉",
+    "start_seconds": 230.40558333333334,
+    "end_seconds": 232.81508333333332
+  },
+  {
+    "id": "序-46",
+    "person": "法比娅",
+    "start_seconds": 233.36508333333333,
+    "end_seconds": 236.3915
+  },
+  {
+    "id": "序-47",
+    "person": "诺曼",
+    "start_seconds": 237.4915,
+    "end_seconds": 242.07291666666666
+  },
+  {
+    "id": "序-48",
+    "person": "雅娜",
+    "start_seconds": 242.62291666666667,
+    "end_seconds": 250.7575
+  },
+  {
+    "id": "序-49",
+    "person": "诺曼",
+    "start_seconds": 251.3075,
+    "end_seconds": 255.34741666666667
+  },
+  {
+    "id": "序-50",
+    "person": "法比娅",
+    "start_seconds": 255.89741666666666,
+    "end_seconds": 262.49983333333336
+  },
+  {
+    "id": "序-51",
+    "person": "法比娅",
+    "start_seconds": 263.5998333333333,
+    "end_seconds": 268.55566666666664
+  },
+  {
+    "id": "序-52",
+    "person": "塔莉",
+    "start_seconds": 269.10566666666665,
+    "end_seconds": 273.28995833333335
+  },
+  {
+    "id": "序-53",
+    "person": "法比娅",
+    "start_seconds": 273.83995833333336,
+    "end_seconds": 276.96191666666664
+  },
+  {
+    "id": "序-54",
+    "person": "雅娜",
+    "start_seconds": 277.51191666666665,
+    "end_seconds": 281.233875
+  },
+  {
+    "id": "序-55",
+    "person": "塔莉",
+    "start_seconds": 282.333875,
+    "end_seconds": 285.62179166666664
+  },
+  {
+    "id": "序-56",
+    "person": "雅娜",
+    "start_seconds": 286.17179166666665,
+    "end_seconds": 290.5755833333333
+  },
+  {
+    "id": "序-57",
+    "person": "法比娅",
+    "start_seconds": 291.12558333333334,
+    "end_seconds": 296.76975
+  },
+  {
+    "id": "序-58",
+    "person": "雅娜",
+    "start_seconds": 297.31975,
+    "end_seconds": 302.7217083333333
+  },
+  {
+    "id": "序-59",
+    "person": "雅娜",
+    "start_seconds": 303.2717083333333,
+    "end_seconds": 312.1275416666667
+  },
+  {
+    "id": "序-60",
+    "person": "塔莉",
+    "start_seconds": 312.6775416666667,
+    "end_seconds": 314.4644166666667
+  },
+  {
+    "id": "序-61",
+    "person": "雅娜",
+    "start_seconds": 315.01441666666665,
+    "end_seconds": 319.47683333333333
+  },
+  {
+    "id": "序-62",
+    "person": "雅娜",
+    "start_seconds": 320.02683333333334,
+    "end_seconds": 326.0457916666667
+  },
+  {
+    "id": "序-63",
+    "person": "法比娅",
+    "start_seconds": 326.5957916666667,
+    "end_seconds": 332.33008333333333
+  },
+  {
+    "id": "序-64",
+    "person": "塔莉",
+    "start_seconds": 332.88008333333335,
+    "end_seconds": 336.61716666666666
+  },
+  {
+    "id": "序-65",
+    "person": "法比娅",
+    "start_seconds": 337.7171666666667,
+    "end_seconds": 345.5162916666667
+  },
+  {
+    "id": "序-66",
+    "person": "塔莉",
+    "start_seconds": 346.06629166666664,
+    "end_seconds": 349.68129166666665
+  },
+  {
+    "id": "序-67",
+    "person": "雅娜",
+    "start_seconds": 350.23129166666666,
+    "end_seconds": 351.494
+  },
+  {
+    "id": "序-68",
+    "person": "塔莉",
+    "start_seconds": 352.044,
+    "end_seconds": 353.5996666666667
+  },
+  {
+    "id": "序-69",
+    "person": "法比娅",
+    "start_seconds": 354.69966666666664,
+    "end_seconds": 358.481375
+  }
+]

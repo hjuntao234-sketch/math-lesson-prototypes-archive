@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-07",
+  "delivered": 24,
+  "transcript_matches": 24,
+  "issues": [],
+  "attempts": 24,
+  "successful_recordings": 24,
+  "total_generation_calls_reserved": 79,
+  "session_seconds": 261.0,
+  "estimated_round_usd": 0.2175,
+  "estimated_cumulative_usd_including_previous_reserves": 0.797917,
+  "final_audio_seconds": 132.339707,
+  "static_checker_errors": 0,
+  "frozen_hashes_matched": 7,
+  "html_audio_references": 25,
+  "html_local_references_all_exist": true,
+  "browser_playback_tested": false,
+  "human_listening_reviewed": false,
+  "lufs_range": [
+    -18.86,
+    -15.65
+  ],
+  "maximum_true_peak_db": -1.83,
+  "full_production_not_started": true
+}

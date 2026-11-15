@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-07",
+  "model": "gpt-live-1",
+  "language": "English",
+  "voices": {
+    "塔莉": "gleam",
+    "雅娜": "willow",
+    "法比娅": "quartz",
+    "诺曼": "vesper"
+  },
+  "final_lines": 69,
+  "reused_selected_auditions": 8,
+  "new_generation_attempts": 64,
+  "successful_new_recordings": 64,
+  "retries": [
+    {
+      "id": "序-28",
+      "take": 2,
+      "reason": "Keep the surprise, but put the hesitation into a silent pause between the questions. Do not restart or repeat any phrase. Say Why is this one wrapped in bandages exactly once."
+    },
+    {
+      "id": "序-66",
+      "take": 2,
+      "reason": "The scene cuts off after the word name. Finish the supplied word name with the sense of an interrupted thought, then remain completely silent. Do not say uh, maybe, an invented name, or any other word."
+    },
+    {
+      "id": "序-69",
+      "take": 2,
+      "reason": "Keep the warm, gentle smile and inviting question. Use a normal flowing conversational pace, with only a brief handover beat between the two sentences. Do not stretch vowels or leave a long dramatic pause. Say exactly the supplied words."
+    }
+  ],
+  "cumulative_generation_call_reserve": 143,
+  "limit": 260,
+  "new_session_seconds": 652.0,
+  "estimated_new_usd": 0.5433333333333333,
+  "estimated_cumulative_usd_with_previous_reserves": 1.3412503333333334,
+  "final_mp3_seconds": 315.581377,
+  "compilation_seconds": 358.481375,
+  "original_checker_errors": 0,
+  "frozen_hashes_matched": 7,
+  "decoded": 69,
+  "transcript_matches": 69,
+  "lufs_range": [
+    -16.25,
+    -15.76
+  ],
+  "maximum_true_peak_db": -2.08,
+  "loudness_tolerance_lu": 0.25,
+  "html_audio_references": 70,
+  "html_local_references_all_exist": true,
+  "browser_playback_tested": false,
+  "human_listening_reviewed": false,
+  "independent_translation_reviewed": false,
+  "compilation_sha256": "377247f9d84ebf4afb698e38f59018a6fe45ad087083926a02ecdec919c06fee",
+  "source_hashes": [
+    {
+      "file": "配音/序章-台词.json",
+      "sha256": "8a9851fd2ea9cd133be30fa7cd9313f39f3256d05bef9eef9115036bb52fba58",
+      "match": true
+    },
+    {
+      "file": "配音/声音设定.md",
+      "sha256": "594dd09be04618406cd11dfafc1d0d017185114bbfb6194a2a35e2e24d33a7a6",
+      "match": true
+    },
+    {
+      "file": "配音/check_序章台词.py",
+      "sha256": "a5369f2619b38e1e299554519008a2d9c12329f00f81a685532a3875b079b899",
+      "match": true
+    },
+    {
+      "file": "gemini/回收/剧情-修订-R3.json",
+      "sha256": "ef2020f6558b9d3778e9e2488441334d6c8b226a9928fb9a9582d35d64559292",
+      "match": true
+    },
+    {
+      "file": "关卡/第一章/战斗/p1-1.json",
+      "sha256": "20d1f15513d4b86acd722a4bb802829389f9171030b576ba82db87489d0262b6",
+      "match": true
+    },
+    {
+      "file": "关卡/第一章/战斗/p2-1.json",
+      "sha256": "98abccee06b1e1bc82a86a532a5863aa4911dcdda1e521d6f1c3c59bfbe82210",
+      "match": true
+    },
+    {
+      "file": "关卡/第一章/战斗/p3-1.json",
+      "sha256": "29f055b011dff6f6a0d447372eff95a21a4bcb4010d81d27be123d58e2fb1b5e",
+      "match": true
+    }
+  ],
+  "status": "序章英文全配交付；等待用户试听和Claude审读；停止"
+}
