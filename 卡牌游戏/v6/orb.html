@@ -1,0 +1,29 @@
+<!-- 心力、牌堆、结束回合 -->
+  <div class="abs orb" title="心力：每回合 3 点；情报、出队友、装备各花 1 点，理由不花">
+    <svg width="150" height="150" viewBox="0 0 176 176" aria-hidden="true">
+      <defs>
+        <radialGradient id="og" cx="42%" cy="36%" r="70%"><stop offset="0" stop-color="#7fe0d0"/><stop offset=".35" stop-color="#2f9a8a"/><stop offset=".8" stop-color="#11433d"/><stop offset="1" stop-color="#0a2a26"/></radialGradient>
+        <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1cf82"/><stop offset=".5" stop-color="#a77c35"/><stop offset="1" stop-color="#5e4319"/></linearGradient>
+      </defs>
+      <circle cx="88" cy="88" r="84" fill="#0b0f0d"/>
+      <circle cx="88" cy="88" r="80" fill="#1b2521" stroke="url(#ring)" stroke-width="6"/>
+      <g id="ticks" stroke="#c49a4c" stroke-width="2"></g>
+      <path d="M88 20 98 88 88 156 78 88Z" fill="#2a3a34" opacity=".9"/><path d="M20 88 88 78 156 88 88 98Z" fill="#2a3a34" opacity=".9"/>
+      <circle cx="88" cy="88" r="52" fill="#0b0f0d"/>
+      <circle cx="88" cy="88" r="49" fill="url(#og)" id="orbcore"/>
+      <ellipse cx="72" cy="66" rx="22" ry="12" fill="#fff" opacity=".22" transform="rotate(-25 72 66)"/>
+      <text x="88" y="18" text-anchor="middle" font-family="Noto Serif SC,serif" font-weight="900" font-size="13" fill="#d24a37">北</text>
+    </svg>
+    <span class="num" id="energy">3/3</span><span class="cap">心力</span>
+  </div>
+  <div class="abs pile" style="left:22px;top:832px" title="待用">
+    <svg width="62" height="62" viewBox="0 0 62 62" aria-hidden="true"><rect x="16" y="8" width="30" height="42" rx="4" transform="rotate(-8 31 29)" fill="#5a3a30" stroke="#0b0f0d" stroke-width="2.5"/><rect x="14" y="10" width="30" height="42" rx="4" fill="#b2483a" stroke="#0b0f0d" stroke-width="2.5"/><path d="M29 22 33 31 29 40 25 31Z" fill="#efe5cb"/></svg>
+    <span class="cnt" id="drawcnt">3</span>
+  </div>
+  <div class="abs pile dis" style="right:22px;top:832px" title="用过">
+    <svg width="62" height="62" viewBox="0 0 62 62" aria-hidden="true"><rect x="16" y="10" width="30" height="42" rx="4" transform="rotate(8 31 31)" fill="#22394f" stroke="#0b0f0d" stroke-width="2.5"/><rect x="16" y="10" width="30" height="42" rx="4" fill="#3b74a3" stroke="#0b0f0d" stroke-width="2.5"/><path d="M24 31h14M31 24v14" stroke="#efe5cb" stroke-width="2.5" stroke-linecap="round" transform="rotate(45 31 31)"/></svg>
+    <span class="cnt" id="discnt">0</span>
+  </div>
+  <button class="abs endturn" type="button" id="endTurn"><span>结束回合</span></button>
+
+  

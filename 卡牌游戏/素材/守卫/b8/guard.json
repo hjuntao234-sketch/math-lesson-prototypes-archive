@@ -1,0 +1,17 @@
+{
+  "名": "卡8外衣守卫",
+  "base": "duo-c",
+  "order": [
+    "body",
+    "eyes",
+    "arm-long",
+    "arm-long-equal",
+    "arm-short",
+    "arm-short-equal",
+    "prop"
+  ],
+  "hidden": [
+    "arm-long-equal",
+    "arm-short-equal"
+  ]
+}

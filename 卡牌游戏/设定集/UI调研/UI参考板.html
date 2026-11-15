@@ -1,0 +1,311 @@
+<title>罗盘指挥官 UI 参考板</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;700;900&family=ZCOOL+XiaoWei&display=swap">
+<style>
+/* 版式：一块设计评审板。从上往下：要定什么 → 现在哪里粗糙 → 每类屏幕借谁 → 三个方向的样张 → 下一步。
+   页面自身用原野的雾绿灰做中性色、黄铜做强调；三块样张各用自己的配色，不跟随主题。 */
+:root{
+  --bg:#edf0ec; --panel:#f7f8f5; --ink:#1b2420; --muted:#5a6762; --line:#cbd3ce;
+  --accent:#8c6418; --accent-soft:#efe3c8; --sage:#4f6a62; --warn:#9a3a2c;
+  --f-head:"Noto Serif SC","Songti SC","STSong",serif;
+  --f-body:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --f-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111816; --panel:#18211e; --ink:#e3e9e5; --muted:#9aa8a2; --line:#2c3833;
+  --accent:#d7a84e; --accent-soft:#33291a; --sage:#8fb0a6; --warn:#e48b7c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111816; --panel:#18211e; --ink:#e3e9e5; --muted:#9aa8a2; --line:#2c3833;
+  --accent:#d7a84e; --accent-soft:#33291a; --sage:#8fb0a6; --warn:#e48b7c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-head);text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,4.4vw,46px);font-weight:900;line-height:1.2;letter-spacing:.02em}
+h2{font-size:26px;font-weight:700;line-height:1.3}
+h3{font-size:18px;font-weight:700;line-height:1.4}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-size:13px;letter-spacing:.14em;color:var(--sage);font-weight:700}
+.lede{max-width:46em;color:var(--muted);margin-top:14px}
+section{margin-top:64px;display:grid;gap:20px}
+.sec-h{display:grid;gap:6px;max-width:52em}
+.sec-h p{color:var(--muted)}
+
+/* 要定的事 */
+.decide{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:baseline;background:var(--accent-soft);border-left:4px solid var(--accent);padding:18px 22px;border-radius:0 10px 10px 0}
+.decide b{font-family:var(--f-head);font-size:17px}
+.decide span{min-width:0}
+
+/* 诊断 */
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.shot{margin:0;display:grid;gap:8px;min-width:0}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:8px;border:1px solid var(--line);display:block}
+.shot figcaption{font-size:14px;color:var(--muted)}
+.shot figcaption b{color:var(--ink);font-weight:700}
+.probs{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px 28px;counter-reset:p;padding:0;margin:0;list-style:none}
+.probs li{counter-increment:p;display:grid;grid-template-columns:34px 1fr;gap:10px;min-width:0}
+.probs li::before{content:counter(p);font-family:var(--f-head);font-weight:900;font-size:22px;color:var(--warn);line-height:1.4}
+.probs b{display:block}
+.probs span{color:var(--muted);font-size:15px}
+
+/* 参考 */
+.refs{display:grid;gap:0;border-top:1px solid var(--line)}
+.ref{display:grid;grid-template-columns:150px minmax(0,1.1fr) minmax(0,1.4fr);gap:8px 24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref .scr{font-family:var(--f-head);font-weight:700;font-size:17px}
+.ref .scr small{display:block;font-family:var(--f-body);font-weight:400;font-size:13px;color:var(--muted)}
+.ref .who{font-weight:500}
+.ref .who em{font-style:normal;color:var(--muted);font-weight:400;font-size:14px;display:block}
+.ref .take{font-size:15px}
+.ref .take i{font-style:normal;color:var(--sage);font-weight:700}
+.tools{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px}
+.rule{font-size:15px;color:var(--muted);max-width:52em}
+
+/* 三个方向 */
+.dirs{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;align-items:start}
+.dir{display:grid;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+.dir.rec{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.dir-h{display:grid;gap:4px}
+.dir-h .tag{font-size:12px;letter-spacing:.12em;font-weight:700;color:var(--accent)}
+.dir-h p{color:var(--muted);font-size:15px}
+.sw{display:flex;flex-wrap:wrap;gap:6px}
+.sw i{display:grid;gap:2px;font-style:normal;font-size:11px;color:var(--muted);font-family:var(--f-mono)}
+.sw i::before{content:"";width:46px;height:30px;border-radius:5px;background:var(--c);border:1px solid rgba(0,0,0,.12)}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:14px}
+.pc div{min-width:0}
+.pc b{display:block;font-size:13px;letter-spacing:.06em;color:var(--sage)}
+.pc ul{margin:4px 0 0;padding-left:1.1em}
+.dir .from{font-size:13px;color:var(--muted)}
+
+/* 样张通用：16:9 场景 + 一张牌。颜色在各自的类里写死，不跟随页面主题 */
+.scene{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:8px;overflow:hidden;background:#3c4339 url(img/bg-path.webp) center/cover;container-type:inline-size}
+.scene .spr{position:absolute;left:4%;bottom:-6%;height:96%;width:auto}
+.scene .hud{position:absolute;right:4%;top:7%;width:46%}
+.scene .box{position:absolute;left:3%;right:3%;bottom:4%;min-height:28%}
+.scene .nm{position:absolute;top:0;left:3.5%;transform:translateY(-62%);white-space:nowrap}
+.scene .tx{font-size:clamp(11px,3.2cqw,16px);line-height:1.55}
+.scene .ctl{position:absolute;right:2.5%;bottom:8%;display:flex;gap:6px;font-size:clamp(8px,1.9cqw,11px)}
+.cardrow{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
+.card{width:150px;display:grid;grid-template-rows:auto auto 1fr;gap:6px;padding:10px;font-size:12.5px;line-height:1.5}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.card .ct{font-size:15px}
+.btns{display:flex;flex-direction:column;gap:8px;justify-content:center;flex:1;min-width:120px}
+.btns span{display:block;text-align:center;padding:8px 10px;font-size:13px}
+
+/* A 雾野手账 */
+.A .scene .box{background:#ece3cb;color:#252b26;border:1.5px solid #2a2f2a;box-shadow:inset 0 0 0 4px #ece3cb,inset 0 0 0 5px rgba(42,47,42,.45);padding:5% 5% 3%;font-family:"Noto Serif SC",serif;
+  background-image:repeating-linear-gradient(0deg,transparent 0 23px,rgba(70,90,80,.10) 23px 24px)}
+.A .scene .nm{background:#2a2f2a;color:#f1e8d0;padding:2px 12px 2px 10px;font-family:"ZCOOL XiaoWei","Noto Serif SC",serif;font-size:clamp(11px,2.6cqw,15px);border-left:5px solid #e3922b}
+.A .scene .ctl span{color:#5b5a48;border-bottom:1px solid #8a815b;font-family:"Noto Serif SC",serif}
+.A .scene .hud{background:#ece3cb;border:1.5px solid #2a2f2a;padding:3% 4%;color:#252b26;font-family:"Noto Serif SC",serif;font-size:clamp(9px,2.2cqw,13px);transform:rotate(1.2deg);box-shadow:3px 3px 0 rgba(30,38,34,.35)}
+.A .scene .hud .bar{height:7px;background:repeating-linear-gradient(90deg,#2a2f2a 0 6px,transparent 6px 8px);margin:4px 0;opacity:.85}
+.A .scene .stamp{position:absolute;right:9%;top:42%;border:3px double #a3412f;color:#a3412f;font-family:"ZCOOL XiaoWei",serif;font-size:clamp(14px,5cqw,30px);padding:0 10px;transform:rotate(-9deg);background:rgba(236,227,203,.6)}
+.A .card{background:#ece3cb;color:#252b26;border:1.5px solid #2a2f2a;box-shadow:inset 0 0 0 4px #ece3cb,inset 0 0 0 5px rgba(42,47,42,.4);font-family:"Noto Serif SC",serif}
+.A .card img{border-radius:50% 50% 8px 8px;border:1.5px solid #2a2f2a;background:#d9cfb4}
+.A .card .ct{font-family:"ZCOOL XiaoWei",serif;font-size:17px}
+.A .card .ty{font-size:11px;color:#a3412f;letter-spacing:.1em}
+.A .btns span{background:#ece3cb;border:1.5px solid #2a2f2a;color:#252b26;font-family:"Noto Serif SC",serif;box-shadow:3px 3px 0 #2a2f2a}
+.A .btns span.pri{background:#2a2f2a;color:#f1e8d0;box-shadow:3px 3px 0 #b0853a}
+
+/* B 学院徽章 */
+.B .scene .box{background:rgba(250,252,255,.93);color:#1d2b3a;border-radius:14px;padding:5% 5% 3%;font-family:"Noto Sans SC",sans-serif;box-shadow:0 6px 18px rgba(20,50,90,.18)}
+.B .scene .nm{background:#2f8fd8;color:#fff;padding:2px 14px;border-radius:999px;font-weight:700;font-size:clamp(11px,2.6cqw,15px)}
+.B .scene .nm small{font-weight:400;opacity:.85;margin-left:6px;font-size:.8em}
+.B .scene .ctl span{background:#e8f3fc;color:#2f6fa8;padding:1px 8px;border-radius:999px;font-weight:700}
+.B .scene .hud{background:rgba(255,255,255,.92);border-radius:12px;padding:3% 4%;color:#1d2b3a;font-size:clamp(9px,2.2cqw,13px);font-weight:500;box-shadow:0 4px 12px rgba(20,50,90,.2)}
+.B .scene .hud .bar{height:7px;border-radius:99px;background:linear-gradient(90deg,#2f8fd8 70%,#dbe8f4 70%);margin:4px 0}
+.B .scene .stamp{position:absolute;right:8%;top:44%;background:#2f8fd8;color:#fff;font-weight:900;font-size:clamp(13px,4.4cqw,26px);padding:2px 14px;border-radius:8px;transform:skewX(-10deg);box-shadow:0 4px 0 #1d6aa8}
+.B .card{background:#fff;color:#1d2b3a;border-radius:14px;box-shadow:0 4px 14px rgba(20,50,90,.16);border-top:5px solid #2f8fd8}
+.B .card img{border-radius:10px;background:#e8f3fc}
+.B .card .ct{font-weight:700}
+.B .card .ty{font-size:11px;color:#2f8fd8;font-weight:700}
+.B .btns span{background:#fff;color:#2f6fa8;border-radius:999px;font-weight:700;box-shadow:0 2px 8px rgba(20,50,90,.15)}
+.B .btns span.pri{background:#2f8fd8;color:#fff}
+
+/* C 星图战术 */
+.C .scene{filter:saturate(.85)}
+.C .scene .box{background:linear-gradient(180deg,rgba(10,14,16,.55),rgba(10,14,16,.9));color:#eef2f3;padding:5% 5% 3%;font-family:"Noto Sans SC",sans-serif;border-top:1px solid rgba(201,164,92,.7)}
+.C .scene .box::before,.C .scene .box::after{content:"";position:absolute;width:14px;height:14px;border:2px solid #c9a45c;top:-2px}
+.C .scene .box::before{left:-2px;border-right:0;border-bottom:0}.C .scene .box::after{right:-2px;border-left:0;border-bottom:0}
+.C .scene .nm{color:#c9a45c;font-weight:700;letter-spacing:.06em;font-size:clamp(11px,2.6cqw,15px);transform:translateY(-120%)}
+.C .scene .nm small{color:#9fb3b6;font-weight:400;margin-left:8px;letter-spacing:.2em;font-size:.72em}
+.C .scene .ctl span{color:#9fb3b6;letter-spacing:.12em}
+.C .scene .hud{color:#eef2f3;font-size:clamp(9px,2.2cqw,13px);font-weight:500;background:rgba(10,14,16,.6);padding:3% 4%;clip-path:polygon(0 0,100% 0,100% 70%,94% 100%,0 100%)}
+.C .scene .hud .bar{height:6px;background:linear-gradient(90deg,#eef2f3 70%,rgba(255,255,255,.18) 70%);margin:5px 0;clip-path:polygon(3% 0,100% 0,97% 100%,0 100%)}
+.C .scene .stamp{position:absolute;right:6%;top:42%;color:#fff;font-weight:900;font-style:italic;font-size:clamp(14px,5.4cqw,32px);letter-spacing:.04em;text-shadow:0 0 12px rgba(111,208,214,.9),2px 2px 0 #c9a45c}
+.C .card{background:#11181b;color:#e6ecee;border:1px solid #c9a45c;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
+.C .card img{background:#1d2a2e;filter:saturate(.9)}
+.C .card .ct{font-weight:700;color:#fff}
+.C .card .ty{font-size:10.5px;color:#c9a45c;letter-spacing:.18em}
+.C .btns span{background:transparent;color:#c9a45c;border:1px solid #c9a45c;letter-spacing:.1em;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.C .btns span.pri{background:#c9a45c;color:#11181b;font-weight:700}
+.samplebg{padding:12px;border-radius:10px}
+.A .samplebg{background:#d9d2bd}.B .samplebg{background:#dfe9f2}.C .samplebg{background:#0c1113}
+
+.next{display:grid;gap:10px;counter-reset:n;padding:0;margin:0;list-style:none;max-width:56em}
+.next li{counter-increment:n;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.next li::before{content:counter(n);font-family:var(--f-head);font-weight:900;color:var(--accent);font-size:20px;line-height:1.5}
+.src{font-size:14px;color:var(--muted);display:grid;gap:4px}
+.foot{margin-top:56px;font-size:13px;color:var(--muted)}
+@media (max-width:760px){.ref{grid-template-columns:1fr}.pc{grid-template-columns:1fr}.decide{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">罗盘指挥官 · 界面调研 · 2026-11-06</p>
+  <h1>先定方向，再画界面</h1>
+  <p class="lede">现在的界面能用，但不像游戏：剧情和战斗是一套画面，其余页面像一个深色网站。这一页把现状的毛病、每类屏幕可以借鉴的游戏、三个可选方向放在一起。你只需要做一件事：挑一个方向，或者说要怎么混。</p>
+  <div class="decide">
+    <b>要你定</b><span>用 A、B、C 哪个方向做底。我推荐 <strong>A 雾野手账</strong>，战斗界面的骨架借 C，对话框的规矩借 galgame 和蔚蓝档案。</span>
+    <b>不用你定</b><span>每类屏幕具体借谁、字号、间距、按钮这些细节，方向定了我来出规范和样稿，你看样稿再提意见。</span>
+  </div>
+
+  <section id="now">
+    <div class="sec-h">
+      <p class="eyebrow">一 · 现状</p>
+      <h2>现在哪里粗糙</h2>
+      <p>下面是游戏里的实际截图，1366×768，冒险外观。</p>
+    </div>
+    <div class="shots">
+      <figure class="shot"><img src="img/now-01-title.webp" alt="现在的标题页：深色网格底，左边一行标题和三个按钮，右边三张小卡" loading="lazy"><figcaption><b>标题页</b>：没有主视觉，开发说明露在玩家面前。</figcaption></figure>
+      <figure class="shot"><img src="img/now-05-map.webp" alt="现在的世界地图：一长串文字列表和小标签" loading="lazy"><figcaption><b>世界地图</b>：是一张文字清单，看不出路线和位置。</figcaption></figure>
+      <figure class="shot"><img src="img/now-06-deck.webp" alt="现在的牌组页：网页卡片，小字说明" loading="lazy"><figcaption><b>牌组</b>：网页卡片加大段小字，没有牌的手感。</figcaption></figure>
+      <figure class="shot"><img src="img/now-03-vn-rival.webp" alt="现在的对话：图书馆背景、诺曼立绘、底部深色圆角对话框" loading="lazy"><figcaption><b>对话</b>：立绘和背景很好，对话框是一块普通的深色圆角框。</figcaption></figure>
+      <figure class="shot"><img src="img/now-09-lesson-choice.webp" alt="现在的学习剧情：右上米色黑板卡片，底部选项按钮" loading="lazy"><figcaption><b>黑板和选择</b>：黑板是一张米色网页卡片，和画风不搭。</figcaption></figure>
+      <figure class="shot"><img src="img/now-10-gear-card.webp" alt="现在的装备卡：米色金边卡片压在黑板上" loading="lazy"><figcaption><b>获得装备</b>：又一套卡片样式，压在黑板上面。</figcaption></figure>
+      <figure class="shot"><img src="img/now-13-sb-cards.webp" alt="现在的剧情战斗出牌：三张带头像的网页按钮，守卫是白雾，标签四散" loading="lazy"><figcaption><b>剧情战斗·出牌</b>：出牌是三颗网页按钮，信息浮在各处。</figcaption></figure>
+      <figure class="shot"><img src="img/now-15-sb-broken.webp" alt="现在的剧情战斗击破：韧性条、击破按钮、标签分散在画面上" loading="lazy"><figcaption><b>剧情战斗·击破</b>：韧性条、标签、“击破”各在一处，没有固定位置。</figcaption></figure>
+      <figure class="shot"><img src="img/now-07-battle-p1-look.webp" alt="现在的普通战斗：三栏网页布局" loading="lazy"><figcaption><b>普通战斗</b>：三栏网页布局，没有场景。</figcaption></figure>
+    </div>
+    <ol class="probs">
+      <li><div><b>两个世界</b><span>剧情和战斗是全屏画面；地图、牌组、菜园、训练场、笔记、档案、好友、领主配牌这 8 页是深色网站，从剧情切回去像退回后台。</span></div></li>
+      <li><div><b>顶栏是网站页眉</b><span>7 个文字链接、经验条、外观、配乐、主题三个开关挤一行。游戏一般用少量大入口，设置收进齿轮。</span></div></li>
+      <li><div><b>标题页没有主视觉</b><span>没有立绘、没有背景，“小样 v4：里面有什么”这种开发说明也摆在玩家面前。</span></div></li>
+      <li><div><b>地图不是地图</b><span>卡号、集号、“打 1 打 2 打 3”排成长清单，进度靠一行“已点亮 0/20”。</span></div></li>
+      <li><div><b>对话框缺标配</b><span>没有回看、自动、快进、隐藏界面；“点一下，或按空格继续”一直挂着；说话的人和不说话的人没有明暗区别。</span></div></li>
+      <li><div><b>卡片各长各的</b><span>标题小卡、牌组卡、入队卡、装备卡、出牌按钮、情报牌，至少 6 套样式。同一张牌在不同地方长得不一样。</span></div></li>
+      <li><div><b>战斗信息四散</b><span>韧性条、“你的回合”、“击破”、部位标签各浮一处，没有固定的界面区块；右下角的通知条还会压住对话框。</span></div></li>
+      <li><div><b>色调和字体对不上画</b><span>背景画是偏绿的雾色、橄榄、米白，界面却是偏蓝的石板灰；标题字是方块感的站酷庆科黄油体，和厚涂立绘不搭；正文多处只有 12—13 像素。</span></div></li>
+    </ol>
+  </section>
+
+  <section id="refs">
+    <div class="sec-h">
+      <p class="eyebrow">二 · 参考</p>
+      <h2>每类屏幕借谁的什么</h2>
+      <p>按屏幕分开找参考，不整套照搬一个游戏。每一行写清借什么。</p>
+    </div>
+    <div class="refs">
+      <div class="ref"><div class="scr">标题、主界面<small>对应问题 2、3</small></div><div class="who">蔚蓝档案、明日方舟<em>手游主界面</em></div><div class="take">一张大立绘或主视觉占满画面，入口只留 4—6 个大块，设置收进角落的齿轮。<i>借：</i>“少而大”的入口和留白。</div></div>
+      <div class="ref"><div class="scr">世界地图<small>对应问题 4</small></div><div class="who">杀戮尖塔<em>地图界面</em></div><div class="take">画在纸上的路线图，节点用图标区分（守卫、营地、领主、遗迹），走过的路描黑，前面的分岔看得见。<i>借：</i>节点图标和“往前走”的路线感。我们的四条路、据点、营地正好对得上。</div></div>
+      <div class="ref"><div class="scr">剧情对话<small>对应问题 5</small></div><div class="who">蔚蓝档案的剧情模式、成熟的 galgame、崩坏：星穹铁道<em>对话和选项</em></div><div class="take">底部对话框，名牌带所属；说话的人亮、其余人压暗；一排快捷键：回看、自动、快进、隐藏界面、跳过。崩铁把对话选项竖排在画面右侧。<i>借：</i>快捷栏和说话人高亮。</div></div>
+      <div class="ref"><div class="scr">战前会议<small>队友各抒己见</small></div><div class="who">极乐迪斯科<em>对话界面</em></div><div class="take">主角脑子里的各项技能会自己插话，各有性格，名字用这项技能的颜色标出来，界面是右侧一条竖长的文字栏。<i>借：</i>“思维方式会说话”这个形式。我们的队友就是学法，同一道题各有主张，正好用这种排法。</div></div>
+      <div class="ref"><div class="scr">战斗界面<small>对应问题 7</small></div><div class="who">崩坏：星穹铁道、杀戮尖塔、重返未来：1999<em>回合制战斗</em></div><div class="take">崩铁：一侧是行动顺序，敌人头上是白色韧性条加弱点图标，打空韧性就“击破”。杀戮尖塔：敌人头顶标出它下回合要干什么。1999：手牌摆在底部，拖出去就是出牌。<i>借：</i>固定的区块位置；韧性和弱点我们已经有了，缺的是把它们钉在固定位置。</div></div>
+      <div class="ref"><div class="scr">解题<small>“做”这一步</small></div><div class="who">雷顿教授系列<em>解谜界面</em></div><div class="take">题面和作答区分开；每题三条提示按顺序解锁，要花提示币；随时能拉出半透明的草稿纸写写画画。<i>借：</i>题面与作答分区、提示分级、草稿纸。</div></div>
+      <div class="ref"><div class="scr">卡牌<small>对应问题 6</small></div><div class="who">杀戮尖塔、符文之地传奇<em>卡牌游戏</em></div><div class="take">卡面四块位置固定（费用、图、类型、说明），不同类型用卡框形状区分，一眼认得出；说明里的关键词可以悬停看解释。<i>借：</i>一套卡框走遍全游戏；数学名词做成可悬停的关键词。</div></div>
+      <div class="ref"><div class="scr">观察笔记、图鉴<small>“费曼的鸟”</small></div><div class="who">星际拓荒的飞船日志、哈迪斯的图鉴<em>收集与线索</em></div><div class="take">星际拓荒把找到的线索做成卡片，用箭头连成一张网，没弄明白的地方留着问号。哈迪斯的图鉴，见得越多，解锁的文字越多。<i>借：</i>四格笔记逐格解锁，知识点之间连线。</div></div>
+      <div class="ref"><div class="scr">获得与升级<small>对应问题 7</small></div><div class="who">崩铁、蔚蓝档案<em>获得演出</em></div><div class="take">拿到新东西时画面中央有一个短演出，配一声音效，然后收进背包。<i>借：</i>用克制的中央演出代替右下角的网页通知条。</div></div>
+    </div>
+    <div class="tools"><span>找截图的工具：</span><a href="https://www.gameuidatabase.com/" target="_blank" rel="noopener">Game UI Database</a><a href="https://interfaceingame.com/" target="_blank" rel="noopener">Interface In Game</a><span>两个站都能按屏幕类型筛选。</span></div>
+    <p class="rule">游戏以后要公开，所以只借做法和原则，不照搬别家的布局、图标和素材。字体只用开源、可商用的（思源宋体、思源黑体、霞鹜文楷、得意黑），用到哪些字就只打包哪些字，控制页面大小。</p>
+  </section>
+
+  <section id="dirs">
+    <div class="sec-h">
+      <p class="eyebrow">三 · 方向</p>
+      <h2>三个方向的样张</h2>
+      <p>同一个场景（序章第 2 关，塔莉开口），同一张队友牌，换三套外观。配色都从现有的背景和立绘里取。样张是示意，不是成品。</p>
+    </div>
+    <div class="dirs">
+
+      <article class="dir A rec" aria-labelledby="dA">
+        <div class="dir-h"><span class="tag">A · 推荐</span><h3 id="dA">雾野手账</h3><p>纸、墨线、印章、罗盘。界面像一本带去原野的观察手账，黑板就是手账的一页。</p></div>
+        <div class="sw"><i style="--c:#ece3cb">纸 ece3cb</i><i style="--c:#2a2f2a">墨 2a2f2a</i><i style="--c:#6f8580">雾绿 6f8580</i><i style="--c:#8a815b">橄榄 8a815b</i><i style="--c:#b0853a">黄铜 b0853a</i><i style="--c:#a3412f">印章红 a3412f</i></div>
+        <div class="samplebg">
+          <div class="scene">
+            <img class="spr" src="img/tally.webp" alt="">
+            <div class="hud">披外衣的守卫 · 外衣<div class="bar"></div>弱点：整体代换　构造</div>
+            <div class="stamp">看穿</div>
+            <div class="box"><span class="nm">塔莉 · 整体代换</span><p class="tx">这一坨 x − 1 一直在，打包成 t 不就好了？</p><div class="ctl"><span>回看</span><span>自动</span><span>快进</span><span>隐藏</span></div></div>
+          </div>
+        </div>
+        <div class="cardrow">
+          <div class="card"><img src="img/ph-tally.webp" alt=""><span class="ty">队友牌 · 换</span><span><span class="ct">塔莉 · 打包</span><br>把 x − 1 打包成 t</span></div>
+          <div class="btns"><span class="pri">出这张牌</span><span>再看一眼</span></div>
+        </div>
+        <div class="pc"><div><b>好处</b><ul><li>和画风、名录院、原野最贴</li><li>纸面放公式最自然</li><li>和“图鉴是观察笔记”一套说法</li></ul></div><div><b>代价</b><ul><li>纸纹、印章、手写字要做细</li><li>做粗了会显旧、显脏</li></ul></div></div>
+        <p class="from">参考：重返未来：1999 的复古印刷感、杀戮尖塔的纸上地图、星际拓荒的线索网、雷顿的草稿纸。</p>
+      </article>
+
+      <article class="dir B" aria-labelledby="dB">
+        <div class="dir-h"><span class="tag">B</span><h3 id="dB">学院徽章</h3><p>明亮、干净、圆角。界面像一所学院发的终端，信息最清楚。</p></div>
+        <div class="sw"><i style="--c:#fbfcfe">白 fbfcfe</i><i style="--c:#1d2b3a">藏青 1d2b3a</i><i style="--c:#2f8fd8">天青 2f8fd8</i><i style="--c:#e8f3fc">浅蓝 e8f3fc</i><i style="--c:#f2c230">徽章黄 f2c230</i></div>
+        <div class="samplebg">
+          <div class="scene">
+            <img class="spr" src="img/tally.webp" alt="">
+            <div class="hud">披外衣的守卫 · 外衣<div class="bar"></div>弱点：整体代换　构造</div>
+            <div class="stamp">看穿！</div>
+            <div class="box"><span class="nm">塔莉<small>整体代换</small></span><p class="tx">这一坨 x − 1 一直在，打包成 t 不就好了？</p><div class="ctl"><span>回看</span><span>自动</span><span>快进</span><span>隐藏</span></div></div>
+          </div>
+        </div>
+        <div class="cardrow">
+          <div class="card"><img src="img/ph-tally.webp" alt=""><span class="ty">队友牌 · 换</span><span><span class="ct">塔莉 · 打包</span><br>把 x − 1 打包成 t</span></div>
+          <div class="btns"><span class="pri">出这张牌</span><span>再看一眼</span></div>
+        </div>
+        <div class="pc"><div><b>好处</b><ul><li>最好读，适合学生长时间看</li><li>做起来最快、最稳</li></ul></div><div><b>代价</b><ul><li>和雾色原野、厚涂立绘有距离</li><li>容易像又一个手游</li></ul></div></div>
+        <p class="from">参考：蔚蓝档案的明亮校园感、明日方舟的信息层级。</p>
+      </article>
+
+      <article class="dir C" aria-labelledby="dC">
+        <div class="dir-h"><span class="tag">C</span><h3 id="dC">星图战术</h3><p>深色、金线、几何切角。界面像指挥官的战术终端，战斗演出最有气势。</p></div>
+        <div class="sw"><i style="--c:#0f1416">夜 0f1416</i><i style="--c:#eef2f3">白 eef2f3</i><i style="--c:#c9a45c">金线 c9a45c</i><i style="--c:#6fd0d6">青光 6fd0d6</i><i style="--c:#9fb3b6">灰青 9fb3b6</i></div>
+        <div class="samplebg">
+          <div class="scene">
+            <img class="spr" src="img/tally.webp" alt="">
+            <div class="hud">披外衣的守卫 · 外衣<div class="bar"></div>弱点：整体代换　构造</div>
+            <div class="stamp">看穿</div>
+            <div class="box"><span class="nm">塔莉<small>整体代换</small></span><p class="tx">这一坨 x − 1 一直在，打包成 t 不就好了？</p><div class="ctl"><span>回看</span><span>自动</span><span>快进</span><span>隐藏</span></div></div>
+          </div>
+        </div>
+        <div class="cardrow">
+          <div class="card"><img src="img/ph-tally.webp" alt=""><span class="ty">队友牌 · 换</span><span><span class="ct">塔莉 · 打包</span><br>把 x − 1 打包成 t</span></div>
+          <div class="btns"><span class="pri">出这张牌</span><span>再看一眼</span></div>
+        </div>
+        <div class="pc"><div><b>好处</b><ul><li>离现在的深色界面最近，改动最小</li><li>战斗和击破最帅</li><li>能用上买的几何素材</li></ul></div><div><b>代价</b><ul><li>偏冷，离纸笔学数学远</li><li>深底上看长公式费眼</li></ul></div></div>
+        <p class="from">参考：崩坏：星穹铁道的战斗界面和击破演出。</p>
+      </article>
+    </div>
+    <p class="rule">为什么推荐 A：游戏的主题是“看清题目长什么样，再决定派谁”，手账、观察笔记、印章都在讲“看”和“记”；背景画本身就是雾色和纸色；公式放在纸面上最好读。战斗时把 C 的骨架拿过来（固定的韧性条、行动顺序、击破演出），换成纸和墨的质感。</p>
+  </section>
+
+  <section id="next">
+    <div class="sec-h">
+      <p class="eyebrow">四 · 下一步</p>
+      <h2>方向定了以后</h2>
+    </div>
+    <ol class="next">
+      <li><div><b>设计规范</b>：颜色、字体和字号、边框和卡框、图标、按钮、动效规矩，写成一份文件，以后 GPT 照着做也不走样。</div></li>
+      <li><div><b>五屏高保真样稿</b>：标题、地图、对话、战斗、牌组。用真立绘、真台词、真题目，按 1366 和 1920 两种宽度出。</div></li>
+      <li><div><b>你看样稿</b>：哪里不对说哪里，改到你满意。</div></li>
+      <li><div><b>改引擎</b>：剧本、题目都是单独的数据文件，换界面不用重做内容。改完照常跑 17 集回归和剧情战斗测试。</div></li>
+    </ol>
+  </section>
+
+  <section id="sources">
+    <div class="sec-h"><p class="eyebrow">资料</p></div>
+    <div class="src">
+      <a href="https://www.icy-veins.com/honkai-star-rail/combat-basics" target="_blank" rel="noopener">Icy Veins · 崩坏：星穹铁道战斗基础（行动顺序、韧性、弱点）</a>
+      <a href="https://honkai-star-rail.fandom.com/wiki/Toughness" target="_blank" rel="noopener">崩坏：星穹铁道 Wiki · 韧性</a>
+      <a href="https://tommartin.myblog.arts.ac.uk/?p=168" target="_blank" rel="noopener">极乐迪斯科对话界面案例分析</a>
+      <a href="https://www.talkandroid.com/32833-reverse-1999-combat-system/" target="_blank" rel="noopener">重返未来：1999 战斗系统</a>
+      <a href="https://strategywiki.org/wiki/Professor_Layton_and_the_Curious_Village/Gameplay" target="_blank" rel="noopener">StrategyWiki · 雷顿教授与不可思议的小镇（提示币、草稿纸）</a>
+      <a href="https://www.mobiusdigitalgames.com/news/concepting-ui" target="_blank" rel="noopener">Mobius Digital · 星际拓荒的界面构思</a>
+      <a href="https://www.creativebloq.com/3d/video-game-design/game-ui-database-20-is-the-ultimate-free-reference-tool-for-game-designers" target="_blank" rel="noopener">Creative Bloq · Game UI Database 2.0 介绍</a>
+    </div>
+  </section>
+
+  <p class="foot">样张里的立绘和背景是本游戏自己的素材（立绘为 AI 生成）。现状截图来自小样第 21 版。</p>
+</div>

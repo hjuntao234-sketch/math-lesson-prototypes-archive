@@ -1,0 +1,458 @@
+<title>罗盘指挥官 战斗样稿</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Noto+Sans+Math&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap">
+<style>
+/* 版式：1600×900 的固定舞台，按窗口等比缩放。借杀戮尖塔 2 的分区：通栏顶栏、左人右敌、左下心力球、底部扇形手牌、右下结束回合、右上题板。
+   单一深色外观（游戏画面），所有颜色写在 :root。 */
+:root{
+  color-scheme:dark;
+  --void:#0b100e; --slate:#24312c; --slate-2:#33433c; --slate-3:#4a5d54; --ink:#121815;
+  --brass:#c49a4c; --brass-hi:#f1cf82; --brass-lo:#7a5a24;
+  --paper:#efe5cb; --paper-2:#e2d5b4; --paper-ink:#2a251c;
+  --text:#f1ebdc; --text-dim:#b9b3a3; --kw:#f4c862;
+  --team:#b2483a; --team-hi:#e07a5f; --gear:#3b74a3; --gear-hi:#76aee0; --intel:#2c8a70; --intel-hi:#6cd2b2;
+  --glow:#f6d27a; --seal:#b23a2c; --hp:#d24a37;
+  --f-num:"Bree Serif","Noto Serif SC",Georgia,serif;
+  --f-title:"Noto Serif SC","Songti SC","STSong",serif;
+  --f-body:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --f-math:"STIX Two Math","Cambria Math","Noto Sans Math",math,serif;
+  --outline:0 2px 0 #0b0f0d,2px 0 0 #0b0f0d,0 -2px 0 #0b0f0d,-2px 0 0 #0b0f0d,1.5px 1.5px 0 #0b0f0d,-1.5px 1.5px 0 #0b0f0d,1.5px -1.5px 0 #0b0f0d,-1.5px -1.5px 0 #0b0f0d,0 4px 6px rgba(0,0,0,.6);
+}
+html,body{height:100%;margin:0;overflow:hidden;background:var(--void);color:var(--text);font-family:var(--f-body)}
+math{font-family:var(--f-math)}
+#shell{position:fixed;inset:0;padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+#fit{position:relative;width:100%;height:100%}
+#stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:50% 50%;overflow:hidden;border-radius:6px;background:#2d3a33;box-shadow:0 0 0 1px #1d2622,0 20px 60px rgba(0,0,0,.6);user-select:none}
+.abs{position:absolute}
+
+/* 背景与调色 */
+.bg{inset:0;background:url(img/bg-path.webp) center 40%/cover}
+.grade{inset:0;background:
+  linear-gradient(180deg,rgba(11,16,14,.78) 0,rgba(11,16,14,.15) 16%,rgba(11,16,14,0) 30%,rgba(11,16,14,0) 58%,rgba(11,16,14,.55) 80%,rgba(11,16,14,.92) 100%),
+  radial-gradient(120% 90% at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%);}
+.ground{left:0;right:0;top:640px;height:90px;background:radial-gradient(60% 50% at 50% 50%,rgba(20,26,22,.35),transparent 70%)}
+
+/* 顶栏 */
+.topbar{left:0;top:0;width:1600px;height:84px;z-index:30}
+.topbar>svg{position:absolute;inset:0}
+.tb-row{position:absolute;left:0;right:0;top:0;height:62px;display:flex;align-items:center;gap:22px;padding:0 22px}
+.tb-row .sp{flex:1}
+.emb{width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#3b4b44,#18211d);box-shadow:inset 0 0 0 2px var(--brass),inset 0 0 0 4px #121815,0 2px 6px rgba(0,0,0,.6);display:grid;place-items:center}
+.stat{display:flex;align-items:center;gap:8px}
+.num{font-family:var(--f-num);color:var(--text);text-shadow:var(--outline);line-height:1}
+.stat .num{font-size:28px}
+.realm{display:grid;gap:4px}
+.realm b{font-family:var(--f-title);font-weight:900;font-size:17px;letter-spacing:.06em;text-shadow:var(--outline)}
+.xp{width:120px;height:8px;border-radius:4px;background:#121815;box-shadow:inset 0 0 0 1px #000,0 0 0 1px var(--brass-lo);overflow:hidden}
+.xp i{display:block;height:100%;width:66%;background:linear-gradient(90deg,#c9963f,#f1cf82)}
+.slots{display:flex;gap:6px;padding:6px 10px;border-radius:22px;background:#151d1a;box-shadow:inset 0 2px 4px rgba(0,0,0,.7),0 0 0 1px #3c4c45}
+.slot{width:30px;height:38px;border-radius:5px;border:1.5px dashed #56675f;display:grid;place-items:center}
+.slot.full{border:1.5px solid var(--brass);background:linear-gradient(#2c3f55,#1b2838);box-shadow:0 0 8px rgba(118,174,224,.35)}
+.slot.full span{font-family:var(--f-math);font-size:12px;color:#dbe9f6}
+.stage-lbl{display:grid;gap:2px;text-align:left}
+.stage-lbl small{font-size:12px;color:var(--text-dim);letter-spacing:.12em}
+.stage-lbl b{font-family:var(--f-title);font-weight:900;font-size:18px;text-shadow:var(--outline)}
+.ibtn{position:relative;width:46px;height:46px;display:grid;place-items:center;border-radius:8px;cursor:pointer;transition:transform .15s}
+.ibtn:hover{transform:translateY(-2px) scale(1.06)}
+.ibtn .cnt{position:absolute;right:-4px;bottom:-4px;font-family:var(--f-num);font-size:18px;color:var(--text);text-shadow:var(--outline)}
+.relics{position:absolute;left:24px;top:70px;display:flex;gap:10px}
+.relic{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 40% 35%,#3a4a43,#1b2420);box-shadow:0 0 0 1.5px var(--brass-lo),0 2px 4px rgba(0,0,0,.6)}
+
+/* 人物 */
+.mate{bottom:260px;filter:drop-shadow(0 10px 8px rgba(0,0,0,.45))}
+.mate.back{filter:brightness(.72) saturate(.85) drop-shadow(0 8px 6px rgba(0,0,0,.4))}
+.shadow{height:26px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent)}
+.rib{display:flex;align-items:center;gap:8px;transform:translateX(-50%);white-space:nowrap}
+.rib .nm{font-family:var(--f-title);font-weight:900;font-size:17px;padding:3px 14px 4px 12px;background:linear-gradient(#1c2522,#121815);border:1.5px solid var(--brass-lo);border-left:5px solid var(--c);border-radius:3px;text-shadow:0 1px 0 #000;box-shadow:0 3px 6px rgba(0,0,0,.5)}
+.rib .nm small{font-family:var(--f-body);font-weight:500;font-size:12px;color:var(--text-dim);margin-left:6px}
+.chip{font-size:12px;padding:2px 8px;border-radius:10px;background:rgba(18,24,21,.85);border:1px solid #4b5c54;color:var(--text-dim)}
+.chip.on{border-color:var(--glow);color:var(--glow)}
+
+/* 气泡 */
+.bub{background:var(--paper);color:var(--paper-ink);font-family:var(--f-title);font-weight:700;font-size:17px;line-height:1.55;padding:12px 16px 13px;border-radius:16px;box-shadow:0 0 0 2px #2a251c,0 6px 14px rgba(0,0,0,.5);z-index:12}
+.bub::after{content:"";position:absolute;bottom:-14px;left:var(--tail,40px);width:22px;height:16px;background:var(--paper);clip-path:polygon(0 0,100% 0,15% 100%);filter:drop-shadow(0 2px 0 #2a251c)}
+.bub small{display:block;font-family:var(--f-body);font-weight:500;font-size:12px;color:#7a6e58;letter-spacing:.08em;margin-bottom:2px}
+.bub.quiet{background:var(--paper-2);font-size:15.5px;opacity:.94}
+.bub.quiet::after{background:var(--paper-2)}
+
+/* 守卫 */
+.guard{left:1060px;top:318px;width:400px;height:365px;z-index:5;animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.tag{background:var(--paper);color:var(--paper-ink);font-size:15px;padding:2px 9px;border-radius:4px;box-shadow:0 0 0 1.5px #2a251c,0 3px 6px rgba(0,0,0,.45);white-space:nowrap;z-index:6}
+.tag::before{content:"";position:absolute;left:50%;top:-14px;width:1.5px;height:14px;background:#2a251c}
+.tag.cloth{background:#d9cdae;font-family:var(--f-body);font-size:13px}
+.tag.cloth::before{display:none}
+.brk{width:26px;height:26px;border:3px solid var(--glow);filter:drop-shadow(0 0 4px rgba(246,210,122,.8));z-index:6}
+.intent{left:1166px;top:320px;display:flex;align-items:center;gap:6px;z-index:7;cursor:help}
+.intent .num{font-size:26px}
+.intent .why{font-size:13px;color:var(--text);background:rgba(12,17,15,.82);padding:3px 9px;border-radius:4px;border:1px solid #4b5c54}
+.coat{left:1100px;top:694px;width:320px;z-index:8}
+.coat-row{display:flex;align-items:center;gap:8px}
+.weak{width:30px;height:30px;display:grid;place-items:center;font-family:var(--f-title);font-weight:900;font-size:15px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.weak.k{background:#e3922b;color:#241404}
+.weak.q{background:#2b3732;color:#9aa8a1}
+.bar{flex:1;height:22px;display:flex;gap:3px;padding:3px;background:#0d1210;border-radius:4px;box-shadow:0 0 0 1.5px #000,0 0 0 3px #5d6d65}
+.bar i{flex:1;border-radius:2px;background:linear-gradient(#ffffff,#c9d3cf 60%,#9aa9a3);box-shadow:inset 0 -2px 0 rgba(0,0,0,.25)}
+.coat .num{position:absolute;left:50%;top:-1px;transform:translateX(-50%);font-size:21px;pointer-events:none}
+.coat .lbl{display:flex;justify-content:space-between;margin-top:6px;font-size:13px;color:var(--text-dim)}
+
+/* 题板 */
+.board{right:22px;top:84px;width:420px;z-index:20;background:var(--paper);color:var(--paper-ink);border-radius:6px;padding:12px 18px 12px;box-shadow:0 0 0 2px #2a251c,0 0 0 5px var(--brass-lo),0 12px 26px rgba(0,0,0,.55);
+  background-image:repeating-linear-gradient(0deg,transparent 0 27px,rgba(76,92,82,.13) 27px 28px)}
+.board::before,.board::after{content:"";position:absolute;width:16px;height:16px;border:2.5px solid var(--brass);top:-7px}
+.board::before{left:-7px;border-right:0;border-bottom:0}.board::after{right:-7px;border-left:0;border-bottom:0}
+.board h3{margin:0;display:flex;align-items:baseline;gap:8px;font-family:var(--f-title);font-weight:900;font-size:19px}
+.board h3 small{font-family:var(--f-body);font-weight:500;font-size:12.5px;color:#7a6e58}
+.board .q{font-family:var(--f-title);font-weight:700;font-size:17px;margin:6px 0 6px;line-height:1.6}
+.board ul{list-style:none;margin:0;padding:6px 0 0;border-top:1.5px solid rgba(42,37,28,.35);display:grid;gap:3px;font-size:14.5px}
+.board li{display:grid;grid-template-columns:22px 1fr;align-items:baseline}
+.board li b{font-family:var(--f-title);color:var(--seal)}
+.board li.todo{color:#8a7f69}
+.board li.todo b{color:#8a7f69}
+
+/* 心力球、牌堆、结束回合 */
+.orb{left:28px;top:650px;width:150px;height:150px;z-index:25}
+.orb .num{position:absolute;inset:0;display:grid;place-items:center;font-size:38px}
+.orb .cap{position:absolute;left:0;right:0;bottom:-18px;text-align:center;font-family:var(--f-title);font-weight:900;font-size:15px;letter-spacing:.3em;text-shadow:var(--outline)}
+.pile{width:62px;height:62px;z-index:25;cursor:pointer}
+.pile .cnt{position:absolute;right:-6px;bottom:-4px;min-width:28px;height:28px;border-radius:14px;display:grid;place-items:center;font-family:var(--f-num);font-size:17px;color:#fff;background:#9a2f22;box-shadow:0 0 0 2px #0b0f0d}
+.pile.dis .cnt{background:#2e5f8a}
+.endturn{right:96px;top:772px;width:236px;height:72px;z-index:25;cursor:pointer;padding:3px;background:linear-gradient(var(--brass-hi),var(--brass-lo));clip-path:polygon(9% 0,91% 0,100% 50%,91% 100%,9% 100%,0 50%);transition:filter .15s,transform .15s;border:0}
+.endturn span{display:grid;place-items:center;width:100%;height:100%;background:linear-gradient(#3e5249,#22302a 60%,#1a2521);clip-path:polygon(9% 0,91% 0,100% 50%,91% 100%,9% 100%,0 50%);font-family:var(--f-title);font-weight:900;font-size:24px;letter-spacing:.12em;color:var(--text);text-shadow:var(--outline)}
+.endturn:hover{filter:brightness(1.15);transform:translateY(-2px)}
+
+/* 手牌 */
+.hand{left:0;top:0;width:1600px;height:900px;z-index:40;pointer-events:none}
+.card{position:absolute;width:190px;height:266px;transform-origin:50% 120%;transition:transform .18s ease,filter .18s;pointer-events:auto;cursor:pointer}
+.card .hk{position:absolute;left:0;right:0;top:-34px;text-align:center;font-size:24px}
+.frame{position:absolute;inset:0;border-radius:14px;background:linear-gradient(170deg,#2d3a34,#18201c 70%);box-shadow:0 0 0 3px #0b0f0d,inset 0 0 0 2px var(--trim),inset 0 0 0 6px rgba(0,0,0,.35),0 12px 22px rgba(0,0,0,.55);overflow:visible}
+.card.play .frame{box-shadow:0 0 0 3px #0b0f0d,0 0 0 5px rgba(246,210,122,.85),0 0 22px rgba(246,210,122,.45),inset 0 0 0 2px var(--trim),inset 0 0 0 6px rgba(0,0,0,.35),0 12px 22px rgba(0,0,0,.55)}
+.frame::before,.frame::after{content:"";position:absolute;width:12px;height:12px;background:var(--brass);transform:rotate(45deg);bottom:-6px;box-shadow:0 0 0 2px #0b0f0d}
+.frame::before{left:24px}.frame::after{right:24px}
+.cost{position:absolute;left:-12px;top:-12px;width:48px;height:48px;display:grid;place-items:center;z-index:3;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);background:#0b0f0d}
+.cost::before{content:"";position:absolute;inset:3px;clip-path:inherit;background:radial-gradient(circle at 40% 30%,var(--brass-hi),var(--brass) 55%,var(--brass-lo))}
+.cost .num{position:relative;font-size:27px}
+.ttl{position:absolute;left:16px;right:8px;top:9px;height:34px;display:grid;place-items:center;font-family:var(--f-title);font-weight:900;font-size:17.5px;color:#fbf3df;text-shadow:0 1.5px 0 #000,0 0 6px rgba(0,0,0,.6);background:linear-gradient(180deg,var(--trim-hi),var(--trim) 55%,color-mix(in srgb,var(--trim) 70%,#000));clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%);z-index:2;letter-spacing:.04em}
+.art{position:absolute;left:14px;right:14px;top:50px;height:112px;overflow:hidden;box-shadow:0 0 0 2px #0b0f0d,0 0 0 3.5px var(--brass-lo)}
+.team .art{border-radius:70px 70px 6px 6px}
+.art img{width:100%;height:100%;object-fit:cover;display:block}
+.gear .art{border-radius:4px;background:linear-gradient(#e9dfc4,#d8cba7);display:grid;place-items:center;color:#1f2f40}
+.gear .art math{font-size:24px}
+.intel .art{border-radius:6px;background:radial-gradient(circle,#efe5cb 55%,#ddd0ad);display:grid;place-items:center}
+.seal{width:84px;height:84px;border-radius:50%;border:4px double var(--seal);color:var(--seal);display:grid;place-items:center;transform:rotate(-10deg);font-size:20px}
+.body{position:absolute;left:12px;right:12px;top:170px;bottom:30px;display:grid;place-items:center;text-align:center;font-size:13px;line-height:1.5;font-weight:500;color:var(--text)}
+.body .kw{color:var(--kw);font-weight:700}
+.type{position:absolute;left:50%;bottom:7px;transform:translateX(-50%);font-size:11px;letter-spacing:.12em;white-space:nowrap;padding:1px 10px;border-radius:9px;background:#0f1412;border:1px solid var(--brass-lo);color:var(--text-dim)}
+.team{--trim:var(--team);--trim-hi:var(--team-hi)}
+.gear{--trim:var(--gear);--trim-hi:var(--gear-hi)}
+.intel{--trim:var(--intel);--trim-hi:var(--intel-hi)}
+.tips{position:absolute;left:calc(100% + 14px);top:0;width:236px;display:none;gap:8px;pointer-events:none}
+.card.left .tips{left:auto;right:calc(100% + 14px)}
+.tip{background:rgba(16,22,19,.96);border:1px solid #56675f;border-radius:6px;padding:8px 11px 9px;font-size:12.5px;line-height:1.55;color:var(--text);box-shadow:0 6px 14px rgba(0,0,0,.5)}
+.tip b{display:block;color:var(--kw);font-family:var(--f-title);font-weight:900;font-size:14px;margin-bottom:1px}
+.card.hot{z-index:60}
+.card.hot .tips{display:grid}
+.card.fly{transition:transform .45s cubic-bezier(.5,0,.8,.4),opacity .45s;opacity:0}
+
+.toast{left:50%;top:380px;transform:translate(-50%,0);z-index:70;font-family:var(--f-title);font-weight:900;font-size:30px;letter-spacing:.06em;color:var(--text);text-shadow:var(--outline);opacity:0;transition:opacity .2s,transform .4s;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,-14px)}
+
+/* 标注 */
+#noteBtn{font-family:var(--f-title);font-weight:900;font-size:14px;color:#1a140a;background:var(--glow);border:0;border-radius:18px;padding:7px 14px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.5)}
+#noteBtn:focus-visible,.endturn:focus-visible,.card:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.pin{width:34px;height:34px;border-radius:50%;display:none;place-items:center;font-family:var(--f-num);font-size:19px;color:#1a140a;background:var(--glow);box-shadow:0 0 0 3px #0b0f0d,0 0 14px rgba(246,210,122,.8);z-index:90}
+.noting .pin{display:grid}
+#notes{position:fixed;z-index:99;top:0;right:0;bottom:0;width:min(400px,92vw);overflow:auto;background:rgba(14,19,17,.97);border-left:1px solid #3c4c45;padding:58px max(20px,env(safe-area-inset-right,0px)) 28px 22px;font-size:14px;line-height:1.7;color:var(--text)}
+#noteClose{position:absolute;top:16px;right:max(20px,env(safe-area-inset-right,0px));font-family:var(--f-title);font-weight:900;font-size:13px;color:#1a140a;background:var(--glow);border:0;border-radius:16px;padding:5px 12px;cursor:pointer}
+#noteClose:focus-visible{outline:3px solid #fff;outline-offset:2px}
+#notes h2{font-family:var(--f-title);font-weight:900;font-size:20px;margin:0 0 4px}
+#notes p.lead{color:var(--text-dim);margin:0 0 14px;font-size:13.5px}
+#notes ol{margin:0;padding:0;list-style:none;display:grid;gap:12px;counter-reset:n}
+#notes li{counter-increment:n;display:grid;grid-template-columns:28px 1fr;gap:6px}
+#notes li::before{content:counter(n);font-family:var(--f-num);font-size:17px;color:#1a140a;background:var(--glow);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;margin-top:2px}
+#notes b{color:var(--kw)}
+#notes .new{display:inline-block;font-size:11.5px;color:#1a140a;background:#e9a35a;border-radius:8px;padding:0 6px;margin-left:4px}
+#notes .foot{margin-top:18px;color:var(--text-dim);font-size:12.5px}
+@media (prefers-reduced-motion:reduce){.guard{animation:none}.card,.toast{transition:none}}
+</style>
+
+<div id="shell"><div id="fit">
+<div id="stage" aria-label="战斗样稿：序章第 2 关，披外衣的守卫">
+  <div class="abs bg"></div>
+  <div class="abs grade"></div>
+  <div class="abs ground"></div>
+
+  <!-- 顶栏 -->
+  <div class="abs topbar">
+    <svg viewBox="0 0 1600 84" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="tbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4a43"/><stop offset=".55" stop-color="#26332e"/><stop offset="1" stop-color="#1b2521"/></linearGradient>
+        <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .22 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+      </defs>
+      <path id="tbShape" fill="url(#tbg)"/>
+      <path id="tbGrain" fill="#000" filter="url(#grain)"/>
+      <path id="tbRim" fill="none" stroke="#0b0f0d" stroke-width="3"/>
+      <path id="tbHi" fill="none" stroke="#5f746a" stroke-width="1.2" opacity=".6"/>
+    </svg>
+    <div class="tb-row">
+      <div class="emb" title="指挥官的罗盘">
+        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="none" stroke="#c49a4c" stroke-width="2"/><g stroke="#7a5a24" stroke-width="1.2">
+          <path d="M20 4v4M20 32v4M4 20h4M32 20h4"/></g><path d="M20 8 24 20 20 32 16 20Z" fill="#efe5cb"/><path d="M20 8 24 20H16Z" fill="#d24a37"/><circle cx="20" cy="20" r="2.2" fill="#121815" stroke="#c49a4c"/></svg>
+      </div>
+      <div class="realm"><b>见习 · 2 级</b><div class="xp" title="经验 40 / 60"><i></i></div></div>
+      <div class="stat" title="提示币：卡住时花一枚，看下一级提示">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="14" fill="#c49a4c" stroke="#0b0f0d" stroke-width="2.5"/><circle cx="17" cy="17" r="10" fill="none" stroke="#7a5a24" stroke-width="1.5"/><text x="17" y="22.5" text-anchor="middle" font-family="Bree Serif,Georgia,serif" font-size="15" fill="#3d2a0c">?</text></svg>
+        <span class="num">3</span>
+      </div>
+      <div class="slots" title="装备槽：只能带认证过的装备，最多 3 件">
+        <div class="slot full" title="平方不会是负数"><span>x²≥0</span></div><div class="slot"></div><div class="slot"></div>
+      </div>
+      <div class="stage-lbl"><small>序章 · 原野边上</small><b>第 2 关 · 第 1 回合</b></div>
+      <div class="sp"></div>
+      <button id="noteBtn" type="button" aria-expanded="false" aria-controls="notes">看标注：借了什么</button>
+      <div class="ibtn" title="世界地图">
+        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="M7 10 15 7 25 11 33 8V30L25 33 15 29 7 32Z" fill="#e2d5b4" stroke="#0b0f0d" stroke-width="2.2" stroke-linejoin="round"/><path d="M15 7V29M25 11V33" stroke="#8a7a58" stroke-width="1.5"/><path d="M11 25c3-4 6 1 9-3s4-4 7-6" fill="none" stroke="#b23a2c" stroke-width="1.8" stroke-dasharray="2.5 2.5"/><path d="M26 13l3 3m0-3-3 3" stroke="#b23a2c" stroke-width="2"/></svg>
+      </div>
+      <div class="ibtn" title="观察笔记">
+        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 9h11c1.5 0 1 1 1 2v21c0-1-1-2-2-2H8Z" fill="#efe5cb" stroke="#0b0f0d" stroke-width="2.2" stroke-linejoin="round"/><path d="M32 9H21c-1.5 0-1 1-1 2v21c0-1 1-2 2-2h10Z" fill="#e2d5b4" stroke="#0b0f0d" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 14h6M11 18h6M11 22h4M23 14h6M23 18h5" stroke="#8a7a58" stroke-width="1.4"/><circle cx="27" cy="25" r="3" fill="none" stroke="#b23a2c" stroke-width="1.6"/></svg>
+      </div>
+      <div class="ibtn" title="牌组：9 张">
+        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="12" y="6" width="19" height="26" rx="3" transform="rotate(10 21 19)" fill="#2c3f55" stroke="#0b0f0d" stroke-width="2.2"/><rect x="9" y="8" width="19" height="26" rx="3" fill="#b2483a" stroke="#0b0f0d" stroke-width="2.2"/><rect x="12" y="11" width="13" height="9" rx="5" fill="#efe5cb"/><path d="M12 25h13M12 28h9" stroke="#efe5cb" stroke-width="1.6"/></svg>
+        <span class="cnt">9</span>
+      </div>
+      <div class="ibtn" title="设置">
+        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(20 20)"><g fill="#9fb0a8" stroke="#0b0f0d" stroke-width="2"><path id="tooth" d="M-3.5-15h7l1 5h-9z"/></g></g><circle cx="20" cy="20" r="10.5" fill="#9fb0a8" stroke="#0b0f0d" stroke-width="2.2"/><circle cx="20" cy="20" r="4.2" fill="#24312c" stroke="#0b0f0d" stroke-width="1.6"/><g id="teeth" transform="translate(20 20)" fill="#9fb0a8" stroke="#0b0f0d" stroke-width="2"></g></svg>
+      </div>
+    </div>
+    <div class="relics">
+      <div class="relic" title="罗盘（被动）：每场第一次看穿，题板上多记一条"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="8.5" fill="none" stroke="#c49a4c" stroke-width="1.6"/><path d="M11 3.5 13.2 11 11 18.5 8.8 11Z" fill="#efe5cb"/><path d="M11 3.5 13.2 11H8.8Z" fill="#d24a37"/></svg></div>
+      <div class="relic" title="雅娜的围巾（被动）：派雅娜时，不花心力"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 7c4 3 10 3 14 0l-1 4c-3 2-9 2-12 0Z" fill="#2f5560" stroke="#0b0f0d" stroke-width="1.2"/><path d="M14 10l2 8 3-1-2-7" fill="#2f5560" stroke="#0b0f0d" stroke-width="1.2"/></svg></div>
+    </div>
+  </div>
+
+  <!-- 我方 -->
+  <div class="abs shadow" style="left:136px;top:626px;width:166px"></div>
+  <img class="abs mate back" src="img/full-yana.webp" alt="雅娜" style="left:150px;height:410px">
+  <div class="abs shadow" style="left:300px;top:628px;width:216px"></div>
+  <img class="abs mate" src="img/full-tally.webp" alt="塔莉" style="left:292px;height:432px">
+  <div class="abs shadow" style="left:528px;top:628px;width:246px"></div>
+  <img class="abs mate" src="img/full-fabia.webp" alt="法比娅" style="left:512px;height:452px">
+
+  <div class="abs rib" style="left:246px;top:648px;--c:#4d6e72"><span class="nm">雅娜<small>转化与化归</small></span></div>
+  <div class="abs rib" style="left:404px;top:652px;--c:#e3922b"><span class="nm">塔莉<small>整体代换</small></span><span class="chip on">想出手</span></div>
+  <div class="abs rib" style="left:654px;top:652px;--c:#a3412f"><span class="nm">法比娅<small>构造</small></span><span class="chip on">想出手</span></div>
+
+  <div class="abs bub" style="left:236px;top:98px;width:300px;--tail:150px"><small>塔莉</small>这一坨 <math><mi>x</mi><mo>−</mo><mn>1</mn></math> 一直在……打包成 <math><mi>t</mi></math> 不就好了？</div>
+  <div class="abs bub quiet" style="left:590px;top:70px;width:256px;--tail:70px"><small>法比娅</small>……也可以先补一项。把 <math><mi>x</mi></math> 补成 <math><mo>(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>+</mo><mn>1</mn></math>。</div>
+
+  <!-- 守卫 -->
+  <svg class="abs guard" viewBox="0 0 460 420" aria-label="披外衣的守卫">
+    <defs>
+      <radialGradient id="gb" cx="55%" cy="42%" r="58%"><stop offset="0" stop-color="#fbfdf9"/><stop offset=".5" stop-color="#e3ebe5" stop-opacity=".9"/><stop offset="1" stop-color="#b9c8c1" stop-opacity="0"/></radialGradient>
+      <radialGradient id="gh" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#e8efea" stop-opacity=".92"/><stop offset="1" stop-color="#c9d5cf" stop-opacity="0"/></radialGradient>
+      <linearGradient id="ga" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#eef3ef"/><stop offset="1" stop-color="#cfdad4" stop-opacity=".85"/></linearGradient>
+      <filter id="wisp" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="3" seed="5"><animate attributeName="baseFrequency" dur="16s" values=".02;.026;.02" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="30" xChannelSelector="R" yChannelSelector="G"/><feGaussianBlur stdDeviation="1.4"/></filter>
+      <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+      <filter id="eyeglow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <ellipse cx="270" cy="250" rx="150" ry="150" fill="#dfe8e2" opacity=".28" filter="url(#soft)"/>
+    <g filter="url(#wisp)">
+      <path d="M262 395c-40-10-70-60-72-130-2-62 22-110 72-118 54-8 92 34 96 100 4 70-24 136-58 150-14 5-26 2-38-2Z" fill="url(#gb)"/>
+      <circle cx="266" cy="130" r="72" fill="url(#gh)"/>
+      <path d="M214 208C170 214 120 236 76 262 58 272 40 280 30 278" fill="none" stroke="url(#ga)" stroke-width="26" stroke-linecap="round"/>
+      <circle cx="30" cy="276" r="21" fill="#f2f6f2"/>
+      <path d="M210 262c-22 6-42 16-58 30" fill="none" stroke="url(#ga)" stroke-width="30" stroke-linecap="round"/>
+      <circle cx="150" cy="294" r="20" fill="#eef3ef"/>
+      <path d="M300 380c10 14 4 30-8 36M250 392c-6 14-2 24 6 28" fill="none" stroke="#e3ebe5" stroke-width="10" stroke-linecap="round" opacity=".7"/>
+    </g>
+    <path d="M128 268c18-10 44-14 62-6l6 30c-6 16-2 30 4 44l-14 4-6-10-8 12-12-6-6 10-12-10c6-20 0-44-14-68Z" fill="#d6caa9" stroke="#2a251c" stroke-width="2" opacity=".93"/>
+    <path d="M140 286c12-4 28-6 40-2M138 306c14-2 26 0 38 4" stroke="#9c8e6c" stroke-width="1.5" fill="none"/>
+    <g filter="url(#eyeglow)"><ellipse cx="242" cy="126" rx="8" ry="9" fill="#ffb347"/><ellipse cx="288" cy="122" rx="8" ry="9" fill="#ffb347"/></g>
+    <circle cx="240" cy="123" r="2.6" fill="#fff6dd"/><circle cx="286" cy="119" r="2.6" fill="#fff6dd"/>
+  </svg>
+  <div class="abs tag" style="left:1040px;top:592px">一只手：<math><mi>x</mi></math></div>
+  <div class="abs tag" style="left:1150px;top:632px">另一只手：<math><mfrac><mn>9</mn><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mfrac></math></div>
+  <div class="abs tag cloth" style="left:1252px;top:560px">布底下：<math><mi>x</mi><mo>−</mo><mn>1</mn></math></div>
+  <div class="abs brk" style="left:1018px;top:348px;border-right:0;border-bottom:0"></div>
+  <div class="abs brk" style="left:1430px;top:348px;border-left:0;border-bottom:0"></div>
+  <div class="abs brk" style="left:1018px;top:660px;border-right:0;border-top:0"></div>
+  <div class="abs brk" style="left:1430px;top:660px;border-left:0;border-top:0"></div>
+
+  <div class="abs intent" title="守卫的打算：下回合再披一层外衣">
+    <svg width="40" height="44" viewBox="0 0 40 44" aria-hidden="true"><path d="M20 3 35 9v13c0 10-7 17-15 20C12 39 5 32 5 22V9Z" fill="#c9d3cf" stroke="#0b0f0d" stroke-width="2.5"/><path d="M20 8 30 12v9c0 7-4 12-10 15Z" fill="#eef3ef"/><path d="M12 18c4 2 12 2 16 0" stroke="#7d8c85" stroke-width="1.8" fill="none"/></svg>
+    <span class="num">+1</span><span class="why">下回合：再披一层外衣</span>
+  </div>
+
+  <div class="abs coat">
+    <div class="coat-row">
+      <span class="weak k" title="弱点：整体代换（已看穿）">换</span>
+      <span class="weak q" title="弱点：还没看穿">?</span>
+      <div class="bar" style="position:relative"><i></i><i></i><span class="num">2/2</span></div>
+    </div>
+    <div class="lbl"><span>披外衣的守卫</span><span>外衣 · 打空就击破</span></div>
+  </div>
+
+  <!-- 题板 -->
+  <div class="abs board">
+    <h3>题板<small>披外衣的守卫 · 名录第三页</small></h3>
+    <p class="q">已知 <math><mi>x</mi><mo>&gt;</mo><mn>1</mn></math>，求 <math><mi>x</mi><mo>+</mo><mfrac><mn>9</mn><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mfrac></math> 的最小值。</p>
+    <ul>
+      <li><b>✓</b><span>一只手是 <math><mi>x</mi></math></span></li>
+      <li><b>✓</b><span>另一只手是 <math><mfrac><mn>9</mn><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mfrac></math>，布底下是 <math><mi>x</mi><mo>−</mo><mn>1</mn></math></span></li>
+      <li><b>✓</b><span>范围：<math><mi>x</mi><mo>&gt;</mo><mn>1</mn></math></span></li>
+      <li class="todo"><b>？</b><span>还有一处没看穿</span></li>
+    </ul>
+  </div>
+
+  <!-- 心力、牌堆、结束回合 -->
+  <div class="abs orb" title="心力：每回合 3 点，出牌要花">
+    <svg width="150" height="150" viewBox="0 0 176 176" aria-hidden="true">
+      <defs>
+        <radialGradient id="og" cx="42%" cy="36%" r="70%"><stop offset="0" stop-color="#7fe0d0"/><stop offset=".35" stop-color="#2f9a8a"/><stop offset=".8" stop-color="#11433d"/><stop offset="1" stop-color="#0a2a26"/></radialGradient>
+        <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1cf82"/><stop offset=".5" stop-color="#a77c35"/><stop offset="1" stop-color="#5e4319"/></linearGradient>
+      </defs>
+      <circle cx="88" cy="88" r="84" fill="#0b0f0d"/>
+      <circle cx="88" cy="88" r="80" fill="#1b2521" stroke="url(#ring)" stroke-width="6"/>
+      <g id="ticks" stroke="#c49a4c" stroke-width="2"></g>
+      <path d="M88 20 98 88 88 156 78 88Z" fill="#2a3a34" opacity=".9"/><path d="M20 88 88 78 156 88 88 98Z" fill="#2a3a34" opacity=".9"/>
+      <circle cx="88" cy="88" r="52" fill="#0b0f0d"/>
+      <circle cx="88" cy="88" r="49" fill="url(#og)"/>
+      <ellipse cx="72" cy="66" rx="22" ry="12" fill="#fff" opacity=".22" transform="rotate(-25 72 66)"/>
+      <text x="88" y="18" text-anchor="middle" font-family="Noto Serif SC,serif" font-weight="900" font-size="13" fill="#d24a37">北</text>
+    </svg>
+    <span class="num">3/3</span><span class="cap">心力</span>
+  </div>
+  <div class="abs pile" style="left:22px;top:832px" title="待用：6 张">
+    <svg width="62" height="62" viewBox="0 0 62 62" aria-hidden="true"><rect x="16" y="8" width="30" height="42" rx="4" transform="rotate(-8 31 29)" fill="#5a3a30" stroke="#0b0f0d" stroke-width="2.5"/><rect x="14" y="10" width="30" height="42" rx="4" fill="#b2483a" stroke="#0b0f0d" stroke-width="2.5"/><path d="M29 22 33 31 29 40 25 31Z" fill="#efe5cb"/></svg>
+    <span class="cnt">6</span>
+  </div>
+  <div class="abs pile dis" style="right:22px;top:832px" title="用过：0 张">
+    <svg width="62" height="62" viewBox="0 0 62 62" aria-hidden="true"><rect x="16" y="10" width="30" height="42" rx="4" transform="rotate(8 31 31)" fill="#22394f" stroke="#0b0f0d" stroke-width="2.5"/><rect x="16" y="10" width="30" height="42" rx="4" fill="#3b74a3" stroke="#0b0f0d" stroke-width="2.5"/><path d="M24 31h14M31 24v14" stroke="#efe5cb" stroke-width="2.5" stroke-linecap="round" transform="rotate(45 31 31)"/></svg>
+    <span class="cnt">0</span>
+  </div>
+  <button class="abs endturn" type="button" id="endTurn"><span>结束回合</span></button>
+
+  <div class="abs toast" id="toast"></div>
+
+  <!-- 手牌 -->
+  <div class="abs hand" id="hand">
+    <div class="card team play" data-i="0" tabindex="0" aria-label="第 1 张：雅娜 · 先看清">
+      <span class="hk num">1</span>
+      <div class="frame"><div class="cost"><span class="num">1</span></div><div class="ttl">雅娜 · 先看清</div>
+        <div class="art"><img src="img/art-yana.webp" alt=""></div>
+        <div class="body"><p>翻开守卫身上一处还没<span class="kw">看穿</span>的地方，记上题板。</p></div>
+        <div class="type">队友 · 转化与化归</div></div>
+      <div class="tips"><div class="tip"><b>看穿</b>看清题目长什么样：有几项、哪一坨反复出现、范围是什么。看穿一处，题板上多一条。</div><div class="tip"><b>转化与化归</b>雅娜的学法：陌生的样子，先变成见过的样子。</div></div>
+    </div>
+    <div class="card team play hot" data-i="1" tabindex="0" aria-label="第 2 张：塔莉 · 打包">
+      <span class="hk num">2</span>
+      <div class="frame"><div class="cost"><span class="num">1</span></div><div class="ttl">塔莉 · 打包</div>
+        <div class="art"><img src="img/art-tally.webp" alt=""></div>
+        <div class="body"><p>把反复出现的 <math><mi>x</mi><mo>−</mo><mn>1</mn></math> <span class="kw">打包</span>：令 <math><mi>t</mi><mo>=</mo><mi>x</mi><mo>−</mo><mn>1</mn></math>，则 <math><mi>x</mi><mo>=</mo><mi>t</mi><mo>+</mo><mn>1</mn></math>，<math><mi>t</mi><mo>&gt;</mo><mn>0</mn></math>。</p></div>
+        <div class="type">队友 · 整体代换</div></div>
+      <div class="tips"><div class="tip"><b>打包</b>一坨式子反复出现，就给它起个新名字，整坨一起算。新字母的范围要跟着写上。</div><div class="tip"><b>整体代换</b>塔莉的学法。她满脑子想的是：哪一坨能当成一个整体？</div><div class="tip"><b>外衣</b>守卫身上的伪装。对着弱点出牌，外衣掉一层；外衣打空，守卫被击破。</div></div>
+    </div>
+    <div class="card team play" data-i="2" tabindex="0" aria-label="第 3 张：法比娅 · 补项">
+      <span class="hk num">3</span>
+      <div class="frame"><div class="cost"><span class="num">1</span></div><div class="ttl">法比娅 · 补项</div>
+        <div class="art"><img src="img/art-fabia.webp" alt=""></div>
+        <div class="body"><p>把 <math><mi>x</mi></math> <span class="kw">补</span>成 <math><mo>(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>+</mo><mn>1</mn></math>，凑出能和 <math><mfrac><mn>9</mn><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mfrac></math> 配对的一项。</p></div>
+        <div class="type">队友 · 构造</div></div>
+      <div class="tips"><div class="tip"><b>补项</b>缺什么就补什么，补上多少，后面再减掉多少，式子的值不变。</div><div class="tip"><b>构造</b>法比娅的学法：手头没有现成的，就自己搭一个出来。</div></div>
+    </div>
+    <div class="card intel play left" data-i="3" tabindex="0" aria-label="第 4 张：情报 · 范围">
+      <span class="hk num">4</span>
+      <div class="frame"><div class="cost"><span class="num">0</span></div><div class="ttl">情报 · 范围</div>
+        <div class="art"><div class="seal"><math><mi>x</mi><mo>&gt;</mo><mn>1</mn></math></div></div>
+        <div class="body"><p><math><mi>x</mi><mo>&gt;</mo><mn>1</mn></math>，所以 <math><mi>x</mi><mo>−</mo><mn>1</mn><mo>&gt;</mo><mn>0</mn></math>。打出：给“都是正数”这一条<span class="kw">盖章</span>。</p></div>
+        <div class="type">情报</div></div>
+      <div class="tips"><div class="tip"><b>情报牌</b>看穿时记下的条件。先摆上桌，后面的装备才用得上。</div><div class="tip"><b>盖章</b>装备要求的条件，桌上有情报证明了，就盖一个章。三个章齐了，装备才能出刀。</div></div>
+    </div>
+    <div class="card gear play left" data-i="4" tabindex="0" aria-label="第 5 张：装备 · 基本不等式">
+      <span class="hk num">5</span>
+      <div class="frame"><div class="cost"><span class="num">0</span></div><div class="ttl">基本不等式</div>
+        <div class="art"><math><mi>a</mi><mo>+</mo><mi>b</mi><mo>≥</mo><mn>2</mn><msqrt><mi>a</mi><mi>b</mi></msqrt></math></div>
+        <div class="body"><p><math><mi>a</mi><mo>&gt;</mo><mn>0</mn></math>，<math><mi>b</mi><mo>&gt;</mo><mn>0</mn></math> 时成立；当且仅当 <math><mi>a</mi><mo>=</mo><mi>b</mi></math> 时取等号。出刀前先<span class="kw">问三句</span>。</p></div>
+        <div class="type">装备 · 已认证</div></div>
+      <div class="tips"><div class="tip"><b>问三句</b>① 两个数都是正数吗？② 积（或和）是不是定值？③ 能取到相等吗？</div><div class="tip"><b>装备牌</b>认证过的结论。三句都答“是”，才能出刀。</div></div>
+    </div>
+  </div>
+
+  <!-- 标注点 -->
+  <span class="abs pin" style="left:520px;top:14px">1</span>
+  <span class="abs pin" style="left:1158px;top:92px">2</span>
+  <span class="abs pin" style="left:1126px;top:322px">3</span>
+  <span class="abs pin" style="left:1058px;top:690px">4</span>
+  <span class="abs pin" style="left:198px;top:96px">5</span>
+  <span class="abs pin" style="left:160px;top:642px">6</span>
+  <span class="abs pin" style="left:590px;top:380px">7</span>
+  <span class="abs pin" style="left:1240px;top:766px">8</span>
+  <span class="abs pin" style="left:88px;top:826px">9</span>
+</div>
+</div></div>
+
+<aside id="notes" hidden>
+  <button id="noteClose" type="button">收起标注</button>
+  <h2>这一屏借了什么</h2>
+  <p class="lead">版式照杀戮尖塔 2 的战斗界面和你截的那个模组；人物、题目、规则都是我们自己的。画框、图标、心力球都是为这个游戏重画的，没有用别家的素材。标<span class="new">新规则</span>的地方，现在的游戏里还没有，先放进样稿看效果，要不要做由你定。</p>
+  <ol>
+    <li><div><b>顶栏</b>：一条通栏石板，左边是自己的状态，右边是地图、笔记、牌组、设置。血量换成境界和经验；药水槽换成装备槽，正好对上“领主战最多带 3 件认证装备”；金币换成提示币<span class="new">新规则</span>。下面一排小圆是被动效果<span class="new">新规则</span>。</div></li>
+    <li><div><b>题板</b>：借模组右上角那块交易面板，游戏特有的信息放在一块固定的面板里。我们放题目和看穿清单。用纸面，公式读得清。</div></li>
+    <li><div><b>敌人意图</b>：敌人头上标出下回合要干什么。守卫下回合会再披一层外衣，逼你这回合就击破<span class="new">新规则</span>。</div></li>
+    <li><div><b>外衣条和弱点</b>：血条放在脚下。我们没有血量，换成外衣（韧性），打空就击破；左边的六角是弱点，看穿了才亮（这一条借崩铁）。</div></li>
+    <li><div><b>气泡</b>：战斗里人物说话用气泡，不弹对话框，不挡画面。两个队友对同一道题各有主张，你来派人。</div></li>
+    <li><div><b>心力球</b>：左下的能量球，做成罗盘。每回合 3 点心力，出牌要花<span class="new">新规则</span>。</div></li>
+    <li><div><b>手牌</b>：底部扇形，牌上方是数字快捷键，按 1—5 或鼠标停上去，牌会升起放大，旁边列出关键词的解释。三种牌三种画框：队友牌是拱形肖像，装备牌是公式铭牌，情报牌是印章。</div></li>
+    <li><div><b>结束回合</b>：右下的六角按钮。</div></li>
+    <li><div><b>牌堆</b>：左下待用、右下用过<span class="new">新规则</span>。如果不做抽牌，这两个就去掉。</div></li>
+  </ol>
+  <p class="foot">试一试：鼠标停在牌上，或按 1—5；点牌或按回车，牌会打出去。立绘为 AI 生成。守卫现在是程序画的雾，正式版要请 GPT 画。</p>
+</aside>
+
+<script>
+(function(){
+  const stage=document.getElementById('stage'),fit=document.getElementById('fit');
+  function scale(){const w=fit.clientWidth,h=fit.clientHeight,s=Math.min(w/1600,h/900);stage.style.transform='translate(-50%,-50%) scale('+s+')';}
+  addEventListener('resize',scale);scale();
+
+  // 顶栏石板：底边做成不规则的手绘边
+  let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
+  const pts=[];for(let x=1600;x>=0;x-=32){let y=60+rnd()*7;if(rnd()>.86)y+=6;pts.push([x,y]);}
+  const edge=pts.map(p=>'L'+p[0]+' '+p[1].toFixed(1)).join(' ');
+  const d='M0 0H1600V'+pts[0][1].toFixed(1)+' '+edge+'Z';
+  ['tbShape','tbGrain'].forEach(id=>document.getElementById(id).setAttribute('d',d));
+  document.getElementById('tbRim').setAttribute('d','M1600 '+pts[0][1].toFixed(1)+' '+edge);
+  document.getElementById('tbHi').setAttribute('d','M1600 '+(pts[0][1]-4).toFixed(1)+' '+pts.map(p=>'L'+p[0]+' '+(p[1]-4).toFixed(1)).join(' '));
+
+  // 齿轮齿、罗盘刻度
+  const teeth=document.getElementById('teeth');
+  for(let i=0;i<8;i++){const u=document.createElementNS('http://www.w3.org/2000/svg','path');u.setAttribute('d','M-3.5-15h7l1 5h-9z');u.setAttribute('transform','rotate('+(i*45)+')');teeth.appendChild(u);}
+  const ticks=document.getElementById('ticks');
+  for(let i=0;i<24;i++){const a=i*15*Math.PI/180,r1=i%6===0?60:66,r2=74;const l=document.createElementNS('http://www.w3.org/2000/svg','line');
+    l.setAttribute('x1',88+r1*Math.sin(a));l.setAttribute('y1',88-r1*Math.cos(a));l.setAttribute('x2',88+r2*Math.sin(a));l.setAttribute('y2',88-r2*Math.cos(a));ticks.appendChild(l);}
+
+  // 手牌扇形
+  const cards=[...document.querySelectorAll('.card')],n=cards.length,cx=760,gap=124;
+  function base(i){const o=i-(n-1)/2;return {x:cx+o*gap-95,y:716+o*o*9,r:o*6};}
+  function place(){cards.forEach((c,i)=>{const b=base(i);c.style.left=b.x+'px';c.style.top=b.y+'px';
+    c.style.transform=c.classList.contains('hot')?'translateY(-250px) rotate(0deg) scale(1.3)':'rotate('+b.r+'deg)';c.style.zIndex=c.classList.contains('hot')?60:10+i;});}
+  function hot(i){cards.forEach((c,j)=>c.classList.toggle('hot',j===i));place();}
+  place();
+  cards.forEach((c,i)=>{c.addEventListener('mouseenter',()=>hot(i));c.addEventListener('focus',()=>hot(i));c.addEventListener('click',()=>play(i));});
+  const toast=document.getElementById('toast');let tt;
+  function say(t){toast.textContent=t;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),1300);}
+  function play(i){const c=cards[i];if(c.classList.contains('fly'))return;const name=c.querySelector('.ttl').textContent;
+    c.classList.add('fly');c.style.transform='translate('+(1240-parseFloat(c.style.left)-95)+'px,'+(480-parseFloat(c.style.top))+'px) rotate(8deg) scale(.6)';
+    say('打出：'+name);setTimeout(()=>{c.classList.remove('fly');c.style.opacity='';place();},1400);}
+  addEventListener('keydown',e=>{if(/^[1-5]$/.test(e.key))hot(+e.key-1);else if(e.key==='Enter'){const i=cards.findIndex(c=>c.classList.contains('hot'));if(i>=0)play(i);}});
+  document.getElementById('endTurn').addEventListener('click',()=>say('结束回合（样稿）'));
+
+  // 标注
+  const btn=document.getElementById('noteBtn'),notes=document.getElementById('notes');
+  function setNotes(on){notes.hidden=!on;stage.classList.toggle('noting',on);btn.setAttribute('aria-expanded',String(on));btn.textContent=on?'收起标注':'看标注：借了什么';}
+  btn.addEventListener('click',()=>setNotes(notes.hidden));document.getElementById('noteClose').addEventListener('click',()=>{setNotes(false);btn.focus();});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&!notes.hidden)setNotes(false);});
+})();
+</script>

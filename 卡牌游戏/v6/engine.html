@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>罗盘指挥官 第一章</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Long+Cang&family=ZCOOL+XiaoWei&family=Noto+Sans+Math&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;700;900&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<style>
+[hidden]{display:none!important}
+/*__CSS__*/
+#chrome{display:none}
+#shell{top:0}
+</style>
+<div id="shell"><div id="fit">
+<div id="stage" aria-label="罗盘指挥官">
+/*__TOPBAR__*/
+  <div class="scr" data-s="battle">
+    <div class="abs bg" id="bbg"></div>
+    <div class="abs grade"></div>
+    <div class="abs ground"></div>
+    <svg class="abs fog" id="fog" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="fogf" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="4" seed="8"/><feColorMatrix values="0 0 0 0 .9  0 0 0 0 .93  0 0 0 0 .91  0 0 0 1.5 -.25"/></filter>
+        <radialGradient id="fogmaskg" cx="74%" cy="58%" r="52%"><stop offset="0" stop-color="#fff"/><stop offset=".72" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <mask id="fogm"><rect width="1600" height="900" fill="url(#fogmaskg)"/></mask>
+      </defs>
+      <g mask="url(#fogm)"><rect width="1600" height="900" filter="url(#fogf)"/><rect width="1600" height="900" fill="#dfe7e2" opacity=".35"/></g>
+    </svg>
+    <div class="abs flash" id="flash"></div>
+    <div id="mates"></div>
+    <div id="bubbles"></div>
+    <div id="floats"></div>
+    <div class="abs guard guard2" id="guard" role="img"></div>
+    <div class="abs pebble" id="pebble" hidden></div>
+    <div id="tags"></div>
+    <div id="parts"></div>
+    <svg class="abs gaze" id="gaze" viewBox="0 0 1600 900" aria-hidden="true"></svg>
+    <div id="glabels"></div>
+    <div id="fx"></div>
+    <button class="abs gazebtn" type="button" id="gazeBtn"><svg width="22" height="16" viewBox="0 0 22 16" aria-hidden="true"><path d="M1 8c3-5 7-7 10-7s7 2 10 7c-3 5-7 7-10 7S4 13 1 8Z" fill="#efe5cb" stroke="#0b0f0d" stroke-width="1.5"/><circle cx="11" cy="8" r="3.6" fill="#2c8a70" stroke="#0b0f0d" stroke-width="1.2"/><circle cx="11" cy="8" r="1.4" fill="#0b0f0d"/></svg>看她们盯着哪<span class="coin" id="gazeCost">1</span></button>
+    <div class="abs coat">
+      <div class="coat-row"><div class="bar" id="coatbar" style="position:relative"></div><span class="num" id="coatnum"></span></div>
+      <div class="lbl"><span id="gname"></span><span>回合 <b id="roundn">1</b></span></div>
+    </div>
+    <div class="abs board">
+      <h3>题板<small id="bsub"></small><span class="seen" id="bseen"></span></h3>
+      <p class="q" id="bq"></p>
+      <ul id="finds"></ul>
+      <div class="morph" id="morphline" hidden></div>
+    </div>
+    <div class="abs nline" id="nline" hidden></div>
+    <ol class="abs lstrip" id="lstrip"></ol>
+    <div class="abs hint" id="hint"></div>
+/*__ORB__*/
+    <div class="abs hand" id="hand"></div>
+    <div class="abs lbanner" id="lbanner"><b></b><span></span></div>
+    <div class="abs veil" id="veil" hidden></div>
+    <div class="abs gpanel" id="gpanel" hidden></div>
+    <div class="abs toast" id="toast"></div>
+  </div>
+  <div class="abs dev" id="dev" hidden></div>
+</div>
+</div></div>
+<script>
+const DATA=/*__DATA__*/null;
+/*__JS__*/
+</script>

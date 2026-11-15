@@ -1,0 +1,1 @@
+{"名": "乘积守卫", "原型": "双手", "base": "p2", "order": ["body", "eyes", "arm-long", "arm-long-equal", "arm-short", "arm-short-equal"], "hidden": ["arm-long-equal", "arm-short-equal"], "_说明": "序章第 1 关：用 p2 的底子，不穿布。Claude 2026-11-06。"}

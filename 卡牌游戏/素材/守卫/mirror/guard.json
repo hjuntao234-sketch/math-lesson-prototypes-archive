@@ -1,0 +1,19 @@
+{
+  "名": "镜子守卫",
+  "原型": "镜子",
+  "order": [
+    "body",
+    "eyes",
+    "mirror-front",
+    "mirror-back",
+    "mirror-clear",
+    "crack",
+    "arm-left",
+    "arm-right"
+  ],
+  "hidden": [
+    "mirror-back",
+    "mirror-clear",
+    "crack"
+  ]
+}

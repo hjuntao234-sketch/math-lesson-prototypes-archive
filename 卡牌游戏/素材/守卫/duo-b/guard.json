@@ -1,0 +1,16 @@
+{
+  "名": "细高双手守卫",
+  "原型": "双手",
+  "order": [
+    "body",
+    "eyes",
+    "arm-long",
+    "arm-long-equal",
+    "arm-short",
+    "arm-short-equal"
+  ],
+  "hidden": [
+    "arm-long-equal",
+    "arm-short-equal"
+  ]
+}

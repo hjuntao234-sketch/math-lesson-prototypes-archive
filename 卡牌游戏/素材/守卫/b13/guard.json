@@ -1,0 +1,17 @@
+{
+  "名": "卡13外衣守卫",
+  "base": "duo-b",
+  "order": [
+    "prop",
+    "body",
+    "eyes",
+    "arm-long",
+    "arm-long-equal",
+    "arm-short",
+    "arm-short-equal"
+  ],
+  "hidden": [
+    "arm-long-equal",
+    "arm-short-equal"
+  ]
+}

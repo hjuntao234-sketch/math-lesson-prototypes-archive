@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>名录审核</title>
+<style>
+:root{--ink:#2a251c;--paper:#f6efdd;--line:#cfc4a6;--brass:#a97f35;--ok:#2f7d4a;--bad:#a33a22}
+*{box-sizing:border-box}body{margin:0;background:#e9e1cb;color:var(--ink);font:16px/1.6 -apple-system,"PingFang SC","Noto Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 60px}h1{margin:0 0 4px;font-size:28px}p.sub{margin:0 0 18px;color:#5c4f37}
+textarea{width:100%;min-height:96px;padding:10px;border:1.5px solid var(--line);border-radius:8px;font:13px/1.5 ui-monospace,monospace;background:#fffaf0}
+button{font:inherit;padding:7px 16px;border-radius:8px;border:1.5px solid var(--ink);background:#fffaf0;color:var(--ink);cursor:pointer}button.pri{background:var(--ink);color:#fff6da}button:disabled{opacity:.45;cursor:default}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}.msg{color:#5c4f37}
+section{margin-top:22px;padding:14px 16px;background:var(--paper);border-radius:10px;box-shadow:0 0 0 1.5px var(--line)}h2{margin:0 0 10px;font-size:19px}
+.note{padding:10px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:start}.note:first-of-type{border-top:0}
+.note input.t{width:100%;font:inherit;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:#fffaf0}.note small{color:#6d5f45;display:block;margin-top:3px}
+.ai{display:inline-block!important;margin-top:4px!important;padding:1px 8px;border-radius:6px;font-weight:700}.ai-过{background:#dff0dd;color:#1f4d2c}.ai-看一眼{background:#f7ecc8;color:#6b4d10}.ai-退回{background:#f7d9d0;color:#7c1f13}
+.acts{display:flex;gap:6px}.acts button.on.yes{background:var(--ok);border-color:var(--ok);color:#fff}.acts button.on.no{background:var(--bad);border-color:var(--bad);color:#fff}
+.bars div{display:grid;grid-template-columns:230px 1fr 34px;gap:8px;align-items:center;margin:3px 0;font-size:14px}.bars i{display:block;height:12px;border-radius:6px;background:var(--brass)}
+ul.rule{margin:6px 0 0;padding-left:20px;color:#5c4f37;font-size:14.5px}
+@media (max-width:560px){.note{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<h1>名录审核</h1>
+<p class="sub">这个页面不联网，学生的话只留在这台电脑上。过了审的签，下一批学生能在战斗里读到。</p>
+
+<section>
+<h2>1. 把学生发来的码贴进来</h2>
+<textarea id="input" placeholder="LUOPAN1:… 一次可以贴很多段，空格或换行隔开"></textarea>
+<div class="row"><button class="pri" id="read" type="button">读取</button><button id="saveCodes" type="button">把这批码存成文件（给筛选脚本用）</button><span class="msg" id="readMsg"></span></div>
+</section>
+
+<section>
+<h2>2. 全班觉得哪儿最容易死</h2>
+<div class="bars" id="bars"><span class="msg">读取后显示。</span></div>
+</section>
+
+<section>
+<h2>3. 一张张过</h2>
+<ul class="rule"><li>答案写全了的退回：签是提醒，不是抄答案。</li><li>有真名、联系方式、骂人、拿同学开玩笑的退回。恶趣味可以，拿守卫开刀就行。</li><li>数学错了的退回，或者改字。可以直接改右边的字。</li></ul>
+<div class="row" style="margin-top:12px"><label>载入 AI 初筛结果（可选） <input type="file" id="screen" accept=".json"></label><button id="passAI" type="button" disabled>AI 说“过”的全部标成过</button><label><input type="checkbox" id="onlyTodo"> 只看还没决定的</label></div><p class="msg" id="screenMsg" style="margin:4px 0 0;font-size:14.5px"></p>
+<div id="list"></div>
+</section>
+
+<section>
+<h2>4. 导出名录</h2>
+<div class="row"><label>这批算第几届 <input id="term" value="第一届" style="width:110px;font:inherit;padding:4px 8px"></label><button class="pri" id="dump" type="button">下载 名录.json</button><span class="msg" id="dumpMsg"></span></div>
+<p class="msg" style="margin:6px 0 0;font-size:14.5px">下载后放到 <code>关卡/卡牌/名录.json</code>，重新构建，发给下一批学生。样例签会被去掉。</p>
+</section>
+</main>
+<script>
+const LV=/*__LEVELS__*/null;
+const OLD=/*__MING__*/null;
+const items=new Map();const useful=new Map();const SCR=new Map();const RANK={'退回':0,'看一眼':1,'过':2};const $=i=>document.getElementById(i);
+function decode(code){const m=/^LUOPAN1:([A-Za-z0-9+/=]+)$/.exec(code.trim());if(!m)return null;try{const o=JSON.parse(decodeURIComponent(escape(atob(m[1]))));return o&&o.v===1&&Array.isArray(o.notes)?o:null;}catch(e){return null;}}
+function clean(n){if(!n||typeof n.id!=='string'||!LV[n.lv])return null;const layer=Number(n.layer);if(!Number.isInteger(layer)||layer<0||layer>=LV[n.lv].层.length)return null;const text=String(n.text||'').slice(0,60),by=String(n.by||'').slice(0,12);if(text.length<1||!by)return null;return {id:n.id.slice(0,40),lv:n.lv,layer,text,by,state:null};}
+function read(){const parts=$('input').value.split(/\s+/).filter(Boolean);let ok=0,bad=0,added=0;for(const p of parts){const o=decode(p);if(!o){bad++;continue;}ok++;for(const raw of o.notes){const n=clean(raw);if(n&&!items.has(n.id)){items.set(n.id,n);added++;}}if(Array.isArray(o.useful))o.useful.slice(0,200).forEach(u=>{if(typeof u==='string')useful.set(u,(useful.get(u)||0)+1);});}$('readMsg').textContent=`读到 ${ok} 段，新增 ${added} 张${bad?`，${bad} 段读不懂`:''}。`;draw();}
+function draw(){const L=$('list');L.textContent='';const all=[...items.values()];const rk=n=>{const r=SCR.get(n.id);return r?RANK[r.建议]:3;};const arr=all.slice().sort((a,b)=>rk(a)-rk(b));const shown=$('onlyTodo').checked?arr.filter(n=>!n.state):arr;if(!shown.length){const s=document.createElement('p');s.className='msg';s.textContent=all.length?'都决定完了。':'还没有。';L.appendChild(s);}
+  for(const n of shown){const d=document.createElement('div');d.className='note';const left=document.createElement('div');const t=document.createElement('input');t.className='t';t.value=n.text;t.maxLength=60;t.oninput=()=>{n.text=t.value;};const sm=document.createElement('small');sm.textContent=`${LV[n.lv].名} · ${LV[n.lv].层[n.layer]} · 署名：${n.by}`;left.append(t,sm);const r=SCR.get(n.id);if(r){const c=document.createElement('small');c.className='ai ai-'+r.建议;c.textContent='AI：'+r.建议+(r.理由?' · '+r.理由:'')+(r.来源==='本地规则'?'（本地规则）':'');left.appendChild(c);}const acts=document.createElement('div');acts.className='acts';const y=document.createElement('button');y.type='button';y.textContent='过';y.className='yes'+(n.state==='yes'?' on':'');y.onclick=()=>{n.state='yes';draw();};const no=document.createElement('button');no.type='button';no.textContent='退回';no.className='no'+(n.state==='no'?' on':'');no.onclick=()=>{n.state='no';draw();};acts.append(y,no);d.append(left,acts);L.appendChild(d);}
+  $('passAI').disabled=![...SCR.values()].some(r=>r.建议==='过');const B=$('bars');B.textContent='';const cnt={};all.forEach(n=>{const k=LV[n.lv].名+' · '+LV[n.lv].层[n.layer];cnt[k]=(cnt[k]||0)+1;});const top=Math.max(1,...Object.values(cnt));Object.entries(cnt).sort((a,b)=>b[1]-a[1]).forEach(([k,v])=>{const r=document.createElement('div');const a=document.createElement('span');a.textContent=k;const w=document.createElement('i');w.style.width=(v/top*100)+'%';const c=document.createElement('b');c.textContent=v;const h=document.createElement('span');h.appendChild(w);r.append(a,h,c);B.appendChild(r);});if(!all.length){const s=document.createElement('span');s.className='msg';s.textContent='读取后显示。';B.appendChild(s);}}
+function dump(){const out={};const term=$('term').value.trim().slice(0,12)||'第一届';for(const lv of Object.keys(LV)){out[lv]=(OLD[lv]||[]).filter(n=>n.届!=='样例').map(n=>{const id='base:'+lv+':'+n.层+':'+n.署;return Object.assign({},n,{帮过:(n.帮过||0)+(useful.get(id)||0)});});}let pass=0;for(const n of items.values()){if(n.state!=='yes')continue;out[n.lv].push({层:n.layer,话:n.text.trim(),署:n.by,届:term,帮过:useful.get(n.id)||0});pass++;}const undecided=[...items.values()].filter(n=>!n.state).length;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(out,null,2)],{type:'application/json'}));a.download='名录.json';a.click();URL.revokeObjectURL(a.href);$('dumpMsg').textContent=`过了 ${pass} 张${undecided?`，还有 ${undecided} 张没决定（没放进去）`:''}。`;window.__lastDump=out;}
+function applyScreen(o){SCR.clear();let n=0,skip=0;const res=o&&o.结果;if(!res||typeof res!=='object'){$('screenMsg').textContent='这个文件读不懂。';return draw();}for(const [id,r] of Object.entries(res)){if(!items.has(id)||!r||!(r.建议 in RANK)){skip++;continue;}SCR.set(id,{建议:r.建议,理由:String(r.理由||'').slice(0,40),来源:r.来源==='本地规则'?'本地规则':'AI'});n++;}$('screenMsg').textContent=`载入 ${n} 条建议${skip?`，${skip} 条对不上`:''}。建议只是建议，放不放行你点。`;draw();}
+window.__applyScreen=applyScreen;
+$('screen').onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{applyScreen(JSON.parse(rd.result));}catch(x){$('screenMsg').textContent='这个文件读不懂。';}};rd.readAsText(f);};
+$('passAI').onclick=()=>{let n=0;for(const it of items.values()){const r=SCR.get(it.id);if(r&&r.建议==='过'&&!it.state){it.state='yes';n++;}}$('screenMsg').textContent=`标了 ${n} 张。AI 也会看走眼，随手抽几张看看。`;draw();};
+$('onlyTodo').onchange=draw;
+$('saveCodes').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([$('input').value],{type:'text/plain'}));a.download='码.txt';a.click();URL.revokeObjectURL(a.href);};
+$('read').onclick=read;$('dump').onclick=dump;draw();
+</script>
+</body>
+</html>

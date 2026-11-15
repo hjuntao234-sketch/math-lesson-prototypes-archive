@@ -1,0 +1,60 @@
+  <!-- ===== 地图（读 关卡/第一章/章节.json） ===== -->
+  <div class="scr" data-s="map" hidden>
+    <div class="abs mapback"></div>
+    <svg class="abs mapsvg" id="mapsvg" viewBox="0 0 1296 822" aria-label="不等式原野地图">
+      <defs>
+        <filter id="paper" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" seed="11"/><feColorMatrix values="0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .15  0 0 0 .16 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+        <filter id="clouds" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".0065" numOctaves="4" seed="21"/><feColorMatrix values="0 0 0 0 .86  0 0 0 0 .83  0 0 0 0 .74  0 0 0 1.6 -.15"/></filter>
+        <filter id="wob"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="2.4"/></filter>
+        <filter id="blurm"><feGaussianBlur stdDeviation="38"/></filter>
+        <radialGradient id="edge" cx="50%" cy="50%" r="72%"><stop offset=".62" stop-color="#e8d9b4" stop-opacity="0"/><stop offset="1" stop-color="#9c7f4c" stop-opacity=".55"/></radialGradient>
+        <mask id="fogmask"><rect width="1296" height="822" fill="#fff"/><g id="mclear" fill="#000" filter="url(#blurm)"></g></mask>
+        <clipPath id="sheetclip"><path id="sheetclipPath"/></clipPath>
+        <g id="i-camp" fill="none" stroke="#3b2f20" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M-16 12 0-13 16 12Z" fill="#d9c79c"/><path d="M-5 12 0 3 5 12"/><path d="M0-13V-22l8 3-8 3"/><path d="M-20 12h40"/></g>
+        <g id="i-guard" fill="none" stroke="#3b2f20" stroke-width="2.4" stroke-linejoin="round"><path d="M-13 13V-1c0-11 6-16 13-16s13 5 13 16v14l-5-5-4 5-4-5-4 5-4-5Z" fill="#f1e7cf"/><circle cx="-5" cy="-3" r="2.2" fill="#3b2f20" stroke="none"/><circle cx="5" cy="-3" r="2.2" fill="#3b2f20" stroke="none"/></g>
+        <g id="i-boss" fill="none" stroke="#3b2f20" stroke-width="2.4" stroke-linejoin="round"><path d="M-15 15V0c0-12 7-17 15-17s15 5 15 17v15l-5-5-5 5-5-5-5 5-5-5Z" fill="#e3cfc2"/><path d="M-12-14-9-23-4-16 0-25l4 9 5-7 3 9" fill="#c49a4c"/><path d="M-8-3l5 2M8-3l-5 2" stroke-width="2.6"/></g>
+        <g id="i-ruin" fill="none" stroke="#3b2f20" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M-14 13h28M-11 13V-4h7v17M4 13V-9h7v22" fill="#d9c79c"/><path d="M-13-4h11M2-9h11"/><path d="M4-9l3-5 4 3"/></g>
+      </defs>
+      <path id="sheet" fill="#e8d9b4" stroke="#5a4528" stroke-width="2"/>
+      <g clip-path="url(#sheetclip)">
+        <rect width="1296" height="822" fill="#000" filter="url(#paper)"/>
+        <rect width="1296" height="822" fill="url(#edge)"/>
+        <g id="mstains"></g>
+        <g id="mdeco" filter="url(#wob)" stroke="#6b5534" fill="none" stroke-width="1.6" opacity=".55"></g>
+        <g id="medges" filter="url(#wob)"></g>
+        <g id="mnodes"></g>
+        <g mask="url(#fogmask)" pointer-events="none"><rect width="1296" height="822" filter="url(#clouds)"/><rect width="1296" height="822" fill="#d9ceb2" opacity=".5"/></g>
+        <g id="mcarto"></g>
+      </g>
+    </svg>
+    <div class="abs maptip" id="mtip" hidden></div>
+    <div class="abs legend">
+      <h4>图例</h4>
+      <ul>
+        <li><svg width="34" height="34" viewBox="-20 -20 40 40"><use href="#i-camp"/></svg><span>营地<small>这条路从这儿出发</small></span></li>
+        <li><svg width="34" height="34" viewBox="-20 -20 40 40"><use href="#i-guard"/></svg><span>据点<small>先听剧情，再打守卫</small></span></li>
+        <li><svg width="34" height="34" viewBox="-20 -20 40 40"><use href="#i-ruin"/></svg><span>遗迹<small>开放题，可以分几次来</small></span></li>
+        <li><svg width="34" height="34" viewBox="-20 -20 40 40"><use href="#i-boss"/></svg><span>领主<small>一条路走完才出雾</small></span></li>
+        <li><svg width="34" height="34" viewBox="-20 -20 40 40"><circle r="15" fill="none" stroke="#b23a2c" stroke-width="2.6"/><circle r="12.5" fill="none" stroke="#b23a2c" stroke-width="1.4" transform="rotate(20) translate(1.5 0)"/></svg><span>红圈<small>点亮了</small></span></li>
+      </ul>
+      <div class="prog" id="mprog"></div>
+    </div>
+    <div class="abs mside">
+      <button class="qbtn" type="button" id="mgarden">菜园 · 改条件</button>
+      <button class="qbtn" type="button" id="mdeckbtn">牌组</button>
+      <button class="qbtn" type="button" id="mrecord">学习记录（给老师看）</button>
+    </div>
+    <div class="abs mpanel" id="mpanel" hidden></div>
+    <div class="abs mtitle" id="mtitle" hidden>
+      <h1>罗盘指挥官</h1><p>第一章 · 不等式原野</p>
+      <div class="qbtns"><button class="qbtn pri" type="button" id="mstart">开始</button><button class="qbtn" type="button" id="mdev">开发菜单</button></div>
+      <p class="mnote">图里的人物立绘由 AI 生成（GPT 图像），数学和剧情经人工审读。</p>
+    </div>
+  </div>
+  <!-- ===== 牌组 ===== -->
+  <div class="scr" data-s="deck" hidden>
+    <div class="abs deckback"></div>
+    <div class="abs dgrid" id="dgrid"></div>
+    <div class="abs dcount" id="dcount"></div>
+    <button class="abs backbtn dback" type="button" id="dback"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M13 4 5 11l8 7M5 11h14" fill="none" stroke="#fbefe0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>返回地图</button>
+  </div>

@@ -1,0 +1,139 @@
+{
+  "canvas": [
+    1200,
+    1100
+  ],
+  "head": {
+    "center": [
+      700,
+      320
+    ],
+    "r": 90
+  },
+  "ground": {
+    "y": 630
+  },
+  "eyes": {
+    "left": [
+      662,
+      320
+    ],
+    "right": [
+      738,
+      320
+    ]
+  },
+  "axis": {
+    "center": [
+      670,
+      630
+    ]
+  },
+  "arch-down": {
+    "foot-left": [
+      425,
+      630
+    ],
+    "foot-right": [
+      973,
+      630
+    ],
+    "top": [
+      700,
+      320
+    ]
+  },
+  "arch-up": {
+    "foot-left": [
+      425,
+      630
+    ],
+    "foot-right": [
+      973,
+      630
+    ],
+    "top": [
+      700,
+      940
+    ]
+  },
+  "arch-up-touch": {
+    "touch": [
+      700,
+      630
+    ]
+  },
+  "arch-up-float": {
+    "bottom": [
+      700,
+      550
+    ]
+  },
+  "flag-left": {
+    "center": [
+      400,
+      560
+    ]
+  },
+  "flag-right": {
+    "center": [
+      948,
+      560
+    ]
+  },
+  "shade-between": {
+    "center": [
+      699,
+      630
+    ]
+  },
+  "shade-outside": {
+    "center": [
+      320,
+      630
+    ]
+  },
+  "eyes-down": {
+    "left": [
+      662,
+      320
+    ],
+    "right": [
+      738,
+      320
+    ]
+  },
+  "eyes-up": {
+    "left": [
+      662,
+      940
+    ],
+    "right": [
+      738,
+      940
+    ]
+  },
+  "eyes-touch": {
+    "left": [
+      662,
+      561
+    ],
+    "right": [
+      738,
+      561
+    ]
+  },
+  "eyes-float": {
+    "left": [
+      662,
+      481
+    ],
+    "right": [
+      738,
+      481
+    ]
+  },
+  "stand": {
+    "y": 950
+  }
+}
