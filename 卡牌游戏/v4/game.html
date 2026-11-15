@@ -1,0 +1,1554 @@
+<title>罗盘指挥官</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<style>
+/* 布局：作战桌。顶栏切页并显示境界与经验；战斗页三栏——左敌人、中当前这一步、右作战记录；窄屏叠成一列。
+   颜色：石板青的桌面 + 黄铜指挥色；四种牌各有一色：队友赤、装备钢蓝、情报青绿、事件琥珀。 */
+:root{
+  --bg:#e6ecef; --grid:rgba(21,33,42,.05); --surface:#f8fafb; --surface-2:#edf2f4; --ink:#15212a; --muted:#566874; --line:#c6d1d8;
+  --brass:#8a5d0c; --brass-soft:#f3e6c9; --on-brass:#fffaf0;
+  --team:#a83a34; --team-soft:#f6e2df; --gear:#275e89; --gear-soft:#dde9f3; --intel:#17705f; --intel-soft:#d8eee8; --event:#8a5f12; --event-soft:#f4e8d0;
+  --ok:#24704a; --ok-soft:#dcefe3; --bad:#a3271f; --bad-soft:#f8e0dc; --fog:#d3dce1; --fog-line:rgba(21,33,42,.07); --leaf:#3f8a3a; --dry:#a68a52;
+  --shadow:0 1px 2px rgba(20,33,42,.07),0 8px 20px rgba(20,33,42,.07);
+  --f-display:"ZCOOL QingKe HuangYou","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --f-body:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --f-math:"STIX Two Math","Cambria Math","Latin Modern Math",math,serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d161c; --grid:rgba(228,236,240,.035); --surface:#16232c; --surface-2:#1d2c36; --ink:#e4ecf0; --muted:#94a6b1; --line:#2b3c47;
+  --brass:#d9a846; --brass-soft:#3a2f1a; --on-brass:#1a1408;
+  --team:#e8817a; --team-soft:#3b2326; --gear:#7cb2db; --gear-soft:#1b2e3e; --intel:#5fc6af; --intel-soft:#153a33; --event:#e2b862; --event-soft:#3a3020;
+  --ok:#74ca96; --ok-soft:#173527; --bad:#f08b81; --bad-soft:#3e2121; --fog:#1f2d36; --fog-line:rgba(228,236,240,.05); --leaf:#7cc46f; --dry:#b89a62;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d161c; --grid:rgba(228,236,240,.035); --surface:#16232c; --surface-2:#1d2c36; --ink:#e4ecf0; --muted:#94a6b1; --line:#2b3c47;
+  --brass:#d9a846; --brass-soft:#3a2f1a; --on-brass:#1a1408;
+  --team:#e8817a; --team-soft:#3b2326; --gear:#7cb2db; --gear-soft:#1b2e3e; --intel:#5fc6af; --intel-soft:#153a33; --event:#e2b862; --event-soft:#3a3020;
+  --ok:#74ca96; --ok-soft:#173527; --bad:#f08b81; --bad-soft:#3e2121; --fog:#1f2d36; --fog-line:rgba(228,236,240,.05); --leaf:#7cc46f; --dry:#b89a62;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.28); color-scheme:dark}
+
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.65;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+math{font-family:var(--f-math);font-size:1.1em}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--brass);font-weight:700}
+.muted{color:var(--muted)}
+
+/* 顶栏 */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.top-in{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding-block:9px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:var(--f-display);font-size:21px;letter-spacing:.04em}
+.seal{width:30px;height:30px;border-radius:50%;border:2px solid var(--brass);display:grid;place-items:center;color:var(--brass);font-size:15px;flex:none}
+.nav{display:flex;flex-wrap:wrap;gap:2px}
+.nav a{color:var(--muted);text-decoration:none;padding:5px 9px;border-radius:6px;font-size:14px}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background:var(--surface-2);font-weight:500}
+.spacer{flex:1}
+.xp{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.xp .rk{font-weight:700;color:var(--ink);font-size:13px}
+.xp .bar{width:96px;height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden;border:1px solid var(--line)}
+.xp .bar i{display:block;height:100%;background:var(--brass)}
+.xp button{border:0;border-radius:999px;padding:2px 9px;font:inherit;font-size:12px;cursor:pointer;background:var(--brass);color:var(--on-brass)}
+.xp .wait{border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+.seg{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg span{font-size:12px;color:var(--muted);padding:0 4px 0 10px}
+.seg button{border:0;background:transparent;color:var(--muted);padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--brass);color:var(--on-brass)}
+
+.wrap{max-width:1240px;margin:0 auto;padding-block:26px 72px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* 按钮 */
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 16px;border-radius:8px;font:inherit;font-weight:500;cursor:pointer;text-decoration:none}
+.btn:hover{border-color:var(--brass)}
+.btn.primary{background:var(--brass);border-color:var(--brass);color:var(--on-brass)}
+.btn.small{padding:5px 11px;font-size:13px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+select,input[type=text]{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);color:var(--ink)}
+
+/* 牌 */
+.hand{display:flex;flex-wrap:wrap;gap:14px}
+.gc{--c:var(--team);--cs:var(--team-soft);position:relative;width:180px;max-width:100%;display:flex;flex-direction:column;background:var(--surface);
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;text-align:left;font:inherit;color:inherit;padding:0;box-shadow:var(--shadow);
+  transition:transform .15s ease,border-color .15s ease}
+button.gc{cursor:pointer}
+button.gc:not(:disabled):hover{transform:translateY(-3px);border-color:var(--c)}
+button.gc:disabled{cursor:default}
+.gc.t-gear{--c:var(--gear);--cs:var(--gear-soft)}
+.gc.t-intel{--c:var(--intel);--cs:var(--intel-soft)}
+.gc.t-event{--c:var(--event);--cs:var(--event-soft)}
+.gc .kind{display:block;font-size:11px;letter-spacing:.16em;color:var(--c);font-weight:700;padding:9px 12px 0}
+.gc .face{display:grid;place-items:center;height:70px;margin:6px 12px 0;border-radius:8px;background-color:var(--cs);
+  background-image:repeating-linear-gradient(135deg,transparent 0 9px,color-mix(in srgb,var(--c) 12%,transparent) 9px 10px);
+  font-family:var(--f-display);font-size:40px;color:var(--c);line-height:1}
+.gc .face.formula{font-family:var(--f-body);font-size:15px;color:var(--ink);padding:0 6px;text-align:center}
+.gc .nm{display:block;padding:8px 12px 0;font-weight:700;font-size:15px}
+.gc .nick{font-weight:400;color:var(--muted);font-size:13px;margin-left:4px}
+.gc .tx{display:block;padding:4px 12px 12px;font-size:13px;color:var(--muted);line-height:1.55}
+.gc .new{position:absolute;top:8px;right:10px;font-size:11px;color:var(--on-brass);background:var(--brass);border-radius:999px;padding:0 7px}
+.gc.sel{border-color:var(--c);outline:2px solid var(--c);outline-offset:-1px}
+.gc.hit{border-color:var(--ok)}
+.gc.miss{opacity:.55}
+.gc .mark{position:absolute;top:8px;right:10px;font-weight:700;font-size:15px}
+.gc.hit .mark{color:var(--ok)} .gc.miss .mark{color:var(--bad)}
+.gc.wide{width:auto}
+.gc dl{margin:0;padding:6px 12px 12px;display:grid;gap:6px;font-size:13px}
+.gc dt{color:var(--muted);font-size:12px}
+.gc dd{margin:0}
+.gc.unmet .face{filter:grayscale(1);opacity:.6}
+
+/* 标题页 */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:center;padding-block:8px 24px}
+.hero h1{font-family:var(--f-display);font-weight:400;font-size:clamp(44px,7vw,76px);line-height:1.05;letter-spacing:.04em;margin:10px 0 16px}
+.prologue{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;max-width:36em}
+.fan{position:relative;height:300px}
+.fan .gc{position:absolute;top:20px;left:50%;width:180px}
+.fan .gc:nth-child(1){transform:translateX(-118%) rotate(-9deg)}
+.fan .gc:nth-child(2){transform:translateX(-50%) translateY(-10px);z-index:2}
+.fan .gc:nth-child(3){transform:translateX(18%) rotate(9deg)}
+details.memo{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-top:8px}
+details.memo summary{cursor:pointer;font-weight:700}
+.gallery{margin-top:10px}.gallery summary{cursor:pointer;color:var(--brass);font-weight:700}
+.gallery figure{margin:0;text-align:center;font-size:12px;color:var(--muted)}
+.g-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:10px}
+.g-row img{width:100%;height:180px;object-fit:contain;object-position:top;background:var(--surface-2);border-radius:6px}
+.g-bg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
+.g-bg img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px}
+.memo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:12px;font-size:14px}
+.memo-grid h3{font-size:13px;color:var(--brass);letter-spacing:.08em;margin-bottom:6px}
+.memo-grid ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:4px}
+.demo{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:13px}
+
+/* 对话 */
+.talk{display:flex;flex-direction:column;gap:12px;margin:6px 0 16px}
+.line{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:22px;background:var(--team-soft);color:var(--team)}
+.av.rival{background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
+.av.narr{background:transparent;color:var(--brass);border:1px dashed var(--brass);font-size:16px}
+.bubble{background:var(--surface-2);border-radius:4px 12px 12px 12px;padding:8px 14px}
+.bubble.narr{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.who{display:block;font-size:12px;color:var(--muted)}
+
+/* 页面头 */
+.page-h{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:10px;margin-bottom:18px}
+.page-h h1{font-family:var(--f-display);font-weight:400;font-size:34px;letter-spacing:.03em}
+.sec{margin-top:28px}
+.sec > h2{font-family:var(--f-display);font-weight:400;font-size:24px;margin-bottom:4px}
+.sec > p{margin-bottom:12px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);min-width:0}
+
+/* 地图 */
+.prolog-path{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.node{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.node .no{width:32px;height:32px;border-radius:50%;border:2px solid var(--brass);display:grid;place-items:center;font-weight:700;color:var(--brass);font-variant-numeric:tabular-nums}
+.node.locked .no{border-color:var(--line);color:var(--muted)}
+.node .nm{font-weight:700}
+.node .why{font-size:12px;color:var(--muted)}
+.chip{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.chip.ok{color:var(--ok);border-color:var(--ok)}
+.chip.brass{color:var(--brass);border-color:var(--brass)}
+.chip.bad{color:var(--bad);border-color:var(--bad)}
+.field-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:start}
+.colm{display:flex;flex-direction:column;gap:10px;min-width:0}
+.colm > h3{font-family:var(--f-display);font-weight:400;font-size:20px}
+.camp{border:2px dashed var(--brass);border-radius:10px;padding:8px 12px;font-size:13px;background:var(--brass-soft)}
+.stn{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 12px;min-width:0}
+.stn h4{margin:0;font-size:14px;display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.stn.fog{background-color:var(--fog);background-image:repeating-linear-gradient(135deg,transparent 0 12px,var(--fog-line) 12px 13px);color:var(--muted)}
+.stn.lit{border-color:var(--ok);box-shadow:0 0 0 1px var(--ok) inset}
+.stn .cards{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.cardbtn{display:flex;justify-content:space-between;gap:8px;text-align:left;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:6px;padding:5px 8px;font:inherit;font-size:13px;cursor:pointer;width:100%}
+.cardbtn:hover{border-color:var(--brass)}
+.cardbtn.done{border-color:var(--ok)}
+.cardbtn .st{color:var(--muted);font-size:12px;white-space:nowrap}
+.ruin{display:block;margin-top:6px;font-size:12px;color:var(--event);background:none;border:0;padding:0;cursor:pointer;text-align:left;font-family:inherit}
+.lore{background:var(--event-soft);border-radius:12px;padding:14px 18px;margin-top:14px}
+.lore p+p{margin-top:6px}
+@media (max-width:1000px){.field-map{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.field-map{grid-template-columns:minmax(0,1fr)}}
+
+/* 战斗 */
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:0;list-style:none}
+.steps li{display:flex;align-items:baseline;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:13px;color:var(--muted)}
+.steps li small{font-size:11px;color:var(--brass)}
+.steps li.now{border-color:var(--brass);color:var(--ink);font-weight:700;background:var(--brass-soft)}
+.steps li.done{color:var(--ok)}
+.battle{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr) minmax(0,250px);gap:20px;align-items:start}
+.enemy .q{font-size:17px;line-height:1.95;margin:10px 0 14px}
+.enemy h2{font-family:var(--f-display);font-weight:400;font-size:23px;margin-top:2px}
+.weak{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.weak li{border:1px dashed var(--line);border-radius:8px;padding:7px 12px;font-size:14px;color:var(--muted)}
+.weak li.got{border:1px solid var(--intel);background:var(--intel-soft);color:var(--ink);animation:reveal .35s ease}
+.traps{margin-top:12px;font-size:13px}
+.traps b{color:var(--bad);font-weight:500}
+.loadout{margin-top:12px;display:flex;flex-direction:column;gap:4px;font-size:13px}
+.loadout b{color:var(--ink)}
+.stamp{display:inline-block;margin-top:14px;font-family:var(--f-display);font-size:32px;color:var(--ok);border:3px solid var(--ok);padding:0 16px;border-radius:8px;transform:rotate(-5deg);animation:stamp .35s ease}
+@keyframes reveal{from{transform:scale(.97);background:var(--surface)}to{transform:none}}
+@keyframes stamp{from{transform:rotate(-5deg) scale(1.5)}to{transform:rotate(-5deg) scale(1)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+@media (min-width:1101px){.enemy{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px)}}
+@media (max-width:1100px){.battle{grid-template-columns:minmax(0,1fr)}}
+.center h2{font-family:var(--f-display);font-weight:400;font-size:27px;letter-spacing:.02em}
+.ask{color:var(--muted);margin:4px 0 16px}
+.msg{margin-top:16px;padding:11px 14px;border-radius:8px;background:var(--surface-2)}
+.msg.bad{background:var(--bad-soft)}
+.msg.good{background:var(--ok-soft)}
+.msg.info{background:var(--brass-soft)}
+.checks{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.checks li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:baseline}
+.checks .mk{font-weight:700;text-align:center}
+.mk.ok{color:var(--ok)} .mk.bad{color:var(--bad)} .mk.unk{color:var(--muted)} .mk.info{color:var(--brass)}
+.reasons{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.reasons p{font-weight:700}
+.reasons button,.opt{text-align:left;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);padding:10px 14px;border-radius:8px;font:inherit;cursor:pointer}
+.reasons button:hover,.opt:hover{border-color:var(--brass)}
+.opt.miss{opacity:.55;cursor:default}
+.opts{display:flex;flex-direction:column;gap:8px}
+.est{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.est button{border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:10px;padding:14px;font:inherit;cursor:pointer;text-align:left}
+.est button:hover{border-color:var(--brass)}
+.est b{display:block;font-family:var(--f-display);font-weight:400;font-size:22px}
+.est span{font-size:13px;color:var(--muted)}
+.do-row{display:flex;flex-wrap:wrap;gap:14px;align-items:end}
+.do-row label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+.do-row input{font-size:19px;width:140px;max-width:100%;font-variant-numeric:tabular-nums}
+.ladder{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
+.ladder ol{margin:10px 0 0;padding-left:1.4em;display:flex;flex-direction:column;gap:6px}
+.five{margin-top:14px;display:flex;flex-direction:column;gap:12px}
+.five .stp{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--surface-2)}
+.five dl{display:grid;grid-template-columns:36px minmax(0,1fr);gap:4px 10px;margin:0;font-size:14px}
+.five dt{font-family:var(--f-display);color:var(--brass);font-size:16px}
+.five dd{margin:0}
+.log h3{font-size:13px;letter-spacing:.1em;color:var(--brass);margin-bottom:10px}
+.log ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13px}
+.log li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:6px}
+.shadow{margin-bottom:12px;padding:8px 10px;border:1px dashed var(--line);border-radius:8px;font-size:12px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--surface-2);border-radius:8px;padding:10px 12px}
+.stat .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.stat .k{font-size:12px;color:var(--muted)}
+.rumor{background:var(--event-soft);border-radius:10px;padding:12px 16px;margin:12px 0}
+.rumor b{color:var(--event)}
+.result-sec{margin-top:14px}
+.result-sec h3{font-size:13px;letter-spacing:.08em;color:var(--brass);margin-bottom:6px}
+.forge{display:flex;flex-direction:column;gap:10px}
+.forge .it{background:var(--surface-2);border-radius:10px;padding:10px 14px}
+
+/* 牌组、笔记 */
+.dk{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.quote{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px;max-width:46em}
+.quote p{font-size:17px}
+.quote cite{display:block;margin-top:6px;font-style:normal;color:var(--muted);font-size:13px}
+.notes{display:flex;flex-direction:column;gap:14px}
+.note{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.note .who-c{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.note .glyph{width:54px;height:54px;border-radius:10px;display:grid;place-items:center;font-family:var(--f-display);font-size:26px;background:var(--cs);color:var(--c)}
+.note.t-team{--c:var(--team);--cs:var(--team-soft)} .note.t-gear{--c:var(--gear);--cs:var(--gear-soft)} .note.t-intel{--c:var(--intel);--cs:var(--intel-soft)}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.field{background:var(--surface-2);border-radius:8px;padding:8px 12px;min-width:0}
+.field .k{display:block;font-size:12px;color:var(--muted)}
+.field.locked .v{color:var(--muted)}
+.own{margin-top:10px}
+.own textarea{width:100%;box-sizing:border-box;min-height:56px;font:inherit;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);color:var(--ink);resize:vertical}
+.own textarea:disabled{opacity:.6}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+
+/* 菜园 */
+.garden{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.plot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.plot.due{border-color:var(--brass)}
+.plot.dry{background:color-mix(in srgb,var(--dry) 10%,var(--surface))}
+.plot .pic{height:64px;display:flex;align-items:end}
+.plot .pic svg{height:64px;width:64px}
+.plot .q{background:var(--surface-2);border-radius:8px;padding:8px 10px;font-size:14px}
+
+/* 训练场、好友、档案 */
+.lines{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.ln{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--surface-2);border-radius:8px;padding:8px 12px}
+.code{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--surface-2);padding:8px 12px;border-radius:8px;word-break:break-all;font-size:14px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.form{display:flex;flex-direction:column;gap:10px}
+.form label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+.tbl-wrap{overflow-x:auto}
+table.cmp{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
+.cmp th,.cmp td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+.cmp th{font-size:12px;color:var(--muted);font-weight:500}
+.cmp td.n{font-variant-numeric:tabular-nums;width:40px;text-align:right}
+.bar{height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden;min-width:80px}
+.bar i{display:block;height:100%;background:var(--muted)}
+.bar.now i{background:var(--brass)}
+.track{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.track .st{padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.track .st.on{border-color:var(--brass);color:var(--ink);background:var(--brass-soft);font-weight:700}
+.track .st.past{color:var(--ok);border-color:var(--ok)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:14px;padding:26px;text-align:center}
+.empty p{margin-bottom:12px}
+.toast{z-index:40!important;position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;box-shadow:var(--shadow);font-size:14px;max-width:min(360px,calc(100vw - 32px))}
+@media (max-width:760px){.g-row{grid-template-columns:repeat(3,minmax(0,1fr))}.g-bg{grid-template-columns:repeat(2,minmax(0,1fr))}.note{grid-template-columns:minmax(0,1fr)}.fields,.two,.memo-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:860px){.hero{grid-template-columns:minmax(0,1fr)}.fan{height:270px}}
+@media (max-width:560px){.est{grid-template-columns:minmax(0,1fr)}.fan{overflow:hidden}.fan .gc{width:150px}.fan .gc .tx{display:none}
+  .fan .gc:nth-child(1){transform:translateX(-100%) rotate(-8deg)}.fan .gc:nth-child(3){transform:translateX(0) rotate(8deg)}}
+/* 视觉小说：叠在图片上，固定一种深色外观 */
+.vn{position:fixed;inset:0;z-index:30;background:#05090c;cursor:pointer;overflow:hidden}
+.vn-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.vn-bg.in{animation:vnfade .5s ease}
+@keyframes vnfade{from{opacity:.15}to{opacity:1}}
+.vn-sprite{position:absolute;bottom:0;left:50%;height:min(86vh,900px);width:auto;max-width:none;transform:translateX(-50%);transition:opacity .3s ease,transform .3s ease;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+.vn-sprite.off{opacity:0;transform:translateX(-50%) translateY(14px)}
+.vn-box{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(980px,calc(100% - 32px));box-sizing:border-box;background:rgba(12,19,25,.88);color:#eef3f5;border:1px solid rgba(217,168,70,.55);border-radius:14px;padding:22px 22px 12px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.vn-name{position:absolute;top:-15px;left:18px;padding:3px 14px;border-radius:8px;background:#d9a846;color:#1a1408;font-weight:700;font-size:14px}
+.vn-text{font-size:19px;line-height:1.75;min-height:3.5em}
+.vn-text.narr{color:#c9d4da}
+.vn-ctl{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:12px;color:#8fa1ab}
+.vn-ctl button{border:1px solid rgba(255,255,255,.28);background:transparent;color:#d6dee3;border-radius:6px;padding:3px 12px;font:inherit;cursor:pointer}
+@media (max-width:600px){.vn-text{font-size:16px}.vn-sprite{height:68vh}}
+.vn-board{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:max(16px,4vw);width:min(640px,calc(100% - 32px));max-height:calc(100% - 240px);overflow:auto;box-sizing:border-box;background:#f6f2e8;color:#1d2a33;border-radius:12px;padding:14px 18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.vn.has-board .vn-sprite{left:24%}
+.vn.choosing .vn-board{max-height:calc(100% - 340px)}   /* 选择题把对话框撑高时，黑板让出位置 */
+@media (max-width:900px){.vn.has-board .vn-sprite{opacity:0}}
+.vn.plain .vn-bg{background:#101a20!important}
+.vn-board .q{font-size:17px;line-height:1.9;margin:4px 0 6px}
+.vn-board .bline{font-size:16px;line-height:1.85;margin:6px 0;animation:vnfade .4s ease}
+.vn-board .bfig{margin:8px 0;animation:vnfade .4s ease}.vn-board .bfig svg{width:100%;max-width:420px;height:auto;display:block;margin:0 auto}
+.vn-board .bq{border-bottom:1px dashed #cdbf9f;padding-bottom:6px;margin:4px 0 8px;animation:vnfade .4s ease}
+.vn-seg:not(:empty){color:#d9a846;margin-right:8px}.vn-seg:not(:empty)::after{content:" ·";color:#8fa1ab}
+.vn-opts{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.vn-opt{text-align:left;border:1px solid rgba(217,168,70,.6);background:rgba(217,168,70,.12);color:#eef3f5;border-radius:10px;padding:8px 14px;font:inherit;font-size:16px;line-height:1.6;cursor:pointer}
+.vn-opt:hover:not(:disabled){background:rgba(217,168,70,.26)}.vn-opt:disabled{opacity:.45;cursor:default}
+.vn-fx{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:0}
+.vn-fx.fx-clear.go{background:radial-gradient(circle at 50% 45%,rgba(255,255,255,0) 0,rgba(214,222,226,.95) 70%);animation:fxout 1.4s ease forwards}
+.vn-fx.fx-flash.go{background:#fff;animation:fxout .45s ease forwards}
+.vn-fx.fx-fog.go{background:rgba(190,200,206,.6);animation:fxfog 1.8s ease forwards}
+.vn-fx.fx-glow.go{background:radial-gradient(circle at 50% 50%,rgba(255,214,120,.55),rgba(255,214,120,0) 60%);animation:fxglow 1.2s ease forwards}
+@keyframes fxout{0%{opacity:1}100%{opacity:0}}
+@keyframes fxfog{0%{opacity:0}40%{opacity:1}100%{opacity:.25}}
+@keyframes fxglow{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+.vn.shake .vn-bg,.vn.shake .vn-sprite{animation:fxshake .45s ease}
+@keyframes fxshake{0%,100%{translate:0 0}20%{translate:-8px 2px}40%{translate:7px -2px}60%{translate:-5px 1px}80%{translate:4px 0}}
+.vn-cap{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));left:max(16px,4vw);z-index:3;padding:6px 14px;border-radius:999px;background:rgba(12,19,25,.82);color:#f3d79a;border:1px solid rgba(217,168,70,.6);font-weight:700;font-size:14px;letter-spacing:.08em;opacity:0;pointer-events:none}
+.vn-cap.go{animation:capin 1.8s ease forwards}
+@keyframes capin{0%{opacity:0;transform:translateY(-6px)}15%{opacity:1;transform:none}75%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.vn-fx.go,.vn-cap.go,.vn.shake .vn-bg,.vn.shake .vn-sprite{animation-duration:.01s}}
+.vn-board .bstep{border-top:1px dashed #cdbf9f;padding-top:8px;margin-top:8px;animation:vnfade .4s ease}
+.vn-board dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;margin:0;font-size:15px;line-height:1.7}
+.vn-board dt{color:#8a5d0c;font-weight:700;white-space:nowrap}
+.vn-board dd{margin:0}
+/* ===== 剧情战斗（11-06 样板）：守卫、外衣（韧性）、弱点、回合、出牌 ===== */
+.vn-stage{position:absolute;right:max(16px,3vw);top:calc(26vh + 30px);bottom:162px;width:min(52vw,720px);display:flex;flex-direction:column;align-items:flex-end;z-index:1;pointer-events:none;transition:bottom .3s ease}
+.vn.battle .vn-board{max-height:26vh;width:min(560px,calc(50vw - 24px));z-index:2}
+.vn.battle .vn-box{z-index:3}   /* 对话框、黑板压在守卫上面 */
+.vn.battle.choosing .vn-board{max-height:26vh}
+.vn.battle.choosing .vn-stage{bottom:150px}
+.sb-hud{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;background:rgba(12,19,25,.8);border:1px solid rgba(217,168,70,.45);border-radius:10px;padding:6px 12px;color:#eef3f5;font-size:13px;margin-bottom:6px}
+.sb-hud b{color:#f3d79a;font-size:14px}
+.sb-bar{position:relative;width:120px;height:10px;border-radius:5px;background:rgba(255,255,255,.12);overflow:hidden}
+.sb-bar i{position:absolute;left:0;top:0;bottom:0;width:100%;background:linear-gradient(90deg,#c9b38a,#f0d79c);transition:width .5s ease}
+.sb-hud.broken .sb-bar i{width:0}
+.sb-weak{display:flex;gap:4px}
+.sb-weak i{font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:rgba(255,255,255,.1);color:#c9d4da;border:1px dashed rgba(255,255,255,.35)}
+.sb-weak i.on{border:1px solid rgba(255,255,255,.7);animation:sbicon .5s ease}
+@keyframes sbicon{0%{transform:scale(.4)}70%{transform:scale(1.25)}100%{transform:scale(1)}}
+.sb-status:not(:empty){padding:1px 8px;border-radius:999px;background:#b3261e;color:#fff;font-weight:700}
+.sb-wrap{position:relative;flex:1;min-height:0;aspect-ratio:420/380;max-width:100%}
+.sb-guard{width:100%;height:100%;display:block;overflow:visible}
+.sb-fig{transform-box:view-box;transform-origin:210px 340px;animation:sbbob 3.4s ease-in-out infinite}
+@keyframes sbbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.sb-armL{transform-box:view-box;transform-origin:296px 196px;animation:sbsway 2.8s ease-in-out infinite}
+@keyframes sbsway{0%,100%{transform:rotate(0)}50%{transform:rotate(-4deg)}}
+.sb-eyes circle{filter:drop-shadow(0 0 6px #f5c868)}
+.sb-hot{fill:transparent;stroke:none;pointer-events:none}
+.vn-stage.looking{pointer-events:auto}
+.vn-stage.looking .sb-hot{pointer-events:auto;cursor:pointer;stroke:rgba(243,215,154,.6);stroke-width:2;stroke-dasharray:6 6;fill:rgba(243,215,154,.05)}
+.vn-stage.looking .sb-hot:hover{fill:rgba(243,215,154,.2)}
+.vn-stage .sb-hot.found{stroke:#7fd39a;stroke-dasharray:none;fill:rgba(127,211,154,.12)}
+.sb-lab{position:absolute;transform:translate(-50%,-50%);padding:2px 8px;border-radius:8px;background:rgba(246,242,232,.95);color:#1d2a33;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,.35);white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none}
+.sb-lab.on{opacity:1;animation:sbpop .45s ease}
+.sb-lab.tagged{outline:3px solid #e3922b;opacity:1}
+.sb-lab.drop{opacity:1;transition:left .9s ease,top .9s cubic-bezier(.55,0,.85,.55);outline:2px dashed #f0cd78}
+@keyframes sbpop{0%{transform:translate(-50%,-50%) scale(.6)}70%{transform:translate(-50%,-50%) scale(1.12)}100%{transform:translate(-50%,-50%) scale(1)}}
+.sb-fly{position:absolute;left:-30%;top:62%;transform:translate(-50%,-50%) rotate(-24deg);transition:left .55s cubic-bezier(.3,.7,.3,1),top .55s cubic-bezier(.3,.7,.3,1),transform .55s;z-index:2;font-weight:700;pointer-events:none}
+.sb-fly.go{transform:translate(-50%,-50%) rotate(0)}
+.sb-fly.tag{background:#fbf4e2;color:#7a4a08;border:2px solid #e3922b;border-radius:4px;padding:4px 12px;font-size:18px}
+.sb-fly.plank{width:60px;height:16px;border-radius:3px;background:linear-gradient(#b5875a,#8a6440);box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.sb-fly.slash{width:160px;height:6px;border-radius:3px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff,rgba(255,255,255,0));box-shadow:0 0 16px #fff}
+.sb-pop{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);font-size:46px;font-weight:900;letter-spacing:.08em;color:#fff;text-shadow:0 0 18px rgba(255,200,90,.9),0 3px 0 #b3261e;opacity:0;pointer-events:none;white-space:nowrap;z-index:3}
+.sb-pop.miss{text-shadow:0 0 14px rgba(160,190,210,.9),0 3px 0 #33454f}
+.sb-pop.go{animation:sbcap 1.3s ease forwards}
+@keyframes sbcap{0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}18%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}70%{opacity:1}100%{opacity:0;transform:translate(-50%,-62%) scale(1)}}
+.sb-turn{position:absolute;left:50%;top:16%;transform:translate(-50%,-50%);padding:10px 30px;border-radius:999px;background:rgba(12,19,25,.88);border:1px solid rgba(217,168,70,.75);color:#f3d79a;font-size:22px;font-weight:800;letter-spacing:.12em;opacity:0;pointer-events:none;z-index:4;white-space:nowrap}
+.sb-turn.foe{color:#ffb3a8;border-color:rgba(255,120,100,.75)}
+.sb-turn.go{animation:sbcap 1.25s ease forwards}
+.vn-stage.hit .sb-wrap{animation:sbhit .45s ease}
+@keyframes sbhit{0%,100%{transform:translateX(0)}25%{transform:translateX(12px)}50%{transform:translateX(-9px)}75%{transform:translateX(5px)}}
+.vn-stage.broken .sb-cloth{opacity:.12;transition:opacity .6s}
+.vn-stage.broken .sb-fig{animation:sbstag 1.8s ease-in-out infinite}
+@keyframes sbstag{0%,100%{transform:rotate(0)}50%{transform:rotate(-2.5deg) translateY(5px)}}
+.vn-stage.lunge .sb-wrap{animation:sblunge .7s ease}
+@keyframes sblunge{0%,100%{transform:scale(1)}45%{transform:scale(1.1) translateX(-22px)}}
+.vn-stage.gone .sb-guard,.vn-stage.gone .sb-lab{opacity:0;filter:blur(12px);transform:translateY(-26px) scale(1.06);transition:opacity 1.5s ease,filter 1.5s ease,transform 1.5s ease}
+.vn-stage.gone .sb-hud{opacity:.35;transition:opacity 1s}
+.sb-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.vn-opt.sb-card{display:grid;grid-template-columns:52px minmax(0,1fr);gap:2px 10px;align-items:center;padding:8px 10px}
+.sb-card .sb-ph{grid-row:1/3;width:52px;height:52px;border-radius:10px;overflow:hidden;background:#24323b;display:grid;place-items:center;color:#f3d79a;font-weight:800;font-size:22px}
+.sb-card .sb-ph img{width:100%;height:100%;object-fit:cover}
+.sb-card .sb-cn{font-weight:700}
+.sb-card .sb-cs{font-size:13px;color:#c9d4da;line-height:1.5}
+.sb-do{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.sb-do label{display:flex;align-items:center;gap:6px;font-size:16px}
+.sb-do input{width:96px;padding:6px 8px;border-radius:8px;border:1px solid rgba(217,168,70,.75);background:#0e171d;color:#fff;font:inherit;font-size:17px}
+.sb-go{border:1px solid #d9a846;background:#d9a846;color:#1a1408;border-radius:10px;padding:7px 20px;font:inherit;font-weight:800;cursor:pointer}
+.sb-miss{color:#ffb3a8;font-weight:700}
+.vn.choosing .vn-ctl span,.vn.waiting .vn-ctl span{visibility:hidden}   /* 要你选、要你点守卫时，不显示“点一下继续” */
+@media (max-width:900px){.vn-stage{width:calc(100% - 32px);right:16px}}
+@media (prefers-reduced-motion:reduce){.sb-fig,.sb-armL,.vn-stage.broken .sb-fig{animation:none}}
+
+.vn-board .m{color:#566874}
+.vn-board .eb{font-size:12px;letter-spacing:.12em;color:#8a5d0c;font-weight:700;margin:0}
+.vn-board .introblk{border:2px solid #d9a846;border-radius:10px;padding:10px 12px;margin-top:8px;background:#fffaf0;animation:vnfade .4s ease}
+.vn-board .mate{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;align-items:start;margin-top:6px}
+.vn-board .mate .ph{width:88px;height:88px;border-radius:10px;background:#f6e2df;display:grid;place-items:center;font-size:40px;color:#a83a34;overflow:hidden;font-family:var(--f-display)}
+.vn-board .mate .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.gc.t-team .face.img{height:120px}.gc.t-team .face.img img{object-position:50% 56%}
+.vn-gear{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,9,12,.55);z-index:2}
+.vn-gear .gcard{width:min(440px,calc(100% - 40px));box-sizing:border-box;max-height:calc(100% - 40px);overflow:auto;background:#f6f2e8;color:#1d2a33;border-radius:16px;padding:20px 22px;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:gearin .5s cubic-bezier(.2,1.4,.4,1);border:3px solid #d9a846}
+@keyframes gearin{from{transform:scale(.6) rotate(-6deg);opacity:0}to{transform:none;opacity:1}}
+.vn-gear .gh{font-size:13px;letter-spacing:.24em;color:#8a5d0c;font-weight:700;margin:0}
+.vn-gear .gn{font-family:var(--f-display);font-size:30px;margin:4px 0 8px}
+.vn-gear .gl{font-size:15px;line-height:1.8;margin:6px 0 0}
+.vn-gear .gl b{color:#8a5d0c;margin-right:6px}
+.cardrow{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:6px 8px}
+.cardrow.done{border-color:var(--ok)}
+.cr-name{font-size:13px}
+.cr-acts{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.chipbtn{font:inherit;font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.chipbtn:hover{border-color:var(--brass)}
+.chipbtn.learn{background:var(--brass);border-color:var(--brass);color:var(--on-brass)}
+.chipbtn.done{color:var(--ok);border-color:var(--ok)}
+.chipbtn[disabled]{opacity:.45;cursor:not-allowed}
+.gc .face.img{padding:0;overflow:hidden;background-image:none}
+.gc .face.img img{width:100%;height:100%;object-fit:cover;object-position:50% 9%}
+</style>
+
+<header class="top"><div class="top-in">
+  <a class="brand" href="#title"><span class="seal">罗</span><span id="brand">罗盘指挥官</span></a>
+  <nav class="nav" id="nav" aria-label="页面"></nav>
+  <span class="spacer"></span>
+  <div class="xp" id="xp"></div>
+  <div class="seg" role="group" aria-label="外观"><span>外观</span><button type="button" data-act="look" data-arg="adv" id="look-adv">冒险</button><button type="button" data-act="look" data-arg="plain" id="look-plain">普通</button></div>
+  <div class="seg" role="group" aria-label="配乐"><span>配乐</span><button type="button" data-act="music" data-arg="on" id="music-on">开</button><button type="button" data-act="music" data-arg="off" id="music-off">关</button></div>
+  <div class="seg" role="group" aria-label="主题"><span>主题</span><button type="button" data-act="theme" data-arg="dark" id="theme-dark">深</button><button type="button" data-act="theme" data-arg="light" id="theme-light">浅</button></div>
+</div></header>
+<main class="wrap" id="main"></main>
+<div class="toast" id="toast" hidden></div>
+<div class="vn" id="vn" hidden><div class="vn-bg"></div><img class="vn-sprite off" alt=""><div class="vn-fx"></div><div class="vn-cap"></div><div class="vn-board" hidden></div><div class="vn-stage" hidden></div><div class="vn-gear" hidden></div><div class="vn-box"><span class="vn-name" hidden></span><div class="vn-text"></div><div class="vn-ctl"><span><b class="vn-seg"></b>点一下，或按空格继续</span><button type="button" id="vn-skip">跳过</button></div></div></div>
+<audio id="bgm" preload="none"></audio>
+
+<script>
+'use strict';
+// 数据：从学科罗盘 v1.18《不等式》页只读抽出（不含真题）。数学文字原样，游戏只加外壳。
+const D=__DATA__;
+// 剧情：Gemini 初稿，Claude 按规矩修订（原稿和改动见 gemini/回收/）。图：Gemini 生成，抠图压缩后内嵌。
+const VN=__VN__;
+const IMG=__IMG__;
+// 数学图：设定集/make_figs.py 按公式精确画的 SVG（不用 AI 画），剧本里用 {"图": 名字} 放上黑板。
+const FIG=__FIG__;
+const R=String.raw;
+const KEY='compass-adventure-mock-v4';
+
+/* ===== 两种外观：同一套数据，只换叫法 ===== */
+const LOOKS={
+  adv:{brand:'罗盘指挥官',map:'世界地图',deck:'牌组',garden:'菜园',train:'训练场',notes:'观察笔记',friends:'好友',record:'逆袭档案',
+       enemy:'敌人',team:'队友',gear:'装备',intel:'情报',win:'击退',slot:'？ 弱点还没看穿',est:['胜算大','胜算中','胜算小'],cert:'已认证',self:'指挥官亲自出手'},
+  plain:{brand:'学科罗盘 · 练习',map:'章节',deck:'工具箱',garden:'复习园',train:'找错练习',notes:'知识笔记',friends:'同学',record:'进步记录',
+       enemy:'题目',team:'思路',gear:'工具',intel:'题目特征',win:'做对了',slot:'？ 还没找到',est:['把握大','把握中','把握小'],cert:'已掌握',self:'直接用工具'}
+};
+const PH={event:['开战前','开始前',''],intent:['它要你做什么','这题要你做什么','凭·信号'],look:['看穿弱点','找特征','凭·信号'],gear:['带装备','选工具','凭'],
+  team:['派队友','选思路','想'],est:['估胜算','估把握','估'],do:['亲手结算','自己算','做'],result:['战果','结果','对']};
+const FIELD={look:'长什么样',do:'它做什么',why:'为什么这么做',fail:'什么时候不灵'};
+const REALMS=['见习','斥候','参谋','指挥官','统帅'];
+const PER=60;          // 每级经验
+const WATER=[1,2,4,7,15]; // 菜园浇水间隔（天）
+const NICK={'转化与化归':'雅娜','整体代换':'塔莉','构造':'法比娅','函数思想':'芙洛','方程思想':'芭兰','分类讨论':'迪薇','退化与边界':'奥菈','存在性检验':'瑟塔','数形结合':'伊露','特殊化':'苔丝','正难则反':'米拉','回到定义':'奎妲','放缩':'玛尔嘉'};
+// 招式＝找路里的起手。归属是暂定，只分了一眼能对上的六个。
+const MOVES={'转化与化归':['diff'],'整体代换':['whole'],'分类讨论':['classify'],'正难则反':['backward'],'存在性检验':['necessary'],'特殊化':['probe']};
+const ST=Object.fromEntries(D.strategies.map(s=>[s.name,s]));
+const AT=Object.fromEntries(D.atoms.map(a=>[a.id,a]));
+const CARD=Object.fromEntries(D.cards.map(c=>[c.n,c]));
+const MOVE=Object.fromEntries(D.moves.map(m=>[m.id,m]));
+const STN=Object.fromEntries([...D.stations.map(s=>({...s})),...D.groups.map(g=>({id:g.id,name:g.name,cards:g.cards,col:0,parents:[],group:true}))].map(s=>[s.id,s]));
+const CODE=Object.fromEntries(D.codes.map(c=>[c.id,c]));
+
+/* ===== 存档：只在这台设备的浏览器里 ===== */
+function blank(){return {look:'adv',dayOffset:0,unlockAll:false,xp:0,realm:0,realmStart:0,capDate:null,examTried:null,xpLog:[],xpOnce:{},
+  runs:[],notes:{},garden:{},cert:{},learned:{},team:{'转化与化归':'序幕','整体代换':'序幕'},rumors:[],train:{},seen:{},flags:{}};}
+function load(){try{const v=JSON.parse(localStorage.getItem(KEY)||'null');return v?Object.assign(blank(),v):blank();}catch(e){return blank();}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+let S=load();
+let L=LOOKS[S.look]||LOOKS.adv;
+let B=null,page='title',cur=null,ui={};
+
+/* ===== 小工具 ===== */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function m(tex){try{if(window.katex)return katex.renderToString(tex,{output:'mathml',throwOnError:false});}catch(e){}return '<code>'+esc(tex)+'</code>';}
+function tx(s){s=String(s??'').replace(/【([A-Z]+-[A-Z]\d+)】/g,(_,id)=>'【'+(AT[id]?AT[id].name:id)+'】');
+  return s.split(/(\$[^$]+\$)/g).map(p=>p.length>1&&p[0]==='$'&&p[p.length-1]==='$'?m(p.slice(1,-1)):esc(p).replace(/\n/g,'<br>')).join('');}
+function day(off=0){const d=new Date();d.setDate(d.getDate()+(S.dayOffset||0)+off);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+const today=()=>day(0);
+function addDays(ds,n){const [y,mo,dd]=ds.split('-').map(Number);const d=new Date(y,mo-1,dd+n);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function hash(s){let h=2166136261;for(const c of String(s)){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
+function pick(list,n,seed){return list.map(x=>[hash(seed+'|'+(x.id||x.name||x.text||(typeof x==='string'?x:JSON.stringify(x)))),x]).sort((a,b)=>a[0]-b[0]).slice(0,n).map(x=>x[1]);}
+const adv=()=>S.look==='adv';
+const nick=n=>NICK[n]||n;
+const tname=n=>n==='self'?L.self:n==='trap'?(adv()?'名录院的打法':'照名字直接套'):adv()?nick(n)+' · '+n:n;
+const tglyph=n=>n==='self'?'你':n==='trap'?'名':(NICK[n]||n)[0];
+function num(v){if(v==null)return null;v=String(v).replace(/[−–—]/g,'-').replace(/\s+/g,'').replace(/^[a-z]=/i,'');if(v==='')return null;
+  const f=v.match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);if(f)return Number(f[1])/Number(f[2]);const n=Number(v);return Number.isFinite(n)?n:null;}
+function toast(t){const el=$('#toast');el.textContent=t;el.hidden=false;clearTimeout(ui.tt);ui.tt=setTimeout(()=>{el.hidden=true;},2600);}
+
+/* ===== 经验、境界、突破 ===== */
+function lv(){const inR=S.xp-S.realmStart,level=Math.min(5,Math.floor(inR/PER)+1),full=inR>=PER*5;return {inR,level,full,pct:full?100:Math.round((inR%PER)/PER*100)};}
+function gain(n,why,once){
+  if(once){if(S.xpOnce[once])return 0;S.xpOnce[once]=today();}
+  const before=lv().full;S.xp+=n;S.xpLog.unshift({date:today(),n,why});S.xpLog=S.xpLog.slice(0,40);
+  if(!before&&lv().full&&!S.capDate)S.capDate=today();
+  save();toast('+'+n+' 经验 · '+why);return n;
+}
+function canBreak(){const v=lv();return v.full&&S.capDate&&today()>S.capDate&&S.examTried!==today();}
+
+/* ===== 观察笔记、菜园、认证、队友 ===== */
+function noteOf(id){return S.notes[id]||(S.notes[id]={seen:{},own:''});}
+function see(id,f){if(!id)return;const n=noteOf(id);if(!n.seen[f]){n.seen[f]=today();if(B&&page==='battle')B.newNotes.push([id,f]);save();}}
+function entry(id){if(ST[id]){const s=ST[id];return {type:'team',name:id,nick:NICK[id],glyph:NICK[id][1],note:{look:s.when,do:s.one,why:s.why,fail:s.boundary}};}
+  const a=AT[id];return {type:a.kind==='知识'?'gear':'intel',name:a.name,glyph:a.kind==='知识'?'凭':'察',note:{look:a.look,do:a.do,why:a.why,fail:a.fail}};}
+function plant(id){if(!AT[id]||S.garden[id])return;S.garden[id]={plant:today(),last:today(),w:0};if(B)B.planted.push(id);save();}
+function dueOf(g){return addDays(g.last,WATER[Math.min(g.w,WATER.length-1)]);}
+function certified(id){return !!S.cert[id]||((S.garden[id]||{}).w||0)>=2;}
+function recruit(n){if(S.team[n])return false;S.team[n]=today();gain(10,'招募 '+nick(n),'recruit-'+n);save();return true;}
+// 11-05 用户：“在学生使用人物之前就得介绍了，别迟迟不介绍”。所以战斗里只列已经入队（介绍过）的队友；自己上、名录打法不算人。
+function canUse(w){return w==='self'||w==='trap'||!!S.team[w];}
+function usableTeam(list){const t=list.filter(o=>canUse(o.who));if(!t.some(o=>o.ok===true))console.warn('这一关能派的人都还没入队',list.map(o=>o.who));return t.some(o=>o.ok===true)?t:list;}   // 后一种情况不该出现，测试会查
+function cleared(key){return S.runs.some(r=>r.key===key&&r.mode!=='sweep');}
+function lastRun(key){const rs=S.runs.filter(r=>r.key===key&&r.mode!=='sweep');return rs[rs.length-1]||null;}
+
+/* ===== 关卡模板（序章、出题对决、突破考核共用） ===== */
+const TPL={A:{name:'乘积守卫',plain:'积是定值'},B:{name:'披外衣的守卫',plain:'先换元再用'},C:{name:'翻面守卫',plain:'负数求最大'},D:{name:'带系数的守卫',plain:'系数不同'}};
+function ivA(k){return [{text:'分母是 $x-1$',ok:false,fb:'再看一眼：这题分母就是 $x$，没有 $x-1$。'},
+  {text:'两项相加，一乘 $x$ 就消掉',ok:true,atom:'I-S2',weak:`乘积是定值：$${k}$`,got:`看穿了：两项乘起来是 $${k}$，是一个数。`},
+  {text:'有平方项 $x^2$',ok:false,fb:'题里没有 $x^2$。没看到的东西，不能当情报。'},
+  {text:'范围说 $x>0$',ok:true,atom:'I-K1',weak:'两项都是正数',got:'看穿了：$x>0$，所以两项都是正数。'}];}
+function teamDirect(k){return [{who:'self',ok:true,go:'冲上去了。最后这一下，你亲手算。',reasons:[[`两项都是正数，乘起来是定值 $${k}$`,true],['看到分式，就套公式',false,'看到分式不一定能套。先看：乘起来是不是一个数？'],['最快',false,'快不是理由。想想：装备的三条，这题满足了几条？']]},
+  {who:'整体代换',ok:'idle',fb:'能派，但白跑一趟：这题没有要打包的整体，换了还是它。'},
+  {who:'转化与化归',ok:'idle',fb:'能派，但白跑一趟：这题本来就是现成的样子，不用换个说法。'},
+  {who:'分类讨论',ok:'idle',fb:'用不上：$x>0$ 已经给定，没有要分的情况。'}];}
+function makeTpl(t,p){
+  const r=x=>Math.sqrt(x);
+  if(t==='A'){const k=p.k;return {t,p,name:TPL.A.name,q:`已知 $x>0$，求 $x+\\dfrac{${k}}{x}$ 的最小值。`,kind:'最小值',intel:ivA(k),
+    gear:[{atom:'I-K7',ok:false,fb:'作差是比两个式子谁大用的。这里只有一个式子，要找它最小是多少。'},
+      {atom:'I-K3',ok:true,checks:[['两项都是正数：$x>0$','ok'],[`乘起来是定值：$${k}$`,'ok'],[`两项能相等：$x=\\dfrac{${k}}{x}$ 有正数解`,'ok']],after:'三条都满足，装备可以直接用。'},
+      {atom:'I-K6',ok:'idle',fb:'先留着：算等号点时用得上。'}],
+    team:teamDirect(k),ans:[2*r(k),r(k)],labels:['最小值','取到时 x ='],
+    hints:[`两项都是正数，乘积是 $${k}$。`,`所以 $x+\\dfrac{${k}}{x}\\ge 2\\sqrt{${k}}$。`,`等号要 $x=\\dfrac{${k}}{x}$，再看 $x>0$。`]};}
+  if(t==='B'){const k=p.k,a=p.a;return {t,p,name:TPL.B.name,q:`已知 $x>${a}$，求 $x+\\dfrac{${k}}{x-${a}}$ 的最小值。`,kind:'最小值',
+    intel:[{text:'两项相加，一乘 $x$ 就消掉',ok:false,note:['I-S2','fail'],fb:`乘一下看看：$x\\cdot\\dfrac{${k}}{x-${a}}$，$x$ 没消掉。这正是它的伪装。`},
+      {text:`前面是 $x$，分母是 $x-${a}$`,ok:true,atom:'I-S5',weak:`前后差一个 $${a}$，不配套`,got:`看穿了：前面是 $x$，分母是 $x-${a}$，差一个 $${a}$。`},
+      {text:'有平方项 $x^2$',ok:false,fb:'题里没有 $x^2$。没看到的东西，不能当情报。'},
+      {text:`范围说 $x>${a}$`,ok:true,atom:'I-K1',weak:`$x-${a}$ 是正数`,got:`看穿了：$x>${a}$，所以 $x-${a}>0$。`}],
+    gear:[{atom:'I-K3',ok:true,checks:[[`两项都是正数：$x>${a}$`,'ok'],[`乘起来是定值？$x\\cdot\\dfrac{${k}}{x-${a}}$ 还带着 $x$`,'bad'],['两项能相等？先把样子变对，再看','unk']],after:'装备没拿错，只是敌人披着外衣，现在打不动。下一步：派个队友，先把外衣扒下来。'},
+      {atom:'I-K7',ok:false,fb:'作差是比两个式子谁大用的。这里只有一个式子，要找它最小是多少。'},
+      {atom:'I-K6',ok:'idle',fb:'先留着：算等号点时用得上。'}],
+    team:[{who:'trap',reasons:[[R`两项相加，就套 $a+b\ge 2\sqrt{ab}$`],['名录上就是这么写的']],fail:`$x+\\dfrac{${k}}{x-${a}}\\ge 2\\sqrt{\\dfrac{${k}x}{x-${a}}}$。右边还带着 $x$，不是一个数，这一招打空了。`},
+      {who:'整体代换',skill:'换元',ok:true,go:`令 $t=x-${a}$，前后配套了。接下来怎么算，你来。`,reasons:[[`把 $x-${a}$ 打包成 $t$，前后就配套了`,true],['换元能让式子变短',false,'变短不是目的。想想：换完以后，前后能不能配套？']]},
+      {who:'构造',skill:'凑项',ok:true,go:`把 $x$ 写成 $(x-${a})+${a}$，前后配套了。接下来怎么算，你来。`,reasons:[[`把 $x$ 写成 $(x-${a})+${a}$，前后就配套了`,true],['多加一项总没错',false,'随手加项会改掉原式。要加得有目的，加了还要减回去。']]},
+      {who:'分类讨论',ok:'idle',fb:`用不上：$x>${a}$ 已经给定。`}],
+    ans:[2*r(k)+a,a+r(k)],labels:['最小值','取到时 x ='],
+    hints:[`令 $t=x-${a}$。因为 $x>${a}$，所以 $t>0$，$x=t+${a}$。`,`原式 $=t+\\dfrac{${k}}{t}+${a}$。`,`$t+\\dfrac{${k}}{t}\\ge 2\\sqrt{${k}}$，再加上那个 $${a}$。`,`等号要 $t=\\dfrac{${k}}{t}$，算出 $t$，再换回 $x$。`]};}
+  if(t==='C'){const k=p.k;return {t,p,name:TPL.C.name,q:`已知 $x<0$，求 $x+\\dfrac{${k}}{x}$ 的最大值。`,kind:'最大值',
+    intel:[{text:'两项都是正数',ok:false,fb:'看范围：$x<0$，两项都是负的。很多人在这里看走眼。'},
+      {text:'范围说 $x<0$',ok:true,atom:'I-K1',weak:'两项都是负数',got:`看穿了：$x<0$，$x$ 和 $\\dfrac{${k}}{x}$ 都是负数。`},
+      {text:'两项相加，一乘 $x$ 就消掉',ok:true,atom:'I-S2',weak:`乘积是定值：$${k}$`,got:`看穿了：乘起来还是 $${k}$。`}],
+    gear:[{atom:'I-K6',ok:'idle',fb:'先留着：算等号点时用得上。'},
+      {atom:'I-K3',ok:true,checks:[['两项都是正数？$x<0$，两项都是负的','bad'],[`乘起来是定值：$${k}$`,'ok'],['两项能相等？翻成正的再看','unk']],after:'装备的第一条没满足，直接用会反弹。下一步：派个能处理负数的队友。'},
+      {atom:'I-K7',ok:false,fb:'作差是比两个式子谁大用的。这里只有一个式子，要找它最大是多少。'}],
+    team:[{who:'trap',reasons:[['两项相加，就套公式'],['昨天就是这么赢的']],fail:'可 $x<0$，两项都是负的，装备的第一条没满足，攻击反弹。'},
+      {who:'转化与化归',skill:'提负号',ok:true,go:`先看 $-x$ 和 $-\\dfrac{${k}}{x}$，两项都翻成正的了。接下来怎么算，你来。`,reasons:[['两项都是负的，先翻成正的',true],['负号看着碍眼',false,'不是因为碍眼。想想：装备要求两项是什么数？']]},
+      {who:'整体代换',ok:'idle',fb:'能派，但白跑一趟：这题没有要打包的整体。'}],
+    ans:[-2*r(k),-r(k)],labels:['最大值','取到时 x ='],
+    hints:[`$-x>0$，$-\\dfrac{${k}}{x}>0$，两项都是正数。`,`$(-x)+\\left(-\\dfrac{${k}}{x}\\right)\\ge 2\\sqrt{${k}}$。`,'两边乘 $-1$，不等号翻过来。',`等号要 $-x=-\\dfrac{${k}}{x}$，再看 $x<0$。`]};}
+  if(t==='D'){const mm=p.m,n=p.n,k=mm*n*n,pr=mm*k;return {t,p,name:TPL.D.name,q:`已知 $x>0$，求 $${mm}x+\\dfrac{${k}}{x}$ 的最小值。`,kind:'最小值',
+    intel:[{text:'系数不一样，就不能用',ok:false,fb:`系数不碍事：$${mm}x\\cdot\\dfrac{${k}}{x}=${pr}$，乘起来照样是一个数。`},
+      {text:'两项相加，一乘 $x$ 就消掉',ok:true,atom:'I-S2',weak:`乘积是定值：$${pr}$`,got:`看穿了：$${mm}x\\cdot\\dfrac{${k}}{x}=${pr}$。`},
+      {text:'范围说 $x>0$',ok:true,atom:'I-K1',weak:'两项都是正数',got:'看穿了：两项都是正数。'}],
+    gear:[{atom:'I-K3',ok:true,checks:[['两项都是正数：$x>0$','ok'],[`乘起来是定值：$${pr}$`,'ok'],[`两项能相等：$${mm}x=\\dfrac{${k}}{x}$ 有正数解`,'ok']],after:'三条都满足，装备可以直接用。'},
+      {atom:'I-K7',ok:false,fb:'作差是比两个式子谁大用的。这里只有一个式子。'},{atom:'I-K6',ok:'idle',fb:'先留着：算等号点时用得上。'}],
+    team:teamDirect(pr),ans:[2*mm*n,n],labels:['最小值','取到时 x ='],
+    hints:[`两项都是正数，乘积是 $${pr}$。`,`所以 $${mm}x+\\dfrac{${k}}{x}\\ge 2\\sqrt{${pr}}$。`,`等号要 $${mm}x=\\dfrac{${k}}{x}$，再看 $x>0$。`]};}
+}
+function validTpl(t,p){const sq=k=>Number.isInteger(Math.sqrt(k));
+  if(t==='A'||t==='C')return Number.isInteger(p.k)&&p.k>0&&p.k<=400&&sq(p.k);
+  if(t==='B')return Number.isInteger(p.k)&&p.k>0&&p.k<=400&&sq(p.k)&&Number.isInteger(p.a)&&p.a>=1&&p.a<=20;
+  if(t==='D')return Number.isInteger(p.m)&&p.m>=2&&p.m<=9&&Number.isInteger(p.n)&&p.n>=1&&p.n<=9;return false;}
+
+/* ===== 剧情（只在冒险外观；只在打之前、打完以后） ===== */
+const RIVAL='诺曼';
+const STORY={
+  prologue:[['narr','名录院。墙上挂满了题型的名字。'],['rival','见习指挥官又在看题。看了半天，一个名字都没叫出来。'],
+    ['narr','名录院不留看得慢的人。今天起，你被逐出了名录院。'],['narr','你流落到不等式原野的边上。这里雾很大，雾里的东西，还没人看懂。'],
+    ['转化与化归','你也是被赶出来的？我也是。他们说我那几招太土。'],['整体代换','我叫塔莉，他们嫌我只会给东西改名字。……你刚才在看题，对吧？我们正缺一个肯看的人。']],
+  p1in:[['整体代换','原野的第一个守卫。指挥官，先看清它长什么样，再决定派谁。']],
+  p1out:[['转化与化归','看吧，这种守卫，看清了就好打。'],['整体代换','下一个……听说长得和它很像。']],
+  p2in:[['rival','哦，被赶出去的那个。这个守卫我认识，名录第 7 页。我直接上。'],['转化与化归','别管他。指挥官，你自己看。']],
+  p2out:[['rival','……右边怎么还带着 x？名录上明明……'],['整体代换','它只是换了件外衣。看穿了，还是老对手。'],['构造','凑项也好，换元也好，你是先看清了才出手的。我跟你走。'],['narr','迷雾散开了一角。不等式原野露出四条路。']],
+  p3in:[['转化与化归','隔了一天，它换了装束回来了。这回两项都是负的。']],
+  p3out:[['转化与化归','基本不等式，今天起正式进你的牌组。'],['整体代换','不是因为你记住了它的名字。是它换了样子，你还认得它。']],
+  bossIn:[['narr','原野深处，一个守卫分出了三个影子。'],['rival','这个你也想看？名录上可没有它。']],
+  bossOut:[['rival','……你到底在看什么？'],['转化与化归','在看它在做什么。'],['narr','原野的迷雾散了。远处是函数森林。']],
+  recruit:'你看得见我能做什么？那我跟你走。',
+  breakthrough:[['narr','名录院不会给你这个称号。是你自己看出来的。']]
+};
+
+/* ===== 视觉小说播放器（只在冒险外观） ===== */
+const BGMAP={'名录院大厅':'hall','原野营地':'camp','雾中小路':'path','遗迹':'ruins','领主之地':'boss','函数森林入口':'forest',
+  '集市':'market','河边':'river','菜园':'garden','溪上木桥':'bridge','遗迹深处':'deep'};
+// 立绘：11-05 起全员 14 人 62 张（GPT · OpenAI 图像生成，只换脸、身体不动）。没标表情、或标了清单外的表情，就用“平静”。
+const SPRITE={'转化与化归':'yana','整体代换':'tally','构造':'fabia','rival':'norman','方程思想':'bala','特殊化':'tess','数形结合':'ilu',
+  '存在性检验':'certa','函数思想':'flo','放缩':'marga','分类讨论':'divi','退化与边界':'ora','回到定义':'quidda','正难则反':'mira'};
+const FACES={'转化与化归':['平静','微笑','思考','惊讶','得意','动摇'],'整体代换':['平静','大笑','思考','惊讶','着急','低落'],
+  '构造':['平静','微笑','思考','惊讶','害羞'],'rival':['平静','不屑','动摇','惊讶','不服'],
+  '方程思想':['平静','微笑','惊讶','皱眉'],'特殊化':['平静','微笑','惊讶','兴奋'],'数形结合':['平静','微笑','惊讶','专注'],
+  '存在性检验':['平静','微笑','惊讶','怀疑'],'函数思想':['平静','微笑','惊讶','出神'],'放缩':['平静','微笑','惊讶','认真'],
+  '分类讨论':['平静','微笑','惊讶','大笑'],'退化与边界':['平静','微笑','惊讶','警觉'],'回到定义':['平静','微笑','惊讶','较真'],'正难则反':['平静','微笑','惊讶','坏笑']};
+function spriteOf(n,face){const k=SPRITE[n];if(!k)return null;return IMG[k+'-'+(FACES[n].includes(face)?face:'平静')]||null;}
+function portraitOf(n){const k=SPRITE[n];return k?IMG['ph-'+k]||null:null;}
+// 对话框名牌用每人的主色（设定集/立绘设计.md 总表）：[底色, 字色]
+const NAMECOL={'转化与化归':['#4d6e72','#f1f5f2'],'整体代换':['#e3922b','#241404'],'构造':['#a3412f','#fbeee8'],'rival':['#ecebf1','#17171c'],
+  '方程思想':['#34307a','#f0d48a'],'特殊化':['#f2c230','#2a2003'],'数形结合':['#8d6db3','#fbf6ff'],'存在性检验':['#55595f','#ffd77a'],
+  '函数思想':['#7cc7cc','#0f2d30'],'放缩':['#6b4230','#f6e8d2'],'分类讨论':['#5c9638','#f6fbef'],'退化与边界':['#1e2033','#d3d7e0'],
+  '回到定义':['#6e2a4a','#fbeaf2'],'正难则反':['#cf6680','#fff4f6']};
+function nameCol(nm,who){const c=adv()&&NAMECOL[who];nm.style.background=c?c[0]:'';nm.style.color=c?c[1]:'';nm.style.boxShadow=who==='rival'&&adv()?'0 0 0 1.5px #17171c inset':who==='退化与边界'&&adv()?'0 0 0 1.5px #aab0bc inset':'';}
+function quote(n){const q=VN._口头禅&&VN._口头禅[n];if(!q)return ST[n]?ST[n].one:'';S.qN=S.qN||{};const i=(S.qN[n]=(S.qN[n]||0)+1)-1;return q[i%q.length];}
+function trapLine(){S.trapN=(S.trapN||0)+1;return VN.trap[(S.trapN-1)%VN.trap.length];}
+let vnQ=[],vnDone=null,vnChoice=null,vnMusic=null;
+const MUSIC={'营地':'camp','战斗':'battle','领主':'boss','菜园':'garden','静音':'none'};
+function playScenes(keys,done){
+  if(!adv()){if(done)done(true);return;}
+  const q=[];keys.forEach(k=>{const sc=VN[k];if(!sc)return;S.seen['vn:'+k.split('@')[0]]=today();sc.forEach(seg=>seg.lines.forEach(x=>{if(!Array.isArray(x)){if(x.选择)q.push({pick:x,bg:seg.bg});return;}const [who,face,text,cond]=x;q.push(who==='入队'?{intro:text,cond}:{bg:seg.bg,who,face,text,cond});}));});
+  save();playQueue(q,done);
+}
+// 队列里的东西：台词 {who,face,text}；黑板 {board}/{boardAdd}；队友介绍 {intro}；获得装备 {gear}。
+// 普通外观只留讲解（teach）和黑板、装备卡，不放人物闲话（flavor）。
+function playQueue(items,done){
+  let q=items;if(!adv())q=items.filter(i=>!i.flavor).map(i=>i.who&&i.who!=='narr'&&!i.ep?Object.assign({},i,{who:'narr'}):i);
+  if(!q.length){if(done)done(true);return;}
+  vnQ=q.slice();vnDone=done||null;const v=$('#vn');v.hidden=false;v.classList.toggle('plain',!adv());document.documentElement.style.overflow='hidden';vnNext();
+}
+function vnNext(){
+  const v=$('#vn'),board=$('#vn .vn-board'),gearEl=$('#vn .vn-gear');gearEl.hidden=true;
+  const ops=$('#vn .vn-opts');if(ops)ops.hidden=true;v.classList.remove('choosing','waiting');
+  let l;
+  while((l=vnQ.shift())){
+    if(l.cond&&!flagOk(l.cond))continue;   // 条件台词：只在玩家做过某个选择时出现
+    if(l.stage){sbStage();continue;}
+    if(l.hud){sbHud(l.hud);continue;}
+    if(l.anim){sbAnim(l.anim);continue;}
+    if(l.run){l.run();continue;}
+    if(l.board!==undefined){board.innerHTML=l.board;board.hidden=false;v.classList.add('has-board');continue;}
+    if(l.boardAdd){board.querySelectorAll('.introblk').forEach(x=>x.remove());board.insertAdjacentHTML('beforeend',l.boardAdd);board.hidden=false;v.classList.add('has-board');board.scrollTop=board.scrollHeight;continue;}
+    if(l.clear){board.innerHTML='';board.hidden=true;v.classList.remove('has-board');continue;}
+    if(l.seg){$('#vn .vn-seg').textContent=adv()?l.seg:'';continue;}
+    if(l.music!==undefined){vnMusic=MUSIC[l.music]||null;updateMusic();continue;}
+    if(l.fx){if(adv())playFx(l.fx);continue;}
+    if(l.checkpoint){S.epPos=S.epPos||{};S.epPos[l.L]=l.checkpoint;save();capShow('进度已存：卡 '+l.card+' 讲完了');continue;}
+    if(l.intro){if(l.once&&S.seen['intro:'+l.intro]&&S.team[l.intro])continue;S.seen['intro:'+l.intro]=today();if(ST[l.intro])recruit(l.intro);board.insertAdjacentHTML('beforeend','<div class="introblk">'+introHTML(l.intro)+'</div>');board.hidden=false;v.classList.add('has-board');board.scrollTop=board.scrollHeight;save();continue;}
+    if(l.gear){const again=!!(S.garden[l.gear]||S.cert[l.gear]);plant(l.gear);see(l.gear,'look');see(l.gear,'do');see(l.gear,'why');gearEl.innerHTML=gearHTML(l.gear,again);gearEl.hidden=false;save();return;}
+    break;
+  }
+  if(!l){vnClose(true);return;}
+  if(l.choice){showChoice(l);return;}
+  if(l.pick){showPick(l);return;}
+  if(l.wait){sbWait(l);return;}
+  const bg=$('#vn .vn-bg'),sp=$('#vn .vn-sprite'),nm=$('#vn .vn-name'),t=$('#vn .vn-text');
+  if(l.bg&&bg.dataset.bg!==l.bg){bg.dataset.bg=l.bg;$('#vn .vn-fx').className='vn-fx';bg.style.backgroundImage=adv()?`url(${IMG['bg-'+BGMAP[l.bg]]})`:'none';bg.classList.remove('in');void bg.offsetWidth;bg.classList.add('in');updateMusic();}
+  const src=adv()?spriteOf(l.who,l.face):null;
+  if(src){if(sp.getAttribute('src')!==src)sp.setAttribute('src',src);sp.classList.remove('off');}else sp.classList.add('off');
+  nameCol(nm,l.who);
+  if(l.who==='narr'){nm.hidden=true;t.className='vn-text narr';}else{nm.hidden=false;nm.textContent=l.who==='rival'?(adv()?RIVAL+' · 名录院':'照名字直接套'):(adv()?nick(l.who)+' · '+l.who:l.who);t.className='vn-text';}
+  t.innerHTML=tx(l.text);}
+function showChoice(l){$('#vn').classList.add('choosing');{const bd=$('#vn .vn-board');bd.scrollTop=bd.scrollHeight;}   // 黑板缩短后，仍让最新一行（常是图）露出来
+  const nm=$('#vn .vn-name'),t=$('#vn .vn-text'),box=$('#vn .vn-box'),tried=l.tried||[];vnChoice=l;
+  nameCol(nm,'');nm.hidden=false;nm.textContent=adv()?'指挥官，你来选':'选一选';t.className='vn-text';t.innerHTML=tx(l.choice.提问);
+  let o=box.querySelector('.vn-opts');if(!o){o=document.createElement('div');o.className='vn-opts';box.insertBefore(o,box.querySelector('.vn-ctl'));}
+  o.innerHTML=l.choice.选项.map((x,i)=>`<button type="button" class="vn-opt" data-i="${i}"${tried.includes(i)?' disabled':''}>${tried.includes(i)?'✗ ':(i+1)+'. '}${tx(x.答)}</button>`).join('');o.hidden=false;}
+function pickChoice(i){const l=vnChoice;if(!l||(l.tried||[]).includes(i))return;
+  if(l.pick){const o=l.pick.选项[i];if(!o)return;vnChoice=null;if(o.记){Object.assign(F(),o.记);save();}if(o.提示)toast(o.提示);   // 剧情选项：没有对错，记下来，后面的台词跟着变
+    const q=[...sbLines(o.回应,l.bg),...(o.then||[])];if(o.retry)q.push(Object.assign({},l,{tried:[...(l.tried||[]),i]}));vnQ.unshift(...q);vnNext();return;}
+  if(!l.choice)return;const o=l.choice.选项[i];if(!o)return;vnChoice=null;if(SBS&&!o.对){const k=l.at==='reason'?'reason':l.at==='gear'?'gear':'do';SBS.wrong[k]++;}
+  S.epPick=S.epPick||{};const k=l.L+'#'+l.at;if(!(k in S.epPick))S.epPick[k]=!!o.对;save();   // 第一次选对没有，以后给逆袭档案用
+  const [who,face,text]=o.回应,line={bg:l.bg,who,face,text,ep:true};
+  if(o.对)vnQ.unshift(line);else vnQ.unshift(line,Object.assign({},l,{tried:[...(l.tried||[]),i]}));
+  vnNext();}
+/* ===== 剧情战斗（11-06 样板：序章第 2 关）=====
+   用户定的方向：弱点击破 + 卡牌回合 + galgame 选项；人物按人设判断，主角派人；装备是卡牌，是额外的东西。
+   剧本在 剧本/战斗-*.json（build.py 打包进 SB）。流程：开场剧情（对话选项）→ 看穿（点守卫身上的地方）→
+   作战会议（队友各说各的）→ 出牌：派对弱点的队友＝击破外衣；直接出装备卡＝打空、守卫反击 →
+   守卫破韧一回合 → 收尾：选刀、刀上三句、估把握、亲手结算 → 收尾剧情照你的选择变。 */
+const SB=__SB__;
+let SBS=null,sbN=0;
+function F(){return S.flags||(S.flags={});}
+function flagOk(c){if(!c)return true;return String(c).split('&').every(p=>{p=p.trim();if(!p)return true;if(p[0]==='!')return !F()[p.slice(1)];const i=p.indexOf('=');return i<0?!!F()[p]:String(F()[p.slice(0,i)])===p.slice(i+1);});}
+function sbLines(arr,bg){const q=[];(arr||[]).forEach(x=>{
+  if(Array.isArray(x)){const [who,face,text,cond]=x;q.push(who==='入队'?{intro:text,cond,once:true}:{bg,who,face,text,cond,ep:true});}
+  else if(x.选择)q.push({pick:x,bg});
+  else if(x.入队)q.push({intro:x.入队,once:true});
+  else if(x.演出){q.push({fx:x.演出});if(x.演出==='迷雾散开'&&SBS)q.push({anim:'散'});}
+  else if(x.提问)q.push({choice:x,bg,L:SBS?SBS.key:'sb',at:'q'+(sbN++)});});
+  return q;}
+const sbBoard=lines=>({boardAdd:(lines||[]).map(x=>`<div class="bline">${tx(x)}</div>`).join('')});
+function sbStart(key){const d=SB[key],bg=d.背景;sbN=0;
+  Object.keys(F()).forEach(k=>{if(k.startsWith(key+'_')&&k!==key+'_weak')delete F()[k];});   // 重打一遍，这一关的选择重新记
+  SBS={key,d,found:[],wrong:{intel:0,gear:0,team:0,reason:0,do:0},t0:Date.now(),sent:null,won:false};
+  const q=[{music:'战斗'},...sbLines(d.开场,bg),{board:`<p class="eb">敌人 · ${esc(d.名)}</p><div class="q">${tx(d.题)}</div>`},{stage:true},
+    ...sbLines(d.看穿.开场,bg),{wait:'look',bg},...sbLines(d.看穿.找齐,bg),{hud:{turn:'你的回合'}},
+    ...sbLines(d.会议.开场,bg),...sbLines(d.会议.发言,bg),sbMeet()];
+  playQueue(q,()=>{SBS=null;go('map');});}
+function sbMeet(){const d=SBS.d;return {pick:{选择:d.会议.提问,cards:true,选项:d.出牌.map(c=>({答:c.名,说明:c.说明,牌:c.牌,记:c.记,提示:c.提示,retry:!c.弱点,then:c.弱点?sbHit(c):sbMiss(c)}))},bg:d.背景};}
+function sbMiss(c){const d=SBS.d,bg=d.背景;return [{run:()=>{SBS.wrong.team++;}},...sbLines(c.出手,bg),{anim:'弹回'},sbBoard(c.黑板),...sbLines(c.打空,bg),
+  {hud:{turn:'守卫的回合',foe:true}},{anim:'反击'},...sbLines(d.守卫回合.反击,bg),{hud:{turn:'你的回合'}}];}
+function sbHit(c){const d=SBS.d,bg=d.背景,f=d.收尾牌;
+  return [{run:()=>{SBS.sent=c;}},...sbLines(c.出手,bg),{anim:c.动画},sbBoard(c.黑板),{anim:'击破'},...sbLines(c.击破,bg),
+    {choice:c.理由,bg,L:SBS.key,at:'reason'},...sbLines(c.没被派,bg),
+    {hud:{turn:'守卫的回合',foe:true}},...sbLines(d.守卫回合.破韧,bg),{hud:{turn:'你的回合'}},...sbLines(f.开场,bg),
+    {choice:f.选刀,bg,L:SBS.key,at:'gear'},{gear:'I-K3'},
+    ...(c.三查||[]).map((x,i)=>({choice:x,bg,L:SBS.key,at:'chk'+i})),
+    {pick:f.估,bg},{wait:'do',bg,spec:f.做,hints:c.结算提示||{}}];}
+function sbWin(){const d=SBS.d,bg=d.背景,c=SBS.sent;return [sbBoard(c.结算黑板),{anim:'收刀'},...sbLines(d.收尾牌.击倒,bg),{run:sbFinish},...sbLines(d.收尾,bg)];}
+function sbFinish(){const s=SBS;if(!s||s.won)return;s.won=true;const key=s.key,first=!cleared(key),w=s.wrong,clean=Object.values(w).every(n=>n===0);
+  S.runs.push({key,date:today(),wrong:Object.assign({},w),hints:0,est:['大','中','小'].indexOf(F()[key+'_est']),secs:Math.round((Date.now()-s.t0)/1000),mode:'story'});
+  F()[key+'_weak']=1;plant('I-K3');see('I-K3','look');see('I-K3','do');
+  if(first)gain(40,'首次通关 · '+s.d.名);if(clean)gain(15,'干净通关','clean-'+key);save();}
+const sbWeakStyle=n=>{const c=NAMECOL[n];return c?`background:${c[0]};color:${c[1]}`:'';};
+function guardSVG(){return `<svg class="sb-guard" viewBox="0 0 420 380" role="img" aria-label="雾做的守卫，两只手，一只缠着布">
+<defs><filter id="sbfog" x="-40%" y="-40%" width="180%" height="180%"><feTurbulence type="fractalNoise" baseFrequency=".013 .021" numOctaves="3" seed="7"><animate attributeName="baseFrequency" dur="10s" values=".013 .021;.018 .028;.013 .021" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="26" xChannelSelector="R" yChannelSelector="G"/><feGaussianBlur stdDeviation="1.1"/></filter>
+<radialGradient id="sbbody" cx="50%" cy="42%" r="62%"><stop offset="0" stop-color="#f4f7f8" stop-opacity=".96"/><stop offset=".55" stop-color="#c3cfd4" stop-opacity=".84"/><stop offset="1" stop-color="#76878f" stop-opacity="0"/></radialGradient>
+<linearGradient id="sbcloth" x1="0" x2="1"><stop offset="0" stop-color="#8a6a48"/><stop offset="1" stop-color="#b8956a"/></linearGradient></defs>
+<g class="sb-ground"><ellipse cx="210" cy="352" rx="190" ry="16" fill="rgba(240,205,120,.10)"/><line x1="40" y1="352" x2="390" y2="352" stroke="#f0cd78" stroke-width="2" stroke-dasharray="6 7" opacity=".8"/><circle cx="58" cy="352" r="5" fill="none" stroke="#f0cd78" stroke-width="2"/></g>
+<g class="sb-fig"><g filter="url(#sbfog)">
+<path d="M210 92c62 0 96 52 94 118-2 64-40 112-94 114-56-2-94-50-96-114-2-66 34-118 96-118z" fill="url(#sbbody)"/>
+<path d="M194 100c-5-18 5-32 16-32s20 15 11 32" fill="#dfe6e9" opacity=".9"/>
+<g class="sb-armL"><path d="M296 196c32-10 60-18 96-24" stroke="#e7edef" stroke-width="22" stroke-linecap="round" fill="none" opacity=".93"/><path d="M388 160l18-12M392 172l22-2M388 184l16 12" stroke="#e7edef" stroke-width="8" stroke-linecap="round"/></g>
+<path d="M120 214c-18 6-34 12-50 18" stroke="#e7edef" stroke-width="24" stroke-linecap="round" fill="none" opacity=".93"/></g>
+<g class="sb-cloth"><path d="M124 201l12 25M110 206l12 26M96 211l11 26M82 217l10 24" stroke="url(#sbcloth)" stroke-width="9" stroke-linecap="round"/><path d="M76 232c-6 10-4 22 2 30" stroke="#9b7a55" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+<g class="sb-eyes"><circle cx="186" cy="170" r="7" fill="#f5c868"/><circle cx="234" cy="170" r="7" fill="#f5c868"/></g></g>
+<g><path class="sb-hot" data-sb="part" data-i="long" d="M288 150h132v66h-132z"/><path class="sb-hot" data-sb="part" data-i="wrap" d="M50 186h92v80h-92z"/>
+<path class="sb-hot" data-sb="part" data-i="ground" d="M30 336h360v32h-360z"/><path class="sb-hot" data-sb="part" data-i="horn" d="M178 54h60v54h-60z"/></g></svg>`;}
+function sbStage(){const st=$('#vn .vn-stage'),d=SBS.d,g=d.守卫,known=!!F()[SBS.key+'_weak'];
+  st.className='vn-stage';
+  st.innerHTML=`<div class="sb-hud"><b>${esc(d.名)}</b><span>外衣</span><span class="sb-bar"><i></i></span><span class="sb-weak" title="弱点">${g.弱点.map(n=>`<i data-w="${esc(n)}"${known?` class="on" style="${sbWeakStyle(n)}"`:''}>${known?esc(tglyph(n)):'？'}</i>`).join('')}</span><span class="sb-status"></span></div>
+    <div class="sb-wrap">${guardSVG()}${g.部位.filter(p=>p.标).map(p=>`<div class="sb-lab" data-i="${p.id}" style="left:${p.位[0]}%;top:${p.位[1]}%">${tx(p.标)}</div>`).join('')}<div class="sb-pop"></div></div><div class="sb-turn"></div>`;
+  st.hidden=false;$('#vn').classList.add('battle');}
+function sbHud(h){const t=$('#vn .sb-turn');if(t&&h.turn){t.textContent=h.turn;t.className='sb-turn'+(h.foe?' foe':'');void t.offsetWidth;t.classList.add('go');}}
+function sbPop(text,miss){const p=$('#vn .sb-pop');if(!p)return;p.textContent=text;p.className='sb-pop'+(miss?' miss':'');void p.offsetWidth;p.classList.add('go');}
+function sbAnim(a){const st=$('#vn .vn-stage');if(!st||st.hidden)return;const w=st.querySelector('.sb-wrap');
+  const lab=id=>st.querySelector(`.sb-lab[data-i="${id}"]`);
+  const fly=(cls,html,id,back)=>{const to=lab(id),el=document.createElement('div');el.className='sb-fly '+cls;el.innerHTML=html||'';w.appendChild(el);void el.offsetWidth;
+    el.style.left=to?to.style.left:'50%';el.style.top=to?to.style.top:'45%';el.classList.add('go');
+    if(back)setTimeout(()=>{el.style.left='-30%';el.style.top='75%';el.classList.remove('go');},560);setTimeout(()=>el.remove(),back?1250:850);};
+  const shake=()=>{st.classList.remove('hit');void st.offsetWidth;st.classList.add('hit');};
+  if(a==='签'){fly('tag',tx('$t$'),'wrap');setTimeout(()=>{const l=lab('wrap');if(l)l.classList.add('tagged');shake();},560);}
+  else if(a==='板'){fly('plank','','long');setTimeout(()=>{const l=lab('long');if(l){l.innerHTML=tx('$(x-1)+1$');l.classList.add('tagged');}shake();},560);}
+  else if(a==='弹回'){fly('slash','','wrap',true);setTimeout(()=>{shake();sbPop('打空',true);},520);}
+  else if(a==='击破'){const c=SBS.sent,m=(c&&c.改标)||{};
+    setTimeout(()=>{st.querySelector('.sb-hud').classList.add('broken');st.classList.add('broken');sbPop('击破！');st.querySelector('.sb-status').textContent='破韧';
+      const wi=st.querySelector(`.sb-weak i[data-w="${c.牌}"]`);if(wi){wi.textContent=tglyph(c.牌);wi.classList.add('on');wi.setAttribute('style',sbWeakStyle(c.牌));}
+      const L0=lab('long');if(m.drop&&L0){const dr=document.createElement('div');dr.className='sb-lab drop';dr.style.left=L0.style.left;dr.style.top=L0.style.top;dr.innerHTML=tx(m.drop);w.appendChild(dr);void dr.offsetWidth;dr.style.left='64%';dr.style.top='86%';}   // 多出来的 1 掉到地上，收尾时还要加回来
+      ['long','wrap'].forEach(id=>{const l=lab(id);if(l&&m[id]){l.innerHTML=tx(m[id]);l.classList.remove('tagged','on');void l.offsetWidth;l.classList.add('on');}});},800);}   // 等出手的动画（0.56 秒）落地再击破
+  else if(a==='反击'){st.classList.remove('lunge');void st.offsetWidth;st.classList.add('lunge');playFx('雾气压近');}
+  else if(a==='收刀'){fly('slash','','wrap');setTimeout(shake,500);}
+  else if(a==='散'){st.classList.add('gone');}}
+function sbBox(){const box=$('#vn .vn-box');let o=box.querySelector('.vn-opts');if(!o){o=document.createElement('div');o.className='vn-opts';box.insertBefore(o,box.querySelector('.vn-ctl'));}return o;}
+function showPick(l){const v=$('#vn'),p=l.pick,tried=l.tried||[];v.classList.add('choosing');vnChoice=l;
+  const nm=$('#vn .vn-name'),t=$('#vn .vn-text');nameCol(nm,'');nm.hidden=false;nm.textContent=adv()?'指挥官，你来选':'选一选';t.className='vn-text';t.innerHTML=tx(p.选择);
+  if(p.cards)$('#vn .vn-sprite').classList.add('off');
+  const o=sbBox();
+  o.innerHTML=p.cards?`<div class="sb-cards">${p.选项.map((x,i)=>{const off=tried.includes(i),img=x.牌&&portraitOf(x.牌);return `<button type="button" class="vn-opt sb-card${off?' miss':''}" data-i="${i}"${off?' disabled':''}><span class="sb-ph">${img?`<img src="${img}" alt="">`:'刀'}</span><span class="sb-cn">${off?'✗ ':''}${tx(x.答)}</span><span class="sb-cs">${tx(x.说明||'')}</span></button>`;}).join('')}</div>`
+    :p.选项.map((x,i)=>`<button type="button" class="vn-opt" data-i="${i}"${tried.includes(i)?' disabled':''}>${i+1}. ${tx(x.答)}</button>`).join('');
+  o.hidden=false;}
+function sbWait(l){vnChoice=l;const v=$('#vn');v.classList.add('waiting');const nm=$('#vn .vn-name'),t=$('#vn .vn-text');
+  nameCol(nm,'');nm.hidden=false;nm.textContent=adv()?'指挥官':'你';t.className='vn-text';const o=sbBox();
+  if(l.wait==='look'){$('#vn .vn-sprite').classList.add('off');$('#vn .vn-stage').classList.add('looking');t.innerHTML=l.msg||tx(SBS.d.看穿.提示);o.hidden=true;}
+  else if(l.wait==='do'){v.classList.add('choosing');const sp=l.spec,vals=l.vals||{};t.innerHTML=l.msg||tx(sp.提问);
+    o.innerHTML=`<form class="sb-do" data-sbform="1">${sp.空.map(f=>`<label>${tx(f.名)} <input inputmode="decimal" autocomplete="off" data-sbin="${f.id}" value="${esc(vals[f.id]||'')}"></label>`).join('')}<button type="submit" class="sb-go">砍下去</button></form>`;o.hidden=false;
+    setTimeout(()=>{const i=o.querySelector('input');if(i&&!l.vals)i.focus();},40);}}
+function sbAct(a,i){const l=vnChoice;if(a!=='part'||!l||l.wait!=='look')return;const p=SBS.d.守卫.部位.find(x=>x.id===i),t=$('#vn .vn-text');if(!p)return;
+  if(!p.对){SBS.wrong.intel++;l.msg=`<span class="sb-miss">看走眼：</span>${tx(p.错)}`;t.innerHTML=l.msg;return;}
+  if(SBS.found.includes(i))return;SBS.found.push(i);const hot=$(`#vn .sb-hot[data-i="${i}"]`);if(hot)hot.classList.add('found');
+  const lb=$(`#vn .sb-lab[data-i="${i}"]`);if(lb)lb.classList.add('on');
+  const bd=$('#vn .vn-board');bd.insertAdjacentHTML('beforeend',`<div class="bline">看穿：${tx(p.看到)}</div>`);bd.scrollTop=bd.scrollHeight;
+  const left=SBS.d.守卫.部位.filter(x=>x.对&&!SBS.found.includes(x.id)).length;
+  if(left){l.msg=`看穿了：${tx(p.看到)}。<span class="m">还差 ${left} 处。</span>`;t.innerHTML=l.msg;return;}
+  vnChoice=null;$('#vn .vn-stage').classList.remove('looking');vnNext();}
+function sbDo(){const l=vnChoice;if(!l||l.wait!=='do')return;const sp=l.spec,vals={};let bad=null;
+  sp.空.forEach(f=>{const raw=(($(`#vn [data-sbin="${f.id}"]`)||{}).value||'').trim();vals[f.id]=raw;const v=Number(raw.replace(/[＝=\s]/g,''));if(!bad&&!(raw&&Math.abs(v-f.答)<1e-9))bad={f,raw,v};});
+  l.vals=vals;if(!bad){vnChoice=null;vnQ.unshift(...sbWin());vnNext();return;}
+  SBS.wrong.do++;const h=Object.assign({},(sp.提示||{})[bad.f.id]||{},(l.hints||{})[bad.f.id]||{});
+  l.msg=`<span class="sb-miss">还差一点：</span>${bad.raw?tx(h[String(bad.v)]||h._||'再算一遍。'):'先把这一格填上。'}`;sbWait(l);}
+function capShow(t){const c=$('#vn .vn-cap');c.textContent=t;c.classList.remove('go');void c.offsetWidth;c.classList.add('go');}
+function playFx(name){const v=$('#vn'),fx=$('#vn .vn-fx');
+  const k={'迷雾散开':'clear','雾气压近':'fog','震动':'shake','闪白':'flash'}[name]||'glow';
+  fx.className='vn-fx fx-'+(k==='shake'?'none':k);void fx.offsetWidth;fx.classList.add('go');
+  if(k==='shake'){v.classList.remove('shake');void v.offsetWidth;v.classList.add('shake');}
+  capShow('✦ '+name);}
+function vnClose(finished){const v=$('#vn');v.hidden=true;{const st=$('#vn .vn-stage');st.hidden=true;st.innerHTML='';st.className='vn-stage';v.classList.remove('battle');}vnChoice=null;v.classList.remove('choosing');vnMusic=null;v.classList.remove('shake');$('#vn .vn-fx').className='vn-fx';$('#vn .vn-seg').textContent='';{const o=$('#vn .vn-opts');if(o)o.hidden=true;}v.classList.remove('has-board');$('#vn .vn-board').hidden=true;$('#vn .vn-board').innerHTML='';$('#vn .vn-gear').hidden=true;
+  document.documentElement.style.overflow='';$('#vn .vn-bg').dataset.bg='';const d=vnDone;vnDone=null;vnQ=[];updateMusic();if(d)d(!!finished);}
+function introHTML(n){const s=ST[n],img=portraitOf(n)||spriteOf(n);
+  return `<p class="eb">${adv()?'新队友入队':'新思路'} · ${esc(s.group||'')}</p><div class="mate"><div class="ph">${img?`<img src="${img}" alt="">`:esc(tglyph(n))}</div>
+    <div><b style="font-size:20px">${esc(adv()?nick(n):n)}</b>${adv()?` <span class="m">${esc(n)}</span>`:''}<dl style="margin-top:6px"><dt>口头禅</dt><dd>${tx(s.one)}</dd><dt>派她</dt><dd>${tx(s.when)}</dd><dt>弱点</dt><dd>${tx(s.boundary)}</dd></dl></div></div>`;}
+function gearHTML(id,again){const a=AT[id],kn=a.kind==='知识';   // again：已经有了，这回是复习
+  return `<div class="gcard"><p class="gh">${again?(kn?(adv()?'复习装备':'复习工具'):(adv()?'复习情报':'复习识别')):kn?(adv()?'获得装备':'学会工具'):(adv()?'获得情报':'学会识别')}</p><div class="gn">${tx(a.name)}</div>
+    ${kn?`<p class="gl"><b>记住这一句</b>${tx(a.say)}</p>${a.why?`<p class="gl"><b>为什么</b>${tx(a.why)}</p>`:''}${a.fail?`<p class="gl"><b>什么时候不灵</b>${tx(a.fail)}</p>`:''}`
+      :`<p class="gl"><b>题里长这样</b>${tx(a.look)}</p><p class="gl"><b>认出来以后</b>${tx(a.do)}</p>${a.fail?`<p class="gl"><b>长得像但不是</b>${tx(a.fail)}</p>`:''}`}
+    <p class="gl" style="color:#566874;font-size:13px">${again?(adv()?'已经在牌组里了，点一下继续':'已经在工具箱里了，点一下继续'):adv()?'收进牌组，点一下继续':'记进工具箱，点一下继续'}</p></div>`;}
+
+/* ===== 学习：先学母题（剧情里讲），再打变式（正式游戏） ===== */
+function learned(id){return !!(S.learned&&S.learned[id]);}
+function cardDone(n){return S.runs.some(r=>r.mode!=='sweep'&&/^c\d+-\d+$/.test(r.key)&&parseInt(r.key.slice(1))===n);}
+function leadOf(n){const g=D.strategies.filter(s=>s.cards.includes(n)).map(s=>s.name);return g.find(x=>S.team[x])||g[0]||'转化与化归';}
+function stepAtoms(s){return [...String(s.can).matchAll(/【([A-Z]+-[A-Z]\d+)】/g)].map(m=>m[1]).filter(id=>AT[id]);}
+function learnCard(n){const c=CARD[n],lead=leadOf(n),bg='雾中小路',q=[],shown=new Set();
+  q.push({bg,who:'narr',text:`前面的守卫：「${c.name}」。`,flavor:true});
+  q.push({board:`<p class="eb">${adv()?'母题':'例题'} · 卡 ${n}</p><div class="q">${tx(c.q)}</div>`});
+  if(!S.seen['intro:'+lead]){q.push({intro:lead});q.push({bg,who:lead,text:quote(lead),flavor:true});}
+  else q.push({bg,who:lead,text:'这只我来带你拆。',flavor:true});
+  c.steps.forEach((s,k)=>{
+    q.push({boardAdd:`<div class="bstep"><p class="eb">第 ${k+1} 步</p><dl><dt>凭</dt><dd>${tx(s.can)}<br><span class="m">${tx(s.simpler)}</span></dd><dt>想</dt><dd>${tx(s.want)}</dd><dt>估</dt><dd>${esc(s.est.level)}　<span class="m">${tx(s.est.because)}</span></dd></dl></div>`});
+    q.push({bg,who:lead,text:`第 ${k+1} 步，先想：${s.want}`,teach:true});
+    stepAtoms(s).forEach(id=>{if(!shown.has(id)&&!S.garden[id]&&!S.cert[id]){shown.add(id);q.push({gear:id});}});
+    q.push({boardAdd:`<div class="bstep"><dl><dt>做</dt><dd>${tx(s.do)}</dd><dt>对</dt><dd>${s.check&&s.check.text?(s.check.ok===false?'✗ ':'✓ ')+tx(s.check.text):''}</dd></dl></div>`});
+    q.push({bg,who:lead,text:s.check&&s.check.text?`做完对一下：${s.check.text}`:'做完了，对一下。',teach:true});
+  });
+  q.push({bg,who:lead,text:'母题学会了。下次它会换个样子来。',flavor:true});
+  q.push({bg,who:'narr',text:'学习完成。正式战斗开放了。',teach:true});
+  return q;}
+function learnPrologue(){const bg='原野营地';return [   // 11-05 照 设定集/语言指南.md 重写台词；数学和黑板不变
+  {bg,who:'narr',text:'雅娜捡起一根树枝，在泥地上画出那只守卫。',flavor:true},
+  {board:`<p class="eb">${adv()?'母题':'例题'} · 乘积守卫</p><div class="q">${tx(R`已知 $x>0$，求 $x+\dfrac{4}{x}$ 的最小值。`)}</div>`},
+  ...(S.seen['intro:转化与化归']?[]:[{intro:'转化与化归'}]),   // 冒险外观在序幕里已经给过雅娜的入队卡
+  {bg,who:'转化与化归',face:'思考',text:R`它的两只手，一只是 $x$，一只是 $\dfrac4x$。`,teach:true},
+  {bg,who:'整体代换',face:'惊讶',text:R`一只变长，另一只就变短……乘起来一直是 $4$！`,teach:true},
+  {boardAdd:`<div class="bstep"><p class="eb">第 1 步</p><dl><dt>凭</dt><dd>${tx(R`两项都是正数：$x>0$，所以 $x$ 和 $\dfrac4x$ 都正。`)}<br>${tx(R`乘起来是定值：$x\cdot\dfrac4x=4$。`)}</dd><dt>想</dt><dd>用基本不等式求最小值</dd><dt>估</dt><dd>大　<span class="m">三条都满足</span></dd></dl></div>`},
+  {bg,who:'转化与化归',face:'平静',text:'两个正数，乘起来不变。碰上这种，有一把现成的刀。',teach:true},
+  {gear:'I-K3'},
+  {bg,who:'整体代换',face:'大笑',text:'这把我在名录第一页见过！可他们从没说过，什么时候能用。',flavor:true},
+  {bg,who:'转化与化归',face:'平静',text:'刀上那句先背下来，以后天天要用。',teach:true},
+  {boardAdd:`<div class="bstep"><dl><dt>做</dt><dd>${tx(R`$x+\dfrac4x\ge 2\sqrt{x\cdot\dfrac4x}=2\sqrt4=4$。`)}</dd></dl></div>`},
+  {bg,who:'转化与化归',face:'平静',text:R`砍下去，右边只剩一个数，$4$。`,teach:true},
+  {bg,who:'整体代换',face:'大笑',text:R`那它最小就是 $4$！`,teach:true},
+  {bg,who:'转化与化归',face:'思考',text:R`先别急。$4$ 得真能碰到，才算数。`,teach:true},
+  {boardAdd:`<div class="bstep"><dl><dt>对</dt><dd>${tx(R`等号要 $x=\dfrac4x$，又 $x>0$，所以 $x=2$，取得到。`)}<br>${tx('最小值是 $4$，在 $x=2$ 时取到。')}</dd></dl></div>`},
+  {bg,who:'转化与化归',face:'微笑',text:R`$x=2$ 时，两只手一样长。这时候，正好是 $4$。`,teach:true},
+  {gear:'I-K5'},
+  {bg,who:'narr',text:adv()?'雾边，那只守卫还蹲着。这一回，你知道它的手在做什么了。':'例题学完了，接下来做换了数的变式。',teach:true}];}
+/* ===== 按集播放的学习剧情（R3：Gemini 初稿，Claude 依执教稿审读修订；一集对应执教稿一课） ===== */
+const EPS=__EPS__;
+const EP_OF={};Object.entries(EPS).forEach(([L,e])=>e.卡.forEach(n=>{EP_OF[n]=L;}));
+function epLabel(L){const e=EPS[L];return `第 ${e.集} 集《${e.集名}》`;}
+function epQueue(L,from){const e=EPS[L],src=e.剧本,q=[];let bg='原野营地',seg='日常',music=null;
+  for(let i=0;i<from;i++){const it=src[i];if(Array.isArray(it))continue;if(it.背景)bg=it.背景;if(it.音乐)music=it.音乐;if(it.段)seg=it.段;}
+  if(from){q.push({seg});if(music)q.push({music});q.push({bg,who:'narr',text:`接着上次学：${epLabel(L)}。`,teach:true,ep:true});}
+  for(let i=from;i<src.length;i++){const it=src[i],fl=seg==='日常'||seg==='收刀';
+    if(Array.isArray(it)){const [who,face,text]=it;q.push({bg,who,face,text,ep:true,flavor:fl||who==='narr'});continue;}
+    if(it.段){seg=it.段;q.push({seg});continue;}
+    if(it.背景){bg=it.背景;continue;}
+    if(it.音乐){q.push({music:it.音乐});continue;}
+    if(it.演出){q.push({fx:it.演出,flavor:true});continue;}
+    if(it.黑板!==undefined){q.push({boardAdd:String(it.黑板).split('\n').map(x=>`<div class="bline">${tx(x)}</div>`).join(''),flavor:fl});continue;}
+    if(it.图){if(FIG[it.图])q.push({boardAdd:`<figure class="bfig">${FIG[it.图]}</figure>`,flavor:fl});continue;}
+    if(it.擦黑板){q.push({clear:true});continue;}
+    if(it.提问){q.push({choice:it,bg,L,at:i,ep:true,flavor:fl});continue;}
+    if(it.母题){const c=CARD[it.母题];q.push({boardAdd:`<div class="bq"><p class="eb">${adv()?'母题':'例题'} · 卡 ${it.母题} · ${tx(c.name)}</p><div class="q">${tx(c.q)}</div></div>`});continue;}
+    if(it.五格){fiveBoxes(q,it.五格,bg,e.主讲);q.push({checkpoint:i+1,L,card:it.五格});continue;}
+    if(it.装备){q.push({gear:it.装备});continue;}
+    if(it.入队){q.push({intro:it.入队});continue;}}
+  return q;}
+function fiveBoxes(q,n,bg,lead){const c=CARD[n];
+  q.push({board:`<p class="eb">${adv()?'五格整理':'步骤整理'} · 卡 ${n}</p><div class="q">${tx(c.q)}</div>`});
+  c.steps.forEach((s,k)=>{
+    q.push({boardAdd:`<div class="bstep"><p class="eb">第 ${k+1} 步</p><dl><dt>凭</dt><dd>${tx(s.can)}<br><span class="m">${tx(s.simpler)}</span></dd><dt>想</dt><dd>${tx(s.want)}</dd><dt>估</dt><dd>${esc(s.est.level)}　<span class="m">${tx(s.est.because)}</span></dd></dl></div>`});
+    q.push({bg,who:lead,text:`第 ${k+1} 步，先想：${s.want}`,teach:true,ep:true});
+    q.push({boardAdd:`<div class="bstep"><dl><dt>做</dt><dd>${tx(s.do)}</dd><dt>对</dt><dd>${s.check&&s.check.text?(s.check.ok===false?'✗ ':'✓ ')+tx(s.check.text):''}</dd></dl></div>`});
+    q.push({bg,who:lead,text:s.check&&s.check.text?`做完对一下：${s.check.text}`:'做完了，对一下。',teach:true,ep:true});});}
+function startEpisode(L,done){S.epPos=S.epPos||{};const from=S.epPos[L]||0;
+  playQueue(epQueue(L,from),ok=>{if(ok)finishEpisode(L);if(done)done(ok);else render();});}
+function finishEpisode(L){const e=EPS[L];if(S.epPos)delete S.epPos[L];S.epDone=S.epDone||{};const first=!S.epDone[L];S.epDone[L]=today();
+  S.learned=S.learned||{};e.卡.forEach(n=>{if(!S.learned[n])S.learned[n]=today();});save();
+  if(first)gain(20*e.卡.length,'学完'+epLabel(L)+' · 卡 '+e.卡.join('、'),'ep-'+L);}
+// 集要按顺序学：第 n 集等第 n-1 集学完才开（剧情前后接着）；演示用的“地图全部解锁”不拦
+function epPrev(L){const e=EPS[L];return Object.keys(EPS).find(k=>EPS[k].集===e.集-1);}
+function epLocked(L){const p=epPrev(L);return !!p&&!(S.epDone&&S.epDone[p])&&!S.unlockAll;}
+function learnBtn(n,ln){const L=EP_OF[n];
+  if(!L)return `<button class="chipbtn${ln?'':' learn'}" type="button" data-act="learn" data-arg="${n}">${ln?(adv()?'重看母题':'重看例题'):(adv()?'学 · 母题':'学 · 例题')}</button>`;
+  const e=EPS[L],lock=epLocked(L),t=lock?`先学第 ${e.集-1} 集`:(ln?'重看 · ':(S.epPos&&S.epPos[L]?'接着学 · ':'学 · '))+epLabel(L);
+  return `<button class="chipbtn${ln||lock?'':' learn'}" type="button" data-act="learn" data-arg="${n}" title="这一集讲卡 ${e.卡.join('、')}"${lock?' disabled':''}>${t}</button>`;}
+function startLearn(id,done){if(id!=='p'&&EP_OF[+id]){const L=EP_OF[+id];if(epLocked(L)){toast(`先学第 ${EPS[L].集-1} 集`);return;}startEpisode(L,done);return;}const q=id==='p'?learnPrologue():learnCard(+id);playQueue(q,ok=>{if(ok)finishLearn(id);if(done)done(ok);else render();});}
+function finishLearn(id){S.learned=S.learned||{};const first=!S.learned[id];S.learned[id]=today();save();
+  if(first)gain(20,(adv()?'学会母题 · ':'学会例题 · ')+(id==='p'?'乘积守卫':'卡 '+id),'learn-'+id);}
+function variantOf(c,vi){const v=c.variants[vi-1];return v?Object.assign({},c,{q:v.q,steps:v.steps,vi,vlabel:'变式 '+vi}):Object.assign({},c,{vi:1,vlabel:'母题（不看讲解）'});}
+const SCENES={prologue:'序幕',p1in:'第 1 关 · 开战前',p1out:'第 1 关 · 打完',p2in:'第 2 关 · 开战前',p2out:'第 2 关 · 打完',p3in:'第 3 关 · 开战前',p3out:'第 3 关 · 打完',
+  fieldOpen:'迷雾散开',ruins:'遗迹','recruit_放缩':'玛尔嘉加入',bossIn:'领主现身',bossOut:'领主之后','recruit_函数思想':'芙洛加入','breakthrough_斥候':'升为斥候'};
+function storyList(){const seen=Object.keys(SCENES).filter(k=>S.seen['vn:'+k]),eps=Object.keys(S.epDone||{}).filter(L=>EPS[L]);
+  return `<section class="sec"><h2>剧情回看</h2>${seen.length||eps.length?`<div class="row">${seen.map(k=>`<button class="btn small" type="button" data-act="story" data-arg="${k}">${SCENES[k]}</button>`).join('')}${eps.map(L=>`<button class="btn small" type="button" data-act="learn" data-arg="${EPS[L].卡[0]}">${epLabel(L)}</button>`).join('')}</div>`:'<p class="muted">还没看过剧情。</p>'}</section>`;}
+/* 配乐：默认关；点了“开”才放（浏览器只许用户点过以后出声） */
+function bgmNow(){if(!$('#vn').hidden){if(vnMusic)return vnMusic;const b=$('#vn .vn-bg').dataset.bg;if(b==='领主之地')return 'boss';if(b==='名录院大厅')return 'title';}
+  if(page==='battle')return B&&(B.key==='boss')?'boss':'battle';if(page==='garden')return 'garden';if(page==='title')return 'title';return 'camp';}
+function updateMusic(){const a=$('#bgm'),m=bgmNow();if(!S.music||m==='none'){a.pause();return;}const t='assets/bgm-'+m+'.mp3';
+  if(a.dataset.t!==t){a.dataset.t=t;a.src=t;a.loop=true;}a.volume=.35;const p=a.play();if(p&&p.catch)p.catch(()=>{});}
+
+/* ===== 渲染：牌 ===== */
+function card(o){
+  const tag=o.act?'button':'div';
+  const attrs=o.act?` type="button" data-act="${o.act}" data-arg="${esc(o.arg)}"${o.disabled?' disabled':''}`:'';
+  const kind={team:L.team,gear:L.gear,intel:L.intel,event:'事件'}[o.type];
+  return `<${tag} class="gc t-${o.type} ${o.cls||''}"${attrs}>${o.mark?`<span class="mark">${o.mark}</span>`:''}${o.badge?`<span class="new">${o.badge}</span>`:''}
+    <span class="kind">${kind}牌</span><span class="face${o.formula?' formula':''}${o.img?' img':''}">${o.img?`<img src="${o.img}" alt="">`:o.formula?tx(o.formula):esc(o.glyph)}</span>
+    <span class="nm">${tx(o.name)}${o.nick&&adv()?`<span class="nick">${esc(o.nick)}</span>`:''}</span>${o.text?`<span class="tx">${tx(o.text)}</span>`:''}${o.extra||''}</${tag}>`;
+}
+function atomCard(id,o={}){const a=AT[id];return card(Object.assign({type:a.kind==='知识'?'gear':'intel',glyph:a.kind==='知识'?'凭':'察',name:a.name,text:a.kind==='知识'?a.say:a.look},o));}
+function teamCard(n,o={}){if(n==='self'||n==='trap')return card(Object.assign({type:'team',glyph:tglyph(n),name:tname(n),text:n==='self'?'不派人，自己用装备':'背名录，照名字直接套'},o));
+  const s=ST[n];return card(Object.assign({type:'team',glyph:tglyph(n),name:n,nick:NICK[n],text:s.one,badge:S.team[n]?'':'新面孔',img:spriteOf(n)},o));}
+function talk(lines){if(!adv()||!lines)return '';return `<div class="talk">${lines.map(([w,l])=>{const narr=w==='narr',rv=w==='rival';
+  return `<div class="line"><span class="av ${narr?'narr':rv?'rival':''}">${narr?'旁白':rv?'名':esc(tglyph(w))}</span><div class="bubble ${narr?'narr':''}">${narr?'':`<span class="who">${rv?RIVAL+' · 名录院':esc(nick(w)+' · '+w)}</span>`}${esc(l)}</div></div>`;}).join('')}</div>`;}
+
+/* ===== 顶栏 ===== */
+function renderTop(){
+  $('#brand').textContent=L.brand;
+  const items=[['map',L.map],['deck',L.deck],['garden',L.garden],['train',L.train],['notes',L.notes],['friends',L.friends],['record',L.record]];
+  $('#nav').innerHTML=items.map(([h,t])=>`<a href="#${h}"${(page===h||(page==='battle'&&h==='map'))?' aria-current="page"':''}>${t}</a>`).join('');
+  const v=lv();
+  $('#xp').innerHTML=`<span class="rk">${REALMS[S.realm]||REALMS[4]} · ${v.level} 级</span><span class="bar" title="本级经验"><i style="width:${v.pct}%"></i></span>`+
+    (v.full?(canBreak()?`<button type="button" data-act="exam">突破考核</button>`:`<span class="wait">${S.examTried===today()?'今天考过了，明天再来':'满级 · 明天可突破'}</span>`):`<span>${S.xp} 经验</span>`);
+  $('#music-on').setAttribute('aria-pressed',String(!!S.music));$('#music-off').setAttribute('aria-pressed',String(!S.music));
+  $('#look-adv').setAttribute('aria-pressed',String(S.look==='adv'));$('#look-plain').setAttribute('aria-pressed',String(S.look==='plain'));
+  const set=document.documentElement.getAttribute('data-theme'),dark=set?set==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  $('#theme-dark').setAttribute('aria-pressed',String(dark));$('#theme-light').setAttribute('aria-pressed',String(!dark));
+}
+
+/* ===== 标题页 ===== */
+function pTitle(){
+  const plainLines=['不等式一章：先做三道入门题，再按体系图一站一站往下走。','每题按五格一步一步做：凭、想、估、做、对。做过的会记进进步记录，学过的东西隔几天回来复习。'];
+  return `<section class="hero"><div>
+      <p class="eyebrow">${adv()?'序幕 · 逐出名录院':'不等式 · 练习'}</p>
+      <h1>${adv()?'罗盘指挥官':'学科罗盘 · 练习'}</h1>
+      <div class="prologue">${(adv()?['名录院只教一件事：背名字。你看题太慢，被赶了出来。','原野上的雾很大，雾里的东西，还没人看懂。','你不用亲自上场。你只要看清楚，再决定派谁。']:plainLines).map(l=>`<p>${esc(l)}</p>`).join('')}</div>
+      <div class="row"><button class="btn primary" type="button" data-act="depart">${adv()?(S.seen['vn:prologue']?'出发':'开始序幕'):(learned('p')?'开始练习':'先学例题')}</button>${adv()&&S.seen['vn:prologue']?'<button class="btn" type="button" data-act="story" data-arg="prologue">重看序幕</button>':''}<a class="btn" href="#deck">${L.deck}</a><a class="btn" href="#garden">${L.garden}</a><a class="btn" href="#record">${L.record}</a></div>
+    </div>
+    <div class="fan" aria-hidden="true">${teamCard('转化与化归')}${atomCard('I-K3',{formula:R`$a+b\ge 2\sqrt{ab}$`})}${atomCard('I-S5')}</div>
+  </section>
+  <details class="memo"><summary>小样 v4：里面有什么、还缺什么</summary>
+    <div class="memo-grid">
+      <div><h3>这一版新加的</h3><ul>
+        <li>先学后打：每只守卫先在剧情里学母题（黑板上按五格一步步展开），队友第一次出场有介绍卡，拿到新装备有装备卡；学完才开正式战斗，正式战斗打的是变式和题库题。</li>
+        <li>剧情改成视觉小说：背景、立绘、对话框，点一下出一句。剧情是 Gemini 初稿，按规矩修订过。</li>
+        <li>11-04 接上第 1 集《背靠背》（执教稿 L01，卡 1—3）：按集播放，分日常、来敌、交锋、收刀；黑板一行行写，选择题先选再看讲解，选错了看为什么错、再选一次；有简单的演出（雾散、震动、罗盘亮）；每讲完一张卡存一次进度；学完这一集，卡 1—3 的战斗才开放。</li>
+        <li>11-04 新素材：塔莉立绘；雅娜换成更像女孩的那版；两人各 6 种表情，台词标什么表情就换哪张；新背景 5 张（集市、河边、菜园、溪上木桥、遗迹深处），在“素材一览”里能看。</li>
+        <li>11-04 换了名字：西式音译，两位主角雅娜（转化与化归）、塔莉（整体代换）已定。</li>
+        <li>配乐 5 首，默认关，右上角打开。</li>
+        <li>放逐流开局：被名录院赶出来，带着同样被嫌弃的队友出发。</li>
+        <li>不等式原野按体系图铺开：4 条路、20 个站、35 张卡，内容直接读罗盘 v1.18。</li>
+        <li>队友改成学法里的 13 种思路，用到她就能招募。</li>
+        <li>经验、境界、突破考核；菜园＝隔天复习；领主 Boss（三阶段，只能带认证过的装备）。</li>
+        <li>学会处无双：装备认证后，旧关可以扫荡。和过去的自己对战；分享码出题对决；训练场找错。</li></ul></div>
+      <div><h3>还是占位</h3><ul>
+        <li>只有雅娜、塔莉有立绘；法比娅、诺曼等人的立绘、短音效、动画演出还没做。新背景要等按集播放的学习剧情接进来才会出场。</li><li>领主 Boss 用的是自编题，真题等版权处理完再放。</li>
+        <li>招式只分了一眼能对上的六个，其余待定。</li><li>除了雅娜、塔莉，名字都是暂定：对手诺曼、法比娅、玛尔嘉……</li>
+        <li>其他章节还在迷雾里。存档只在这台设备的浏览器里。</li></ul></div>
+      <div><h3>守住的规矩</h3><ul>
+        <li>数学文字一个字不改，游戏只加外壳。</li><li>胜负不靠随机；牌不会自己赢，最后一步你亲手算。</li>
+        <li>不刷：同一关当天重打不给经验；菜园只在到期时能浇。</li><li>不抽卡、不付费、不排行、不比快；没有自由聊天。</li>
+        <li>夸奖只给真本事，传闻每关只传一次。</li></ul></div>
+    </div>
+    <div class="demo"><b>素材与标注</b>：立绘为 AI 生成（OpenAI 图像生成），背景为 AI 生成（Gemini），都抠图压缩过；配乐为 AI 生成（工具待填），压低了音量；剧情初稿由 AI（Gemini）生成，Claude 修订；数学内容来自学科罗盘 v1.18。
+      <details class="gallery"><summary>素材一览：立绘表情、背景</summary>
+        ${Object.keys(SPRITE).map(n=>`<div class="g-row">${FACES[n].map(f=>`<figure><img src="${spriteOf(n,f)}" alt="${esc(nick(n)+' '+f)}"><figcaption>${esc(nick(n))} · ${f}</figcaption></figure>`).join('')}</div>`).join('')}
+        <div class="g-bg">${Object.entries(BGMAP).map(([k,v])=>`<figure><img src="${IMG['bg-'+v]}" alt="${esc(k)}"><figcaption>${esc(k)}</figcaption></figure>`).join('')}</div>
+      </details></div>
+    <div class="demo row"><span>演示用：现在日期拨后了 <b>${S.dayOffset||0}</b> 天（${today()}）。</span>
+      <button class="btn small" type="button" data-act="day" data-arg="1">往后拨一天</button>
+      <button class="btn small" type="button" data-act="day" data-arg="-1"${S.dayOffset?'':' disabled'}>拨回一天</button>
+      <button class="btn small" type="button" data-act="unlock">${S.unlockAll?'恢复正常解锁':'地图全部解锁'}</button>
+      <button class="btn small" type="button" data-act="give">送 100 经验（看突破）</button></div>
+  </details>`;
+}
+
+/* ===== 地图 ===== */
+function stationOpen(s){if(S.unlockAll)return true;if(!cleared('p2'))return false;if(s.group)return litCount()>=3;
+  return s.parents.some(p=>p.startsWith('R')||(STN[p]&&STN[p].cards.some(c=>cardDone(c))));}
+function stationLit(s){return s.cards.every(c=>cardDone(c));}
+function litCount(){return D.stations.filter(s=>stationLit(STN[s.id])).length;}
+function tplState(key){const i={p1:0,p2:1,p3:2}[key];if(cleared(key))return 'done';
+  if(i===0)return learned('p')?'open':'locked';if(i===1)return cleared('p1')?'open':'locked';
+  const g=S.runs.find(r=>r.key==='p1'||r.key==='p2');if(!g)return 'locked';return today()>g.date?'open':'wait';}
+function sweepable(key){if(!cleared(key))return false;const ids=key[0]==='p'?['I-K3']:(()=>{const c=CARD[parseInt(key.slice(1))];const k=c.atoms.filter(a=>AT[a]&&AT[a].kind==='知识');return k.length?k:c.atoms;})();
+  return ids.length>0&&ids.every(certified);}
+function pMap(){
+  const pro=[['p1',makeTpl('A',{k:9})],['p2',makeTpl('B',{k:9,a:1})],['p3',makeTpl('C',{k:4})]].map(([key,st],i)=>{const s=tplState(key),go=s==='open'||s==='done';
+    const sub=s==='wait'?'隔一天再来：考的是换个样子你还认不认得它':s==='locked'?(key==='p1'?'先学母题':'先过上一关'):key==='p3'?'过了，基本不等式才认证':'';
+    return `<div class="node ${go?'':'locked'}"><span class="no">${i+1}</span><span><span class="nm">${esc(adv()?st.name:'第 '+(i+1)+' 题')}</span>${sub?`<br><span class="why">${esc(sub)}</span>`:''}</span>
+      <span class="row">${go?`<a class="btn small${s==='open'?' primary':''}" href="#battle-${key}">${s==='done'?'再打':(adv()?'出战':'开始')}</a>`:`<span class="chip">${s==='wait'?'明天':'没开'}</span>`}
+      ${sweepable(key)?`<a class="btn small" href="#sweep-${key}">${adv()?'扫荡':'快速复习'}</a>`:''}</span></div>`;}).join('');
+  const lit=litCount();
+  const colH=D.cols.map((c,i)=>{const roots=D.roots.filter(r=>r.col===i+1);const st=D.stations.filter(s=>s.col===i+1);
+    return `<div class="colm"><h3>${esc(c)}</h3>${roots.map(r=>`<div class="camp"><b>${adv()?'营地':'起点'} · ${tx(r.name)}</b><br>${tx(r.text)}</div>`).join('')}${i===3&&!roots.length?`<div class="camp">${adv()?'没有新营地':'没有新起点'} · 从第 2、3 条路接过来</div>`:''}
+      ${st.map(s=>stationHTML(STN[s.id])).join('')}</div>`;}).join('');
+  const side=D.groups.map(g=>stationHTML(STN[g.id])).join('');
+  const bossOpen=bossReady();
+  const ruins=D.history.filter(h=>stationOpen(STN[h.station]||{parents:[]}));
+  return `<div class="page-h"><div><p class="eyebrow">${adv()?'作战桌':'选题'}</p><h1>${L.map}</h1></div>
+    <p class="muted">${adv()?`不等式原野 · 已点亮 ${lit}/20 个据点。其他章节还在迷雾里。`:`不等式 · 已完成 ${lit}/20 个知识点。`}</p></div>
+  <section class="sec" style="margin-top:0"><h2>${adv()?'序章 · 原野边上':'入门三题'}</h2><p class="muted">${adv()?'先在原野边上打三场，学会“看”。':'先做三道入门题。'}</p><div class="prolog-path"><div class="node"><span class="no">学</span><span><span class="nm">${adv()?'母题 · 乘积守卫':'例题'}</span><br><span class="why">${learned('p')?'学过了，可以重看':'先学，学完第 1 关才开'}</span></span><span class="row"><button class="btn small${learned('p')?'':' primary'}" type="button" data-act="learn" data-arg="p">${learned('p')?'重看':'学'}</button></span></div>${pro}</div></section>
+  <section class="sec"><h2>${adv()?'不等式原野':'不等式 · 体系图'}</h2><p class="muted">${cleared('p2')||S.unlockAll?(adv()?'四条路都从营地出发。打通一张卡，后面的据点才会出雾；一个据点的卡全打完，它就点亮。':'从起点往上做；一个知识点的题全做完，它就完成。'):(adv()?'序章第 2 关打完，迷雾才会散开。':'先做完入门第 2 题。')}</p>
+    <div class="field-map">${colH}</div></section>
+  <section class="sec"><h2>${adv()?'支线':'专题'}</h2><p class="muted">${adv()?'点亮 3 个据点后出雾。':'完成 3 个知识点后开放。'}</p><div class="field-map">${side}</div></section>
+  <section class="sec"><h2>${adv()?'原野领主':'综合题'}</h2>
+    <div class="node ${bossOpen?'':'locked'}" style="max-width:560px"><span class="no">B</span><span><span class="nm">${adv()?'三影守卫（领主）':'三问综合题'}</span><br><span class="why">${bossOpen?'三个阶段。只能带认证过的装备进场，最多 3 件。':'学完'+epLabel('L09')+'才出现：第 3 阶段要用芙洛和恒成立。'} 现用自编题占位，真题以后放。</span></span>
+      ${bossOpen?`<a class="btn small${cleared('boss')?'':' primary'}" href="#battle-boss">${cleared('boss')?'再打':(adv()?'挑战':'开始')}</a>`:'<span class="chip">迷雾</span>'}</div></section>
+  ${adv()&&ruins.length?`<section class="sec"><h2>遗迹</h2><p class="muted">原野上留着前人的痕迹。都是真实的数学史，标着史料的可靠程度。</p>
+    <div class="row">${ruins.map(h=>`<button class="btn small" type="button" data-act="lore" data-arg="${h.id}">${esc(h.title)} · ${esc(h.person)}</button>`).join('')}</div>
+    ${ui.lore?loreHTML(ui.lore):''}</section>`:''}`;
+}
+function loreHTML(id){const h=D.history.find(x=>x.id===id);if(!h)return '';
+  return `<div class="lore"><p class="eyebrow">${esc(h.person)} · ${esc(h.work||'')} · ${esc(h.date||'')} · ${esc(h.grade||'')}</p><h3 style="margin:4px 0 8px">${esc(h.title)}</h3>${(h.body||[]).map(p=>`<p>${tx(p)}</p>`).join('')}</div>`;}
+function stationHTML(s){const open=stationOpen(s),lit=stationLit(s);
+  return `<div class="stn ${open?(lit?'lit':''):'fog'}"><h4><span>${tx(s.name)}</span>${lit?`<span class="chip ok">${adv()?'点亮':'完成'}</span>`:open?'':'<span class="chip">迷雾</span>'}</h4>
+    ${open?`<div class="cards">${s.cards.map(n=>{const c=CARD[n],nv=Math.max(1,c.variants.length),ln=learned(n);
+      const fights=Array.from({length:nv},(_,i)=>{const k='c'+n+'-'+(i+1),done=cleared(k);return `<button class="chipbtn${done?' done':''}" type="button" data-act="go" data-arg="battle-${k}"${ln?'':' disabled'}>${done?'✓ ':''}${adv()?'打':'练'} ${i+1}</button>${done&&sweepable(k)?`<button class="chipbtn" type="button" data-act="go" data-arg="sweep-${k}">${adv()?'扫荡':'复习'}</button>`:''}`;}).join('');
+      return `<div class="cardrow${cardDone(n)?' done':''}"><div class="cr-name">卡 ${n} · ${tx(c.name)}</div><div class="cr-acts">${learnBtn(n,ln)}${fights}</div></div>`;}).join('')}</div>`:`<p class="muted" style="font-size:12px;margin-top:4px">${s.cards.length} 张卡</p>`}</div>`;}
+
+/* ===== 战斗：通用框架 ===== */
+function newB(o){return Object.assign({phase:'event',found:[],tried:{},looks:0,wrong:{intel:0,gear:0,team:0,reason:0,do:0},hints:0,est:null,gearOk:false,gearIdx:null,team:null,pending:null,
+  triedTeam:{},trapSeen:false,msg:null,log:[],newNotes:[],planted:[],recruited:[],t0:Date.now(),inA:'',inB:'',over:false,shadow:null},o);}
+function startTpl(key,st,extra){B=newB(Object.assign({kind:'tpl',key,st,seq:null},extra||{}));B.shadow=lastRun(key);if(!adv()||!B.intro)B.phase='look';}
+function startCard(n,vi){const c=variantOf(CARD[n],vi),k='c'+n+'-'+vi;const st=cardStage(CARD[n]);B=newB({kind:'card',key:k,card:c,st});B.shadow=lastRun(k);B.phase=st.phases[0];}
+function startSweep(key){if(key[0]==='p'){const st={p1:makeTpl('A',{k:9}),p2:makeTpl('B',{k:9,a:1}),p3:makeTpl('C',{k:4})}[key];B=newB({kind:'tpl',key,st,mode:'sweep',phase:'do'});}
+  else{const [cn,vi]=key.slice(1).split('-').map(Number);B=newB({kind:'card',key,card:variantOf(CARD[cn],vi),st:cardStage(CARD[cn]),mode:'sweep',phase:'do'});}}
+function phases(){if(B.mode==='sweep')return ['do','result'];if(B.kind==='card')return B.st.phases;return ['look','gear','team','est','do','result'];}
+function pBattle(){
+  if(B.kind==='exam')return pExam();
+  if(B.kind==='deckpick')return pDeckPick();
+  if(!adv()&&B.phase==='event')B.phase=phases()[0];
+  const ph=phases(),idx=ph.indexOf(B.phase);
+  const steps=`<ol class="steps">${ph.map((p,i)=>{const l=PH[p];const done=i<idx||B.phase==='result';return `<li class="${p===B.phase&&B.phase!=='result'?'now':done?'done':''}">${done?'✓ ':''}${adv()?l[0]:l[1]}<small>${l[2]}</small></li>`;}).join('')}</ol>`;
+  const head=B.kind==='card'?{eb:(adv()?'不等式原野 · ':'')+'卡 '+B.card.n+' · '+B.card.vlabel,h:B.card.name}:B.seq?{eb:(adv()?'原野领主 · 第 ':'综合题 · 第 ')+(B.si+1)+' 阶段',h:adv()?'三影守卫':'三问综合题'}
+    :B.key==='duel'?{eb:adv()?'出题对决':'同学出的题',h:adv()?B.st.name:'同学出的题'}:{eb:adv()?'序章':'入门题',h:adv()?B.st.name:B.st.kind};
+  return `<div class="page-h"><div><p class="eyebrow">${esc(head.eb)}${B.mode==='sweep'?(adv()?' · 扫荡':' · 快速复习'):''}</p><h1>${tx(head.h)}</h1></div><a class="btn small" href="#map">${adv()?'撤回地图':'回章节'}</a></div>
+    ${steps}<div class="battle">${enemyPanel()}<section class="box center">${center()}</section>${logPanel()}</div>`;
+}
+function enemyPanel(){
+  let q,slots='',traps='';
+  if(B.kind==='card'){const c=B.card;q=c.q;const look=B.st.look||[];
+    slots=[...(B.st.intent?[B.st.intent.find(o=>o.ok)]:[]),...look.filter(o=>o.ok)].map(o=>`<li class="${B.found.includes(o.key)?'got':''}">${B.found.includes(o.key)?tx(o.weak):esc(L.slot)}</li>`).join('');
+    if(c.codes&&c.codes.length)traps=`<div class="traps muted">${adv()?'听说它会设的陷阱':'这类题常见的错'}：${c.codes.map(id=>`<b>${esc(CODE[id]?CODE[id].name:id)}</b>`).join('、')}</div>`;}
+  else{q=B.st.q;
+    slots=B.st.intel.map((o,j)=>o.ok?`<li class="${B.found.includes(j)?'got':''}">${B.found.includes(j)?tx(o.weak):esc(L.slot)}</li>`:'').join('');}
+  const g=B.gearOk&&B.st.gear&&B.st.gear[B.gearIdx]?AT[B.st.gear[B.gearIdx].atom]:null;
+  return `<aside class="box enemy"><p class="eyebrow">${L.enemy}</p><div class="q">${B.seq?tx(R`已知 $x>0$，$y>0$，$x+2y=1$。`)+'<br>'+tx(B.st.q):tx(q)}</div>
+    ${B.mode==='sweep'?'':`<ul class="weak">${slots}</ul>`}${traps}
+    <div class="loadout muted">${g?`<span>${L.gear}：<b>${tx(g.name)}</b></span>`:''}${B.team?`<span>${L.team}：<b>${esc(tname(B.team))}</b></span>`:''}${B.est!==null?`<span>估：<b>${L.est[B.est]}</b></span>`:''}
+      ${B.deck?`<span>带进场：<b>${B.deck.map(id=>tx(AT[id].name)).join('、')||'空手'}</b></span>`:''}</div>
+    ${B.phase==='result'?`<span class="stamp">${B.mode==='sweep'&&B.wrong.do===0&&B.hints===0?(adv()?'一刀秒':'一次做对'):L.win}</span>`:''}</aside>`;
+}
+function logPanel(){const sh=B.shadow;
+  return `<aside class="box log">${sh&&B.mode!=='sweep'?`<div class="shadow"><b>${adv()?'影子 · 上次的你':'上次的记录'}</b><br>错 ${mist(sh)} 次 · 提示 ${sh.hints} 步 · 用时 ${sh.secs} 秒</div>`:''}
+    <h3>${adv()?'作战记录':'做题记录'}</h3>${B.log.length?`<ol>${B.log.map(([k,h])=>`<li><span class="mk ${k}">${k==='ok'?'✓':k==='bad'?'✗':'·'}</span><span>${h}</span></li>`).join('')}</ol>`:'<p class="muted">每一步都会记在这里。</p>'}</aside>`;}
+const mist=r=>r.wrong.intel+r.wrong.gear+r.wrong.team+r.wrong.reason+r.wrong.do;
+function msgBox(){return B.msg?`<div class="msg ${B.msg.k}" role="status">${B.msg.h}</div>`:'';}
+function nextBtn(ph,label){return `<div class="row" style="margin-top:16px"><button class="btn primary" type="button" data-act="phase" data-arg="${ph}">${label}</button></div>`;}
+function nextPhase(){const ph=phases();return ph[ph.indexOf(B.phase)+1];}
+function phaseLabel(p){return adv()?PH[p][0]:PH[p][1];}
+
+function center(){
+  if(B.phase==='event')return `<p class="eyebrow">事件</p><h2>${B.seq?'领主现身':'开战前'}</h2>${talk(B.intro)}${nextBtn(phases()[0],'开战')}`;
+  if(B.phase==='result')return resultHTML();
+  if(B.phase==='bossmid')return `<h2>第 ${B.si+1} 影击退</h2>${msgBox()}<div class="row" style="margin-top:14px"><button class="btn primary" type="button" data-act="bossnext">迎战第 ${B.si+2} 影</button></div>`;
+  if(B.kind==='card')return cardCenter();
+  const st=B.st;
+  if(B.phase==='look'){const done=st.intel.every((o,j)=>!o.ok||B.found.includes(j));const left=st.intel.filter((o,j)=>o.ok&&!B.found.includes(j)).length;
+    return `<h2>${phaseLabel('look')}</h2><p class="ask">${adv()?'这只敌人露出了什么？选你在题里亲眼看到的。':'这道题有什么特征？选你在题里亲眼看到的。'}${done?'':` 还有 ${left} 处没找到。`}</p>
+      <div class="hand">${st.intel.map((o,j)=>card({type:'intel',glyph:o.atom?(AT[o.atom].kind==='知识'?'凭':'察'):'？',name:o.text,act:'intel',arg:j,cls:B.tried[j]?(o.ok?'hit':'miss'):'',mark:B.tried[j]?(o.ok?'✓':'✗'):'',disabled:!!B.tried[j]||done})).join('')}</div>
+      ${msgBox()}${done?nextBtn('gear',adv()?'弱点全看穿了 → 带装备':'特征找齐了 → 选工具'):''}`;}
+  if(B.phase==='gear'){const chosen=B.gearOk?st.gear[B.gearIdx]:null;
+    const noNeed=B.deck&&!st.gear.some(o=>o.ok===true&&B.deck.includes(o.atom));
+    return `<h2>${phaseLabel('gear')}</h2><p class="ask">${B.deck?'只能用带进场的装备。':''}${adv()?'带哪件装备上场？':'用哪个工具？'}</p>
+      <div class="hand">${st.gear.map((o,j)=>{const off=B.deck&&!B.deck.includes(o.atom);return atomCard(o.atom,{act:'gear',arg:j,cls:B.gearOk&&B.gearIdx===j?'sel':(B.tried['g'+j]&&o.ok===false?'miss':''),
+        mark:B.tried['g'+j]&&o.ok===false?'✗':'',disabled:B.gearOk||off,badge:off?'没带':''});}).join('')}</div>
+      ${chosen?`<ul class="checks">${chosen.checks.map(([t,k])=>`<li><span class="mk ${k}">${k==='ok'?'✓':k==='bad'?'✗':'？'}</span><span>${tx(t)}</span></li>`).join('')}</ul><div class="msg info">${tx(chosen.after)}</div>${nextBtn('team','下一步：'+phaseLabel('team'))}`
+        :msgBox()+(noNeed?`<div class="msg bad">要用的装备没带进场。这一阶段只能靠提示硬算（会记一步提示）。</div><div class="row" style="margin-top:12px"><button class="btn" type="button" data-act="nogear">不带装备，硬算</button></div>`:'')}`;}
+  if(B.phase==='team'&&!B.teamChecked){B.teamChecked=true;st.team=usableTeam(st.team);}   // 到这一步才筛：开战前的剧情可能刚让人入队（序章第 2 关的法比娅）
+  if(B.phase==='team'){const pend=B.pending!==null?st.team[B.pending]:null;const reasons=pend?(pend.reasons||[['它擅长这个'],['先派了再说']]):[];
+    return `<h2>${phaseLabel('team')}</h2><p class="ask">${adv()?'派谁去？牌上写着她的口头禅。':'用哪个思路？'}</p>
+      <div class="hand">${st.team.map((o,j)=>teamCard(o.who,Object.assign(o.skill?{text:(adv()?'招式：':'做法：')+o.skill}:{},{act:'team',arg:j,cls:B.team===o.who?'sel':(B.pending===j?'sel':(B.triedTeam[j]?'miss':'')),mark:B.triedTeam[j]&&B.team!==o.who?'✗':'',disabled:!!B.team||!!B.triedTeam[j]}))).join('')}</div>
+      ${pend&&!B.team?`<div class="reasons"><p>${adv()?'出牌先说理由：为什么派她？':'为什么选这个思路？'}</p>${reasons.map((r,k)=>`<button type="button" data-act="reason" data-arg="${k}">${tx(r[0])}</button>`).join('')}</div>`:''}
+      ${msgBox()}${B.team?nextBtn('est','下一步：'+phaseLabel('est')):''}`;}
+  if(B.phase==='est')return estHTML();
+  if(B.phase==='do'){const sweep=B.mode==='sweep';
+    return `<h2>${sweep?(adv()?'一刀秒':'快速复习'):phaseLabel('do')}</h2><p class="ask">${sweep?(adv()?'这件装备你已经认证过了。这次不用看、不用派人，直接算。':'学会的题，直接算。'):(adv()?'牌不会自己赢。在草稿纸上算，再把结果填进来。':'在草稿纸上算，再把结果填进来。')}</p>
+      <form class="do-row" id="do-form" autocomplete="off">
+        <label for="do-a">${esc(st.labels[0])}<input id="do-a" type="text" value="${esc(B.inA)}"></label>
+        ${st.labels[1]?`<label for="do-b">${esc(st.labels[1])}<input id="do-b" type="text" value="${esc(B.inB)}"></label>`:''}
+        <button class="btn primary" type="submit">${adv()?'结算':'对答案'}</button></form>
+      <p class="muted" style="font-size:12px;margin-top:6px">分数可以写成 1/8。</p>${msgBox()}
+      ${sweep?'':`<div class="ladder"><div class="row"><span class="muted">卡住了？提示一次只给一步，会记进${L.record}。</span>
+        <button class="btn small" type="button" data-act="hint"${B.hints>=st.hints.length?' disabled':''}>要一步提示（${B.hints}/${st.hints.length}）</button></div>
+        ${B.hints?`<ol>${st.hints.slice(0,B.hints).map(h=>`<li>${tx(h)}</li>`).join('')}</ol>`:''}</div>`}`;}
+  return '';
+}
+function estHTML(){const sub=['我认得这种，能做完','有思路，不一定算对','还没把握'];
+  return `<h2>${phaseLabel('est')}</h2><p class="ask">动手之前先估一下。估得准不准，打完会告诉你。</p>
+    <div class="est">${L.est.map((e,i)=>`<button type="button" data-act="est" data-arg="${i}"><b>${e}</b><span>${sub[i]}</span></button>`).join('')}</div>`;}
+
+/* ===== 真卡：从罗盘五格数据生成 ===== */
+function cardStage(c){
+  const n=c.n,st={phases:[]};
+  const lab=D.labels.find(l=>l.stations.includes(c.station));
+  if(lab){const others=pick(D.labels.filter(l=>l!==lab),2,'lab'+n);st.intent=pick([lab,...others],3,'labo'+n).map((l,i)=>({key:'i'+i,text:l.text,ok:l===lab,weak:'它要你：'+l.text.replace(/^要我/,'')}));st.phases.push('intent');}
+  const sAt=c.atoms.filter(id=>AT[id]&&AT[id].kind==='结构'),kAt=c.atoms.filter(id=>AT[id]&&AT[id].kind==='知识');
+  if(sAt.length){const dec=pick(D.atoms.filter(a=>a.kind==='结构'&&!sAt.includes(a.id)),2,'s'+n).map(a=>a.id);
+    st.look=pick([...sAt.slice(0,2),...dec],4,'so'+n).map(id=>({key:'a'+id,atom:id,text:AT[id].look,ok:sAt.includes(id),weak:AT[id].name+'：'+AT[id].do}));st.phases.push('look');}
+  if(kAt.length){const dec=pick(D.atoms.filter(a=>a.kind==='知识'&&!kAt.includes(a.id)),2,'k'+n).map(a=>a.id);
+    st.gear=pick([...kAt.slice(0,2),...dec],4,'ko'+n).map(id=>({atom:id,ok:kAt.includes(id)}));st.phases.push('gear');}
+  const good=D.strategies.filter(s=>s.cards.includes(n)).map(s=>s.name);
+  if(good.length){const pool=D.strategies.filter(s=>!good.includes(s.name)).map(s=>s.name);
+    const met=good.filter(canUse),dec=pick(pool.filter(canUse),2,'t'+n);   // 没入队的人不进选项；该派的人都还没入队，这一关就不派人
+    if(met.length){st.team=pick([...met.slice(0,2),...dec],4,'to'+n).map(nm=>({who:nm,ok:good.includes(nm)}));
+    const others=pick(D.cards.filter(x=>x.station!==c.station&&x.why),2,'r'+n).map(x=>x.why);
+    st.reasons=pick([[c.why,true],...others.map(w=>[w,false])],3,'ro'+n);st.phases.push('team');}}
+  st.phases.push('est','do','result');return st;
+}
+function cardCenter(){
+  const c=B.card,st=B.st;
+  if(B.phase==='intent'||B.phase==='look'){const opts=B.phase==='intent'?st.intent:st.look;const done=opts.every(o=>!o.ok||B.found.includes(o.key));
+    return `<h2>${phaseLabel(B.phase)}</h2><p class="ask">${B.phase==='intent'?(adv()?'先看它最后要你交什么。':'先看题目最后要你交什么。'):(adv()?'题里露出了哪个样子？选你亲眼看到的。':'题里有哪个特征？选你亲眼看到的。')}</p>
+      ${B.phase==='intent'?`<div class="opts">${opts.map(o=>`<button class="opt${B.tried[o.key]&&!o.ok?' miss':''}" type="button" data-act="cpick" data-arg="${o.key}"${B.tried[o.key]||done?' disabled':''}>${B.tried[o.key]?(o.ok?'✓ ':'✗ '):''}${tx(o.text)}</button>`).join('')}</div>`
+        :`<div class="hand">${opts.map(o=>atomCard(o.atom,{act:'cpick',arg:o.key,text:o.text,cls:B.tried[o.key]?(o.ok?'hit':'miss'):'',mark:B.tried[o.key]?(o.ok?'✓':'✗'):'',disabled:!!B.tried[o.key]||done})).join('')}</div>`}
+      ${msgBox()}${done?nextBtn(nextPhase(),'下一步：'+phaseLabel(nextPhase())):''}`;}
+  if(B.phase==='gear'){const done=B.gearOk;
+    return `<h2>${phaseLabel('gear')}</h2><p class="ask">${adv()?'这一关用得上哪件装备？':'这题用得上哪个工具？'}</p>
+      <div class="hand">${st.gear.map((o,j)=>atomCard(o.atom,{act:'cgear',arg:j,cls:B.tried['g'+j]?(o.ok?'hit':'miss'):'',mark:B.tried['g'+j]?(o.ok?'✓':'✗'):'',disabled:!!B.tried['g'+j]||done})).join('')}</div>
+      ${msgBox()}${done?nextBtn(nextPhase(),'下一步：'+phaseLabel(nextPhase())):''}`;}
+  if(B.phase==='team'){const pend=B.pending!==null?st.team[B.pending]:null;
+    return `<h2>${phaseLabel('team')}</h2><p class="ask">${adv()?'派谁去？牌上写着她的口头禅。':'用哪个思路？'}</p>
+      <div class="hand">${st.team.map((o,j)=>teamCard(o.who,{act:'cteam',arg:j,cls:B.team===o.who?'sel':(B.pending===j?'sel':(B.triedTeam[j]?'miss':'')),mark:B.triedTeam[j]&&B.team!==o.who?'✗':'',disabled:!!B.team||!!B.triedTeam[j]})).join('')}</div>
+      ${pend&&!B.team?`<div class="reasons"><p>${adv()?'出牌先说理由：这道题哪里让你想派她？':'为什么选这个思路？'}</p>${st.reasons.map((r,k)=>`<button type="button" data-act="creason" data-arg="${k}">${tx(r[0])}</button>`).join('')}</div>`:''}
+      ${msgBox()}${B.team?nextBtn('est','下一步：'+phaseLabel('est')):''}`;}
+  if(B.phase==='est')return estHTML();
+  if(B.phase==='do'){const sweep=B.mode==='sweep';
+    if(!B.revealed)return `<h2>${sweep?(adv()?'一刀秒':'快速复习'):phaseLabel('do')}</h2><p class="ask">${adv()?'牌不会自己赢。在草稿纸上把这道题做完，再来对。':'在草稿纸上把这道题做完，再来对。'}</p>
+      <div class="row"><button class="btn primary" type="button" data-act="reveal">我做完了，对一下</button></div>
+      ${sweep?'':`<div class="ladder"><div class="row"><span class="muted">卡住了？提示一次给一步的“想”，会记进${L.record}。</span>
+        <button class="btn small" type="button" data-act="hint"${B.hints>=c.steps.length?' disabled':''}>要一步提示（${B.hints}/${c.steps.length}）</button></div>
+        ${B.hints?`<ol>${c.steps.slice(0,B.hints).map(s=>`<li>${tx(s.want)}　<span class="muted">${tx(s.simpler)}</span></li>`).join('')}</ol>`:''}</div>`}`;
+    return `<h2>对一下</h2><p class="ask">这是罗盘里这道题的五格原文。逐格对照你写的。</p>${fiveHTML(c)}
+      ${B.selfStep===1?`<div class="msg info">对照着改一遍，改好了再点。</div><div class="row" style="margin-top:12px"><button class="btn primary" type="button" data-act="selfdone">我改好了</button></div>`
+       :B.selfStep===2?`<div class="msg info">看懂以后，合上答案，在纸上自己重写一遍。</div><div class="row" style="margin-top:12px"><button class="btn primary" type="button" data-act="selfdone">我写好了</button></div>`
+       :`<div class="row" style="margin-top:14px"><button class="btn primary" type="button" data-act="self" data-arg="0">全对</button><button class="btn" type="button" data-act="self" data-arg="1">有一处不一样</button><button class="btn" type="button" data-act="self" data-arg="2">没做出来</button></div>`}`;}
+  return '';
+}
+function fiveHTML(c){return `<div class="five">${c.steps.map((s,i)=>`<div class="stp"><dl>
+  <dt>凭</dt><dd>${tx(s.can)}<br><span class="muted">${tx(s.simpler)}</span></dd><dt>想</dt><dd>${tx(s.want)}</dd>
+  <dt>估</dt><dd>${esc(s.est.level)}<span class="muted">　${tx(s.est.because)}</span></dd><dt>做</dt><dd>${tx(s.do)}</dd>
+  <dt>对</dt><dd>${s.check&&s.check.text?(s.check.ok===false?'✗ ':'✓ ')+tx(s.check.text):''}</dd></dl></div>`).join('')}</div>`;}
+
+/* ===== 战果 ===== */
+function win(){
+  const w=B.wrong;B.over=true;B.phase='result';B.secs=Math.round((Date.now()-B.t0)/1000);B.msg=null;
+  const key=B.key,first=!cleared(key),clean=w.team===0&&w.reason===0&&B.hints===0&&w.do===0;
+  const run={key,date:today(),wrong:Object.assign({},w),hints:B.hints,est:B.est,secs:B.secs,mode:B.mode||'normal'};
+  if(B.mode==='sweep'){S.runs.push(run);save();B.log.push(['ok',adv()?'扫荡完成':'复习完成']);return;}
+  const prev=B.shadow;if(B.kind==='card')B.litBefore=stationLit(STN[B.card.station]);S.runs.push(run);B.xp=[];
+  if(key!=='duel'){
+    if(first)B.xp.push(gain(B.kind==='card'?30:key==='boss'?100:40,'首次通关 · '+(B.kind==='card'?'卡 '+B.card.n:B.seq?'领主':B.st.name)));
+    if(clean)B.xp.push(gain(15,'干净通关','clean-'+key));
+    if(prev&&(mist(run)+run.hints<mist(prev)+prev.hints||(mist(run)+run.hints===mist(prev)+prev.hints&&run.secs<prev.secs))){B.beatShadow=true;B.xp.push(gain(10,'赢了过去的自己','shadow-'+key+'-'+today()));}
+    if(!first&&!B.xp.some(Boolean))B.noXp=true;
+  }
+  if(key==='p3'&&!S.cert['I-K3']){S.cert['I-K3']=today();B.certNews=true;}
+  if(clean&&adv()&&['p2','p3','boss'].includes(key)&&!S.rumors.some(r=>r.key===key)){
+    B.rumor=VN.rumor[S.rumors.length%VN.rumor.length].replace(/\{看了几张情报\}/g,B.looks).replace(/\{守卫名\}/g,B.seq?'三影守卫':B.st.name);S.rumors.push({key,date:today(),text:B.rumor});}
+  if(key==='p2'&&recruit('构造'))B.recruited.push('构造');
+  if(B.kind==='card'&&!B.litBefore&&stationLit(STN[B.card.station])){B.litNews=STN[B.card.station].name;B.xp.push(gain(20,(adv()?'点亮据点 · ':'完成知识点 · ')+STN[B.card.station].name.replace(/\$/g,''),'lit-'+B.card.station));}
+  B.vnAfter=[];
+  if(key==='p1')B.vnAfter.push(clean?'p1out':'p1out@notclean');
+  if(key==='p2')B.vnAfter.push(B.usedTrap?'p2out@trap':'p2out');
+  if(key==='p3')B.vnAfter.push('p3out');
+  if(key==='boss')B.vnAfter.push('bossOut');
+  B.recruited.forEach(n=>{if(VN['recruit_'+n])B.vnAfter.push('recruit_'+n);});
+  ui.scene=B.vnAfter.slice();
+  B.log.push(['ok',esc(L.win)]);save();
+}
+function resultHTML(){
+  const w=B.wrong,first=w.do===0&&B.hints===0,sweep=B.mode==='sweep';
+  if(sweep)return `<h2>${adv()?(first?'一刀秒':'扫荡完成'):'复习完成'}</h2><p>${first?(adv()?'学会的东西，再遇到就是这样。':'一次做对。'):'这次没一次过。说明它还没长牢，菜园里多浇几次。'}</p>
+    <p class="muted" style="margin-top:8px">扫荡不给经验：经验在新关卡、菜园和突破里。</p><div class="row" style="margin-top:14px"><a class="btn primary" href="#map">回地图</a><a class="btn" href="#garden">去${L.garden}</a></div>`;
+  const estLine=B.est===null?'':B.est===0?(first?'你估「'+L.est[0]+'」，一次就做对了。估得准。':'你估「'+L.est[0]+'」，做了不止一次。估高了一点，记下了。')
+    :B.est===1?(first?'你估「'+L.est[1]+'」，一次就做对了。':'你估「'+L.est[1]+'」，做了不止一次。估得差不多。')
+    :(first?'你估「'+L.est[2]+'」，结果一次就做对了。你比自己以为的强。':'你估「'+L.est[2]+'」，最后还是做出来了。');
+  const cardEst=B.kind==='card'?`出题的人第一步估「${esc(B.card.steps[0].est.level)}」：${tx(B.card.steps[0].est.because)}`:'';
+  const grouped={};B.newNotes.forEach(([id,f])=>{(grouped[id]=grouped[id]||[]).push(FIELD[f]);});
+  const trap=B.st.team&&B.st.team.find(o=>o.who==='trap');
+  const sh=B.shadow;
+  const forgeIds=B.kind==='card'?B.card.atoms.filter(id=>AT[id]):B.st.gear?[B.st.gear.find(o=>o.ok===true).atom]:[];
+  return `<h2>${adv()?'战果':'结果'}</h2>
+    <div class="stats"><div class="stat"><div class="v">${B.looks}</div><div class="k">翻看${L.intel}（看走眼 ${w.intel}）</div></div>
+      <div class="stat"><div class="v">${w.gear}</div><div class="k">${L.gear}带错</div></div><div class="stat"><div class="v">${w.team}</div><div class="k">${adv()?'派错人':'思路选错'}</div></div>
+      <div class="stat"><div class="v">${w.reason}</div><div class="k">理由不对</div></div><div class="stat"><div class="v">${B.hints}</div><div class="k">要了提示</div></div>
+      <div class="stat"><div class="v">${B.secs}</div><div class="k">用时（秒）</div></div></div>
+    ${estLine?`<p>${esc(estLine)}</p>`:''}${cardEst?`<p class="muted">${cardEst}</p>`:''}
+    ${sh?`<div class="result-sec"><h3>${adv()?'影子对战':'和上次比'}</h3><p>上次：错 ${mist(sh)} 次、提示 ${sh.hints} 步、${sh.secs} 秒。这次：错 ${mist(B.wrong)} 次、提示 ${B.hints} 步、${B.secs} 秒。${B.beatShadow?(adv()?' 你赢了过去的自己。':' 比上次好。'):' 这次没赢过上次，下次再来。'}</p></div>`:''}
+    ${B.xp&&B.xp.some(Boolean)?`<p class="muted" style="margin-top:8px">经验 +${B.xp.reduce((a,b)=>a+b,0)}</p>`:B.noXp?`<p class="muted" style="margin-top:8px">今天这关的经验已经拿过了。重打不给经验，只记进${L.record}。</p>`:''}
+    ${B.rumor?`<div class="rumor"><b>江湖传闻</b>　${esc(B.rumor)}</div>`:''}
+    ${B.litNews?`<div class="result-sec"><h3>${adv()?'据点点亮':'知识点完成'}</h3><p>${tx(B.litNews)}：这一站的卡全打完了。${adv()?'迷雾又散开一片。':''}</p></div>`:''}
+    ${B.certNews?`<div class="result-sec"><h3>${L.gear}</h3><p>基本不等式：隔了一天、换了条件，你还认得它。正式进${L.deck}，以后旧关可以${adv()?'扫荡':'快速复习'}。</p></div>`:''}
+    ${B.recruited.length?`<div class="result-sec"><h3>${adv()?'新队友':'新思路'}</h3><p>${B.recruited.map(n=>esc(tname(n))).join('、')}${adv()?' 加入了队伍。':' 记进了工具箱。'}</p></div>`:''}
+    ${B.planted.length?`<div class="result-sec"><h3>${L.garden}</h3><p>种下了：${B.planted.map(id=>tx(AT[id].name)).join('、')}。明天回来浇第一次水。</p></div>`:''}
+    ${Object.keys(grouped).length?`<div class="result-sec"><h3>${L.notes}新记下</h3><p>${Object.entries(grouped).map(([id,fs])=>`${tx(entry(id).name)}：${fs.join('、')}`).join('；')}</p></div>`:''}
+    ${forgeIds.length?`<div class="result-sec"><h3>${adv()?'铁匠铺 · 听讲法':'看讲法'}</h3><div class="forge">${forgeIds.map(id=>{const a=AT[id],open=ui.forge===id;
+      return `<div class="it"><b>${tx(a.name)}</b>　<button class="btn small" type="button" data-act="forge" data-arg="${id}">${open?'收起':'为什么是这样？'}</button>${open?`<p style="margin-top:8px">${tx(a.why||a.do)}</p>`:''}</div>`;}).join('')}</div></div>`:''}
+    ${msgBox()}${adv()&&B.vnAfter&&B.vnAfter.length?`<div class="row" style="margin-top:10px"><button class="btn small" type="button" data-act="replayvn">重看剧情</button></div>`:''}
+    <div class="row" style="margin-top:8px"><a class="btn primary" href="#map">${adv()?'回地图':'回章节'}</a>
+      ${B.key==='duel'||B.seq?'':`<button class="btn" type="button" data-act="replay">再打一次</button>`}
+      ${trap&&!B.trapSeen?`<button class="btn" type="button" data-act="trap">看看陷阱：${esc(tname('trap'))}会怎样</button>`:''}<a class="btn" href="#notes">去${L.notes}</a></div>`;
+}
+
+/* ===== 领主：先配牌，再打三阶段 ===== */
+const BOSS=[
+  {name:'第一影',q:'第一阶段：求 $xy$ 的最大值。',kind:'最大值',
+   intel:[{text:'和是定值：$x+2y=1$',ok:true,atom:'I-S1',weak:'和固定，积有最大值',got:'看穿了：$x+2y$ 是定值，乘积就有最大值。'},
+     {text:'积是定值',ok:false,fb:'积没给定：题里给的是 $x+2y=1$，是“和”。'},{text:'$x$、$y$ 都是正数',ok:true,atom:'I-K1',weak:'两项都是正数',got:'看穿了：$x$ 和 $2y$ 都是正数。'}],
+   gear:[{atom:'I-K3',ok:true,checks:[['$x$ 和 $2y$ 都是正数','ok'],['和是定值：$x+2y=1$','ok'],['两项能相等：$x=2y$ 做得到','ok']],after:'把 $x$ 和 $2y$ 当成两项。'},
+     {atom:'I-K7',ok:false,fb:'作差是比两个式子谁大用的。'},{atom:'I-K2',ok:'idle',fb:'平方不负是这件装备的来历，这里直接用装备就行。'}],
+   team:[{who:'self',ok:true,go:'指挥官亲自出手。最后这一下，你来算。',reasons:[['$x$ 和 $2y$ 的和是定值，积就有最大值',true],['看到 $xy$ 就套',false,'先看：和是定值，还是积是定值？']]},
+     {who:'构造',skill:'凑系数',ok:true,go:R`把 $xy$ 写成 $\dfrac12\cdot x\cdot 2y$。接下来你来算。`,reasons:[['凑出 $x$ 和 $2y$ 这两项，它们的和是定值',true],['系数越多越好',false,'凑系数是为了让两项的和变成定值。']]},
+     {who:'分类讨论',ok:'idle',fb:'用不上：$x$、$y$ 都已经给定是正数。'}],
+   ans:[1/8,1/2],labels:['最大值','取到时 x ='],hints:[R`$xy=\dfrac12\cdot x\cdot 2y$。`,R`$x\cdot 2y\le\left(\dfrac{x+2y}{2}\right)^2=\dfrac14$。`,R`所以 $xy\le\dfrac18$；等号要 $x=2y$，再用 $x+2y=1$。`]},
+  {name:'第二影',q:R`第二阶段：求 $\dfrac2x+\dfrac1y$ 的最小值。`,kind:'最小值',
+   intel:[{text:'条件给了“和是 $1$”',ok:true,atom:'I-S7',weak:'乘“1”：把 $1$ 换成 $x+2y$',got:'看穿了：$1=x+2y$，可以乘进来。'},
+     {text:'两项相加，一乘就消掉',ok:false,note:['I-S2','fail'],fb:R`乘一下：$\dfrac2x\cdot\dfrac1y=\dfrac{2}{xy}$，还带着字母。`},{text:'两项都是正数',ok:true,atom:'I-K1',weak:'两项都是正数',got:'看穿了：两项都是正数。'}],
+   gear:[{atom:'I-K3',ok:true,checks:[['两项都是正数','ok'],[R`乘起来是定值？$\dfrac{2}{xy}$ 还带着字母`,'bad'],['先变样，再看','unk']],after:'直接打不动。下一步：派人把它变个样。'},
+     {atom:'I-K7',ok:false,fb:'作差是比两个式子谁大用的。'},{atom:'I-K5',ok:'idle',fb:'先留着：最后检查等号取不取得到时用。'}],
+   team:[{who:'trap',reasons:[[R`两项相加，就套 $a+b\ge2\sqrt{ab}$`],['名录上就是这么写的']],fail:R`$\dfrac2x+\dfrac1y\ge2\sqrt{\dfrac{2}{xy}}$，右边还带着 $x$、$y$，不是一个数，这一招打空了。`},
+     {who:'构造',skill:'乘“1”',ok:true,go:R`乘上 $1=x+2y$：$\left(\dfrac2x+\dfrac1y\right)(x+2y)$。接下来你来展开、再用装备。`,reasons:[['把 $1$ 换成 $x+2y$ 乘进来，展开后两项的积是定值',true],['乘 1 不改变大小，多乘几次更保险',false,'乘“1”只乘一次，目的是让展开后的两项乘起来是定值。']]},
+     {who:'整体代换',ok:'idle',fb:'这题没有反复出现的一块，换元帮不上。'}],
+   ans:[8,1/2],labels:['最小值','取到时 x ='],hints:[R`$\left(\dfrac2x+\dfrac1y\right)(x+2y)=4+\dfrac{4y}{x}+\dfrac{x}{y}$。`,R`$\dfrac{4y}{x}+\dfrac{x}{y}\ge 2\sqrt4=4$。`,R`所以原式 $\ge 8$；等号要 $\dfrac{4y}{x}=\dfrac{x}{y}$，也就是 $x=2y$。`]},
+  {name:'第三影',q:R`第三阶段：若 $\dfrac2x+\dfrac1y\ge m$ 恒成立，求 $m$ 的最大值。`,kind:'最大值',
+   intel:[{text:'“恒成立”：对所有 $x$、$y$ 都要成立',ok:true,atom:'I-S10',weak:'恒成立：看左边最小能到多少',got:'看穿了：要对所有 $x$、$y$ 成立，就看左边最小是几。'},
+     {text:'只要找到一组 $x$、$y$ 成立就行',ok:false,fb:'那是“有解”。“恒成立”要所有的 $x$、$y$ 都成立。'}],
+   gear:[{atom:'I-K5',ok:true,checks:[['最小值 $8$ 取得到：第二阶段已经找到等号点','ok']],after:'最小值取得到，$m$ 就能等于它。'},{atom:'I-K7',ok:false,fb:'作差是比两个式子谁大用的。'}],
+   team:[{who:'函数思想',skill:'恒成立看最值',ok:true,go:'把左边看成一个整体，看它最小是几。$m$ 由你来定。',reasons:[['恒成立：左边最小的那个也不能小于 $m$',true],['随便代一组数，算出来就是答案',false,'代一组只能说明“有一组成立”，恒成立要看最小的那一个。']]},
+     {who:'trap',reasons:[['名录上写：恒成立看最大值']],fail:'看最大值不对：左边要“每一个都不小于 $m$”，卡住的是最小的那个。'},{who:'分类讨论',ok:'idle',fb:'用不上：没有要分的情况。'}],
+   ans:[8],labels:['m 的最大值'],hints:['恒成立：$m$ 不能超过左边的最小值。','第二阶段算过，左边最小是 $8$，而且取得到。']}];
+function startBoss(){B={kind:'deckpick',key:'boss',pickSel:[]};}
+// 11-05：领主第 3 阶段要派芙洛（第 4 集入队）、考恒成立（第 9 集讲），所以第 9 集学完才开放
+function bossReady(){return S.unlockAll||(cleared('p3')&&!!(S.epDone&&S.epDone.L09));}
+function pDeckPick(){const cand=D.atoms.filter(a=>a.kind==='知识'&&certified(a.id)).map(a=>a.id);
+  return `<div class="page-h"><div><p class="eyebrow">${adv()?'原野领主':'综合题'}</p><h1>${adv()?'进场前配牌':'选要用的工具'}</h1></div><a class="btn small" href="#map">${adv()?'撤回地图':'回章节'}</a></div>
+    <p class="muted" style="margin-bottom:14px">${adv()?'只能带认证过的装备，最多 3 件。牌组里只有你真会的东西。':'只能选已掌握的工具，最多 3 个。'}</p>
+    ${cand.length?`<div class="hand">${cand.map(id=>atomCard(id,{act:'pick',arg:id,cls:B.pickSel.includes(id)?'sel':'',mark:B.pickSel.includes(id)?'✓':''})).join('')}</div>`
+      :`<div class="empty"><p>还没有认证过的装备。先打完序章第 3 关，或者在菜园里浇够两次水。</p></div>`}
+    <div class="row" style="margin-top:16px"><button class="btn primary" type="button" data-act="bossgo">${adv()?'进场':'开始'}（带 ${B.pickSel.length} 件）</button></div>`;}
+function bossStage(i){const b=BOSS[i];return Object.assign({},b,{name:b.name,team:usableTeam(b.team)});}
+
+/* ===== 突破考核：三道混合题，不告诉题型，不给提示 ===== */
+function examProblems(){const seed=hash(today()+'|'+S.realm);const ts=pick(['A','B','C','D'],3,'ex'+seed);
+  const ks=[1,4,9,16,25,36];return ts.map((t,i)=>{const h=hash(seed+'p'+i);const k=ks[1+h%5];
+    return makeTpl(t,t==='B'?{k,a:1+h%4}:t==='D'?{m:2+h%3,n:1+(h>>3)%3}:{k});});}
+function pExam(){const ps=B.ps;
+  return `<div class="page-h"><div><p class="eyebrow">${adv()?'突破考核':'升级测验'}</p><h1>${adv()?'从'+REALMS[S.realm]+'到'+(REALMS[S.realm+1]||'？'):'三道混合题'}</h1></div><a class="btn small" href="#map">先不考</a></div>
+    <p class="muted" style="margin-bottom:16px">三道题混在一起，不告诉你是哪种，没有提示。全对就突破。没过不扣任何东西，明天再来。</p>
+    <form id="exam-form" class="form" autocomplete="off">${ps.map((p,i)=>`<div class="box"><p class="eyebrow">第 ${i+1} 题</p><div style="font-size:17px;margin:6px 0 10px">${tx(p.q)}</div>
+      <div class="do-row"><label for="ex-${i}a">${esc(p.labels[0])}<input id="ex-${i}a" type="text" value="${esc((B.vals||[])[i*2]||'')}"></label><label for="ex-${i}b">${esc(p.labels[1])}<input id="ex-${i}b" type="text" value="${esc((B.vals||[])[i*2+1]||'')}"></label>
+      ${B.res?`<span class="chip ${B.res[i]?'ok':'bad'}">${B.res[i]?'对':'没对'}</span>`:''}</div></div>`).join('')}
+      ${B.res?'':`<div class="row"><button class="btn primary" type="submit">交卷</button></div>`}</form>
+    ${B.res?(B.res.every(Boolean)?`<div class="msg good">全对。突破成功：你现在是${REALMS[S.realm]}。</div>`:`<div class="msg info">这次没全对。没关系，明天再来；考的就是隔一天还会不会。</div>`)+`<div class="row" style="margin-top:12px"><a class="btn primary" href="#map">回地图</a></div>`:''}`;}
+
+/* ===== 牌组 ===== */
+function pDeck(){
+  const dl=rows=>`<dl>${rows.map(([k,v])=>`<div><dt>${k}</dt><dd>${tx(v)}</dd></div>`).join('')}</dl>`;
+  const team=D.strategyGroups.map(g=>{const ms=D.strategies.filter(s=>s.group===g);
+    return `<h3 style="margin:18px 0 8px;font-size:15px">${esc(g)}</h3><div class="dk">${ms.map(s=>{const met=!!S.team[s.name];
+      return card({type:'team',glyph:tglyph(s.name),img:met&&adv()?portraitOf(s.name):null,name:s.name,nick:NICK[s.name],cls:'wide'+(met?'':' unmet'),extra:met?dl([['口头禅',s.one],['什么时候派',s.when],['为什么',s.why],['弱点',s.boundary],
+        [adv()?'招式':'具体做法',(MOVES[s.name]||[]).map(id=>MOVE[id].name).join('；')||'待定']])+`<span class="tx"><span class="chip ok">${adv()?'已入队':'已用过'}</span></span>`
+        :`<span class="tx">${tx(s.one)}<br><span class="chip">${adv()?'还没遇到 · 名字白给':'还没用过'}</span></span>`});}).join('')}</div>`;}).join('');
+  const gear=D.atoms.filter(a=>a.kind==='知识').map(a=>{const g=S.garden[a.id];const stt=certified(a.id)?`<span class="chip ok">${L.cert}</span>`:g?'<span class="chip brass">种下了 · 见习</span>':'<span class="chip">没用过</span>';
+    return atomCard(a.id,{cls:'wide',text:a.say,extra:`<span class="tx">${stt}</span>`});}).join('');
+  const intel=D.atoms.filter(a=>a.kind==='结构').map(a=>atomCard(a.id,{cls:'wide',text:a.look})).join('');
+  const unassigned=D.moves.filter(mv=>!Object.values(MOVES).flat().includes(mv.id));
+  return `<div class="page-h"><div><p class="eyebrow">${adv()?'你的牌':'你会用的'}</p><h1>${L.deck}</h1></div>
+    <p class="muted" style="max-width:36em">${adv()?'队友是学法里的 13 种思路，每一章都会用到，会陪你走完整个高中。装备要隔天换个样子再赢一次，才从见习转正。':'13 种思路每章都会用到。工具要隔天再做对一次，才算掌握。'}</p></div>
+  <section class="sec"><h2>${L.team}牌 · ${Object.keys(S.team).length}/13</h2><p class="muted">${adv()?'口头禅、什么时候派、弱点，都来自罗盘“学法”原文。':'内容来自“学法”原文。'}</p>${team}</section>
+  <section class="sec"><h2>${L.gear}牌</h2><p class="muted">不等式这一章的 13 个知识原子。</p><div class="dk">${gear}</div></section>
+  <section class="sec"><h2>${L.intel}牌</h2><p class="muted">15 个结构原子：题里能看到的样子。认出来，就亮出弱点。</p><div class="dk">${intel}</div></section>
+  <section class="sec"><h2>${adv()?'指挥官习惯':'三个习惯'}</h2><div class="dk">${D.habits.map(([h,t])=>card({type:'event',glyph:'习',name:h,text:t,cls:'wide'})).join('')}</div></section>
+  ${unassigned.length?`<section class="sec"><h2>${adv()?'作战会议 · 还没分给队友的招式':'找路 · 其他起手'}</h2><p class="muted">来自罗盘“找路”。归属以后再定。</p><div class="chips">${unassigned.map(mv=>`<span class="chip">${esc(mv.name)}</span>`).join('')}</div></section>`:''}`;
+}
+
+/* ===== 菜园 ===== */
+function plantSVG(w,dry){const c=dry?'var(--dry)':'var(--leaf)';const soil='<rect x="6" y="54" width="52" height="8" rx="3" fill="var(--line)"/>';
+  const parts=[`<circle cx="32" cy="52" r="3" fill="${c}"/>`,`<path d="M32 54 V40" stroke="${c}" stroke-width="3" fill="none"/><ellipse cx="38" cy="40" rx="6" ry="3" fill="${c}"/>`,
+    `<path d="M32 54 V30" stroke="${c}" stroke-width="3" fill="none"/><ellipse cx="38" cy="38" rx="7" ry="3.5" fill="${c}"/><ellipse cx="25" cy="32" rx="7" ry="3.5" fill="${c}"/>`,
+    `<path d="M32 54 V22" stroke="${c}" stroke-width="3" fill="none"/><ellipse cx="38" cy="38" rx="7" ry="3.5" fill="${c}"/><ellipse cx="25" cy="30" rx="7" ry="3.5" fill="${c}"/><circle cx="32" cy="18" r="6" fill="var(--event)"/>`,
+    `<path d="M32 54 V22" stroke="${c}" stroke-width="3" fill="none"/><ellipse cx="38" cy="38" rx="7" ry="3.5" fill="${c}"/><ellipse cx="25" cy="30" rx="7" ry="3.5" fill="${c}"/><circle cx="32" cy="18" r="7" fill="var(--team)"/><circle cx="42" cy="26" r="5" fill="var(--team)"/>`,
+    `<path d="M32 54 V16" stroke="${c}" stroke-width="3" fill="none"/><ellipse cx="40" cy="40" rx="8" ry="4" fill="${c}"/><ellipse cx="24" cy="32" rx="8" ry="4" fill="${c}"/><ellipse cx="40" cy="24" rx="8" ry="4" fill="${c}"/><circle cx="32" cy="12" r="7" fill="var(--brass)"/>`];
+  return `<svg viewBox="0 0 64 64" aria-hidden="true">${soil}${parts[Math.min(w,5)]}</svg>`;}
+const STAGE=['种子','发芽','长叶','开花','结果','成熟'];
+function pGarden(){const ids=Object.keys(S.garden);
+  const head=`<div class="page-h"><div><p class="eyebrow">${adv()?'营地后面的地':'隔天复习'}</p><h1>${L.garden}</h1></div>
+    <p class="muted" style="max-width:36em">学会一样东西就是种下一棵。第 1、2、4、7、15 天回来浇水（答一道小题）。浇够两次，装备就认证。太久不浇会枯黄，但浇一次就回来，不会死。</p></div>`;
+  if(!ids.length)return head+`<div class="empty"><p>还没种下任何东西。打一关，用对的装备和情报会自动种下。</p><a class="btn primary" href="#map">去${L.map}</a></div>`;
+  const rows=ids.map(id=>{const g=S.garden[id],a=AT[id],due=dueOf(g),isDue=today()>=due&&g.w<5,dry=today()>addDays(due,3)&&g.w<5,open=ui.water===id;
+    return `<div class="plot${isDue?' due':''}${dry?' dry':''}"><div class="pic">${plantSVG(g.w,dry)}</div><b>${tx(a.name)}</b>
+      <span class="muted" style="font-size:13px">${STAGE[Math.min(g.w,5)]}${certified(id)?' · '+L.cert:''}${dry?' · 有点枯黄':''}</span>
+      <span class="muted" style="font-size:12px">${g.w>=5?'长成了':isDue?'今天可以浇水':'下次浇水：'+due}</span>
+      ${isDue&&!open?`<button class="btn small primary" type="button" data-act="water" data-arg="${id}">浇水</button>`:''}
+      ${open?`<div class="q">${tx(a.check.q)}</div>${ui.waterShow?`<div class="q"><b>答案：</b>${tx(a.check.a)}</div><div class="row"><button class="btn small primary" type="button" data-act="rate" data-arg="0">记得</button><button class="btn small" type="button" data-act="rate" data-arg="1">模糊</button><button class="btn small" type="button" data-act="rate" data-arg="2">没掌握</button></div>`
+        :`<button class="btn small" type="button" data-act="showans">想好了，看答案</button>`}`:''}</div>`;}).join('');
+  return head+`<div class="garden">${rows}</div>`;}
+
+/* ===== 训练场：找错（罗盘游戏厅的“找错”原题） ===== */
+function pTrain(){const ps=D.packets;const i=Math.min(ui.ti||0,ps.length-1),p=ps[i],r=S.train[p.id],done=Object.values(S.train).filter(x=>x==='ok').length;
+  const ans=ui.tans;
+  return `<div class="page-h"><div><p class="eyebrow">${adv()?'营地训练场 · 抓假情报':'找错练习'}</p><h1>${L.train}</h1></div><p class="muted">已经答对 ${done}/${ps.length} 道。来自罗盘“游戏厅”。</p></div>
+    <div class="box" style="max-width:820px"><p class="eyebrow">第 ${i+1} 道 · ${p.kind==='claim'?'判断这条说法':'看这段解答'}</p>
+      <div style="font-size:17px;margin:6px 0">${tx(p.q)}</div>
+      <div class="lines">${p.lines.map((l,j)=>`<div class="ln"><span>${tx(l)}</span>${ans===undefined?`<button class="btn small" type="button" data-act="tbad" data-arg="${j}">这一行有问题</button>`:(p.bad===j?'<span class="chip bad">问题在这</span>':'')}</div>`).join('')}</div>
+      ${ans===undefined?`<button class="btn" type="button" data-act="tbad" data-arg="-1">每一行都对，放行</button>`:
+        `<div class="msg ${ans===p.bad?'good':'bad'}">${ans===p.bad?'抓对了。':'没抓对。'}${p.bad>=0?' '+tx(p.why):' '+tx(p.why)}${p.fix?`<br><b>改成：</b>${tx(p.fix)}`:''}${p.action?`<br><span class="muted">${tx(p.action)}</span>`:''}</div>`}
+      <div class="row" style="margin-top:14px"><button class="btn small" type="button" data-act="tnav" data-arg="-1"${i?'':' disabled'}>上一道</button><button class="btn small primary" type="button" data-act="tnav" data-arg="1"${i<ps.length-1?'':' disabled'}>下一道</button>
+        ${r?`<span class="chip ${r==='ok'?'ok':'bad'}">${r==='ok'?'答对过':'答错过'}</span>`:''}</div></div>`;}
+
+/* ===== 观察笔记 ===== */
+function pNotes(){
+  const ids=[...D.atoms.map(a=>a.id),...D.strategies.map(s=>s.name)];
+  const met=ids.filter(id=>Object.keys((S.notes[id]||{}).seen||{}).length||(ST[id]&&S.team[id]));
+  const unmet=ids.filter(id=>!met.includes(id));
+  const one=id=>{const e=entry(id),n=noteOf(id),seen=Object.keys(FIELD).filter(f=>n.seen[f]).length,can=seen>=2;
+    const badge=n.own&&n.own.trim().length>=4&&can?'<span class="chip ok">写下了自己的话</span>':seen?`<span class="chip brass">看到 ${seen}/4</span>`:'<span class="chip">只知道名字</span>';
+    return `<article class="note t-${e.type}"><div class="who-c"><span class="glyph">${esc(e.glyph)}</span><b>${tx(e.name)}${e.nick&&adv()?` <span class="muted">${esc(e.nick)}</span>`:''}</b><span data-badge="${esc(id)}">${badge}</span></div>
+      <div><div class="fields">${Object.entries(FIELD).map(([f,k])=>`<div class="field ${n.seen[f]?'':'locked'}"><span class="k">${k}</span><span class="v">${n.seen[f]?tx(e.note[f]):'？ 还没亲眼看到'}</span></div>`).join('')}</div>
+      <div class="own"><label class="muted" for="own-${esc(id)}">用你自己的话写一句${can?'':'（看到两格以后才能写）'}</label>
+        <textarea id="own-${esc(id)}" data-note="${esc(id)}"${can?'':' disabled'} placeholder="${can?'比如：看到……我就……因为……':''}">${esc(n.own||'')}</textarea></div></div></article>`;};
+  return `<div class="page-h"><div><p class="eyebrow">${adv()?'图鉴':'笔记'}</p><h1>${L.notes}</h1></div></div>
+    <div class="quote"><p>知道一只鸟在各种语言里叫什么，你对这只鸟还是一无所知。要看它在做什么。</p><cite>—— 费曼讲他父亲带他看鸟（大意）</cite></div>
+    <p class="muted" style="margin-top:14px;max-width:44em">名字白给。四格要在${adv()?'战斗':'做题'}里亲眼看到才会写上；“为什么”在战果页的${adv()?'铁匠铺':'讲法'}里看。看到两格以后，用自己的话写一句，第一次写有经验。</p>
+    <section class="sec"><h2>见过的 · ${met.length}</h2>${met.length?`<div class="notes">${met.map(one).join('')}</div>`:'<p class="muted">还没有。去打一关。</p>'}</section>
+    <section class="sec"><h2>只知道名字的 · ${unmet.length}</h2><div class="chips">${unmet.map(id=>`<span class="chip">${tx(entry(id).name)}</span>`).join('')}</div></section>`;
+}
+
+/* ===== 好友：出题对决（分享码，不需要服务器） ===== */
+function pFriends(){const f=ui.duel||(ui.duel={t:'B',k:16,a:2,m:2,n:3,ansA:'',ansB:'',code:'',err:'',inCode:''});
+  const opt=(arr,v)=>arr.map(x=>`<option value="${x}"${String(x)===String(v)?' selected':''}>${x}</option>`).join('');
+  const sq=[1,4,9,16,25,36,49,64,81,100];
+  const preview=validTpl(f.t,{k:+f.k,a:+f.a,m:+f.m,n:+f.n})?makeTpl(f.t,{k:+f.k,a:+f.a,m:+f.m,n:+f.n}):null;
+  return `<div class="page-h"><div><p class="eyebrow">${adv()?'不比快，比谁看得清':'同学之间'}</p><h1>${L.friends}</h1></div></div>
+  <div class="two">
+    <section class="box"><h2 style="font-family:var(--f-display);font-weight:400;font-size:22px">${adv()?'出题对决 · 你来设伪装':'给同学出一道题'}</h2>
+      <p class="muted" style="margin:4px 0 12px">选一种伪装，定数字，先自己算出答案。答案对上了，才生成分享码。</p>
+      <div class="form">
+        <label for="d-t">伪装方式<select id="d-t" data-duel="t">${Object.entries(TPL).map(([k,v])=>`<option value="${k}"${f.t===k?' selected':''}>${adv()?v.name:v.plain}</option>`).join('')}</select></label>
+        ${f.t==='D'?`<label for="d-m">系数<select id="d-m" data-duel="m">${opt([2,3,4,5,6,7,8,9],f.m)}</select></label><label for="d-n">等号点<select id="d-n" data-duel="n">${opt([1,2,3,4,5,6,7,8,9],f.n)}</select></label>`
+          :`<label for="d-k">分子 k（取平方数，答案才是整数）<select id="d-k" data-duel="k">${opt(sq,f.k)}</select></label>${f.t==='B'?`<label for="d-a">外衣 a<select id="d-a" data-duel="a">${opt([1,2,3,4,5,6,7,8,9],f.a)}</select></label>`:''}`}
+        ${preview?`<div class="msg info">${tx(preview.q)}</div>
+          <div class="do-row"><label for="d-ansA">你算的${esc(preview.labels[0])}<input id="d-ansA" type="text" data-duel="ansA" value="${esc(f.ansA)}"></label><label for="d-ansB">${esc(preview.labels[1])}<input id="d-ansB" type="text" data-duel="ansB" value="${esc(f.ansB)}"></label></div>
+          <div class="row"><button class="btn primary" type="button" data-act="mkcode">生成分享码</button></div>`:''}
+        ${f.err?`<div class="msg bad">${esc(f.err)}</div>`:''}
+        ${f.code?`<div class="code" id="duel-code">${esc(f.code)}</div><div class="row"><button class="btn small" type="button" data-act="copy">复制</button><span class="muted" style="font-size:13px">发给同学。码里只有题目数字，没有名字。</span></div>`:''}
+      </div></section>
+    <section class="box"><h2 style="font-family:var(--f-display);font-weight:400;font-size:22px">${adv()?'接受挑战':'做同学出的题'}</h2>
+      <p class="muted" style="margin:4px 0 12px">把同学给的分享码贴进来。照五格打：看、凭、想、估、做、对。</p>
+      <div class="form"><label for="d-in">分享码<input id="d-in" type="text" data-duel="inCode" value="${esc(f.inCode)}" placeholder="QD1. 开头"></label>
+        <div class="row"><button class="btn primary" type="button" data-act="playcode">${adv()?'开战':'开始'}</button></div></div>
+      <h3 style="margin-top:22px;font-size:15px">${adv()?'和过去的自己对战':'和上次的自己比'}</h3>
+      <p class="muted" style="margin-top:4px">任何一关打第二次，右边都会出现“影子”：上次的你错了几次、要了几步提示、用了多久。赢了它有经验，每关每天一次。</p>
+      <h3 style="margin-top:18px;font-size:15px">为什么没有聊天室</h3>
+      <p class="muted" style="margin-top:4px">用的人都是未成年人，自由聊天要有人管、要有服务器，学生的话也不该放到外面去。以后真要做，用预设短句，或者分享观察笔记卡片。</p></section>
+  </div>`;
+}
+
+/* ===== 逆袭档案 ===== */
+function keyName(k){if(k==='boss')return adv()?'三影守卫（领主）':'三问综合题';if(k==='duel')return '出题对决';if(k[0]==='p')return adv()?{p1:TPL.A.name,p2:TPL.B.name,p3:TPL.C.name}[k]:'入门第 '+k[1]+' 题';const [cn,vi]=k.slice(1).split('-').map(Number);return '卡 '+cn+' · '+CARD[cn].name+' · '+variantOf(CARD[cn],vi).vlabel;}
+function pRecord(){
+  const head=`<div class="page-h"><div><p class="eyebrow">${adv()?'以前和现在':'进步'}</p><h1>${L.record}</h1></div><p class="muted" style="max-width:34em">每个数字都来自你在这台设备上的真实记录，没有一个是编的。</p></div>`;
+  const later=`<section class="sec"><h2>以后接入</h2><p class="muted">9 月 30 日诊断卷和平行复测卷的对照。现在还没接，这里不放任何假数字。</p></section>`;
+  const v=lv();
+  const realm=`<section class="sec"><h2>境界</h2><div class="track">${REALMS.map((r,i)=>`<span class="st ${i===S.realm?'on':i<S.realm?'past':''}">${r}</span>`).join('<span class="muted">→</span>')}</div>
+    <p class="muted" style="margin-top:8px">现在 ${REALMS[S.realm]} ${v.level} 级，共 ${S.xp} 经验。${v.full?(canBreak()?'可以去突破了。':'满级了，隔天才能考突破。'):'每级 '+PER+' 经验，5 级满了要过突破考核。'}</p></section>`;
+  const runs=S.runs.filter(r=>r.mode!=='sweep');
+  if(!runs.length)return head+realm+`<div class="empty" style="margin-top:20px"><p>还没有记录。打完一关，这里会出现第一条；同一关打第二次，就能看到前后对比。</p><a class="btn primary" href="#map">${adv()?'去出战':'去练习'}</a></div>`+later;
+  const keys=[...new Set(runs.map(r=>r.key))];
+  const metrics=[['错的次数',mist],['要了提示',r=>r.hints],['用时（秒）',r=>r.secs]];
+  const cmp=keys.map(k=>{const rs=runs.filter(r=>r.key===k),a=rs[0],b=rs[rs.length-1],two=rs.length>1;
+    return `<tr><td>${tx(keyName(k))}</td><td class="n">${rs.length}</td>${metrics.map(([n,f])=>{const x=f(a),y=f(b),mx=Math.max(x,y,1);return `<td class="n">${x}</td><td><div class="bar"><i style="width:${x/mx*100}%"></i></div>${two?`<div class="bar now" style="margin-top:3px"><i style="width:${y/mx*100}%"></i></div>`:''}</td><td class="n">${two?y:'—'}</td>`;}).join('')}</tr>`;}).join('');
+  const certN=D.atoms.filter(a=>certified(a.id)).length;
+  return head+`<div class="stats"><div class="stat"><div class="v">${runs.length}</div><div class="k">${adv()?'出战次数':'做题次数'}</div></div>
+      <div class="stat"><div class="v">${litCount()}/20</div><div class="k">${adv()?'点亮的据点':'完成的知识点'}</div></div>
+      <div class="stat"><div class="v">${Object.keys(S.team).length}/13</div><div class="k">${adv()?'队友':'用过的思路'}</div></div>
+      <div class="stat"><div class="v">${certN}</div><div class="k">认证的${L.gear}</div></div>
+      <div class="stat"><div class="v">${Object.keys(S.garden).length}</div><div class="k">${L.garden}里的植物</div></div></div>
+    ${realm}
+    <section class="sec"><h2>第一次和最近一次</h2><p class="muted">灰条是第一次，${adv()?'金':'深'}色条是最近一次。</p><div class="tbl-wrap"><table class="cmp"><thead><tr><th>关</th><th>次数</th>${metrics.map(([n])=>`<th>${n} · 第一次</th><th></th><th>最近</th>`).join('')}</tr></thead><tbody>${cmp}</tbody></table></div></section>
+    <section class="sec"><h2>经验从哪来</h2><ul>${S.xpLog.slice(0,10).map(x=>`<li>${x.date}　+${x.n}　${esc(x.why)}</li>`).join('')||'<li class="muted">还没有。</li>'}</ul></section>
+    ${adv()?`<section class="sec"><h2>江湖传闻</h2>${S.rumors.length?S.rumors.map(r=>`<div class="rumor">${esc(r.text)}<br><span class="muted">${r.date}</span></div>`).join(''):'<p class="muted">还没有传闻。传闻只记真本事：一次派对人、不要提示、一次做对。每关只传一次。</p>'}</section>`:''}
+    ${adv()?storyList():''}
+    ${later}`;
+}
+
+/* ===== 动作 ===== */
+const ACT={
+  look(v){S.look=v;save();render();},
+  theme(v){document.documentElement.setAttribute('data-theme',v);try{localStorage.setItem(KEY+'-theme',v);}catch(e){}renderTop();},
+  day(n){S.dayOffset=Math.max(0,(S.dayOffset||0)+Number(n));save();render();},
+  unlock(){S.unlockAll=!S.unlockAll;save();render();},
+  give(){gain(100,'演示');render();},
+  go(h){go(h);},
+  lore(id){ui.lore=ui.lore===id?null:id;if(adv()&&!S.seen['vn:ruins'])ui.scene=['ruins'];render();},
+  depart(){const next=()=>{if(!learned('p'))startLearn('p',()=>go('map'));else go('map');};
+    if(adv()&&!S.seen['vn:prologue'])playScenes(['prologue'],next);else next();},
+  learn(id){startLearn(id);},
+  story(k){playScenes([k]);},
+  replayvn(){playScenes(B&&B.vnAfter||[]);},
+  sprite(x){S.sprite=x;save();render();},
+  music(v){S.music=v==='on';save();renderTop();updateMusic();},
+  phase(p){B.phase=p;B.msg=null;render();},
+  intel(j){j=Number(j);const o=B.st.intel[j];if(B.tried[j])return;B.tried[j]=true;B.looks++;
+    if(o.ok){B.found.push(j);see(o.atom,'look');see(o.atom,'do');plant(o.atom);B.log.push(['ok','看穿：'+tx(o.weak)]);B.msg={k:'good',h:tx(o.got)};}
+    else{B.wrong.intel++;if(o.note)see(o.note[0],o.note[1]);B.log.push(['bad','看走眼：'+tx(o.text)]);B.msg={k:'bad',h:tx(o.fb)};}render();},
+  gear(j){j=Number(j);const o=B.st.gear[j],a=AT[o.atom];
+    if(o.ok===true){B.gearOk=true;B.gearIdx=j;B.msg=null;see(o.atom,'look');see(o.atom,'do');plant(o.atom);if(o.checks.some(c=>c[1]==='bad'))see(o.atom,'fail');B.log.push(['ok','带上：'+tx(a.name)]);}
+    else if(o.ok==='idle'){B.msg={k:'info',h:tx(o.fb)};}
+    else{if(!B.tried['g'+j]){B.wrong.gear++;B.log.push(['bad','带错：'+tx(a.name)]);}B.tried['g'+j]=true;see(o.atom,'look');B.msg={k:'bad',h:tx(o.fb)};}render();},
+  nogear(){B.hints++;B.gearOk=true;B.gearIdx=B.st.gear.findIndex(o=>o.ok===true);B.log.push(['info','没带装备，硬算（记一步提示）']);B.msg=null;render();},
+  team(j){B.pending=Number(j);B.msg=null;render();},
+  reason(k){const j=B.pending,o=B.st.team[j],who=tname(o.who);
+    if(o.who==='trap'){B.wrong.team++;B.trapSeen=true;B.usedTrap=true;B.triedTeam[j]=true;B.log.push(['bad',esc(who)+'：打空']);see('I-K3','fail');
+      B.msg={k:'bad',h:(adv()?esc(trapLine())+'<br>':'直接套公式：')+tx(o.fail)+'<br>换一个'+L.team+'。'};B.pending=null;}
+    else if(o.ok==='idle'){B.wrong.team++;B.triedTeam[j]=true;B.log.push(['bad','白跑：'+esc(who)]);B.msg={k:'bad',h:tx(o.fb)};B.pending=null;}
+    else{const r=o.reasons[Number(k)];
+      if(r[1]){B.team=o.who;B.pending=null;if(ST[o.who]){see(o.who,'look');see(o.who,'do');see(o.who,'why');if(recruit(o.who))B.recruited.push(o.who);}
+        B.log.push(['ok','派出：'+esc(who)+'。理由：'+tx(r[0])]);B.msg={k:'good',h:(adv()&&o.who!=='self'?esc(nick(o.who))+'：'+esc(quote(o.who))+'<br>':'')+tx(o.go)+(B.recruited.includes(o.who)&&adv()&&!VN['recruit_'+o.who]&&o.who!=='构造'?'<br>“'+STORY.recruit+'”':'')};}
+      else{B.wrong.reason++;B.log.push(['bad','理由不对']);B.msg={k:'bad',h:(adv()?'人派对了，':'思路对了，')+'理由不对。'+tx(r[2])};}}render();},
+  est(i){B.est=Number(i);B.log.push(['info','估：'+L.est[B.est]]);B.phase='do';B.msg=null;render();},
+  hint(){const max=B.kind==='card'?B.card.steps.length:B.st.hints.length;if(B.hints<max){B.hints++;B.log.push(['info','要了第 '+B.hints+' 步提示']);}render();},
+  replay(){go('battle-'+B.key,true);},
+  trap(){const o=B.st.team.find(t=>t.who==='trap');B.trapSeen=true;see('I-K3','fail');B.msg={k:'info',h:(adv()?'名录院的打法：':'直接套公式：')+tx(o.fail)};render();},
+  forge(id){ui.forge=ui.forge===id?null:id;if(ui.forge)see(id,'why');render();},
+  // 真卡
+  cpick(key){const opts=B.phase==='intent'?B.st.intent:B.st.look;const o=opts.find(x=>x.key===key);if(!o||B.tried[key])return;B.tried[key]=true;B.looks++;
+    if(o.ok){B.found.push(key);if(o.atom){see(o.atom,'look');see(o.atom,'do');plant(o.atom);}B.log.push(['ok','看穿：'+tx(o.weak)]);B.msg={k:'good',h:'看穿了：'+tx(o.weak)};}
+    else{B.wrong.intel++;if(o.atom)see(o.atom,'look');B.log.push(['bad','看走眼']);B.msg={k:'bad',h:o.atom?'题里没有这个样子。'+(AT[o.atom].fail?'<br><span class="muted">长得像但不是：'+tx(AT[o.atom].fail)+'</span>':''):'再看一眼题目最后一句：它要你交什么？'};}render();},
+  cgear(j){j=Number(j);const o=B.st.gear[j],a=AT[o.atom];if(B.tried['g'+j])return;B.tried['g'+j]=true;
+    if(o.ok){B.gearOk=true;B.gearIdx=j;see(o.atom,'look');see(o.atom,'do');plant(o.atom);const all=B.st.gear.filter(x=>x.ok).map(x=>tx(AT[x.atom].name));
+      B.log.push(['ok','带上：'+tx(a.name)]);B.msg={k:'good',h:'记住这一句：'+tx(a.say)+(all.length>1?'<br><span class="muted">这一关还用得上：'+all.join('、')+'</span>':'')};}
+    else{B.wrong.gear++;see(o.atom,'look');B.log.push(['bad','带错：'+tx(a.name)]);B.msg={k:'bad',h:'这一关用不上它。'+(a.fail?'<br><span class="muted">它什么时候不灵：'+tx(a.fail)+'</span>':'')};}render();},
+  cteam(j){B.pending=Number(j);B.msg=null;const o=B.st.team[B.pending];
+    if(!o.ok){B.wrong.team++;B.triedTeam[B.pending]=true;B.log.push(['bad','派错：'+esc(tname(o.who))]);B.msg={k:'bad',h:`这道题的解法里没用到她这一招。<br><span class="muted">${esc(nick(o.who))}擅长：${tx(ST[o.who].when)}</span>`};B.pending=null;}render();},
+  creason(k){const o=B.st.team[B.pending],r=B.st.reasons[Number(k)];
+    if(r[1]){B.team=o.who;B.pending=null;see(o.who,'look');see(o.who,'do');see(o.who,'why');if(recruit(o.who))B.recruited.push(o.who);
+      B.log.push(['ok','派出：'+esc(tname(o.who))]);B.msg={k:'good',h:(adv()?esc(nick(o.who))+'：'+esc(quote(o.who)):tx(ST[o.who].one))+(B.recruited.includes(o.who)&&adv()&&!VN['recruit_'+o.who]?'<br>“'+STORY.recruit+'”':'')};}
+    else{B.wrong.reason++;B.log.push(['bad','理由不对']);B.msg={k:'bad',h:'这句理由说的是别的题。回到题目里，找让你想派她的那个地方。'};}render();},
+  reveal(){B.revealed=true;render();},
+  self(v){v=Number(v);if(v===0){win();render();return;}if(v===1){B.wrong.do++;B.selfStep=1;}else{B.hints=B.card.steps.length;B.selfStep=2;}B.log.push(['info',v===1?'对照后改了一处':'看了完整解答']);render();},
+  selfdone(){win();render();},
+  // 领主
+  pick(id){const i=B.pickSel.indexOf(id);if(i>=0)B.pickSel.splice(i,1);else if(B.pickSel.length<3)B.pickSel.push(id);else toast('最多带 3 件');render();},
+  bossgo(){const deck=B.pickSel.slice();B=newB({kind:'tpl',key:'boss',seq:BOSS,si:0,st:bossStage(0),deck,intro:null});B.shadow=lastRun('boss');B.phase='look';B.bossTotals={wrong:{intel:0,gear:0,team:0,reason:0,do:0},hints:0,looks:0};render();},
+  bossnext(){const t=B.bossTotals;Object.keys(t.wrong).forEach(k=>t.wrong[k]+=B.wrong[k]);t.hints+=B.hints;t.looks+=B.looks;
+    const si=B.si+1,keep={deck:B.deck,t0:B.t0,shadow:B.shadow,bossTotals:t,log:B.log.concat([['info','进入第 '+(si+1)+' 阶段']]),newNotes:B.newNotes,planted:B.planted,recruited:B.recruited};
+    B=newB(Object.assign({kind:'tpl',key:'boss',seq:BOSS,si,st:bossStage(si)},keep));B.phase='look';render();},
+  // 菜园
+  water(id){ui.water=id;ui.waterShow=false;render();},
+  showans(){ui.waterShow=true;render();},
+  rate(v){const id=ui.water,g=S.garden[id];v=Number(v);
+    if(v===0){g.w=Math.min(5,g.w+1);g.last=today();gain(10,'浇水 · '+AT[id].name.replace(/\$/g,''),'water-'+id+'-'+today());see(id,'fail');if(g.w===2)toast(AT[id].kind==='知识'?'装备认证了':'情报记牢了');if(adv())setTimeout(()=>toast(VN.garden[(S.gN=(S.gN||0)+1)%VN.garden.length]),2800);}
+    else{g.last=addDays(today(),-WATER[Math.min(g.w,WATER.length-1)]+1);if(v===2)see(id,'why');}
+    ui.water=null;save();render();},
+  // 训练场
+  tbad(j){const p=D.packets[Math.min(ui.ti||0,D.packets.length-1)];ui.tans=Number(j);const ok=ui.tans===p.bad;
+    if(!S.train[p.id]||S.train[p.id]!=='ok'){S.train[p.id]=ok?'ok':'miss';if(ok)gain(5,'训练场抓对一道','train-'+p.id);}save();render();},
+  tnav(d){ui.ti=Math.max(0,Math.min(D.packets.length-1,(ui.ti||0)+Number(d)));ui.tans=undefined;render();},
+  // 好友
+  mkcode(){const f=ui.duel,p={k:+f.k,a:+f.a,m:+f.m,n:+f.n},t=f.t;const st=makeTpl(t,p);const a=num(f.ansA),b=num(f.ansB);
+    if(a===null||b===null||Math.abs(a-st.ans[0])>1e-9||Math.abs(b-st.ans[1])>1e-9){f.err='你算的答案和题目对不上。出题人自己先要算对，题才算出得好。';f.code='';}
+    else{const q=t==='D'?{t,m:p.m,n:p.n}:t==='B'?{t,k:p.k,a:p.a}:{t,k:p.k};f.code='QD1.'+btoa(JSON.stringify(q));f.err='';gain(10,'出了一道对的题','duel-made-'+f.code);}render();},
+  copy(){const c=ui.duel&&ui.duel.code;if(!c)return;const sel=()=>{const el=$('#duel-code');if(!el)return;const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);};
+    try{navigator.clipboard.writeText(c).then(()=>toast('复制好了'),()=>{sel();toast('已选中，按复制键');});}catch(e){sel();toast('已选中，按复制键');}},
+  playcode(){const f=ui.duel;try{const s=f.inCode.trim();if(!s.startsWith('QD1.'))throw 0;const q=JSON.parse(atob(s.slice(4)));const p={k:+q.k,a:+q.a,m:+q.m,n:+q.n};
+      if(!TPL[q.t]||!validTpl(q.t,p))throw 0;startTpl('duel',makeTpl(q.t,p));go('battle-duel',true);}catch(e){f.err='这个分享码读不出来。检查一下有没有漏字。';render();}},
+  exam(){B={kind:'exam',key:'exam',ps:examProblems(),res:null};page='battle';cur='exam';render();window.scrollTo(0,0);}
+};
+function submit(){
+  const st=B.st,a=num(B.inA),b=num(B.inB),two=st.labels.length>1;
+  const okA=a!==null&&Math.abs(a-st.ans[0])<1e-9,okB=!two||(b!==null&&Math.abs(b-st.ans[1])<1e-9);
+  if(okA&&okB){if(B.seq&&B.si<B.seq.length-1){B.log.push(['ok','第 '+(B.si+1)+' 影击退']);B.msg={k:'good',h:'第 '+(B.si+1)+' 影击退。'};B.phase='bossmid';render();return;}
+    if(B.seq){const t=B.bossTotals;Object.keys(t.wrong).forEach(k=>B.wrong[k]+=t.wrong[k]);B.hints+=t.hints;B.looks+=t.looks;}
+    win();}
+  else{B.wrong.do++;B.log.push(['bad','结算没对上']);
+    B.msg={k:'bad',h:okA&&two?esc(st.labels[0])+'对了，x 的值再看看。':okB&&two?'x 的值对了，'+esc(st.labels[0])+'再算算。':'没对上。再算一遍，或者要一步提示。'};}
+  render();
+}
+function submitExam(){const ps=B.ps;B.vals=ps.flatMap((p,i)=>[$('#ex-'+i+'a').value,$('#ex-'+i+'b').value]);B.res=ps.map((p,i)=>{const a=num(B.vals[i*2]),b=num(B.vals[i*2+1]);return a!==null&&b!==null&&Math.abs(a-p.ans[0])<1e-9&&Math.abs(b-p.ans[1])<1e-9;});
+  S.examTried=today();if(B.res.every(Boolean)){S.realm=Math.min(REALMS.length-1,S.realm+1);S.realmStart+=PER*5;S.capDate=null;S.xpLog.unshift({date:today(),n:0,why:'突破到 '+REALMS[S.realm]});if(S.realm===1)ui.scene=['breakthrough_斥候'];}save();render();}
+
+/* ===== 路由与渲染（不靠 hash 也能走；能写 hash 时顺手写上） ===== */
+function route(hh,force){
+  const h=(hh!==undefined?hh:(location.hash||'').slice(1))||'title';
+  if(h.startsWith('battle-')||h.startsWith('sweep-')){
+    const sweep=h.startsWith('sweep-'),key=h.slice(sweep?6:7);
+    if(sweep){if(!sweepable(key)){go('map');return;}startSweep(key);}
+    else if(key==='duel'){if(!B||B.key!=='duel'){go('friends');return;}}
+    else if(key==='boss'){if(!bossReady()){go('map');return;}if(force||!B||B.key!=='boss'){startBoss();ui.scene=['bossIn'];}}
+    else if(key==='p2'&&adv()&&SB.p2){if(!['open','done'].includes(tplState(key))&&!S.unlockAll){go('map');return;}go('map');setTimeout(()=>sbStart('p2'),40);return;}   // 11-06 样板：冒险外观下序章第 2 关是剧情战斗
+    else if(key[0]==='p'){if(!['open','done'].includes(tplState(key))&&!S.unlockAll){go('map');return;}
+      if(force||!B||B.key!==key||B.mode==='sweep'){const st={p1:makeTpl('A',{k:9}),p2:makeTpl('B',{k:9,a:1}),p3:makeTpl('C',{k:4})}[key];startTpl(key,st,{});B.phase='look';ui.scene=[key+'in'];}}
+    else if(key[0]==='c'&&CARD[parseInt(key.slice(1))]){const [cn,vi]=key.slice(1).split('-').map(Number);const c=CARD[cn];
+      if(!stationOpen(STN[c.station])||!learned(cn)||!(vi>=1&&vi<=Math.max(1,c.variants.length))){go('map');return;}if(force||!B||B.key!==key||B.mode==='sweep')startCard(cn,vi);}
+    else{go('map');return;}
+    page='battle';
+  }else{page=['title','map','deck','garden','train','notes','friends','record'].includes(h)?h:'title';B=null;}
+  cur=h;ui.forge=null;render();window.scrollTo(0,0);
+}
+function go(h,force){try{if(location.hash.slice(1)!==h)location.hash=h;}catch(e){}route(h,force);}
+function render(){
+  L=LOOKS[S.look]||LOOKS.adv;renderTop();
+  const f={title:pTitle,map:pMap,deck:pDeck,garden:pGarden,train:pTrain,notes:pNotes,friends:pFriends,record:pRecord,battle:pBattle}[page];
+  $('#main').innerHTML=f();document.title=adv()?'罗盘指挥官':'学科罗盘 · 练习';
+  if(page==='map'&&adv()&&cleared('p2')&&!S.seen['vn:fieldOpen']&&!(ui.scene&&ui.scene.length))ui.scene=['fieldOpen'];
+  if(ui.scene&&ui.scene.length&&$('#vn').hidden){const q=ui.scene;ui.scene=null;setTimeout(()=>playScenes(q),60);}
+  updateMusic();
+}
+document.addEventListener('click',e=>{
+  if(S.music&&$('#bgm').paused)updateMusic();
+  const l=e.target.closest('a[href^="#"]');if(l){e.preventDefault();go(l.getAttribute('href').slice(1));return;}
+  const b=e.target.closest('[data-act]');if(!b||b.disabled)return;const a=ACT[b.dataset.act];if(a){e.preventDefault();a(b.dataset.arg);}});
+document.addEventListener('submit',e=>{if(e.target.dataset&&e.target.dataset.sbform){e.preventDefault();sbDo();return;}if(e.target.id==='do-form'){e.preventDefault();submit();}if(e.target.id==='exam-form'){e.preventDefault();submitExam();}});
+document.addEventListener('input',e=>{const t=e.target;
+  if(B&&t.id==='do-a')B.inA=t.value;if(B&&t.id==='do-b')B.inB=t.value;
+  if(t.dataset&&t.dataset.duel){ui.duel[t.dataset.duel]=t.value;}
+  if(t.dataset&&t.dataset.note){const id=t.dataset.note,n=noteOf(id);n.own=t.value;save();const seen=Object.keys(FIELD).filter(f=>n.seen[f]).length;
+    if(n.own.trim().length>=4&&seen>=2)gain(10,'写下自己的话','own-'+id);
+    const el=document.querySelector(`[data-badge="${CSS.escape(id)}"]`);if(el)el.innerHTML=n.own.trim().length>=4&&seen>=2?'<span class="chip ok">写下了自己的话</span>':`<span class="chip brass">看到 ${seen}/4</span>`;}});
+document.addEventListener('change',e=>{const t=e.target;if(t.dataset&&t.dataset.duel&&t.tagName==='SELECT'){ui.duel[t.dataset.duel]=t.value;ui.duel.code='';ui.duel.err='';render();}});
+$('#vn').addEventListener('click',e=>{e.stopPropagation();if(e.target.id==='vn-skip'){vnClose(false);return;}const sbe=e.target.closest('[data-sb]');if(sbe){sbAct(sbe.dataset.sb,sbe.dataset.i);return;}if(e.target.closest('.sb-do'))return;const op=e.target.closest('.vn-opt');if(op){if(!op.disabled)pickChoice(+op.dataset.i);return;}if(vnChoice)return;vnNext();});
+document.addEventListener('keydown',e=>{if($('#vn').hidden)return;if(e.target&&e.target.tagName==='INPUT')return;if(vnChoice){if(/^[1-4]$/.test(e.key)&&(vnChoice.choice||vnChoice.pick))pickChoice(+e.key-1);return;}if(e.key===' '||e.key==='Enter'){e.preventDefault();vnNext();}else if(e.key==='Escape')vnClose(false);});
+window.addEventListener('hashchange',()=>{const h=location.hash.slice(1)||'title';if(h!==cur)route(h);});
+try{const th=localStorage.getItem(KEY+'-theme');if(th)document.documentElement.setAttribute('data-theme',th);}catch(e){}
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',renderTop);
+route();
+</script>
