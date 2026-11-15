@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/Applications/Codex.app/Contents/Resources/cua_node/bin/node",
+    "v6/tools/autoplay.cjs",
+    "clean",
+    "11-3",
+    "12-1"
+  ],
+  "start": "2026-11-07T15:41:02.062738",
+  "dist_sha256": "3ae48c596f301046b6213602bb1880c8948a7ed80106ff73319f246343d2edab",
+  "battle_sha256": {
+    "11-3": "621c49bbcf17b57c3279ce88bd98116e04d2f82131cbf937ab0daa98e3f12e0f",
+    "12-1": "58839ff09cd08bd10c1dd253aa5a8c57889c14c948759481a83ab85dc9e2c725"
+  },
+  "exit_code": 0,
+  "finish": "2026-11-07T15:41:47.260747",
+  "source_unchanged_during_run": {
+    "11-3": true,
+    "12-1": true
+  },
+  "dist_unchanged": true
+}

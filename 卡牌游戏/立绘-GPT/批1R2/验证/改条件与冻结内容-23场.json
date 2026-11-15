@@ -1,0 +1,420 @@
+{
+  "method": "json.dumps(改条件,ensure_ascii=False,sort_keys=True,separators=(\",\",\":\")) UTF-8 SHA-256；按任务基线_说明，不比较JSON外层缩进",
+  "battles": [
+    {
+      "id": "6-1",
+      "sha256": "89db1f8f6ccf1b20e15ecfc878a5ce6f5995daae9e3852172e68578c3aab821d",
+      "baseline_sha256": "89db1f8f6ccf1b20e15ecfc878a5ce6f5995daae9e3852172e68578c3aab821d",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "6-2",
+      "sha256": "8b70b19cada2db8cd80d9a8b753abfcf49d0230af3460f3cb2e54dfbba7eca1b",
+      "baseline_sha256": "8b70b19cada2db8cd80d9a8b753abfcf49d0230af3460f3cb2e54dfbba7eca1b",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "6-3",
+      "sha256": "5630b5034131f52b77fb913586624a018e2db301fadb056f378ce55659a501c9",
+      "baseline_sha256": "5630b5034131f52b77fb913586624a018e2db301fadb056f378ce55659a501c9",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "7-1",
+      "sha256": "8422b0f19973b8bf9fff5540d401c00591a511a682795718ec981c550ac5b24c",
+      "baseline_sha256": "8422b0f19973b8bf9fff5540d401c00591a511a682795718ec981c550ac5b24c",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "7-2",
+      "sha256": "cd37901daaadefd465741b051de8ea3b17bed9ca0ea53ef0ac23603e31cdcdbb",
+      "baseline_sha256": "cd37901daaadefd465741b051de8ea3b17bed9ca0ea53ef0ac23603e31cdcdbb",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "7-3",
+      "sha256": "cd49cba599aa0839de3d9272cc1dfdc0b4d60ada768ed42edd7502015a2b72f5",
+      "baseline_sha256": "cd49cba599aa0839de3d9272cc1dfdc0b4d60ada768ed42edd7502015a2b72f5",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "8-1",
+      "sha256": "937ea9d1416846ec17ad6efa65ec9ca766da14eba9f5d480a13e2645bf544d02",
+      "baseline_sha256": "937ea9d1416846ec17ad6efa65ec9ca766da14eba9f5d480a13e2645bf544d02",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "8-2",
+      "sha256": "1c5d89df13e512f2600ed0180c75de4ec192c6df1d4e4cc4d43cc82a995aa399",
+      "baseline_sha256": "1c5d89df13e512f2600ed0180c75de4ec192c6df1d4e4cc4d43cc82a995aa399",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "8-3",
+      "sha256": "271dc088ec00c477168ae3dab8cb5d63cbc0f998e64283b9e08708c3230cb08d",
+      "baseline_sha256": "271dc088ec00c477168ae3dab8cb5d63cbc0f998e64283b9e08708c3230cb08d",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "9-2",
+      "sha256": "ce776227427230f2e13fee45bdfba9de4984a6b2453ee9b122d8d6ff3b3194b9",
+      "baseline_sha256": "ce776227427230f2e13fee45bdfba9de4984a6b2453ee9b122d8d6ff3b3194b9",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "9-3",
+      "sha256": "a402370065a248490d40a16bb8986671a87ba1eab573817312f9215913fca5b5",
+      "baseline_sha256": "a402370065a248490d40a16bb8986671a87ba1eab573817312f9215913fca5b5",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "10-1",
+      "sha256": "46b742b5c5929e1912123cbb9b941584f95e6108cf5738f70dc912862dbf0a12",
+      "baseline_sha256": "46b742b5c5929e1912123cbb9b941584f95e6108cf5738f70dc912862dbf0a12",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "10-2",
+      "sha256": "0adf9c548a957f0fa806b3341c76ca98d1db768ed7012154f45c58fa251ddfd1",
+      "baseline_sha256": "0adf9c548a957f0fa806b3341c76ca98d1db768ed7012154f45c58fa251ddfd1",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "10-3",
+      "sha256": "46b742b5c5929e1912123cbb9b941584f95e6108cf5738f70dc912862dbf0a12",
+      "baseline_sha256": "46b742b5c5929e1912123cbb9b941584f95e6108cf5738f70dc912862dbf0a12",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "11-1",
+      "sha256": "d789365ec40957e5eed4f8b793ef7b64999479108b92c45214969aca5d95d770",
+      "baseline_sha256": "d789365ec40957e5eed4f8b793ef7b64999479108b92c45214969aca5d95d770",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "11-2",
+      "sha256": "7e7fddcdde3a2174e3bad9ea66dc3a187483097053cbbed6cfee5196ee68645e",
+      "baseline_sha256": "7e7fddcdde3a2174e3bad9ea66dc3a187483097053cbbed6cfee5196ee68645e",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "11-3",
+      "sha256": "b5ed78f059de994219b1d712004601410cbd160e398bb8de4d5479a09f565a45",
+      "baseline_sha256": "b5ed78f059de994219b1d712004601410cbd160e398bb8de4d5479a09f565a45",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "12-1",
+      "sha256": "b8c8f22b6bf8ac7d8e9d88d264b5ce915f5d56075825896ceaff9558ce04d9a2",
+      "baseline_sha256": "b8c8f22b6bf8ac7d8e9d88d264b5ce915f5d56075825896ceaff9558ce04d9a2",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "12-2",
+      "sha256": "fb692c8df24b37b24305ea809fa2ac115a0b5901d4adb22cbbec62c00dff60fd",
+      "baseline_sha256": "fb692c8df24b37b24305ea809fa2ac115a0b5901d4adb22cbbec62c00dff60fd",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "12-3",
+      "sha256": "2a2c51450a8e4c977f46c6676ce061118ffb20c7b2ee20e0c135dc536a646d92",
+      "baseline_sha256": "2a2c51450a8e4c977f46c6676ce061118ffb20c7b2ee20e0c135dc536a646d92",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "13-1",
+      "sha256": "1ccfdacd8d5190fd5226c813778cb08dc6793204008e62c31596e112372f886c",
+      "baseline_sha256": "1ccfdacd8d5190fd5226c813778cb08dc6793204008e62c31596e112372f886c",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "13-2",
+      "sha256": "dc7ee246d5990104fd02e6de8dbe2a014dc28b41b3404f7ad257001daddb7f09",
+      "baseline_sha256": "dc7ee246d5990104fd02e6de8dbe2a014dc28b41b3404f7ad257001daddb7f09",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    },
+    {
+      "id": "13-3",
+      "sha256": "eee195ec0a4b6114a523eb53f3c21e9a30329f38ce12d1dceab2f12addd6f422",
+      "baseline_sha256": "eee195ec0a4b6114a523eb53f3c21e9a30329f38ce12d1dceab2f12addd6f422",
+      "checks": {
+        "题": true,
+        "答": true,
+        "卡": true,
+        "次": true,
+        "队友": true,
+        "支架": true,
+        "图": true,
+        "部位坐标与标位": true,
+        "改条件与旧稿逐值一致": true,
+        "改条件与Claude基线逐值一致": true,
+        "改条件规范化SHA一致": true
+      }
+    }
+  ],
+  "pass": true
+}

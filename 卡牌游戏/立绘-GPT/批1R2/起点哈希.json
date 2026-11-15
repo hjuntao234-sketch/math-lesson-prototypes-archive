@@ -1,0 +1,82 @@
+[
+  {
+    "path": "关卡/第一章/审读-批1与批2a.md",
+    "expected": "151570c19e3665c58a18413d1354c45d24366683cdb86c197249d253ed10ddd1",
+    "start": "151570c19e3665c58a18413d1354c45d24366683cdb86c197249d253ed10ddd1"
+  },
+  {
+    "path": "关卡/格式.md",
+    "expected": "834045e7d599639f5aaa40bb56432986b45adc703fffcd25cf01f2c570d7b18a",
+    "start": "834045e7d599639f5aaa40bb56432986b45adc703fffcd25cf01f2c570d7b18a"
+  },
+  {
+    "path": "关卡/check_levels.py",
+    "expected": "88ff77fb5e3950fcb3de13f09311e70e7ecca0a9e408aa03d5784e771af92675",
+    "start": "88ff77fb5e3950fcb3de13f09311e70e7ecca0a9e408aa03d5784e771af92675"
+  },
+  {
+    "path": "关卡/check_modes.py",
+    "expected": "9c35fa58256899ab3ec93637d4b2cc4a1f9581b3675c4cc8f7bf29131a1ba79c",
+    "start": "9c35fa58256899ab3ec93637d4b2cc4a1f9581b3675c4cc8f7bf29131a1ba79c"
+  },
+  {
+    "path": "关卡/第一章/战斗/9-1.json",
+    "expected": "c959d8d338f885aa3f9bf448dc1af229f5effaa391e6cfcb66be8213d993269b",
+    "start": "c959d8d338f885aa3f9bf448dc1af229f5effaa391e6cfcb66be8213d993269b"
+  },
+  {
+    "path": "关卡/第一章/战斗/p2-1.json",
+    "expected": "98abccee06b1e1bc82a86a532a5863aa4911dcdda1e521d6f1c3c59bfbe82210",
+    "start": "98abccee06b1e1bc82a86a532a5863aa4911dcdda1e521d6f1c3c59bfbe82210"
+  },
+  {
+    "path": "v6/engine.js",
+    "expected": "002196bbc056d7f6a5f8e7bf8759c596c864441b1c5814dc60c7564217d0ee7d",
+    "start": "002196bbc056d7f6a5f8e7bf8759c596c864441b1c5814dc60c7564217d0ee7d"
+  },
+  {
+    "path": "v6/build.py",
+    "expected": "6249751f6e60ed5910d27465f44559722f536d7407c317169562bd5585bbaecd",
+    "start": "6249751f6e60ed5910d27465f44559722f536d7407c317169562bd5585bbaecd"
+  },
+  {
+    "path": "v6/tools/autoplay.cjs",
+    "expected": "574779d7b8838e5f0a502f92c631569cec027cab869728b6199b161d9ef1be94",
+    "start": "574779d7b8838e5f0a502f92c631569cec027cab869728b6199b161d9ef1be94"
+  },
+  {
+    "path": "v6/tools/check_tex.cjs",
+    "expected": "2bcd6eb1480ccf3352ec880a5b12b817372daa739e61511d4a0b4d02ac537e93",
+    "start": "2bcd6eb1480ccf3352ec880a5b12b817372daa739e61511d4a0b4d02ac537e93"
+  },
+  {
+    "path": "设定集/战斗规则-v3.md",
+    "expected": "b2b3a4f76397e9ebc180c4f91af70c34d9573edb67284fc659b2884bb5dfb28c",
+    "start": "b2b3a4f76397e9ebc180c4f91af70c34d9573edb67284fc659b2884bb5dfb28c"
+  },
+  {
+    "path": "设定集/人物.md",
+    "expected": "d42d0612015aea9a13d2c037e2b49dd1c8c98837951022a9242473ba6d476c15",
+    "start": "d42d0612015aea9a13d2c037e2b49dd1c8c98837951022a9242473ba6d476c15"
+  },
+  {
+    "path": "设定集/语言指南.md",
+    "expected": "b4959f2402c61ebedd6f7db97a2675e8bc8442f9312c37b69827326286b9bc52",
+    "start": "b4959f2402c61ebedd6f7db97a2675e8bc8442f9312c37b69827326286b9bc52"
+  },
+  {
+    "path": "v4/data-inequality.json",
+    "expected": "61bc43aef999ddb4f7eb92dab9b6110cbee71ff80ef569411d304a5afc618990",
+    "start": "61bc43aef999ddb4f7eb92dab9b6110cbee71ff80ef569411d304a5afc618990"
+  },
+  {
+    "path": "关卡/第一章/改条件-基线-20261107.json",
+    "expected": "0e8d2dce7d0e4fef15258ed866ab1f3fbcd26ab897357ed418815108e4a45353",
+    "start": "0e8d2dce7d0e4fef15258ed866ab1f3fbcd26ab897357ed418815108e4a45353"
+  },
+  {
+    "path": "素材/守卫/siege/guard.json",
+    "expected": "a7faedb36e59b3f9887e3e8b4692a2faf40caa1faa5dea982a1e302da1980c28",
+    "start": "a7faedb36e59b3f9887e3e8b4692a2faf40caa1faa5dea982a1e302da1980c28"
+  }
+]

@@ -1,0 +1,3549 @@
+[
+  {
+    "id": "p2-1",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "S1",
+      "S2",
+      "E1",
+      "C1",
+      "V1"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true,
+          "scale": 0.82
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "cloth": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "一只手：$t$",
+        "cloth": "另一只手：$\\dfrac9t$",
+        "ground": "$x>1$，所以 $x-1>0$"
+      },
+      "pebble": true,
+      "gone": true
+    },
+    "images": [
+      "http://127.0.0.1:8767/img/guard/p2/eyes.webp",
+      "http://127.0.0.1:8767/img/guard/p2/arm-long-equal.webp",
+      "http://127.0.0.1:8767/img/guard/p2/arm-short.webp",
+      "http://127.0.0.1:8767/img/guard/p2/arm-short-equal.webp",
+      "http://127.0.0.1:8767/img/guard/p2/cloth.webp"
+    ],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 7,
+    "screenshot": "p2-1-无坑-结算.png",
+    "ok": false
+  },
+  {
+    "id": "6-1",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "放缩",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$，所以 $x>0,2y>0$。"
+      },
+      "gone": true
+    },
+    "images": [
+      "http://127.0.0.1:8767/img/guard/b6/arm-short-equal.webp",
+      "http://127.0.0.1:8767/img/guard/b6/prop.webp"
+    ],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "6-1-无坑-结算.png",
+    "ok": false
+  },
+  {
+    "id": "p2-1",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:@long",
+        "msg": "「找一整块」在这里找不到东西。换个地方看。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "就因为这个？……那我可不一定灵哦。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "两个数相等，是 $t=\\dfrac9t$，也就是 $t^2=9$，不是 $t=9$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "$x=3$ 时是 $7.5$，不是 7。$t$ 才是 3，$x$ 是 4。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "S1",
+      "S2",
+      "E1",
+      "C1",
+      "V1"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true,
+          "scale": 0.82
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "cloth": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "一只手：$x-1$",
+        "cloth": "另一只手：$\\dfrac{9}{x-1}$",
+        "ground": "$x>1$，所以 $x-1>0$"
+      },
+      "pebble": true,
+      "gone": true
+    },
+    "images": [
+      "http://127.0.0.1:8767/img/guard/p2/arm-short-equal.webp",
+      "http://127.0.0.1:8767/img/guard/p2/cloth.webp"
+    ],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 17,
+    "screenshot": "p2-1-每层一坑-结算.png",
+    "ok": false
+  },
+  {
+    "id": "6-1",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "这时 $x+2y=3$，不等于题里的 $2$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "这时 $x+2y=3$，不等于题里的 $2$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "这时 $x+2y=3$，不等于题里的 $2$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$，所以 $x>0,2y>0$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "6-1-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "6-2",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "放缩",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$，两项 $x,2y$ 都正。"
+      },
+      "gone": true
+    },
+    "images": [
+      "http://127.0.0.1:8767/img/guard/b6/prop.webp"
+    ],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "6-2-无坑-结算.png",
+    "ok": false
+  },
+  {
+    "id": "6-3",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$3x$",
+        "short": "$y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$，所以 $3x,y$ 均为正数。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "6-3-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "6-2",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "两数的积是 $1/4$，不满足 $xy=1/2$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "两数的积是 $1/4$，不满足 $xy=1/2$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "两数的积是 $1/4$，不满足 $xy=1/2$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$，两项 $x,2y$ 都正。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "6-2-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "7-1",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "函数思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": false
+        },
+        "arm-long-equal": {
+          "hide": true
+        },
+        "arm-short": {
+          "hide": false
+        },
+        "arm-short-equal": {
+          "hide": true
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$1/x$",
+        "prop": "条件已看清",
+        "ground": "合法端点取得最值；两项不必相等。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "7-1-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "6-3",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "虽然满足和，但两项 $3x,y$ 不相等，积为 $9/4<3$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "虽然满足和，但两项 $3x,y$ 不相等，积为 $9/4<3$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "虽然满足和，但两项 $3x,y$ 不相等，积为 $9/4<3$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "放缩",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$3x$",
+        "short": "$y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$，所以 $3x,y$ 均为正数。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "6-3-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "7-2",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "函数思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$9/x$",
+        "prop": "条件已看清",
+        "ground": "$x=3$ 在区间内；最大值还要比较两端。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "7-2-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "7-1",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "$x=1$ 不满足 $x\\ge2$。下界 $2$ 在这里取不到。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "$x=1$ 不满足 $x\\ge2$。下界 $2$ 在这里取不到。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:G1#算",
+        "msg": "把题板这一行重新算完，别漏系数和剩下的常数。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "$x=1$ 不满足 $x\\ge2$。下界 $2$ 在这里取不到。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": false
+        },
+        "arm-long-equal": {
+          "hide": true
+        },
+        "arm-short": {
+          "hide": false
+        },
+        "arm-short-equal": {
+          "hide": true
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$1/x$",
+        "prop": "条件已看清",
+        "ground": "合法端点取得最值；两项不必相等。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "7-1-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "7-3",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$3x$",
+        "short": "$1/x$",
+        "prop": "条件已看清",
+        "ground": "$x>0$，两项均正且积为 $3$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "7-3-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "7-2",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "$f(4)=25/4<13/2=f(2)$。不能只看字母最大。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "$f(4)=25/4<13/2=f(2)$。不能只看字母最大。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:G1#算",
+        "msg": "把题板这一行重新算完，别漏系数和剩下的常数。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "$f(4)=25/4<13/2=f(2)$。不能只看字母最大。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$9/x$",
+        "prop": "条件已看清",
+        "ground": "$x=3$ 在区间内；最大值还要比较两端。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "7-2-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "8-1",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$2(x-1)$",
+        "short": "$1/(x-1)$",
+        "prop": "条件已看清",
+        "ground": "令 $t=x-1$，由 $x>1$ 得 $t>0$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "8-1-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "7-3",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "两字母相等不代表 $3x=2y$，因此不能取等。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "两字母相等不代表 $3x=2y$，因此不能取等。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:G1#算",
+        "msg": "把题板这一行重新算完，别漏系数和剩下的常数。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "两字母相等不代表 $3x=2y$，因此不能取等。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$3x$",
+        "short": "$1/x$",
+        "prop": "条件已看清",
+        "ground": "$x>0$，两项均正且积为 $3$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "7-3-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "8-2",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": false
+        },
+        "arm-long-equal": {
+          "hide": true
+        },
+        "arm-short": {
+          "hide": false
+        },
+        "arm-short-equal": {
+          "hide": true
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$t$",
+        "short": "$1/t$",
+        "prop": "条件已看清",
+        "ground": "合法端点取得最值；两项不必相等。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "8-2-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "8-1",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "这是 $t$ 的值，原字母还要加 $1$；它也不满足 $x>1$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "这是 $t$ 的值，原字母还要加 $1$；它也不满足 $x>1$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "这是 $t$ 的值，原字母还要加 $1$；它也不满足 $x>1$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$2(x-1)$",
+        "short": "$1/(x-1)$",
+        "prop": "条件已看清",
+        "ground": "令 $t=x-1$，由 $x>1$ 得 $t>0$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 20,
+    "screenshot": "8-1-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "8-3",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2/x$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$ 给出 $0<x<2$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "8-3-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "8-2",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "$t=(x-2)^2+4\\ge4$，不能等于 $1$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "$t=(x-2)^2+4\\ge4$，不能等于 $1$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "$t=(x-2)^2+4\\ge4$，不能等于 $1$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "函数思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": false
+        },
+        "arm-long-equal": {
+          "hide": true
+        },
+        "arm-short": {
+          "hide": false
+        },
+        "arm-short-equal": {
+          "hide": true
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$t$",
+        "short": "$1/t$",
+        "prop": "条件已看清",
+        "ground": "合法端点取得最值；两项不必相等。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 20,
+    "screenshot": "8-2-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "9-1",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$2y/x$",
+        "short": "$x/(2y)$",
+        "prop": "条件已看清",
+        "ground": "$x>0,2y>0$，交叉两项相乘为 $1$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "9-1-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "8-3",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "$y=0$ 不满足正数条件，且两项 $2$ 与 $1$ 不相等。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "$y=0$ 不满足正数条件，且两项 $2$ 与 $1$ 不相等。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "$y=0$ 不满足正数条件，且两项 $2$ 与 $1$ 不相等。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2/x$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$ 给出 $0<x<2$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 20,
+    "screenshot": "8-3-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "9-2",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$2y/x$",
+        "short": "$2x/y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,2y>0$，两分母和为 $2$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "9-2-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "9-1",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "$x+2y=2$，直接乘会放大一倍；要保留前面的 $1/2$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "$x+2y=2$，直接乘会放大一倍；要保留前面的 $1/2$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:G1#算",
+        "msg": "把题板这一行重新算完，别漏系数和剩下的常数。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "$x+2y=2$，直接乘会放大一倍；要保留前面的 $1/2$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$2y/x$",
+        "short": "$x/(2y)$",
+        "prop": "条件已看清",
+        "ground": "$x>0,2y>0$，交叉两项相乘为 $1$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "9-1-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "9-3",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$4y/x$",
+        "short": "$3x/(2y)$",
+        "prop": "条件已看清",
+        "ground": "$x>0,2y>0$；交叉两项积为 $6$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "9-3-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "9-2",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "这里的交叉两项是 $2y/x,2x/y$；相等要求 $x=y$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "这里的交叉两项是 $2y/x,2x/y$；相等要求 $x=y$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:G1#算",
+        "msg": "把题板这一行重新算完，别漏系数和剩下的常数。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "这里的交叉两项是 $2y/x,2x/y$；相等要求 $x=y$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$2y/x$",
+        "short": "$2x/y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,2y>0$，两分母和为 $2$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "9-2-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "10-1",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x/2$",
+        "short": "$y$",
+        "prop": "条件已看清",
+        "ground": "$x,y$ 不限正负；求最大值要选正的比例。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "10-1-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "9-3",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "两个权重不同；相等应是 $2/u=3u$，即 $u^2=2/3$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "两个权重不同；相等应是 $2/u=3u$，即 $u^2=2/3$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:G1#算",
+        "msg": "把题板这一行重新算完，别漏系数和剩下的常数。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "两个权重不同；相等应是 $2/u=3u$，即 $u^2=2/3$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$4y/x$",
+        "short": "$3x/(2y)$",
+        "prop": "条件已看清",
+        "ground": "$x>0,2y>0$；交叉两项积为 $6$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "9-3-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "10-2",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x/3$",
+        "short": "$y/4$",
+        "prop": "条件已看清",
+        "ground": "$x,y$ 为实数；$x^2+y^2\\ge0$。"
+      },
+      "gone": true
+    },
+    "images": [
+      "http://127.0.0.1:8767/img/guard/b10/prop.webp"
+    ],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "10-2-无坑-结算.png",
+    "ok": false
+  },
+  {
+    "id": "10-1",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "这组满足平方和，但 $2x+y=-2\\sqrt5$，给的是最小值。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "这组满足平方和，但 $2x+y=-2\\sqrt5$，给的是最小值。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "这组满足平方和，但 $2x+y=-2\\sqrt5$，给的是最小值。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x/2$",
+        "short": "$y$",
+        "prop": "条件已看清",
+        "ground": "$x,y$ 不限正负；求最大值要选正的比例。"
+      },
+      "gone": true
+    },
+    "images": [
+      "http://127.0.0.1:8767/img/guard/b10/prop.webp"
+    ],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 20,
+    "screenshot": "10-1-每层一坑-结算.png",
+    "ok": false
+  },
+  {
+    "id": "10-3",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$y/2$",
+        "prop": "条件已看清",
+        "ground": "$x,y$ 不限正负；上界需要正比例取到。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "10-3-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "10-2",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "虽满足一次条件，却不满足 $x/3=y/4$；平方和为 $50/49>1$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "虽满足一次条件，却不满足 $x/3=y/4$；平方和为 $50/49>1$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "虽满足一次条件，却不满足 $x/3=y/4$；平方和为 $50/49>1$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x/3$",
+        "short": "$y/4$",
+        "prop": "条件已看清",
+        "ground": "$x,y$ 为实数；$x^2+y^2\\ge0$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 20,
+    "screenshot": "10-2-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "11-1",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "存在性检验",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$2y/x$",
+        "short": "$2x/y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$ 且 $x+2y=2$，因此 $x<2,y<1$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "11-1-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "10-3",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "比例反了；应是 $y=2x$，这组目标值只有 $12\\sqrt5/5<3\\sqrt5$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "比例反了；应是 $y=2x$，这组目标值只有 $12\\sqrt5/5<3\\sqrt5$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "比例反了；应是 $y=2x$，这组目标值只有 $12\\sqrt5/5<3\\sqrt5$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$y/2$",
+        "prop": "条件已看清",
+        "ground": "$x,y$ 不限正负；上界需要正比例取到。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 20,
+    "screenshot": "10-3-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "11-2",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "存在性检验",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$1/x$",
+        "short": "$1/y$",
+        "prop": "条件已看清",
+        "ground": "第一问 $0<x<1$；第二问 $0<x<2$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "11-2-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "11-1",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "$1+2\\times1=3\\ne2$；得到下界，不代表最小值就是它。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:GX",
+        "msg": "$1+2\\times1=3\\ne2$；得到下界，不代表最小值就是它。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q1#1",
+        "msg": "$1+2\\times1=3\\ne2$；得到下界，不代表最小值就是它。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "$1+2\\times1=3\\ne2$；得到下界，不代表最小值就是它。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$2y/x$",
+        "short": "$2x/y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$ 且 $x+2y=2$，因此 $x<2,y<1$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 18,
+    "screenshot": "11-1-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "11-3",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "存在性检验",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$8y/x$",
+        "short": "$x/(2y)$",
+        "prop": "条件已看清",
+        "ground": "$0<x<2,0<y<1$，两个分母都正。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "11-3-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "11-2",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "第一问要求和为 $1$，这组的和却为 $2$；改条件后不能沿用相等点。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:GX",
+        "msg": "第一问要求和为 $1$，这组的和却为 $2$；改条件后不能沿用相等点。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q1#1",
+        "msg": "第一问要求和为 $1$，这组的和却为 $2$；改条件后不能沿用相等点。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "第一问要求和为 $1$，这组的和却为 $2$；改条件后不能沿用相等点。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$1/x$",
+        "short": "$1/y$",
+        "prop": "条件已看清",
+        "ground": "第一问 $0<x<1$；第二问 $0<x<2$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 18,
+    "screenshot": "11-2-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "12-1",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x,y>0$，所以 $xy>0$ 且 $3-xy>0$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "12-1-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "11-3",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "两项各自取等，却有 $x+2y=3$，不满足原条件。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:GX",
+        "msg": "两项各自取等，却有 $x+2y=3$，不满足原条件。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q1#1",
+        "msg": "两项各自取等，却有 $x+2y=3$，不满足原条件。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "两项各自取等，却有 $x+2y=3$，不满足原条件。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$8y/x$",
+        "short": "$x/(2y)$",
+        "prop": "条件已看清",
+        "ground": "$0<x<2,0<y<1$，两个分母都正。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 18,
+    "screenshot": "11-3-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "12-2",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$a$",
+        "short": "$b$",
+        "prop": "条件已看清",
+        "ground": "$a,b>0$，且 $(a-1)(b-1)=4$，可得 $a,b>1$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "12-2-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "12-1",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "$u$ 才是平方根，回到积要算 $xy=u^2$，不能直接换名字。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:GX",
+        "msg": "$u$ 才是平方根，回到积要算 $xy=u^2$，不能直接换名字。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q1#1",
+        "msg": "$u$ 才是平方根，回到积要算 $xy=u^2$，不能直接换名字。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "$u$ 才是平方根，回到积要算 $xy=u^2$，不能直接换名字。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x,y>0$，所以 $xy>0$ 且 $3-xy>0$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 18,
+    "screenshot": "12-1-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "12-3",
+    "round": 5,
+    "stars": 3,
+    "layers": 5,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x,y>0$，由条件得 $0<x<4$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "12-3-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "13-1",
+    "round": 3,
+    "stars": 3,
+    "layers": 3,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "放缩",
+    "view": {
+      "layers": {
+        "prop": {
+          "hide": true,
+          "drop": true
+        },
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x,y>0,xy=64$；墙足够长。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "13-1-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "12-2",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "这只证明端点能取到；还要说明每个 $p>9$ 也有正数解。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:GX",
+        "msg": "这只证明端点能取到；还要说明每个 $p>9$ 也有正数解。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q1#1",
+        "msg": "这只证明端点能取到；还要说明每个 $p>9$ 也有正数解。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "这只证明端点能取到；还要说明每个 $p>9$ 也有正数解。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$a$",
+        "short": "$b$",
+        "prop": "条件已看清",
+        "ground": "$a,b>0$，且 $(a-1)(b-1)=4$，可得 $a,b>1$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 18,
+    "screenshot": "12-2-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "12-3",
+    "round": 10,
+    "stars": 1,
+    "layers": 5,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "这是积的上界，题目要和；应代回 $x+2y=4-2xy$。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:GX",
+        "msg": "这是积的上界，题目要和；应代回 $x+2y=4-2xy$。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q1#1",
+        "msg": "这是积的上界，题目要和；应代回 $x+2y=4-2xy$。"
+      },
+      {
+        "layer": 4,
+        "round": 9,
+        "key": "4:Q2#1",
+        "msg": "这是积的上界，题目要和；应代回 $x+2y=4-2xy$。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x,y>0$，由条件得 $0<x<4$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 18,
+    "screenshot": "12-3-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "13-2",
+    "round": 3,
+    "stars": 3,
+    "layers": 3,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "放缩",
+    "view": {
+      "layers": {
+        "prop": {
+          "hide": true,
+          "drop": true
+        },
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": false
+        },
+        "arm-long-equal": {
+          "hide": true
+        },
+        "arm-short": {
+          "hide": false
+        },
+        "arm-short-equal": {
+          "hide": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$128/x$",
+        "prop": "条件已看清",
+        "ground": "合法端点取得最值；两项不必相等。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "13-2-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "13-1",
+    "round": 6,
+    "stars": 1,
+    "layers": 3,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "只围三边，正方形需 $24$ 米，大于 $16\\sqrt2$ 米。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "只围三边，正方形需 $24$ 米，大于 $16\\sqrt2$ 米。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "prop": {
+          "hide": true,
+          "drop": true
+        },
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x,y>0,xy=64$；墙足够长。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "13-1-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "13-3",
+    "round": 3,
+    "stars": 3,
+    "layers": 3,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "特殊化",
+    "view": {
+      "layers": {
+        "prop": {
+          "hide": true,
+          "drop": true
+        },
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        }
+      },
+      "tags": {
+        "long": "$3600/x$",
+        "short": "$4x$",
+        "prop": "条件已看清",
+        "ground": "$0<x\\le600$，一年购买次数 $600/x$ 应为正整数。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "13-3-无坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "13-2",
+    "round": 6,
+    "stars": 1,
+    "layers": 3,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "靠墙边超过 $10$ 米，实际放不下；不能沿用原来的相等点。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "靠墙边超过 $10$ 米，实际放不下；不能沿用原来的相等点。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "prop": {
+          "hide": true,
+          "drop": true
+        },
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": false
+        },
+        "arm-long-equal": {
+          "hide": true
+        },
+        "arm-short": {
+          "hide": false
+        },
+        "arm-short-equal": {
+          "hide": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$128/x$",
+        "prop": "条件已看清",
+        "ground": "合法端点取得最值；两项不必相等。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "13-2-每层一坑-结算.png",
+    "ok": true
+  },
+  {
+    "id": "13-3",
+    "round": 6,
+    "stars": 1,
+    "layers": 3,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "虽省运费，存储费变大；这时 $F=6+2400=2406$ 万元。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "虽省运费，存储费变大；这时 $F=6+2400=2406$ 万元。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "放缩",
+    "view": {
+      "layers": {
+        "prop": {
+          "hide": true,
+          "drop": true
+        },
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        }
+      },
+      "tags": {
+        "long": "$3600/x$",
+        "short": "$4x$",
+        "prop": "条件已看清",
+        "ground": "$0<x\\le600$，一年购买次数 $600/x$ 应为正整数。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 19,
+    "screenshot": "13-3-每层一坑-结算.png",
+    "ok": true
+  }
+]

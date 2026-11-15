@@ -1,0 +1,805 @@
+{
+  "scope": "Official full page replay; latest battle SHA required; not student simulation or exhaustive wrong-option coverage.",
+  "all_46_current_passed": true,
+  "missing": [],
+  "battles": [
+    {
+      "id": "6-1",
+      "clean": {
+        "ok": true,
+        "id": "6-1",
+        "layers": 4,
+        "round": 4,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.context.json",
+        "battle_sha256": "117cedfa6fbc031ecb097cf1edb82177ce1667847023dbd9d922dcacf3ea06b9"
+      },
+      "trap": {
+        "ok": true,
+        "id": "6-1",
+        "layers": 4,
+        "round": 8,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.context.json",
+        "battle_sha256": "117cedfa6fbc031ecb097cf1edb82177ce1667847023dbd9d922dcacf3ea06b9"
+      }
+    },
+    {
+      "id": "6-2",
+      "clean": {
+        "ok": true,
+        "id": "6-2",
+        "layers": 4,
+        "round": 4,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.context.json",
+        "battle_sha256": "aba4e349a92ea47d24b6d56efb58b879e02ff1f24ed6797f0ea2f572d5b65dce"
+      },
+      "trap": {
+        "ok": true,
+        "id": "6-2",
+        "layers": 4,
+        "round": 8,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.context.json",
+        "battle_sha256": "aba4e349a92ea47d24b6d56efb58b879e02ff1f24ed6797f0ea2f572d5b65dce"
+      }
+    },
+    {
+      "id": "6-3",
+      "clean": {
+        "ok": true,
+        "id": "6-3",
+        "layers": 4,
+        "round": 4,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.context.json",
+        "battle_sha256": "722b81f9bc0dd9545d2f460292417a0bc0617985ec093dd255f9f5e166ee9dbc"
+      },
+      "trap": {
+        "ok": true,
+        "id": "6-3",
+        "layers": 4,
+        "round": 8,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.context.json",
+        "battle_sha256": "722b81f9bc0dd9545d2f460292417a0bc0617985ec093dd255f9f5e166ee9dbc"
+      }
+    },
+    {
+      "id": "7-1",
+      "clean": {
+        "ok": true,
+        "id": "7-1",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.context.json",
+        "battle_sha256": "086caa6b926c9e6e4065051974d6bae847fd763b563d7d738f1e3028baf1af67"
+      },
+      "trap": {
+        "ok": true,
+        "id": "7-1",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G0",
+          "坑 2 层：ask E0",
+          "坑 3 层：decoy R9",
+          "坑 4 层：ask E",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.context.json",
+        "battle_sha256": "086caa6b926c9e6e4065051974d6bae847fd763b563d7d738f1e3028baf1af67"
+      }
+    },
+    {
+      "id": "7-2",
+      "clean": {
+        "ok": true,
+        "id": "7-2",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.context.json",
+        "battle_sha256": "2e93c7cb34b85607ed3d2f1ec4ba2ade4788e89b038bc590a40fb01a10056f2e"
+      },
+      "trap": {
+        "ok": true,
+        "id": "7-2",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：card G1",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.context.json",
+        "battle_sha256": "2e93c7cb34b85607ed3d2f1ec4ba2ade4788e89b038bc590a40fb01a10056f2e"
+      }
+    },
+    {
+      "id": "7-3",
+      "clean": {
+        "ok": true,
+        "id": "7-3",
+        "layers": 4,
+        "round": 4,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.context.json",
+        "battle_sha256": "5b1a0e6a986154bf9c8e716579b35a6921aa44898bc5ee89a898c6f92f8be56d"
+      },
+      "trap": {
+        "ok": true,
+        "id": "7-3",
+        "layers": 4,
+        "round": 8,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.context.json",
+        "battle_sha256": "5b1a0e6a986154bf9c8e716579b35a6921aa44898bc5ee89a898c6f92f8be56d"
+      }
+    },
+    {
+      "id": "8-1",
+      "clean": {
+        "ok": true,
+        "id": "8-1",
+        "layers": 4,
+        "round": 4,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.context.json",
+        "battle_sha256": "f56789dd39f434edc3989d32191149c46e1792dba8731d89c07a4f23098e7c84"
+      },
+      "trap": {
+        "ok": true,
+        "id": "8-1",
+        "layers": 4,
+        "round": 8,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask M",
+          "坑 4 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.context.json",
+        "battle_sha256": "f56789dd39f434edc3989d32191149c46e1792dba8731d89c07a4f23098e7c84"
+      }
+    },
+    {
+      "id": "8-2",
+      "clean": {
+        "ok": true,
+        "id": "8-2",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.context.json",
+        "battle_sha256": "a33b8ba42e8c32e0597a1c265563ce9bd4d7d0103da5cf1f046a2be30772bc67"
+      },
+      "trap": {
+        "ok": true,
+        "id": "8-2",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G0",
+          "坑 2 层：ask T",
+          "坑 3 层：decoy R9",
+          "坑 4 层：ask E",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.context.json",
+        "battle_sha256": "a33b8ba42e8c32e0597a1c265563ce9bd4d7d0103da5cf1f046a2be30772bc67"
+      }
+    },
+    {
+      "id": "8-3",
+      "clean": {
+        "ok": true,
+        "id": "8-3",
+        "layers": 4,
+        "round": 4,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151911-clean-8-3,9-2,9-3,10-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151911-clean-8-3,9-2,9-3,10-1.context.json",
+        "battle_sha256": "50665bd3bb4456eba0c04d2c69c65f9b761c1b65632d08bdc2b5ab1be6db9c21"
+      },
+      "trap": {
+        "ok": true,
+        "id": "8-3",
+        "layers": 4,
+        "round": 8,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.context.json",
+        "battle_sha256": "50665bd3bb4456eba0c04d2c69c65f9b761c1b65632d08bdc2b5ab1be6db9c21"
+      }
+    },
+    {
+      "id": "9-2",
+      "clean": {
+        "ok": true,
+        "id": "9-2",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151911-clean-8-3,9-2,9-3,10-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151911-clean-8-3,9-2,9-3,10-1.context.json",
+        "battle_sha256": "c8003204bc3cadcbe6fce49a263042fcfc85688e861f0df95bf0e945dc7825cd"
+      },
+      "trap": {
+        "ok": true,
+        "id": "9-2",
+        "layers": 5,
+        "round": 9,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card GX",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：none",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.context.json",
+        "battle_sha256": "c8003204bc3cadcbe6fce49a263042fcfc85688e861f0df95bf0e945dc7825cd"
+      }
+    },
+    {
+      "id": "9-3",
+      "clean": {
+        "ok": true,
+        "id": "9-3",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152544-clean-9-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152544-clean-9-3.context.json",
+        "battle_sha256": "adeabeabafba519538a95b2c8455b406e35d76ad970eb236f048a5f19147f321"
+      },
+      "trap": {
+        "ok": true,
+        "id": "9-3",
+        "layers": 5,
+        "round": 9,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card GX",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：none",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.context.json",
+        "battle_sha256": "adeabeabafba519538a95b2c8455b406e35d76ad970eb236f048a5f19147f321"
+      }
+    },
+    {
+      "id": "10-1",
+      "clean": {
+        "ok": true,
+        "id": "10-1",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151911-clean-8-3,9-2,9-3,10-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151911-clean-8-3,9-2,9-3,10-1.context.json",
+        "battle_sha256": "bdf58e8ab2b1f7c9e01ee04bfe20cb0a6123d1a91b09b7d348f597648b0cc35d"
+      },
+      "trap": {
+        "ok": true,
+        "id": "10-1",
+        "layers": 5,
+        "round": 9,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：none",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.context.json",
+        "battle_sha256": "bdf58e8ab2b1f7c9e01ee04bfe20cb0a6123d1a91b09b7d348f597648b0cc35d"
+      }
+    },
+    {
+      "id": "10-2",
+      "clean": {
+        "ok": true,
+        "id": "10-2",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-151912-clean-10-2,10-3,11-1,11-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-151912-clean-10-2,10-3,11-1,11-2.context.json",
+        "battle_sha256": "57058d8f2136a335f04bcbcc452ac9094b23c9064dccf9dc46670c659dfb06e7"
+      },
+      "trap": {
+        "ok": true,
+        "id": "10-2",
+        "layers": 5,
+        "round": 9,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：none",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152546-trap-10-2,10-3,11-1,11-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152546-trap-10-2,10-3,11-1,11-2.context.json",
+        "battle_sha256": "57058d8f2136a335f04bcbcc452ac9094b23c9064dccf9dc46670c659dfb06e7"
+      }
+    },
+    {
+      "id": "10-3",
+      "clean": {
+        "ok": true,
+        "id": "10-3",
+        "layers": 4,
+        "round": 4,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-153439-clean-10-3,11-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-153439-clean-10-3,11-1.context.json",
+        "battle_sha256": "49685c1078a5c9579a2619fc36dc658e771c5a55a7636084caae796d0d86b96d"
+      },
+      "trap": {
+        "ok": true,
+        "id": "10-3",
+        "layers": 4,
+        "round": 8,
+        "stars": 1,
+        "traps": 4,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask E",
+          "坑 4 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-153443-trap-10-3,11-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-153443-trap-10-3,11-1.context.json",
+        "battle_sha256": "49685c1078a5c9579a2619fc36dc658e771c5a55a7636084caae796d0d86b96d"
+      }
+    },
+    {
+      "id": "11-1",
+      "clean": {
+        "ok": true,
+        "id": "11-1",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-153439-clean-10-3,11-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-153439-clean-10-3,11-1.context.json",
+        "battle_sha256": "ba86836f36f732c56cf91771dcaf3cf9bc61886e84468b101cca25c7c971a5ff"
+      },
+      "trap": {
+        "ok": true,
+        "id": "11-1",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G0",
+          "坑 2 层：ask E0",
+          "坑 3 层：decoy R9",
+          "坑 4 层：ask E",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-153443-trap-10-3,11-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-153443-trap-10-3,11-1.context.json",
+        "battle_sha256": "ba86836f36f732c56cf91771dcaf3cf9bc61886e84468b101cca25c7c971a5ff"
+      }
+    },
+    {
+      "id": "11-2",
+      "clean": {
+        "ok": true,
+        "id": "11-2",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-153748-clean-11-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-153748-clean-11-2.context.json",
+        "battle_sha256": "64d88dfbb461f5cd2fc8dde638f9d6d57f6f42f834388db46bb14b0fe69facf1"
+      },
+      "trap": {
+        "ok": true,
+        "id": "11-2",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G0",
+          "坑 2 层：ask E0",
+          "坑 3 层：decoy R9",
+          "坑 4 层：ask E",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-153752-trap-11-2.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-153752-trap-11-2.context.json",
+        "battle_sha256": "64d88dfbb461f5cd2fc8dde638f9d6d57f6f42f834388db46bb14b0fe69facf1"
+      }
+    },
+    {
+      "id": "11-3",
+      "clean": {
+        "ok": true,
+        "id": "11-3",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-154102-clean-11-3,12-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-154102-clean-11-3,12-1.context.json",
+        "battle_sha256": "621c49bbcf17b57c3279ce88bd98116e04d2f82131cbf937ab0daa98e3f12e0f"
+      },
+      "trap": {
+        "ok": true,
+        "id": "11-3",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G0",
+          "坑 2 层：ask E0",
+          "坑 3 层：decoy R9",
+          "坑 4 层：ask E",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-154105-trap-11-3,12-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-154105-trap-11-3,12-1.context.json",
+        "battle_sha256": "621c49bbcf17b57c3279ce88bd98116e04d2f82131cbf937ab0daa98e3f12e0f"
+      }
+    },
+    {
+      "id": "12-1",
+      "clean": {
+        "ok": true,
+        "id": "12-1",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-154102-clean-11-3,12-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-154102-clean-11-3,12-1.context.json",
+        "battle_sha256": "58839ff09cd08bd10c1dd253aa5a8c57889c14c948759481a83ab85dc9e2c725"
+      },
+      "trap": {
+        "ok": true,
+        "id": "12-1",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask U",
+          "坑 4 层：ask E",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-154105-trap-11-3,12-1.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-154105-trap-11-3,12-1.context.json",
+        "battle_sha256": "58839ff09cd08bd10c1dd253aa5a8c57889c14c948759481a83ab85dc9e2c725"
+      }
+    },
+    {
+      "id": "12-2",
+      "clean": {
+        "ok": true,
+        "id": "12-2",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-155336-clean-12-2,12-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-155336-clean-12-2,12-3.context.json",
+        "battle_sha256": "a02185afcf41f7019e16a3a636fe79b3f8ed7a06c2c2dfdeea4b445b3a71b653"
+      },
+      "trap": {
+        "ok": true,
+        "id": "12-2",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask T",
+          "坑 4 层：ask E",
+          "坑 5 层：ask P"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-155340-trap-12-2,12-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-155340-trap-12-2,12-3.context.json",
+        "battle_sha256": "a02185afcf41f7019e16a3a636fe79b3f8ed7a06c2c2dfdeea4b445b3a71b653"
+      }
+    },
+    {
+      "id": "12-3",
+      "clean": {
+        "ok": true,
+        "id": "12-3",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-155336-clean-12-2,12-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-155336-clean-12-2,12-3.context.json",
+        "battle_sha256": "de1a00254f688d93de5aea638a78fdcb73e0d89834e02022100de1cf5b2a5f06"
+      },
+      "trap": {
+        "ok": true,
+        "id": "12-3",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：decoy R9",
+          "坑 3 层：ask T",
+          "坑 4 层：ask E",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-155340-trap-12-2,12-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-155340-trap-12-2,12-3.context.json",
+        "battle_sha256": "de1a00254f688d93de5aea638a78fdcb73e0d89834e02022100de1cf5b2a5f06"
+      }
+    },
+    {
+      "id": "13-1",
+      "clean": {
+        "ok": true,
+        "id": "13-1",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152057-clean-13-1,13-2,13-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152057-clean-13-1,13-2,13-3.context.json",
+        "battle_sha256": "f70515e76c37540b9cb2b48944fbd07d8107d317939bbb9fd7898f0d533e7984"
+      },
+      "trap": {
+        "ok": true,
+        "id": "13-1",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：ask M",
+          "坑 3 层：decoy R9",
+          "坑 4 层：ask E",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152903-trap-13-1,13-2,13-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152903-trap-13-1,13-2,13-3.context.json",
+        "battle_sha256": "f70515e76c37540b9cb2b48944fbd07d8107d317939bbb9fd7898f0d533e7984"
+      }
+    },
+    {
+      "id": "13-2",
+      "clean": {
+        "ok": true,
+        "id": "13-2",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152057-clean-13-1,13-2,13-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152057-clean-13-1,13-2,13-3.context.json",
+        "battle_sha256": "3b6dedc00d15f7b22d19a6f6b80df3da0162172425a388ace53bb7be11c3e976"
+      },
+      "trap": {
+        "ok": true,
+        "id": "13-2",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G0",
+          "坑 2 层：ask E0",
+          "坑 3 层：decoy R9",
+          "坑 4 层：card G0",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152903-trap-13-1,13-2,13-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152903-trap-13-1,13-2,13-3.context.json",
+        "battle_sha256": "3b6dedc00d15f7b22d19a6f6b80df3da0162172425a388ace53bb7be11c3e976"
+      }
+    },
+    {
+      "id": "13-3",
+      "clean": {
+        "ok": true,
+        "id": "13-3",
+        "layers": 5,
+        "round": 5,
+        "stars": 3,
+        "traps": 0,
+        "end": true,
+        "log": [],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152057-clean-13-1,13-2,13-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152057-clean-13-1,13-2,13-3.context.json",
+        "battle_sha256": "046e0c1642de5f4d809c38faf20249c6848cf2e82690135b3ac8546962d4f809"
+      },
+      "trap": {
+        "ok": true,
+        "id": "13-3",
+        "layers": 5,
+        "round": 10,
+        "stars": 1,
+        "traps": 5,
+        "end": true,
+        "log": [
+          "坑 1 层：card G1",
+          "坑 2 层：ask M",
+          "坑 3 层：decoy R9",
+          "坑 4 层：ask E",
+          "坑 5 层：ask V"
+        ],
+        "raw": "立绘-GPT/批1R2/验证/20261107-152903-trap-13-1,13-2,13-3.json",
+        "context": "立绘-GPT/批1R2/验证/20261107-152903-trap-13-1,13-2,13-3.context.json",
+        "battle_sha256": "046e0c1642de5f4d809c38faf20249c6848cf2e82690135b3ac8546962d4f809"
+      }
+    }
+  ]
+}

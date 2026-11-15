@@ -1,0 +1,762 @@
+{
+  "scope": "作者隔离调用startLayer逐层渲染，非通关；第三次变式按原支架隐藏提醒",
+  "results": [
+    {
+      "id": "10-1",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　原题没有写 x>0、y>0，不要擅自加上正数条件。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-1",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　取等是 x 与 2、y 与 1 成比例，不是 x=y。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-1",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　负解不是无解；它给最小值，这里问的是最大值。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-1",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　不超过 20 的是目标的平方；原目标还要开方。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-1",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　最大值是 2x+y 的值，别把 x 或 y 单独当答案。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-2",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　5 是 3x+4y，不是 x²+y²；放进柯西后右边要平方。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-2",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　相同的是 x/3 与 y/4，不是 x 与 y。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-2",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　25t=5 是一次方程，不要额外添一个负解。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-2",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　25 是平方和前面的系数，最后还要除掉。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-2",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　平方分数时分母也要平方，五分之一不能只平方分子。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-3",
+      "layer": 1,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-3",
+      "layer": 2,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-3",
+      "layer": 3,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "10-3",
+      "layer": 4,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-1",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　不等式可以成立，但右边的数不一定取得到。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-1",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　检验的是两个等号同时成立，不是只验其中一个。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-1",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　合起 x+2y 后还有固定的 2，最后别漏加。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-1",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　两项的最小和为 4，整道题还要算 2+(5+4)/2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-1",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　要证明最小，既得谁都不更小，也得有一对数真能取到。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-2",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　目标一样，允许的 x、y 却不同；最小值未必相同。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-2",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　第一问失败，不代表同一个取等点在第二问也失败。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-2",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　s 在第一问是 1，在第二问是 2；每次代入要成套更换。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-2",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　x=y 还要结合和为 s，得到的是 x=y=s/2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-2",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　最小值从 5 变 4 不矛盾，两问允许的点本来不同。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-3",
+      "layer": 1,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-3",
+      "layer": 2,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-3",
+      "layer": 3,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-3",
+      "layer": 4,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "11-3",
+      "layer": 5,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-1",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　3−xy 不是一个固定数，xy 变时它也会变。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-1",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　若记 u=√(xy)，拆包时要用 xy=u²。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-1",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　u+√2 为正，开方后取正的一侧，再减 √2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-1",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　(√5−√2)² 有交叉项，不能只算 5−2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-1",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　题目最终要 xy，不是它的平方根，也不是 x+2y。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-2",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　题目是积等于和加 3，别把它写成积比和少 3。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-2",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　新字母若是平方根，最后必须平方才能回到 ab。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-2",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　t≤−1 虽使两因数同负，却违反 t>0。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-2",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　t 最小是 3，ab 最小是 t²=9，不是 3。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-2",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　验到 9 只证明端点；整段范围还要保证每个 p≥9 都能取。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-3",
+      "layer": 1,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-3",
+      "layer": 2,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-3",
+      "layer": 3,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-3",
+      "layer": 4,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "12-3",
+      "layer": 5,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-1",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　x 表示平行墙的边，y 表示垂直墙的边；别在中途对调。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-1",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　靠墙一边不用围；垂直墙的两边却都要围。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-1",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　相等的是 x 与 2y，不是矩形的两种边长相等。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-1",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　从 2y²=64 得 y²=32，求边长还要开正平方根。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-1",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　64 是平方米，最短篱笆是米，两个数回答不同的问题。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-2",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　受十米墙长限制的是平行墙的 x，不是垂直墙的 y。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-2",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　两边都为正时，可比较平方；(8√2)²=128>100。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-2",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　先试用满墙只是提出候选，作差不负才证明它最短。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-2",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　最短发生在作差等于零处，这次不要求 x=2y。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-2",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　平行边没有超过 10 米，面积也仍需保持 64 平方米。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-3",
+      "layer": 1,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-3",
+      "layer": 2,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-3",
+      "layer": 3,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-3",
+      "layer": 4,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "13-3",
+      "layer": 5,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-1",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　扁担上是 x+2y，右边那个 2 不能漏。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-1",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　只让 x=y，不能让 x 和 2y 这两项相等。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-1",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　算出的是 2xy 还是 xy？最后要分清。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-1",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　验算乘积用 xy，别把担子右端的 2y 又乘进来。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-2",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　已知的是 xy，而相加的两项乘起来是 2xy。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-2",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　积为 1/2，不代表每个因数都等于 1/2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-2",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　由平方开出来的负数，要用题目的正数条件排除。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-2",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　条件中的乘积不带 2，目标中的和带 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-3",
+      "layer": 1,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-3",
+      "layer": 2,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-3",
+      "layer": 3,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "6-3",
+      "layer": 4,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-1",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　两项的积固定，还不够证明最小值取得到。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-1",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　“不小于 2”和“能等于 2”不是同一句话。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-1",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　比较时用的两个数，都必须在 x≥2 这段路里。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-1",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　差为零出现的根，还得放回 x≥2 检查。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-1",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　这回取等的是作差结论，不是两正数相等的那一步。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-2",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　区间是 [2,4]，不是只剩 2 和 4 两个数。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-2",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　最小能用基本不等式找，最大还要另作比较。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-2",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　这题相等要解 x²=9，不能还写上一题的 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-2",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　右端的 x 大，不代表右端的函数值更大。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-2",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　值和取到的位置要配成对，别把两个答案对调。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-3",
+      "layer": 1,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-3",
+      "layer": 2,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-3",
+      "layer": 3,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "7-3",
+      "layer": 4,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-1",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　先乘 2x 与 1/(x−1)，积里还有 x，不能当定值。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-1",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　拆的是 2x，拿出 x−1 时别只补回一个 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-1",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 3 步，心力还剩 3。　t 是 x−1，不是 x；答案里的常数和根式也要分开留着。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-1",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　代回 2x 时，x 里的 1 也要乘 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-2",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　分母配方后有一个 +4，不能只写“是正数”。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-2",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　能推出 t>0，不代表可以扔掉 t≥4。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-2",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　换元后原式是 t−1+1/t，前面的减 1 要保留。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-2",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　t=4 不是 x=4；t 是整块分母的新名字。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-2",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　前面算得 3，分母算得 4；它们原本就差 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-3",
+      "layer": 1,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-3",
+      "layer": 2,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-3",
+      "layer": 3,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "8-3",
+      "layer": 4,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-2",
+      "layer": 1,
+      "shown": true,
+      "text": "这一层还要做 2 步，心力还剩 2。　乘进去的是 1；只乘 x+2y 会把目标放大两倍。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-2",
+      "layer": 2,
+      "shown": true,
+      "text": "这一层还要做 3 步，心力还剩 3。　常数来自 1 和 4，相加是 5；外面仍有二分之一。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-2",
+      "layer": 3,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　目标换了系数，取等也要重新解，不能沿用 x=2y。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-2",
+      "layer": 4,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　两项至少是 4，只是括号的一部分，还要加 5 再除以 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-2",
+      "layer": 5,
+      "shown": true,
+      "text": "这一层还要做 1 步，心力还剩 1。　第二项是 2/y，代入后是 3，不是 3/2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-3",
+      "layer": 1,
+      "shown": false,
+      "text": "这一层还要做 2 步，心力还剩 2。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-3",
+      "layer": 2,
+      "shown": false,
+      "text": "这一层还要做 3 步，心力还剩 3。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-3",
+      "layer": 3,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-3",
+      "layer": 4,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    },
+    {
+      "id": "9-3",
+      "layer": 5,
+      "shown": false,
+      "text": "这一层还要做 1 步，心力还剩 1。",
+      "rawMarkup": false
+    }
+  ],
+  "pageErrors": []
+}

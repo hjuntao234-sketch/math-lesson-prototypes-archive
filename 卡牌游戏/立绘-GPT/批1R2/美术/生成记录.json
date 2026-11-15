@@ -1,0 +1,14 @@
+{
+  "tool": "内置 image_gen",
+  "prompt": "Use case: precise-object-edit. Edit target: the supplied isolated wall sprite. Produce ONLY this wall layer on true transparent alpha, no background. Keep the broad low wall silhouette, its near frontal view, and the single smooth valley in its top edge: both ends tall, a single clearly lowest center. Replace the indistinct fluffy cloud mass with a readable ancient LOW STONE WALL partly wrapped in wisps of pale mist. Large grey-green stone blocks, clearly visible dark mortar seams, weathered hand painted stone surfaces, subtle muted moss, softly lit edges. The wall must look unquestionably like solid masonry at game size, not another cloud. Its top contour descends gently from each end to one central low point, no multiple notches, no battlements, no extra towers. Preserve a flat horizontal ground base. Style: soft painterly fantasy game illustration matching the reference, not photoreal. Keep exactly the original wall position and overall 1200x1100 transparent canvas arrangement with generous empty upper space, wall around x180..1100 and y620..920; do not crop. No guardian, no eyes, no arms, no flags, no horizontal guide line, no text/numbers/symbols, no checkerboard pixels, no cast ground rectangle. Transparent background.",
+  "source": "~/.codex/generated_images/01a1ab12-e453-7723-a7e4-bc17aab1a141/exec-ab01acdf-3d2e-471c-b459-ddbcc6308ca1.png",
+  "reference": "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/批2a/守卫/siege/wall.png",
+  "transparent_background": true,
+  "arm-c": {
+    "tool": "内置 image_gen",
+    "source": "~/.codex/generated_images/01a1ab12-e453-7723-a7e4-bc17aab1a141/exec-fbed49dd-8047-4f19-adce-058668fddf42.png",
+    "reference": "立绘-GPT/批2a/守卫/siege/arm-c.png",
+    "transparent_background": true,
+    "brief": "灰绿描边奶白雾臂；弧线越过墙头，再在墙左缘外下降为低拳；初版坐标肩800,480，弧经560,440和340,430，拳105,650；最终刚性装配变换见assemble_siege.py。"
+  }
+}

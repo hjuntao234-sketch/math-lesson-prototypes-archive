@@ -1,0 +1,148 @@
+{
+  "checks": [
+    {
+      "layer": "wall",
+      "PNG": [
+        1200,
+        1100
+      ],
+      "WebP": [
+        600,
+        550
+      ],
+      "fully_transparent_RGB_zero": true,
+      "edge_alpha": 0,
+      "bytes": 75044,
+      "points": {
+        "low": {
+          "xy": [
+            637,
+            770
+          ],
+          "nearby_alpha": 253
+        },
+        "left": {
+          "xy": [
+            250,
+            644
+          ],
+          "nearby_alpha": 255
+        },
+        "right": {
+          "xy": [
+            1030,
+            646
+          ],
+          "nearby_alpha": 255
+        }
+      }
+    },
+    {
+      "layer": "wall-raised",
+      "PNG": [
+        1200,
+        1100
+      ],
+      "WebP": [
+        600,
+        550
+      ],
+      "fully_transparent_RGB_zero": true,
+      "edge_alpha": 0,
+      "bytes": 75022,
+      "points": {
+        "low": {
+          "xy": [
+            637,
+            610
+          ],
+          "nearby_alpha": 253
+        }
+      }
+    },
+    {
+      "layer": "arm-c",
+      "PNG": [
+        1200,
+        1100
+      ],
+      "WebP": [
+        600,
+        550
+      ],
+      "fully_transparent_RGB_zero": true,
+      "edge_alpha": 0,
+      "bytes": 32120,
+      "points": {
+        "shoulder": {
+          "xy": [
+            815,
+            476
+          ],
+          "nearby_alpha": 254
+        },
+        "fist": {
+          "xy": [
+            110,
+            620
+          ],
+          "nearby_alpha": 253
+        }
+      }
+    },
+    {
+      "layer": "low-gap",
+      "PNG": [
+        1200,
+        1100
+      ],
+      "WebP": [
+        600,
+        550
+      ],
+      "fully_transparent_RGB_zero": true,
+      "edge_alpha": 0,
+      "bytes": 4210,
+      "points": {
+        "center": {
+          "xy": [
+            637,
+            770
+          ],
+          "nearby_alpha": 253
+        }
+      }
+    },
+    {
+      "layer": "flag",
+      "PNG": [
+        1200,
+        1100
+      ],
+      "WebP": [
+        600,
+        550
+      ],
+      "fully_transparent_RGB_zero": true,
+      "edge_alpha": 0,
+      "bytes": 4042,
+      "points": {
+        "center": {
+          "xy": [
+            607,
+            540
+          ],
+          "nearby_alpha": 255
+        }
+      }
+    }
+  ],
+  "raised_exact_translation": [
+    0,
+    -160
+  ],
+  "arm_c_wall_overlap_at_alpha_over_128": 0,
+  "boss_d_inherits_siege": true,
+  "untouched_layers_unchanged": true,
+  "note": "只量化指定不变量；初始/高亮/抬升及boss-d三态均另有470尺寸目检图。半透明边缘以图像目检为准。"
+}

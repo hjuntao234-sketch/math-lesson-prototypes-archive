@@ -1,0 +1,36 @@
+{
+  "wall_low": [
+    637,
+    770
+  ],
+  "raised_low": [
+    637,
+    610
+  ],
+  "line_y": 710,
+  "raised_above_line": true,
+  "arm_wall_overlap_pixels": {
+    "initial": 0,
+    "raised": 0
+  },
+  "png_size": [
+    1200,
+    1100
+  ],
+  "webp_size": [
+    600,
+    550
+  ],
+  "transforms": {
+    "wall": "resize to 1200x1100",
+    "raised": [
+      0,
+      -160
+    ],
+    "arm-c": "resize to 1200x1100; y -100; rotate 5 degrees clockwise about (110,640); y -20",
+    "flag_low-gap": [
+      -3,
+      13
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "scope": "独立算术抽查新文案中的作差恒等式、柯西平方差、整段范围构造；不是证明替代，也不是学生测评",
+  "checks": 182,
+  "all_pass": true,
+  "labels": [
+    "10-1 square",
+    "10-2 square",
+    "10-3 square",
+    "12-1",
+    "12-2",
+    "12-2 arbitrary p product",
+    "12-2 arbitrary p sum",
+    "12-3",
+    "13-1",
+    "13-2 x",
+    "13-2 y",
+    "13-3",
+    "6-2 difference",
+    "7-1 difference",
+    "7-2 max",
+    "7-2 min",
+    "7-3",
+    "8-2",
+    "8-3"
+  ]
+}

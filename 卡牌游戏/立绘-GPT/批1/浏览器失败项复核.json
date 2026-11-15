@@ -1,0 +1,394 @@
+[
+  {
+    "id": "p2-1",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "S1",
+      "S2",
+      "E1",
+      "C1",
+      "V1"
+    ],
+    "sent": "整体代换",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true,
+          "scale": 0.82
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "cloth": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "一只手：$t$",
+        "cloth": "另一只手：$\\dfrac9t$",
+        "ground": "$x>1$，所以 $x-1>0$"
+      },
+      "pebble": true,
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 7,
+    "screenshot": "p2-1-无坑-复核结算.png",
+    "ok": true
+  },
+  {
+    "id": "6-1",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "放缩",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$，所以 $x>0,2y>0$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "6-1-无坑-复核结算.png",
+    "ok": true
+  },
+  {
+    "id": "p2-1",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:@long",
+        "msg": "「找一整块」在这里找不到东西。换个地方看。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "就因为这个？……那我可不一定灵哦。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "两个数相等，是 $t=\\dfrac9t$，也就是 $t^2=9$，不是 $t=9$。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "$x=3$ 时是 $7.5$，不是 7。$t$ 才是 3，$x$ 是 4。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "S1",
+      "S2",
+      "E1",
+      "C1",
+      "V1"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true,
+          "scale": 0.82
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "cloth": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "一只手：$x-1$",
+        "cloth": "另一只手：$\\dfrac{9}{x-1}$",
+        "ground": "$x>1$，所以 $x-1>0$"
+      },
+      "pebble": true,
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 17,
+    "screenshot": "p2-1-每层一坑-复核结算.png",
+    "ok": true
+  },
+  {
+    "id": "6-2",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "放缩",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x$",
+        "short": "$2y$",
+        "prop": "条件已看清",
+        "ground": "$x>0,y>0$，两项 $x,2y$ 都正。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "6-2-无坑-复核结算.png",
+    "ok": true
+  },
+  {
+    "id": "10-2",
+    "round": 4,
+    "stars": 3,
+    "layers": 4,
+    "traps": [],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "构造",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x/3$",
+        "short": "$y/4$",
+        "prop": "条件已看清",
+        "ground": "$x,y$ 为实数；$x^2+y^2\\ge0$。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "无坑-第一路线",
+    "actions": 8,
+    "screenshot": "10-2-无坑-复核结算.png",
+    "ok": true
+  },
+  {
+    "id": "10-1",
+    "round": 8,
+    "stars": 1,
+    "layers": 4,
+    "traps": [
+      {
+        "layer": 0,
+        "round": 1,
+        "key": "0:GX",
+        "msg": "这组满足平方和，但 $2x+y=-2\\sqrt5$，给的是最小值。"
+      },
+      {
+        "layer": 1,
+        "round": 3,
+        "key": "1:R9",
+        "msg": "能推出一个界还不够；最值还要求等号在原条件下取得到。"
+      },
+      {
+        "layer": 2,
+        "round": 5,
+        "key": "2:Q1#1",
+        "msg": "这组满足平方和，但 $2x+y=-2\\sqrt5$，给的是最小值。"
+      },
+      {
+        "layer": 3,
+        "round": 7,
+        "key": "3:Q2#1",
+        "msg": "这组满足平方和，但 $2x+y=-2\\sqrt5$，给的是最小值。"
+      }
+    ],
+    "steps": [
+      "D1",
+      "D2",
+      "R",
+      "S",
+      "E",
+      "C1",
+      "C2",
+      "V"
+    ],
+    "sent": "方程思想",
+    "view": {
+      "layers": {
+        "body": {
+          "hide": false
+        },
+        "eyes": {
+          "hide": false
+        },
+        "arm-long": {
+          "hide": true
+        },
+        "arm-long-equal": {
+          "hide": false
+        },
+        "arm-short": {
+          "hide": true
+        },
+        "arm-short-equal": {
+          "hide": false
+        },
+        "prop": {
+          "hide": true,
+          "drop": true
+        }
+      },
+      "tags": {
+        "long": "$x/2$",
+        "short": "$y$",
+        "prop": "条件已看清",
+        "ground": "$x,y$ 不限正负；求最大值要选正的比例。"
+      },
+      "gone": true
+    },
+    "images": [],
+    "runtimeErrors": [],
+    "mode": "每层一坑-第二路线",
+    "actions": 20,
+    "screenshot": "10-1-每层一坑-复核结算.png",
+    "ok": true
+  }
+]

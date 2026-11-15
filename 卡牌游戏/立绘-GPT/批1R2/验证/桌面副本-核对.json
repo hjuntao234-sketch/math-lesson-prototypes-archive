@@ -1,0 +1,15 @@
+{
+  "verified": "2026-11-07T16:14:02.053724+09:00",
+  "pass": true,
+  "source_root": "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame",
+  "desktop_root": "~/Desktop/罗盘指挥官_第一章批1R2_20261107",
+  "payload_count": 897,
+  "total_files_including_manifest_and_receipt": 899,
+  "mismatches": [],
+  "missing": [],
+  "extra": [],
+  "manifest_sha256": "02ead72cd6bbf4d269ab1f249bfa4e3103703880cfdc980ec567af6a4056b284",
+  "manifest_copy_equal": true,
+  "progress_sha256": "1743a2910600df70d27d746e69436a8b1d2d40b9148c60fb37f027df21977824",
+  "note": "Every payload file and manifest compared against its source. This identical receipt is then copied and its SHA equality asserted; it cannot include its own SHA."
+}

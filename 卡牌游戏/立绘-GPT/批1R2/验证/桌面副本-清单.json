@@ -1,0 +1,4494 @@
+{
+  "created": "2026-11-07T16:14:01.649957+09:00",
+  "source_root": "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame",
+  "desktop_root": "~/Desktop/罗盘指挥官_第一章批1R2_20261107",
+  "note": "Payload hashes exclude this manifest and receipt to avoid self-reference; both metadata files are separately compared after copying.",
+  "payload_count": 897,
+  "files": [
+    {
+      "path": "关卡/第一章/战斗/10-1.json",
+      "sha256": "bdf58e8ab2b1f7c9e01ee04bfe20cb0a6123d1a91b09b7d348f597648b0cc35d",
+      "bytes": 8248
+    },
+    {
+      "path": "关卡/第一章/战斗/10-2.json",
+      "sha256": "57058d8f2136a335f04bcbcc452ac9094b23c9064dccf9dc46670c659dfb06e7",
+      "bytes": 7610
+    },
+    {
+      "path": "关卡/第一章/战斗/10-3.json",
+      "sha256": "49685c1078a5c9579a2619fc36dc658e771c5a55a7636084caae796d0d86b96d",
+      "bytes": 7313
+    },
+    {
+      "path": "关卡/第一章/战斗/11-1.json",
+      "sha256": "ba86836f36f732c56cf91771dcaf3cf9bc61886e84468b101cca25c7c971a5ff",
+      "bytes": 9244
+    },
+    {
+      "path": "关卡/第一章/战斗/11-2.json",
+      "sha256": "64d88dfbb461f5cd2fc8dde638f9d6d57f6f42f834388db46bb14b0fe69facf1",
+      "bytes": 9587
+    },
+    {
+      "path": "关卡/第一章/战斗/11-3.json",
+      "sha256": "621c49bbcf17b57c3279ce88bd98116e04d2f82131cbf937ab0daa98e3f12e0f",
+      "bytes": 8915
+    },
+    {
+      "path": "关卡/第一章/战斗/12-1.json",
+      "sha256": "58839ff09cd08bd10c1dd253aa5a8c57889c14c948759481a83ab85dc9e2c725",
+      "bytes": 9332
+    },
+    {
+      "path": "关卡/第一章/战斗/12-2.json",
+      "sha256": "a02185afcf41f7019e16a3a636fe79b3f8ed7a06c2c2dfdeea4b445b3a71b653",
+      "bytes": 9263
+    },
+    {
+      "path": "关卡/第一章/战斗/12-3.json",
+      "sha256": "de1a00254f688d93de5aea638a78fdcb73e0d89834e02022100de1cf5b2a5f06",
+      "bytes": 9069
+    },
+    {
+      "path": "关卡/第一章/战斗/13-1.json",
+      "sha256": "f70515e76c37540b9cb2b48944fbd07d8107d317939bbb9fd7898f0d533e7984",
+      "bytes": 9192
+    },
+    {
+      "path": "关卡/第一章/战斗/13-2.json",
+      "sha256": "3b6dedc00d15f7b22d19a6f6b80df3da0162172425a388ace53bb7be11c3e976",
+      "bytes": 10106
+    },
+    {
+      "path": "关卡/第一章/战斗/13-3.json",
+      "sha256": "046e0c1642de5f4d809c38faf20249c6848cf2e82690135b3ac8546962d4f809",
+      "bytes": 9611
+    },
+    {
+      "path": "关卡/第一章/战斗/6-1.json",
+      "sha256": "117cedfa6fbc031ecb097cf1edb82177ce1667847023dbd9d922dcacf3ea06b9",
+      "bytes": 9056
+    },
+    {
+      "path": "关卡/第一章/战斗/6-2.json",
+      "sha256": "aba4e349a92ea47d24b6d56efb58b879e02ff1f24ed6797f0ea2f572d5b65dce",
+      "bytes": 7796
+    },
+    {
+      "path": "关卡/第一章/战斗/6-3.json",
+      "sha256": "722b81f9bc0dd9545d2f460292417a0bc0617985ec093dd255f9f5e166ee9dbc",
+      "bytes": 7289
+    },
+    {
+      "path": "关卡/第一章/战斗/7-1.json",
+      "sha256": "086caa6b926c9e6e4065051974d6bae847fd763b563d7d738f1e3028baf1af67",
+      "bytes": 9258
+    },
+    {
+      "path": "关卡/第一章/战斗/7-2.json",
+      "sha256": "2e93c7cb34b85607ed3d2f1ec4ba2ade4788e89b038bc590a40fb01a10056f2e",
+      "bytes": 9598
+    },
+    {
+      "path": "关卡/第一章/战斗/7-3.json",
+      "sha256": "5b1a0e6a986154bf9c8e716579b35a6921aa44898bc5ee89a898c6f92f8be56d",
+      "bytes": 7923
+    },
+    {
+      "path": "关卡/第一章/战斗/8-1.json",
+      "sha256": "f56789dd39f434edc3989d32191149c46e1792dba8731d89c07a4f23098e7c84",
+      "bytes": 8399
+    },
+    {
+      "path": "关卡/第一章/战斗/8-2.json",
+      "sha256": "a33b8ba42e8c32e0597a1c265563ce9bd4d7d0103da5cf1f046a2be30772bc67",
+      "bytes": 9113
+    },
+    {
+      "path": "关卡/第一章/战斗/8-3.json",
+      "sha256": "50665bd3bb4456eba0c04d2c69c65f9b761c1b65632d08bdc2b5ab1be6db9c21",
+      "bytes": 7732
+    },
+    {
+      "path": "关卡/第一章/战斗/9-2.json",
+      "sha256": "c8003204bc3cadcbe6fce49a263042fcfc85688e861f0df95bf0e945dc7825cd",
+      "bytes": 8579
+    },
+    {
+      "path": "关卡/第一章/战斗/9-3.json",
+      "sha256": "adeabeabafba519538a95b2c8455b406e35d76ad970eb236f048a5f19147f321",
+      "bytes": 9004
+    },
+    {
+      "path": "关卡/第一章/批1R2-进度.md",
+      "sha256": "1743a2910600df70d27d746e69436a8b1d2d40b9148c60fb37f027df21977824",
+      "bytes": 25657
+    },
+    {
+      "path": "立绘-GPT/批1R2/README.md",
+      "sha256": "fb257b68450084e39abe8d88da4bc50fb38a77b3219235371a7bf5e6b41a1843",
+      "bytes": 1243
+    },
+    {
+      "path": "立绘-GPT/批1R2/baseline.json",
+      "sha256": "c281a944113c8693aab846e8dd4c8a062694569173b07325f4c9f80992700a60",
+      "bytes": 195505
+    },
+    {
+      "path": "立绘-GPT/批1R2/student_ui.cjs",
+      "sha256": "59e393cfc7cefdc5ba06b3d5a600429545429bf22d8c4cabdd93768cc8525871",
+      "bytes": 4174
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/bg-boss.webp",
+      "sha256": "aeb68b4793268a230e635f4d7de6f0f1d368cd0c032f54fe9724432527862308",
+      "bytes": 43854
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/bg-garden.webp",
+      "sha256": "6d6b72b31c78f16f660f26ef28558f04056770b7990e4b605b3c6a2889fab2fb",
+      "bytes": 193120
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/bg-path.webp",
+      "sha256": "eb4d92cd3f6b03f06e7e9295cbf1a30bf9d0b1a6b5dce0bcb2a08ad61ea44050",
+      "bytes": 177930
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/bg-ruins.webp",
+      "sha256": "de0efa2cc4b5a7b84699ca69832e236c24726db226316fe793c680ab069764d8",
+      "bytes": 145626
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-bala.webp",
+      "sha256": "0447d39da62732d1a61a3302ff18296f235abec529ef30f0c6df80aca1c0e3a1",
+      "bytes": 29182
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-certa.webp",
+      "sha256": "52b94384fca021a2f04fb379ebcc317fc9d7ae823b84e4cde06b4ed3fcb0ecf2",
+      "bytes": 32702
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-divi.webp",
+      "sha256": "a1e1b525248912f05ba10460214e976729e9619c79ad1d64725c6a974053d2b2",
+      "bytes": 45858
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-fabia.webp",
+      "sha256": "fb3dda213da9bf39b171fe9776ff70ce51a7ea781efef9f54b3bd211e8a66055",
+      "bytes": 36348
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-flo.webp",
+      "sha256": "2b4fb1c6a6db5b7fb8bb3d55db290182fc99bd276eebc674e42c3497f3dfdd93",
+      "bytes": 62164
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-ilu.webp",
+      "sha256": "8f0816fe96ab480e1cc9cb020d7afc02bca4dfd4259da90bd708486408c836a7",
+      "bytes": 25780
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-marga.webp",
+      "sha256": "8caa53314e16e69d04ab60255d87fbbeb467891008e47e2af3394eb003bfe5a5",
+      "bytes": 28152
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-mira.webp",
+      "sha256": "4da0bb4845437651c9bb3b8751e932160ae598276f164d7a546639d30580c0a1",
+      "bytes": 24072
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-norman.webp",
+      "sha256": "6bef62754210d48cff0c06bd3b0345924f9569f2111978d8fffe2cf3b7e05e77",
+      "bytes": 25008
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-ora.webp",
+      "sha256": "163b1fcc2054fd8be1b241687457bcdf7c86ddb01c8c3b9962082c1a07a76faa",
+      "bytes": 19768
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-quidda.webp",
+      "sha256": "d2cbcaf90810f30d6bd22cba19327fe4e21bd8a1d3f95948783d3c0ff90fc73d",
+      "bytes": 19016
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-tally.webp",
+      "sha256": "0327495a690f54ff9d3a472ffc0b2b0e065c6bb15ce9d002f69c255f123dc79d",
+      "bytes": 38474
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-tess.webp",
+      "sha256": "784b48d265d6e3b34babdad6f8f263e1b0985a7bc0a5a51109e2df4440ecfd8b",
+      "bytes": 34256
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/calm-yana.webp",
+      "sha256": "9b5387d9e7521e9028cd6bd960b43a01478e5b51ac989668742c4c1362275a89",
+      "bytes": 23628
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-bala.webp",
+      "sha256": "5d13e12f73c34b73c1d5532dfebbc32e4e95f1c83ea88588fd23f5edfc6d4984",
+      "bytes": 25078
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-certa.webp",
+      "sha256": "9d186834c1509ea7c72a30144519d841f990d2cbd6ad3de6713199c23c5973a6",
+      "bytes": 33424
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-divi.webp",
+      "sha256": "d8f44190f75e1d2bf517739679634b4d9f6f46bb6a2b86ccc25a911129506825",
+      "bytes": 53654
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-fabia.webp",
+      "sha256": "898e400599bb6c1f8160bc275a5ce8a43956a97e9b2b0157301c07184d162f72",
+      "bytes": 39666
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-flo.webp",
+      "sha256": "b408a3048e778bcc33553e8ad989b8eff6550d10be37987716f819ccc756fd1f",
+      "bytes": 54792
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-ilu.webp",
+      "sha256": "4cbe6debab55c36efb293d25453fa5e9d46ee3019b8b57ea46e47769af53e36a",
+      "bytes": 26904
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-marga.webp",
+      "sha256": "e4d897a841a1f4071ab3c0dcb744a10d1ac49e360546893827984cd9c1dab2b9",
+      "bytes": 28382
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-mira.webp",
+      "sha256": "1d4d09ef1bea2e7663224ef286118d2d7b4b38ecd0f26b447a4a34fbeb26f052",
+      "bytes": 27248
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-ora.webp",
+      "sha256": "a20efb3737aba78baac80b4fa3fc465851172ba396f78de7adba05d4f33c6db7",
+      "bytes": 18028
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-quidda.webp",
+      "sha256": "52cb2dd9c512f54282f84e0a195b913c5f02b52b1354094e34f07d0b429ddff8",
+      "bytes": 19508
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-tally.webp",
+      "sha256": "85db43f6690c62772a6bdefab3c03c0e3ad9aa826148c5ecadf7068d215d879f",
+      "bytes": 53880
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-tess.webp",
+      "sha256": "bf005ec71d9b09ef7fbc53b42a74b830d21d63aaff866409be449f363f4b025c",
+      "bytes": 33264
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/full/ready-yana.webp",
+      "sha256": "eb95cfa747c1fa62115f1239ef3429f08dd9aeb584c5477d9a0ad2fced59a9d9",
+      "bytes": 26280
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/arch-down.webp",
+      "sha256": "7f92552a9394c23067bdefb13e3da56fc9daeb432ae15cfb7072251abe525c77",
+      "bytes": 9990
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/arch-up-float.webp",
+      "sha256": "db5285482b7cc858e804a291d671fb176603dc12197deecfa076065560a713b0",
+      "bytes": 10082
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/arch-up-touch.webp",
+      "sha256": "a99bd6aa3a21891fe6ac8c99a5e7ad6cca19bceb67798ce2f61485180bc1bd55",
+      "bytes": 10090
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/arch-up.webp",
+      "sha256": "77c2c43ddb526c19fe7b6569feb53cacba26adac78e5ca6e3dfd87058ebbc13b",
+      "bytes": 10054
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/axis.webp",
+      "sha256": "33282c8bce697401b3a9ae272ef9a9b3137d84799b12643139a9496895874ae0",
+      "bytes": 2806
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/eyes-down.webp",
+      "sha256": "2006f92831a1bdee4968c25c9cd49d8ce54c754ae14c7b11a58fef5bb7724372",
+      "bytes": 2462
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/eyes-float.webp",
+      "sha256": "c2bbc49de3a3815d49d6edbf24de3b2f737202b747a044438c5aeb4b39d70671",
+      "bytes": 2416
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/eyes-touch.webp",
+      "sha256": "97392f80c878b5983bc2c32f932119b3405a4cb364dad4c1bdcc8310cf2a399e",
+      "bytes": 2450
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/eyes-up.webp",
+      "sha256": "085bb0e937ede0985454932d0a619a031bf5ac253b95362eddc74b4ba8aba453",
+      "bytes": 2418
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/flag-left.webp",
+      "sha256": "56901f03267492228683f8f6c090bf86f891411dddf7fc95b0e387e24d177e29",
+      "bytes": 2382
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/flag-right.webp",
+      "sha256": "8aad7d411c5203cc8f0df3eb7f13f02a3bd609d87718a71c43f1093bdfb39e20",
+      "bytes": 2426
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/shade-between.webp",
+      "sha256": "574587828fa5b9fd2860d3a69963108e05e3673f1075fe2f39996547cf0ec29a",
+      "bytes": 2142
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/arch/shade-outside.webp",
+      "sha256": "cfaf671ad91e548d13b8dbbdf19872694e625cac9825936dfe000257ffa7700e",
+      "bytes": 1946
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b10/arm-long-equal.webp",
+      "sha256": "34761e09d700764866620d19e718b239c15fe88eb002e0e1af94396324722bb8",
+      "bytes": 8088
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b10/arm-long.webp",
+      "sha256": "a880147fdd821761358c31e02a5bdd033d10c50d63a3dd22e249bf6e96707c01",
+      "bytes": 9310
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b10/arm-short-equal.webp",
+      "sha256": "e8db375320636a140433de3af4b7b0c07c7293b0da51ef671f0bff0a117ccc2b",
+      "bytes": 8128
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b10/arm-short.webp",
+      "sha256": "70608a170d298d2dd1a091d55855a468016e43cc2a691c2a3b7fafe1d6ca5a9a",
+      "bytes": 6748
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b10/body.webp",
+      "sha256": "bccc7e4c4edd3ede4df1876aaed6b22f37854a9926ebbde0e1df975d30e0d14f",
+      "bytes": 21914
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b10/eyes.webp",
+      "sha256": "8de51de21d01f7e3d8055f279b4cb1a69015bafdcb4a0f6879b98ec94fc4181f",
+      "bytes": 2856
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b10/prop.webp",
+      "sha256": "b32c675d1cbdf0cda1035576da5b023cad3f23438b83f8035fdc517aad012b65",
+      "bytes": 6648
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b11/arm-long-equal.webp",
+      "sha256": "4d0f954282b8fad27406d8d667a9bf0c24f36540ed218d33a6cd61646d65982f",
+      "bytes": 5676
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b11/arm-long.webp",
+      "sha256": "a8278eeab6a25ded93fc4f63b8d270cc771d5caa44ee99d7f67e6d8ea7425a43",
+      "bytes": 6338
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b11/arm-short-equal.webp",
+      "sha256": "a0a8f5e1c674d6483f2ddec6c0c4f388f6ef89549dc9b96da60227b03ec8076f",
+      "bytes": 5666
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b11/arm-short.webp",
+      "sha256": "8832e1d706ab85e3487cd7f2abe2c31ee738a5c93e00d2ae44e3700b04974064",
+      "bytes": 4810
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b11/body.webp",
+      "sha256": "ebd35fcf235166d60df505cf29bc05782a4c5bb056e26225f149180713da0faa",
+      "bytes": 14468
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b11/eyes.webp",
+      "sha256": "083e37016fcb2708c04ded0d7a652ed2becd965802fa4ac04890a128c2a19884",
+      "bytes": 3268
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b11/prop.webp",
+      "sha256": "94727b526ddd3ca90f13a065c4343297db03fa2fa8ba63e1e9acf2f44d8c5696",
+      "bytes": 8468
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b12/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b12/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b12/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b12/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b12/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b12/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b12/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b12/prop.webp",
+      "sha256": "a78440f9ab0c94e17660899de8698438764fbf7f63a8bc6085ba767e728e7cf9",
+      "bytes": 11116
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b13/arm-long-equal.webp",
+      "sha256": "34761e09d700764866620d19e718b239c15fe88eb002e0e1af94396324722bb8",
+      "bytes": 8088
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b13/arm-long.webp",
+      "sha256": "a880147fdd821761358c31e02a5bdd033d10c50d63a3dd22e249bf6e96707c01",
+      "bytes": 9310
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b13/arm-short-equal.webp",
+      "sha256": "e8db375320636a140433de3af4b7b0c07c7293b0da51ef671f0bff0a117ccc2b",
+      "bytes": 8128
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b13/arm-short.webp",
+      "sha256": "70608a170d298d2dd1a091d55855a468016e43cc2a691c2a3b7fafe1d6ca5a9a",
+      "bytes": 6748
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b13/body.webp",
+      "sha256": "bccc7e4c4edd3ede4df1876aaed6b22f37854a9926ebbde0e1df975d30e0d14f",
+      "bytes": 21914
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b13/eyes.webp",
+      "sha256": "8de51de21d01f7e3d8055f279b4cb1a69015bafdcb4a0f6879b98ec94fc4181f",
+      "bytes": 2856
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b13/prop.webp",
+      "sha256": "f1b53b8c8957e10453c29aabf907ca141b41f22db9c077ac929f8fc07f1a0473",
+      "bytes": 9286
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b6/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b6/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b6/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b6/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b6/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b6/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b6/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b6/prop.webp",
+      "sha256": "f966d8fadc8c741575f11db896590d000dac057da600f53d18015485c09191d1",
+      "bytes": 5952
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b7/arm-long-equal.webp",
+      "sha256": "34761e09d700764866620d19e718b239c15fe88eb002e0e1af94396324722bb8",
+      "bytes": 8088
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b7/arm-long.webp",
+      "sha256": "a880147fdd821761358c31e02a5bdd033d10c50d63a3dd22e249bf6e96707c01",
+      "bytes": 9310
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b7/arm-short-equal.webp",
+      "sha256": "e8db375320636a140433de3af4b7b0c07c7293b0da51ef671f0bff0a117ccc2b",
+      "bytes": 8128
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b7/arm-short.webp",
+      "sha256": "70608a170d298d2dd1a091d55855a468016e43cc2a691c2a3b7fafe1d6ca5a9a",
+      "bytes": 6748
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b7/body.webp",
+      "sha256": "bccc7e4c4edd3ede4df1876aaed6b22f37854a9926ebbde0e1df975d30e0d14f",
+      "bytes": 21914
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b7/eyes.webp",
+      "sha256": "8de51de21d01f7e3d8055f279b4cb1a69015bafdcb4a0f6879b98ec94fc4181f",
+      "bytes": 2856
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b7/prop.webp",
+      "sha256": "9ed71fa16b7256f71f38d447805fc00fbc5f6fc7fe3f1975fc80907b86437210",
+      "bytes": 4152
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b8/arm-long-equal.webp",
+      "sha256": "4d0f954282b8fad27406d8d667a9bf0c24f36540ed218d33a6cd61646d65982f",
+      "bytes": 5676
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b8/arm-long.webp",
+      "sha256": "a8278eeab6a25ded93fc4f63b8d270cc771d5caa44ee99d7f67e6d8ea7425a43",
+      "bytes": 6338
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b8/arm-short-equal.webp",
+      "sha256": "a0a8f5e1c674d6483f2ddec6c0c4f388f6ef89549dc9b96da60227b03ec8076f",
+      "bytes": 5666
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b8/arm-short.webp",
+      "sha256": "8832e1d706ab85e3487cd7f2abe2c31ee738a5c93e00d2ae44e3700b04974064",
+      "bytes": 4810
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b8/body.webp",
+      "sha256": "ebd35fcf235166d60df505cf29bc05782a4c5bb056e26225f149180713da0faa",
+      "bytes": 14468
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b8/eyes.webp",
+      "sha256": "083e37016fcb2708c04ded0d7a652ed2becd965802fa4ac04890a128c2a19884",
+      "bytes": 3268
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b8/prop.webp",
+      "sha256": "a37203273fb5f297480c18257ef16c153391f1f75a17619b8fa225b8949fa12b",
+      "bytes": 9600
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b9/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b9/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b9/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b9/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b9/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b9/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b9/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/b9/prop.webp",
+      "sha256": "21a9b6ef4bdf95b71425ac59373512921f9a4373fceea8b842e1d3ad34971dec",
+      "bytes": 7084
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/balance/body.webp",
+      "sha256": "1fb799ef51f400b04717cea78455613a082377a66151ca3832e052d83e24d52d",
+      "bytes": 19566
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/balance/eyes.webp",
+      "sha256": "a4558e65eedc8a48dc143bd62de3bfbcb2401251a7dce01af8d18435ef8a4849",
+      "bytes": 2758
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/balance/scale-left-down.webp",
+      "sha256": "8c3fb5d0ece0c14e802380dfe5dc0e4a554bf9c9741a80e14a8347d78f504a29",
+      "bytes": 25660
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/balance/scale-level.webp",
+      "sha256": "b55925219341705c014284496661dabf7d805e7e4055368f0168089706cca09c",
+      "bytes": 25126
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/balance/scale-merged.webp",
+      "sha256": "f2afe7841e2cb78a944ab95a3414de5a62a1779a01ed1b1b4c3b8a8a692af60c",
+      "bytes": 21676
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/balance/scale-right-down.webp",
+      "sha256": "707840c3c72a305026149749a16adf46259e750060baa2d17485861d11499754",
+      "bytes": 26310
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-a/body.webp",
+      "sha256": "1fb799ef51f400b04717cea78455613a082377a66151ca3832e052d83e24d52d",
+      "bytes": 19566
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-a/crown.webp",
+      "sha256": "cbbe9142ebb1e5a7c8ccab7f128334dcdbe9b7de81dadaaf3a9dd443ff6882ac",
+      "bytes": 2886
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-a/eyes.webp",
+      "sha256": "a4558e65eedc8a48dc143bd62de3bfbcb2401251a7dce01af8d18435ef8a4849",
+      "bytes": 2758
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-a/scale-left-down.webp",
+      "sha256": "8c3fb5d0ece0c14e802380dfe5dc0e4a554bf9c9741a80e14a8347d78f504a29",
+      "bytes": 25660
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-a/scale-level.webp",
+      "sha256": "b55925219341705c014284496661dabf7d805e7e4055368f0168089706cca09c",
+      "bytes": 25126
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-a/scale-merged.webp",
+      "sha256": "f2afe7841e2cb78a944ab95a3414de5a62a1779a01ed1b1b4c3b8a8a692af60c",
+      "bytes": 21676
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-a/scale-right-down.webp",
+      "sha256": "707840c3c72a305026149749a16adf46259e750060baa2d17485861d11499754",
+      "bytes": 26310
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-b/arm-long.webp",
+      "sha256": "9d3a8b497ee6260254048f13141b8cbd749ff35c369240d3d0ec99e0377d15d3",
+      "bytes": 12624
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-b/arm-short.webp",
+      "sha256": "82fe9abda8219c280d3c10788a0a8154fd3842cf1d46ab382d01173c4370e614",
+      "bytes": 8596
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-b/body.webp",
+      "sha256": "0e3f7f0fba7660c119c3f450a6480c7059a12d5bd3bd786e23244d380ba375df",
+      "bytes": 21628
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-b/cracks.webp",
+      "sha256": "f7f19d2d8b7ac2364b8ce925f3b4d591f2fbc9920ec9e0dfef1101c9668f0445",
+      "bytes": 2372
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-b/crown.webp",
+      "sha256": "75c134e965c6f7482659dc3c11b5f023d9de97a64ebca716840ce4481f9f2a04",
+      "bytes": 4828
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-b/eyes.webp",
+      "sha256": "74351c169e700ecfb1f63074b9801ebb43e88111fac0e594c710f015fc6d11bf",
+      "bytes": 2866
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-b/shadow-a.webp",
+      "sha256": "d3dc342356871fa6d23ac93aa61a045b33abb9a9d464bfcf5b17c6429e57a909",
+      "bytes": 2500
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-b/shadow-b.webp",
+      "sha256": "6759c5ecc85117cf32b18e0514cbcb0f87b04f2724be8ff9e6b856c24a569003",
+      "bytes": 2714
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-b/shadow-c.webp",
+      "sha256": "a2ee3fec0e7f4dbc8a8338ee8831de46df7715aa2e902db7c94a228cf4c45599",
+      "bytes": 2530
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/arch-down.webp",
+      "sha256": "7f92552a9394c23067bdefb13e3da56fc9daeb432ae15cfb7072251abe525c77",
+      "bytes": 9990
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/arch-up-float.webp",
+      "sha256": "db5285482b7cc858e804a291d671fb176603dc12197deecfa076065560a713b0",
+      "bytes": 10082
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/arch-up-touch.webp",
+      "sha256": "a99bd6aa3a21891fe6ac8c99a5e7ad6cca19bceb67798ce2f61485180bc1bd55",
+      "bytes": 10090
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/arch-up.webp",
+      "sha256": "77c2c43ddb526c19fe7b6569feb53cacba26adac78e5ca6e3dfd87058ebbc13b",
+      "bytes": 10054
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/axis.webp",
+      "sha256": "33282c8bce697401b3a9ae272ef9a9b3137d84799b12643139a9496895874ae0",
+      "bytes": 2806
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/crown.webp",
+      "sha256": "72ff87a2b62dc09b6dfdb0f03efc5e6b17882a009adc05679302229120edc787",
+      "bytes": 3944
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/eyes-down.webp",
+      "sha256": "2006f92831a1bdee4968c25c9cd49d8ce54c754ae14c7b11a58fef5bb7724372",
+      "bytes": 2462
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/eyes-float.webp",
+      "sha256": "c2bbc49de3a3815d49d6edbf24de3b2f737202b747a044438c5aeb4b39d70671",
+      "bytes": 2416
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/eyes-touch.webp",
+      "sha256": "97392f80c878b5983bc2c32f932119b3405a4cb364dad4c1bdcc8310cf2a399e",
+      "bytes": 2450
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/eyes-up.webp",
+      "sha256": "085bb0e937ede0985454932d0a619a031bf5ac253b95362eddc74b4ba8aba453",
+      "bytes": 2418
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/flag-left.webp",
+      "sha256": "56901f03267492228683f8f6c090bf86f891411dddf7fc95b0e387e24d177e29",
+      "bytes": 2382
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/flag-right.webp",
+      "sha256": "8aad7d411c5203cc8f0df3eb7f13f02a3bd609d87718a71c43f1093bdfb39e20",
+      "bytes": 2426
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/shade-between.webp",
+      "sha256": "574587828fa5b9fd2860d3a69963108e05e3673f1075fe2f39996547cf0ec29a",
+      "bytes": 2142
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-c/shade-outside.webp",
+      "sha256": "cfaf671ad91e548d13b8dbbdf19872694e625cac9825936dfe000257ffa7700e",
+      "bytes": 1946
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/arm-a.webp",
+      "sha256": "f8a922838505f8006331ad43ffc732b54f7b06373287bb6411812c12321beaf3",
+      "bytes": 10718
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/arm-b.webp",
+      "sha256": "bd88eabcbdc7d46c7ffac87b71dfefecdc75b062da8eeb49b884e1b83bab52fe",
+      "bytes": 10876
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/arm-c.webp",
+      "sha256": "2e66a2a73581bc679407f370357757cd52f05fd26dbea582b242acd51fa18056",
+      "bytes": 32120
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/body.webp",
+      "sha256": "d254858bca657f7dcac0c9b0816408d5badd371b844d514e0219f6bd88a34053",
+      "bytes": 15760
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/crown.webp",
+      "sha256": "10d4cb87d4fc6f0067b395b3ddaa179ba1d039d8b35b19332ce7e1166f29c115",
+      "bytes": 3506
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/eyes.webp",
+      "sha256": "162cf1222ca888a5b5efe8cfaa237f372b50e61b03695649d7397be4f603f2cf",
+      "bytes": 2518
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/flag.webp",
+      "sha256": "4bb5d316dbc2e273c339a4a01e6b4e6934785753e217fcf2b9b01d275eae8f93",
+      "bytes": 4042
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/line.webp",
+      "sha256": "18400db1bcf72045e3de9b63c2194a5b8213b099d3351e2552a38d9caee633de",
+      "bytes": 3104
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/low-gap.webp",
+      "sha256": "6b493700c43632604bcd654e8be8f1242faa4e4b6f22d22c427162281d411718",
+      "bytes": 4210
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/wall-raised.webp",
+      "sha256": "d13ca0642534a42143fdf675c57e5cfd62bdd5b8092732724bfe58678a3f7def",
+      "bytes": 75022
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-d/wall.webp",
+      "sha256": "0dd7080d1c817fcb198d371c432f2556c400710450c0902604b87c3100196903",
+      "bytes": 75044
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-end/body.webp",
+      "sha256": "80cc74d2f990f3f86c8da2bdb3e58e68e32d18313918fe6cb54806d3588b1a8f",
+      "bytes": 29782
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-end/cracks.webp",
+      "sha256": "21080d31b14e02edef277618a458fd697d5d225ac58b1a73305920f28e9c2416",
+      "bytes": 2818
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-end/crown.webp",
+      "sha256": "29d41db132e599ec71ff1b4ab47675a972f1a1de5f37467796b3eafb52947c48",
+      "bytes": 3684
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-end/eyes.webp",
+      "sha256": "9dc851c9f9958f1ce1db0fa7ebd8d56932b33bda78e798e2bf9caf071242fb76",
+      "bytes": 2164
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-end/shade-arch.webp",
+      "sha256": "31129f2ab86d37b427b9f96db348038f216281f626af1f8493d0e5cf18a88166",
+      "bytes": 3518
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-end/shade-balance.webp",
+      "sha256": "9abb89b6d3c61a17d8284d7b97ecda3e4f950939f2bd07a4e450bf163bf48edc",
+      "bytes": 11168
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/boss-end/shade-duo.webp",
+      "sha256": "5ceac9f1ff768ff3c429e6a3a5c9c5b041bc4b02d740a239e11c8d7a6a8cf5ee",
+      "bytes": 5422
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-b/arm-long-equal.webp",
+      "sha256": "34761e09d700764866620d19e718b239c15fe88eb002e0e1af94396324722bb8",
+      "bytes": 8088
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-b/arm-long.webp",
+      "sha256": "a880147fdd821761358c31e02a5bdd033d10c50d63a3dd22e249bf6e96707c01",
+      "bytes": 9310
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-b/arm-short-equal.webp",
+      "sha256": "e8db375320636a140433de3af4b7b0c07c7293b0da51ef671f0bff0a117ccc2b",
+      "bytes": 8128
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-b/arm-short.webp",
+      "sha256": "70608a170d298d2dd1a091d55855a468016e43cc2a691c2a3b7fafe1d6ca5a9a",
+      "bytes": 6748
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-b/body.webp",
+      "sha256": "bccc7e4c4edd3ede4df1876aaed6b22f37854a9926ebbde0e1df975d30e0d14f",
+      "bytes": 21914
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-b/eyes.webp",
+      "sha256": "8de51de21d01f7e3d8055f279b4cb1a69015bafdcb4a0f6879b98ec94fc4181f",
+      "bytes": 2856
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-c/arm-long-equal.webp",
+      "sha256": "4d0f954282b8fad27406d8d667a9bf0c24f36540ed218d33a6cd61646d65982f",
+      "bytes": 5676
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-c/arm-long.webp",
+      "sha256": "a8278eeab6a25ded93fc4f63b8d270cc771d5caa44ee99d7f67e6d8ea7425a43",
+      "bytes": 6338
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-c/arm-short-equal.webp",
+      "sha256": "a0a8f5e1c674d6483f2ddec6c0c4f388f6ef89549dc9b96da60227b03ec8076f",
+      "bytes": 5666
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-c/arm-short.webp",
+      "sha256": "8832e1d706ab85e3487cd7f2abe2c31ee738a5c93e00d2ae44e3700b04974064",
+      "bytes": 4810
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-c/body.webp",
+      "sha256": "ebd35fcf235166d60df505cf29bc05782a4c5bb056e26225f149180713da0faa",
+      "bytes": 14468
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/duo-c/eyes.webp",
+      "sha256": "083e37016fcb2708c04ded0d7a652ed2becd965802fa4ac04890a128c2a19884",
+      "bytes": 3268
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/mirror/arm-left.webp",
+      "sha256": "df99bde9243417edf4e133a625462e49e4df1cc224f01bad88566add3a12390f",
+      "bytes": 8324
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/mirror/arm-right.webp",
+      "sha256": "2a5c133712d31d3e13944f47b7a19ce770fb495b40a435b820be7db30bca8445",
+      "bytes": 6240
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/mirror/body.webp",
+      "sha256": "478fe837957716f13a726cae91e12633516cbee954497c07c06088f94a60830a",
+      "bytes": 21500
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/mirror/crack.webp",
+      "sha256": "55ae181620b3501092ac6e2c0a122711b8022a064f29c1858c81bd3ae15286fc",
+      "bytes": 3270
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/mirror/eyes.webp",
+      "sha256": "d0c25a368bcd15007d864b1d0a7ba5df319b3068cfd6de9bc20e0c51fd457456",
+      "bytes": 2686
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/mirror/mirror-back.webp",
+      "sha256": "e775c13e21af0af78476049c68b94a2edb391954f54321ea61b28c9cc2af5340",
+      "bytes": 14298
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/mirror/mirror-clear.webp",
+      "sha256": "f8c5acd3a85369e86dfce477ed767cd3c53ae234a317f3db59dec8bb309ada1f",
+      "bytes": 12360
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/mirror/mirror-front.webp",
+      "sha256": "c73a5a29da9d1c14f5391ac0d0c24ded53a0f0f613a99e61fed43b7cef746028",
+      "bytes": 11520
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p1/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p1/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p1/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p1/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p1/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p1/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p1/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p2/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p2/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p2/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p2/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p2/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p2/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p2/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p3/arm-long-down.webp",
+      "sha256": "3d32b8fd595435c1a8debf44801f09bc4f9790a6f63b823b9dcd4cb282436ba5",
+      "bytes": 9896
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p3/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p3/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p3/arm-short-down.webp",
+      "sha256": "fa9238f00d2f0d33856f1c85f9da995f9d1c99d8dc682aa4a61614ce1e00c0fc",
+      "bytes": 6316
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p3/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p3/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p3/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p3/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/p3/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/arm-a.webp",
+      "sha256": "f8a922838505f8006331ad43ffc732b54f7b06373287bb6411812c12321beaf3",
+      "bytes": 10718
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/arm-b.webp",
+      "sha256": "bd88eabcbdc7d46c7ffac87b71dfefecdc75b062da8eeb49b884e1b83bab52fe",
+      "bytes": 10876
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/arm-c.webp",
+      "sha256": "2e66a2a73581bc679407f370357757cd52f05fd26dbea582b242acd51fa18056",
+      "bytes": 32120
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/body.webp",
+      "sha256": "d254858bca657f7dcac0c9b0816408d5badd371b844d514e0219f6bd88a34053",
+      "bytes": 15760
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/eyes.webp",
+      "sha256": "162cf1222ca888a5b5efe8cfaa237f372b50e61b03695649d7397be4f603f2cf",
+      "bytes": 2518
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/flag.webp",
+      "sha256": "4bb5d316dbc2e273c339a4a01e6b4e6934785753e217fcf2b9b01d275eae8f93",
+      "bytes": 4042
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/line.webp",
+      "sha256": "18400db1bcf72045e3de9b63c2194a5b8213b099d3351e2552a38d9caee633de",
+      "bytes": 3104
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/low-gap.webp",
+      "sha256": "6b493700c43632604bcd654e8be8f1242faa4e4b6f22d22c427162281d411718",
+      "bytes": 4210
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/wall-raised.webp",
+      "sha256": "d13ca0642534a42143fdf675c57e5cfd62bdd5b8092732724bfe58678a3f7def",
+      "bytes": 75022
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/siege/wall.webp",
+      "sha256": "0dd7080d1c817fcb198d371c432f2556c400710450c0902604b87c3100196903",
+      "bytes": 75044
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/zigzag/eyes.webp",
+      "sha256": "16a2d08716798cae3f2ca9a77f0b776632175fc978174fcc0a78f0ec99d892ec",
+      "bytes": 1720
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/zigzag/joint-1.webp",
+      "sha256": "ea3c75e425b52f9e0d43a9484ee29df7fc696b24baa8c1c5b56c61ae099cbc32",
+      "bytes": 1776
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/zigzag/joint-2.webp",
+      "sha256": "63e77da646ac77ed9d23233a49b74f5fde3568daac29bdf30c5bdcc13144fbb8",
+      "bytes": 1794
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/zigzag/numline.webp",
+      "sha256": "e9d428669683a70925a66785f5f31f1c581cd0b7f009222884cbf5d122afc36b",
+      "bytes": 10644
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/zigzag/seg-left.webp",
+      "sha256": "aa0617cc360b6426110d7dec644543d6d87bcb30f78ab08960afcf85bccc958c",
+      "bytes": 5068
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/zigzag/seg-mid-flat.webp",
+      "sha256": "92a26b3aaf4df6cff50ce231750d13ad6cbe992ea4ba16e15f73b23c0c7d5ecc",
+      "bytes": 4594
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/zigzag/seg-mid.webp",
+      "sha256": "7c00d4d8a6849f2b28ba98624a01a222ca6aee3f8c25328269616bdc15e20efb",
+      "bytes": 4740
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/guard/zigzag/seg-right.webp",
+      "sha256": "3259e6554c0ef9d5dff23d40d0bb7f6cc704b0d6adfb5e829a55a82d31d0cb3b",
+      "bytes": 7334
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-bala.webp",
+      "sha256": "7afd2cab2d6be108aeae4f001d2a5288ca300adb5f8845fc1f32b140ffd9f4f9",
+      "bytes": 10298
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-certa.webp",
+      "sha256": "e3480c28b1c309360bd1be46b5e12e2e1474ac0486dbd9c79288a9296d9ad4e3",
+      "bytes": 13484
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-divi.webp",
+      "sha256": "d1be2ca22fd8b9b6a159bb15a6ee0a51df8567b8e515d6e1a417df3a52d1e3ab",
+      "bytes": 16690
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-fabia.webp",
+      "sha256": "5c73a917744cd6e8d7efdb7f114cb2991d703a4ca2618c1d759d66eae4c7ce65",
+      "bytes": 15756
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-flo.webp",
+      "sha256": "bba7e3b48dbc057a49dcaa66078dafc764b923626739223e653700ea709a89c2",
+      "bytes": 17354
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-ilu.webp",
+      "sha256": "a2e03e855ac974205796fabc5a6975d3dc95a3d52f6aa8ee9de3238fa5447122",
+      "bytes": 13140
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-marga.webp",
+      "sha256": "4f94551f70c1b70006a88cce327e666515c11ca757ea1ab4c4205b42961fd0a3",
+      "bytes": 15024
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-mira.webp",
+      "sha256": "6241ef70cc0c4753f136709b9943bec1c25b5da0acde2aa7bdcd464d5c3c5229",
+      "bytes": 15352
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-norman.webp",
+      "sha256": "c563ddbc9eaf73a70f0c679ca1413651bbd36659c6c767883bd10bd1c7527dab",
+      "bytes": 12348
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-ora.webp",
+      "sha256": "4b1a3521c023fb164dd403973b9f3639f1ad40252a288f29000fcfb13da2fb57",
+      "bytes": 8962
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-quidda.webp",
+      "sha256": "b4ec78f5a7e7072b5f7a5f982f4aa3089758dcb03b2eee24920eb37849586682",
+      "bytes": 10890
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-tally.webp",
+      "sha256": "5205735d0670ff11a3201c844e6b54c440a8a5dfc2be0ba7f9968c15f95571b8",
+      "bytes": 16688
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-tess.webp",
+      "sha256": "8df42fe35d0b4872e00df1d8439c88d786529a864f9ddc80efc08763bd85b67a",
+      "bytes": 17236
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/img/ph-yana.webp",
+      "sha256": "497743874a102ac07a241d7a81b346e356c1252b26558118effea51081896082",
+      "bytes": 11796
+    },
+    {
+      "path": "立绘-GPT/批1R2/交付预览/index.html",
+      "sha256": "75e98254c92fc5dded5d0b2e686f7fad2a2a04805f2a4ba5e587c8bef76824f9",
+      "bytes": 383655
+    },
+    {
+      "path": "立绘-GPT/批1R2/执行记录.md",
+      "sha256": "e0af649f5c1b6d873db45e127f1a743f6e0e0bac569ee1f6cf1ee1bb59128dc4",
+      "bytes": 7560
+    },
+    {
+      "path": "立绘-GPT/批1R2/报告草稿.md",
+      "sha256": "1743a2910600df70d27d746e69436a8b1d2d40b9148c60fb37f027df21977824",
+      "bytes": 25657
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/10-1.json",
+      "sha256": "2445d35e396c08a46b9ce24f621fcc87772b809526443ccad535b3046eae40d6",
+      "bytes": 11777
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/10-2.json",
+      "sha256": "da3cafc8130e6b4c6e4b4938c3c86b901f7be4125846693998a515edb3da217c",
+      "bytes": 11601
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/10-3.json",
+      "sha256": "b8e2ea5d2e04417a3ccc9f80d1a0ea0d1afedf9ed9aaf37cb7ac4f25022ca31a",
+      "bytes": 11331
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/11-1.json",
+      "sha256": "9da94f1564f00e4105b47db301cc551d891375db73571c3e277670c393f0cb13",
+      "bytes": 12736
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/11-2.json",
+      "sha256": "3c56931118515be010a6b16489e5c9da6affad2d580cb575f1bac6b6e76165a4",
+      "bytes": 13186
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/11-3.json",
+      "sha256": "18aedba7d6c997ec56aef8c72e6844866e476ee07ab10796ed4b56ed566a57c5",
+      "bytes": 11972
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/12-1.json",
+      "sha256": "dffc393b1439364a2db22426410e8fb2f39dc70ec7c18c36efc8b8d901fbace7",
+      "bytes": 13197
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/12-2.json",
+      "sha256": "cf44e0e721443dac613de2beb24d819f3806384ad5f54fbac1831de7a7f691fe",
+      "bytes": 13207
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/12-3.json",
+      "sha256": "e06b443fa70e991c178367c4e944007aacd30ffd7753df4f6318d7aa5c27a68e",
+      "bytes": 12714
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/13-1.json",
+      "sha256": "d26d0c4dd0cb60b4d2051e0601943fa425cc1e257ff661152b10c2533dbdaaa0",
+      "bytes": 12523
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/13-2.json",
+      "sha256": "d1690827a2f3b3c396d23fa675ee99de731389e8893c31aff5423458e6b23f7b",
+      "bytes": 12626
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/13-3.json",
+      "sha256": "d709a2e3d9449e10dd6cde7923b7dda7ccf45df4488e7db8869ca5f82a7edda4",
+      "bytes": 11948
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/6-1.json",
+      "sha256": "ef4f98bb5328c7c153097fc3b8bb70a7f48582665bc61857d37eae1ebcc8cc00",
+      "bytes": 11933
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/6-2.json",
+      "sha256": "c8a57603d1daee13626ddffd9929dac3d6d0450466af4e2f5fad4b29e375bd3d",
+      "bytes": 11627
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/6-3.json",
+      "sha256": "98f15b681be3c11929a9517e592a4f250d3dfc47de57eed6e4f769d38a3559e2",
+      "bytes": 11411
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/7-1.json",
+      "sha256": "13c6adb45f75435fff13804bea8f83d9ebe28eebf52ccb17d3b3c314e623fdcd",
+      "bytes": 11779
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/7-2.json",
+      "sha256": "6675490ba3e4b40579d1e40cc57bd67daf53de41403c827498e745e683c36f2e",
+      "bytes": 12572
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/7-3.json",
+      "sha256": "e3be445230c0f9b6933eb02eca05ce09b8e1850548460e1b05c7efadf474d63b",
+      "bytes": 12141
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/8-1.json",
+      "sha256": "646d23e73025d47cc051eaa991402316707a7e6ddfa5a512c2455cd030beaf1e",
+      "bytes": 11991
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/8-2.json",
+      "sha256": "b14c8f6c9c0e4719485dbedf8837f305f16ae3a31a102367ddd3ab39c249e9c8",
+      "bytes": 11796
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/8-3.json",
+      "sha256": "080714aa2359b802347b84c4da26278664f85c7bf00158d59fb7033c30976546",
+      "bytes": 11705
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/9-2.json",
+      "sha256": "fadac5974951278c9d7e9c7e9678b92d67b7a4930a07a816ed1d407854a79f92",
+      "bytes": 12457
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/9-3.json",
+      "sha256": "8a87a8be3de156716526a4bf7d95f54e7768a038210f9d2817feebb67fc2c22a",
+      "bytes": 12402
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/siege/arm-c.webp",
+      "sha256": "db1a7e779f633e05348db3561e6881d22b02c3a635e865a376ed3fc373cdbb96",
+      "bytes": 14866
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/siege/flag.webp",
+      "sha256": "19174aead7697a6b20a7e73b8155c93f3d6672cfb1472b8dbcd95b37f22a54d6",
+      "bytes": 2322
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/siege/low-gap.webp",
+      "sha256": "5770f5d8632dc3bb5439ed95777ea803cfb5bfeaafd723cbcd8b572bf263bf16",
+      "bytes": 2458
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/siege/pivots.json",
+      "sha256": "65b992b183b340f37aa2a105912ace3f2c1fffac70ad94e7e6cd84614978921d",
+      "bytes": 923
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/siege/wall-raised.webp",
+      "sha256": "d70c1d44003d3cec38ee4e3a18cc32c3b2035a9836d153e497b3ea40cb84ab36",
+      "bytes": 10826
+    },
+    {
+      "path": "立绘-GPT/批1R2/旧版/siege/wall.webp",
+      "sha256": "a8db39aacb52c9eeea25b26597106d3e0fa130cf5ed81b1a8771c3e5107fd142",
+      "bytes": 10790
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-lowest-470.png",
+      "sha256": "92075dfd1be771968941fce65db82cba56dfa591c1e07bb3aadb90068c85d289",
+      "bytes": 413111
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-lowest-逐态点位.jpg",
+      "sha256": "3e8c2595fd7bbad2841fc06515a054962a0873bae79b3e7800a450cb82640d02",
+      "bytes": 320029
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-lowest.png",
+      "sha256": "534cedf9dc724310ad013e240e65e014cf3691a4d18639a6281ec996647e9e91",
+      "bytes": 1826381
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-raised-470.png",
+      "sha256": "fcc55f87bf7fa441a6fd110e552a5f8a32c8126d9732b560fa5ba9ff7fb4c59d",
+      "bytes": 420714
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-raised-逐态点位.jpg",
+      "sha256": "6010f1f524381e1fb964eaccafef19991727edb276e08748163929d8ccbd8b80",
+      "bytes": 330478
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-raised.png",
+      "sha256": "66e377833391a4947f5337cb0333d127a3674e06aa99fa1f5d661579c8435fae",
+      "bytes": 1845385
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-wall-470.png",
+      "sha256": "7d8d83b48102b9b2d15e566ff481ab4d6ce2a417b62edf1a22ba83c75f40b8d4",
+      "bytes": 413227
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-wall-逐态点位.jpg",
+      "sha256": "7687a56cd381214c35cb3a122f5b1dde61c517a8688d93355552a4fb04c1ea0c",
+      "bytes": 319751
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-wall.png",
+      "sha256": "22ca33dc7cc3a65218312556a6fd30737c6b84eedec724d85731f737b8140358",
+      "bytes": 1827618
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/boss-d-三态-470.jpg",
+      "sha256": "a9afc170a9358225069105e929dde02b9eab65c72cfb7db62a28be39fd4e31b2",
+      "bytes": 281790
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-lowest-470.png",
+      "sha256": "c3d5b8a686df4ce1d419a354f8fbf5be4eb6395524d882b790b2fb548bccad17",
+      "bytes": 408238
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-lowest-逐态点位.jpg",
+      "sha256": "e4ac31f9d407eee458671fa5978461a73f657cd13d8933751197e68adc1f4e92",
+      "bytes": 314473
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-lowest.png",
+      "sha256": "f7ca207acb7fc7c1255e001d3f6cdfd98d1c5c6021ccba23a5d1a59eb552b446",
+      "bytes": 1803668
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-raised-470.png",
+      "sha256": "4119f7e2d8ff1267ec6d4348137faf93d112e531ff1a91f220bf458ead2ae24d",
+      "bytes": 415735
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-raised-逐态点位.jpg",
+      "sha256": "82375fd8bf4d7dfdc98c4fdde30ce25c48ee442b68df2924d1ccb7f90e1668e7",
+      "bytes": 324893
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-raised.png",
+      "sha256": "8095e37e4f0cf36dc4bd0b7a8696ea0991c3117e7e39d91d0a1aa5c1c59f0863",
+      "bytes": 1822509
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-wall-470.png",
+      "sha256": "7f5fe8806c936c00f1a0f9c2462982ef2477e4339acf82f5bf65f17f3ab46ea0",
+      "bytes": 408359
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-wall-逐态点位.jpg",
+      "sha256": "54b1841ac5cc38a61f4c2ff7579e283f3d2603b1f4ecac4f05682a1cba4647dd",
+      "bytes": 314176
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-wall.png",
+      "sha256": "61bfd55dc5c69870d52ec77241b399cf71889171021cf52b07ad722117ca797c",
+      "bytes": 1804913
+    },
+    {
+      "path": "立绘-GPT/批1R2/检查/siege-三态-470.jpg",
+      "sha256": "66e6503420c0c1caac016ff3c3a038899e6946dc6f7e311930b2e76d9865281f",
+      "bytes": 277138
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/arm-c-600.png",
+      "sha256": "255785a152d63992e982b4a70b7d15524df624e5f31e75c5a21d46048e6b7110",
+      "bytes": 50841
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/arm-c-prompt.txt",
+      "sha256": "64c81b1099bae360a1dc2b0ecb054059f28652c908e6e683d8b693ded596e1cd",
+      "bytes": 1345
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/arm-c.png",
+      "sha256": "b9cc546ee7978675778225ad3c724a6a6a83535af7810c0fdb7edd8cd1f2881a",
+      "bytes": 172346
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/assemble_siege.py",
+      "sha256": "cdcf554e68b25ffeb4989702eb5d03bb07998e8b5f024112e3cc80fe22f50601",
+      "bytes": 4579
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/flag-600.png",
+      "sha256": "49e279558895dd57e11fec1ca529249549008d380977bf8fbe210df90849eff9",
+      "bytes": 6665
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/flag.png",
+      "sha256": "dfc1a7cd1a4687da8c53bf199079b796e9da5ed8f69529241e4d69cfd4a66edd",
+      "bytes": 20422
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/low-gap-600.png",
+      "sha256": "8d27b5f312d1864697c8caf45a8118027ac1cb72607ac95d70457195694942b5",
+      "bytes": 7025
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/low-gap.png",
+      "sha256": "f25382692511f7ce2d657deaa5b15f5443256e991ea736386ebfb635b461b6fb",
+      "bytes": 18996
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/pivots.json",
+      "sha256": "f3ef225aef8560a26cc4badf29d4c959774b847eb0aec536671cac14fc1870d5",
+      "bytes": 923
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/raw/arm-c-arch.png",
+      "sha256": "8e15a5fd18bdf32e84dba8b8c17f48466b141282ceabce3139dd06cfa3133711",
+      "bytes": 236249
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/raw/wall-stone.png",
+      "sha256": "e0b4a09019170d9de43bb6106490ac31547cb1977723d4f747ce2f3804c4c9fa",
+      "bytes": 530659
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/wall-600.png",
+      "sha256": "4d3c60c34c2c0f376e0b1302869ff8308bf6aadad65ed2aa5d423594253bd331",
+      "bytes": 112087
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/wall-raised-600.png",
+      "sha256": "894989241eead5a5e50611451398ff6fbfcdee13cfbce12eea5504b7be3693ed",
+      "bytes": 112237
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/wall-raised.png",
+      "sha256": "4d0e9622299b5827c75ecb551389eb36769470dcbb7acf22c83a49808e117cea",
+      "bytes": 404713
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/wall.png",
+      "sha256": "f5c18cee637e53f16d860b24f7dfa26ed25eb6b02022f4ae193edee2273623d2",
+      "bytes": 404955
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/图片规格与点位核对.json",
+      "sha256": "850c6caace9b52ab2bf27644b553026316313b569f7c883a0496177caf22c5d0",
+      "bytes": 2581
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/核对美术.py",
+      "sha256": "8c8117623297c96243ab1536cb32f0db6d5a11b0b405977d7e69f57afa9da0dc",
+      "bytes": 2526
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/生成记录.json",
+      "sha256": "b1aabb5f174ada13146f03dd8258a0c552a31e15c68076970f50f298d17b2676",
+      "bytes": 2145
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/装配核对.json",
+      "sha256": "ca35285f099bf869668536456e559b15d3864fe7aaff83f923496fb9f3d7ff87",
+      "bytes": 519
+    },
+    {
+      "path": "立绘-GPT/批1R2/美术/说明.md",
+      "sha256": "4c1f24bd90b9bd6b7264252c3703049475900d99324c487ffcbfcb25a2e07f5a",
+      "bytes": 1577
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-1-r1-result.png",
+      "sha256": "32eb6909608fb524f61be2da8d006604dda85a601d8d4e9a19b5a46b34cbdf58",
+      "bytes": 857122
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-1-r1-start.png",
+      "sha256": "1d2780065d96f1cfd6c6926da15e160c491ba0d06c09dfffe53c0a401a9889ba",
+      "bytes": 1288001
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-1-r1-弱基础模拟.md",
+      "sha256": "93261df237031744b795f8d6d97d83284aa2d0f4a0a6bbb622634af4edd634fe",
+      "bytes": 2493
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-1-r2-result.png",
+      "sha256": "453f8dad5127ec1dc23175454b5fc8293c2a539e90bbf2dc630ef599e0bc2bf4",
+      "bytes": 856958
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-1-r2-弱基础模拟.md",
+      "sha256": "dfd2f618f37705f4363cbc57f7bd6dcbddeb93aa0eaf1db98f8d634e37d597c0",
+      "bytes": 2373
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第一遍-初始.png",
+      "sha256": "5294fc2380f9b199b03bb0aed9b1c051b85778c491590b9a7982cfe8d0b3cf10",
+      "bytes": 1294074
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第一遍-方程.png",
+      "sha256": "b7f4660a8dff0aa5bb3152866712a7eab865d4918deda3b9185d80a5043ff983",
+      "bytes": 859910
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第一遍-纠错.png",
+      "sha256": "30bff1e2e2085cffd407cd3480fe6364c9389bd6c4927885f65233d6e761f361",
+      "bytes": 1289843
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第一遍-结算.png",
+      "sha256": "d0806e017c2244e1c0852fa4e4a0dd148aad871d4c6470a3f475f4f9fe86b963",
+      "bytes": 856792
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第一遍-落笔.png",
+      "sha256": "aba907fbdcb18f9587bd2279e54cbc3d9a1494709ab36bbc264940ed89896566",
+      "bytes": 813241
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第一遍.md",
+      "sha256": "8e6497c4a8d881bce686a375a0ccc6f2f4c96ae7564bbfcda614bda3c4c83590",
+      "bytes": 3720
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第二遍-构造.png",
+      "sha256": "0ef5d4d00211da6c721af023f617391a65a0371db421eb33c309aa00741a021d",
+      "bytes": 1261831
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第二遍-结算.png",
+      "sha256": "b8efb81f0c7d6295045f7ba929710571fd07477e0f19e56d837f44fff6a88852",
+      "bytes": 863629
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第二遍-落笔.png",
+      "sha256": "7c52b407a60a41702aca1d70f95d70dc587e4afdd475a7f498dd6a657f230270",
+      "bytes": 814736
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-2-第二遍.md",
+      "sha256": "cc29be9b110ddd603ec6bf41dde79e54ad885d0c1024d422b89a54e1f0f61437",
+      "bytes": 1935
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-3-r1-layer1.png",
+      "sha256": "b65bbe76777714ea04f881b4e12f049d5d8b211f0003dac95e48227dc1ce4504",
+      "bytes": 1290023
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-3-r1-pen.png",
+      "sha256": "b5489eb1ae9a7a1835d3256357511f2a11bfe2a7084b128f7846810860450ecf",
+      "bytes": 817132
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-3-r1-result.png",
+      "sha256": "5d417dc64a833ab842e6be7f934e3118db15f1642d860983ebc667279fd3fb7e",
+      "bytes": 860859
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-3-r1-student-b.txt",
+      "sha256": "a60f8902cc73616b0530ffacf4e5e5930f19fd6a1c28856d05df18b1f1c50a0f",
+      "bytes": 3213
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-3-r2-fabia.png",
+      "sha256": "dee8bc1b868b20a22f84d152f246a9407466464d28b9f73bd441030b5a99b28c",
+      "bytes": 1268432
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-3-r2-pen.png",
+      "sha256": "dd17f7b72c3cb81d7b1b28344d51a107773ef32cc7b7c062dace3b960346fce7",
+      "bytes": 811425
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-3-r2-result.png",
+      "sha256": "b03b4a3ca1797c38539faae3d90a654b8f67b62f64ff51429931d8105c54e5f5",
+      "bytes": 858715
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/10-3-r2-student-b.txt",
+      "sha256": "242da5c2ebc14cfea647a8c9d8c42bc91613a3a9df0dd1394ae72e707d66f085",
+      "bytes": 2046
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-1-r1-result.png",
+      "sha256": "5e34cde539de4eaef5f71039ad60fa6209a6a174740197185f79202aee44b435",
+      "bytes": 839428
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-1-r1-start.png",
+      "sha256": "816f0035c7186664c7eb4b2fc627ee83093a1d79aeefec548fe42c9fd8a687d2",
+      "bytes": 1290973
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-1-r1-弱基础模拟.md",
+      "sha256": "9158fa3bb2f2fb7a75550b5933873b0ffb5665ac39afbee9ff0a05e808ade477",
+      "bytes": 2575
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-1-r2-result.png",
+      "sha256": "8de0d8752984d8449b8a237835966d33cc36dd539e9f4aee2d3360ff636a49d5",
+      "bytes": 842788
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-1-r2-弱基础模拟.md",
+      "sha256": "1ed6a07fde527d699d9699918f403636fdd982cab3a2cbc1765c92edb894bd82",
+      "bytes": 1620
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-2-r2-瑟塔局部.png",
+      "sha256": "84b2047c5c8b71ab22b111a12540500bfe6d42e99997323cd375a28b12bc2fc8",
+      "bytes": 1261420
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-2-局部复核.md",
+      "sha256": "cddbd81f8f3ac37b768000699b0925395e71e8ea5bb79447e2d87e616a8f1620",
+      "bytes": 1200
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-2-第一遍-初始.png",
+      "sha256": "5b6a55492ea7cb18eb9bf0d3cdff09683c71e8c30f84a5dbaf00aabaf3dd486b",
+      "bytes": 1311546
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-2-第一遍-瑟塔.png",
+      "sha256": "72d3d1ef8e6fd8448803a19c52ac7556153ad02b2c2deabd7faf33e92dba30d7",
+      "bytes": 1280501
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-2-第一遍-结算.png",
+      "sha256": "1a2a25c7571d72377b9ee4aaeb157e4d931d51b7245c5abb928a014b87a97511",
+      "bytes": 837049
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-2-第一遍-落笔.png",
+      "sha256": "c21848277517d209ef81a264f67d9cb77afb41090e3cba2d6d84b93fd4cbb805",
+      "bytes": 813399
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-2-第一遍.md",
+      "sha256": "5a992d6b214a4828e4701d22d12d1bc47ea666e15fd9536737f8a9d6ef732757",
+      "bytes": 3461
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-3-r1-layer1.png",
+      "sha256": "8e9ba3b9d5193fb3b56c6cfa71db63defb16d4a376fccda38779688df407c2fc",
+      "bytes": 1300232
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-3-r1-pen.png",
+      "sha256": "855f1ae8180aa220b90d107b56a8c6264a7c8ba466b6217e3aee5b07ff96fc5a",
+      "bytes": 811718
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-3-r1-result.png",
+      "sha256": "fd267a3684e8d2b9e94e1171af6dfd0df41cabcd57580ed4cd52ec676f519df7",
+      "bytes": 855390
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-3-r1-student-b.txt",
+      "sha256": "7d93ac74b1ed854dac2e25eccd720d87bface6ca2bee5a27174fe8aff636129b",
+      "bytes": 3216
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-3-r2-q1.png",
+      "sha256": "a20ab4ae40ba745f8e5a73b93b0fb13e0f98f5c05cd1da4f25d59eeccc0f929e",
+      "bytes": 830371
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/11-3-r2-student-b.txt",
+      "sha256": "a54d24a214428bb66fbb0ef250a46ed98b42ecf2c89b9b485c67b18c0670edeb",
+      "bytes": 1250
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-1-r2-first-result.png",
+      "sha256": "1c23cd36e613c64cb6277bdac4d952cf68d4b783fdd3ef61177a01ccbe941983",
+      "bytes": 853527
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-1-r2-first-start.png",
+      "sha256": "f51db924838699de65398cdca8a7c790107f7c50e3dd31812ea767bec5513ee1",
+      "bytes": 1295579
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-1-r2-首遍弱基础模拟.md",
+      "sha256": "e6a0a3ef6c3680e318843d5859bf282f5cb9a252ba9d4d08d2118ffe92652c03",
+      "bytes": 2281
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-1-r3-局部核验.md",
+      "sha256": "3d02ce372df121e70db6f33af5a74e1175af62955b7927d8053aa7f2396d4dfa",
+      "bytes": 837
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-2-第一遍-初始.png",
+      "sha256": "d8f86d7b5536ead0b7c81f3ea0f6bffb2119cb3444f6fb0d53aff3ee174787fd",
+      "bytes": 1295833
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-2-第一遍-整段.png",
+      "sha256": "5b62e9ca143e18021311aef4238bb309173bd007f09d30f7f7c102ff5a9275a0",
+      "bytes": 831261
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-2-第一遍-结算.png",
+      "sha256": "2de3b509ba2ca9b92105987d7a212ed23851c18b24b8845ddaa817ab06633479",
+      "bytes": 844206
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-2-第一遍.md",
+      "sha256": "a2ffe449ce08e3e3f1871777dc009f4efdffd76a4bd81b3e22c685a70becb788",
+      "bytes": 2208
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-3-r1-layer1.png",
+      "sha256": "8e03951ab189672ef774fb29a72b21c0f6b89d5fb358d79ea9e89ff8285ab9b5",
+      "bytes": 1293169
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-3-r1-result.png",
+      "sha256": "5d22ec235dd31e6da61faf63f23fc166149d459e15a9e3e168167397ab2f2899",
+      "bytes": 835686
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/12-3-r1-student-b.txt",
+      "sha256": "693048e2b98c02ff8e93cba8c8d7485ccfffc6625a0a7e1611ce7fc038b5484b",
+      "bytes": 1732
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-1-r1-start.png",
+      "sha256": "17a46917af84125c438afdc4f0f2eb92555fb3400ad2a366e67bc85cf3633220",
+      "bytes": 1267089
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-1-r1-首遍进度交接.md",
+      "sha256": "853ef6653a9b2e784fd1d85028e688f4b490d757cb998d8b5e04ddcd178440d3",
+      "bytes": 2624
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-1.png",
+      "sha256": "9705b1960c9154077cbb76e4e1c28cd7f71fbb9ef4a0178fca639bdccb15266b",
+      "bytes": 834820
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-1至13-3-首遍记录.md",
+      "sha256": "b29f7ba11ac58a2bc8f5d8003b8382ef23b92fe87f0fcec225c2d5b89926ed6d",
+      "bytes": 887
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-2-l3.png",
+      "sha256": "3c45dd5a12910379a04300af9668cce3144a7847f78e4e392f70085c8ed44f05",
+      "bytes": 1276665
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-2-now.png",
+      "sha256": "6efad6d0d832883172ec2cf20a04f484aeddf198d31b4f422ded38c8a8164d76",
+      "bytes": 1272710
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-2-now2.png",
+      "sha256": "b0998df9a0712aea4c4700ab57e5eb6b89eee648389d50c33b890b23bc59ccbb",
+      "bytes": 1273460
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-2-q.png",
+      "sha256": "442f9301ac558a21387e7853e8c65cb1b30c1362ff9582a6d8952241acd0eaef",
+      "bytes": 1247752
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-2-start.png",
+      "sha256": "560bcecb24dded739e084f81a88c9e3a323b58e7ab442d33f368340f49859d2f",
+      "bytes": 1258994
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-2.png",
+      "sha256": "8da233f2b426188538821889a6254412e65fd8b06abbbf4b37b884a3b5f9f10a",
+      "bytes": 826556
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-3-l4.png",
+      "sha256": "a7e7399fdae42bfc7efc65945e8e69a3d88672552d74786ab33f9e343de3db17",
+      "bytes": 1254260
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-3-l4b.png",
+      "sha256": "e350389c1709174c9d446284baaa9d2422aa4e1e3721fb99b97bf3a34cf95e2d",
+      "bytes": 1254480
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/13-3.png",
+      "sha256": "8ee6b8f5512c3842ef996733a98e34a6e1f52482ef175c02b0d2006075220fbf",
+      "bytes": 847893
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第一遍-初始.png",
+      "sha256": "ba2e1b616507acc886b94bd812654a92a56d8bd625977a457eedc478d8c884bb",
+      "bytes": 1243840
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第一遍-结算.png",
+      "sha256": "739a8045565055106da880022abaf9bac03e14a1622faaad75b1cd4c5e29fc5c",
+      "bytes": 850816
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第一遍-落笔.png",
+      "sha256": "67763d105aeb18430cd9ac1cefb1b0ce000dadf0629a0933034efee6210dbd26",
+      "bytes": 807418
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第一遍.md",
+      "sha256": "dddae1eb7e591abb606e5a38eb54dcf7fb0fdaaf290e6db242b412abe587d467",
+      "bytes": 5303
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第三版-局部复核.png",
+      "sha256": "e633eb996a27772a863c1dc9c5f3ff26515aba5a64585972264e7bc1ad5d8e05",
+      "bytes": 742901
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第二遍-纠错.png",
+      "sha256": "a5a2afbb5d8b389b9d92dbcf2258d0ea8fe074f5d4a387dde04b1cf9720d303f",
+      "bytes": 1252327
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第二遍-结算.png",
+      "sha256": "fec66e2238625c9b39c36c5d3c49d1afe28672fb5ca53e99e7a48da35ac60bd2",
+      "bytes": 851624
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第二遍-芭兰.png",
+      "sha256": "188a46356163d308d8794e1a0b51566e5952afc4295da8343d35db776594040a",
+      "bytes": 1232735
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第二遍-落笔.png",
+      "sha256": "223acb515709ba9617fc71e10039f6d83e9f96e5301ad5e29f00ddf8962a7e1e",
+      "bytes": 804811
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第二遍.md",
+      "sha256": "1491da451508083827551cd8c31f50b89c6c5ee0c2fa38c03d48a96678be0da2",
+      "bytes": 6401
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-1-第四版-局部复核.png",
+      "sha256": "84f39ea596539f331cefa08535944483e08e46b25f0feae47e3fbe49cd905e73",
+      "bytes": 1233796
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r1-layer1.png",
+      "sha256": "d254e761edec73a60e17dde45aa034a56bada32e5d8bda1b01e30cf87ff0de67",
+      "bytes": 1234759
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r1-pen.png",
+      "sha256": "be91437cf4b4384ea6876dfb8c36192b1b89d23718cab4137719f1957f6debb1",
+      "bytes": 792168
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r1-result.png",
+      "sha256": "dddf75559d9d60c400762893a815e81bb90a97b04c88c04bd92f128af32ab23c",
+      "bytes": 837634
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r1-student-b.txt",
+      "sha256": "9cc836e40277b9be5611d00dae38db667b10b6c8c8aa4568bdbde43d99864e8e",
+      "bytes": 4519
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r1-wrong.png",
+      "sha256": "15893e0110c5d9e3ddfc097a88cb3601e43cc9324c6e706d92f19634c771272c",
+      "bytes": 830623
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r2-bala-equipment.png",
+      "sha256": "d898584abbc5fb2e005ec0d90f9a203b59e59f38c32f23d16441f6284a103747",
+      "bytes": 736394
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r2-layer1.png",
+      "sha256": "af0a66e1510c7fc88d15009aa4d120af855fbe4603434a15ca92a063333df5c6",
+      "bytes": 1235699
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r2-pen.png",
+      "sha256": "391cfbed767e45a44a2aa60cb1c3aa505ffe4bfbcdf409cecb6699a2ea76ec35",
+      "bytes": 798703
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r2-result.png",
+      "sha256": "0cbbbc18fdfdbeac9ebd6cd97e66e86a54c642d482b4d61e0a6879cf4eeeb3cf",
+      "bytes": 846143
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r2-student-b.txt",
+      "sha256": "b9817f583b7de659c9a7bc18b483aa1b1f60ec26a3f2c05a76db5ded0c5e7fd4",
+      "bytes": 4764
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r3-layer1.png",
+      "sha256": "0ad4b0ffe423dad674ee68812514285e394f789cdf6e5affaf88561520c84ba2",
+      "bytes": 1235828
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-2-r3-transition.png",
+      "sha256": "88c82fd9079c42568faa413b2c5e0526442d3a52166b79eec2dacfa478a03bb7",
+      "bytes": 1229207
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r1-pen.png",
+      "sha256": "9fe4d874d668417df89beb2a857a9083b72084556f93760691cb1b860f9441ce",
+      "bytes": 799420
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r1-result.png",
+      "sha256": "e3251dd4278b39e0204df3d2d85edcc1ff177937b80004c2e657c088bbe6dba3",
+      "bytes": 847311
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r1-start.png",
+      "sha256": "d504e9626a398b266cd0ca2eda2c854a4f52c4c08cedfb564f27ee3c5fdfffe0",
+      "bytes": 1257302
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r1-targets.png",
+      "sha256": "3d4a56efa108ad60f3a23a54be1b002497b2cd025691c02115d358d6d7ecdc61",
+      "bytes": 1242986
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r1-弱基础模拟.md",
+      "sha256": "c87b0f1f948d70fbc81b58ea58128fbb568a6a55dd6ddfee66a8657cf0b2a047",
+      "bytes": 5453
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r2-method-switch.png",
+      "sha256": "8b4bfdff935dc3cfdc9d22e9aaa4503cadac7e57b028cc09a436d4e83e839e70",
+      "bytes": 752005
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r2-result.png",
+      "sha256": "948464937d01640aade85be0c34c75021fd49ecb387d6e6bcaa237e80bd77b3a",
+      "bytes": 839038
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r2-start.png",
+      "sha256": "8622da77483701ea8a9079879a3a21394af02c20a683710d2d3e994004aaddda",
+      "bytes": 1256881
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r2-trap.png",
+      "sha256": "81f562a9b9f0196aa6f0ec15bc54c0ce1e1c2301a227746d828f13df24f44c94",
+      "bytes": 1245441
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r2-弱基础模拟.md",
+      "sha256": "a6bc7725f09d0bdf57284b96417b1af4ab55d61f09e657694bd761ed237ef37c",
+      "bytes": 3985
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/6-3-r3-local-bridge.png",
+      "sha256": "c63110f10701d0751b2daab1e20472a2c5a8ba4f7e19b7b4741a14602ece4b60",
+      "bytes": 1237888
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第一遍-初始.png",
+      "sha256": "1b707cae6dd8f658c78dc539703b4ad5fbada05664568e316980906ac8dc4867",
+      "bytes": 1291846
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第一遍-差与选项.png",
+      "sha256": "6f072af1bbc83dbf07e2f414094a48f901dc5acfdddb1b7713d0c89cef5a8e3c",
+      "bytes": 851602
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第一遍-结算.png",
+      "sha256": "4d000f8d6f958d28edb93e65d52bfffc520c9213586d5158706b07e3c54ad5ce",
+      "bytes": 860651
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第一遍-落笔.png",
+      "sha256": "cfc8c0ab724f287dcefc27f3fbf509da3cfbacc0431f1a5271ea111c12703a3c",
+      "bytes": 804324
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第一遍.md",
+      "sha256": "86a180cbdd8271a2952ad99e6d87029eb89df4927d7ecde92983b99e50ec3fbd",
+      "bytes": 5401
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第三版-局部复核.png",
+      "sha256": "1d1a6511194674dd731fdfdc6697cb4bcef78138959e0772eaa41a2d5c73e5a5",
+      "bytes": 760145
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第二遍-结算.png",
+      "sha256": "168529f0830baa3dd89134d6f7dc2a59656900f48c4265712accd1ff486af00b",
+      "bytes": 868035
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第二遍-落笔.png",
+      "sha256": "fd557cfdd5f5f9e24a697bf84f3fbe1aca74aaaa97f9900201ff29be832586c7",
+      "bytes": 811599
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第二遍-选项.png",
+      "sha256": "43b66ca8e369fd85fb434b759192bb82daf62f14e0b8906bc57ec30422e2fed6",
+      "bytes": 858061
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-1-第二遍.md",
+      "sha256": "2f165b81f7433037c23b55cfb908ef8dac7d252849368f341e87c2382963a2b0",
+      "bytes": 3523
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-2-r1-layer1.png",
+      "sha256": "1f273a64a166d7439c797febf67f3f9ee62d6cc90be28d833496dd579abceccc",
+      "bytes": 1294908
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-2-r1-pen.png",
+      "sha256": "b9dcdd6cfb4f90fb7f400b47cc55878e316742cc0d7e3c16b2dfc83e921f1f3f",
+      "bytes": 822116
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-2-r1-result.png",
+      "sha256": "30921545a70299538105e79621ef3a5f437c05aeafee27eaffe7da49514f4fe5",
+      "bytes": 868409
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-2-r1-student-b.txt",
+      "sha256": "d6a32a798142c942eca53fb79fb0b56144843b5d368e009e5550b226c4d119da",
+      "bytes": 4021
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-2-r2-function-local.png",
+      "sha256": "2874332a4e0fa9abb0f941d08f8ded224585d13990dd7fec8659bc2d04d82552",
+      "bytes": 1277186
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-2-r2-layer1.png",
+      "sha256": "ba319ec4b7bd359aa1571b17f45a3d78f56ea4ccbbd8b100cd37887022afdba8",
+      "bytes": 1295949
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-2-r2-pen.png",
+      "sha256": "6dac56d2de6dc4964ce25b6308d34fb8d45e301eb1448a9479c4a1833eaccdba",
+      "bytes": 814888
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-2-r2-result.png",
+      "sha256": "8961850b00bd37e61d4f69a1c8b2ced342c61c830bc6babfa0425a4d4c3f976e",
+      "bytes": 861038
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-2-r2-student-b.txt",
+      "sha256": "5b5819b7d763934cfe9654fe4474bb8dba7604999e2209fc59e24d2a49d18bca",
+      "bytes": 3859
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-3-r1-result.png",
+      "sha256": "c27858ffe475c4512ddceb84b7326f795b1aa922f50a74fc31bb1f8480a8b528",
+      "bytes": 859443
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-3-r1-start.png",
+      "sha256": "2e6a4a5309e97f8ecbd07aea196869cfd10049a4e46e00a810220f280804801d",
+      "bytes": 1312182
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-3-r1-trap.png",
+      "sha256": "17f285cc696f1aa3f089483ed08bfeda55290be17629135b297babb50126c59e",
+      "bytes": 1290694
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-3-r1-弱基础模拟.md",
+      "sha256": "e4646f1ae47779f157a0c6b17aea728ab5bed339a242ce83c0b45617bfce3b29",
+      "bytes": 3593
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-3-r2-construction.png",
+      "sha256": "a83b53b01bcae060f8a1e64f343d36ca470d8e7f6f798e1753de059529edad58",
+      "bytes": 1281511
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-3-r2-result.png",
+      "sha256": "7468697ce43afa628572b3450e61dbac7b4a6a7e4c11e70a60efae7879850abe",
+      "bytes": 833665
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-3-r2-弱基础模拟.md",
+      "sha256": "5e87d949f5e137a4ee33f6b4b023ef0cecc4bdd7110b90b8a63d4db54dad3306",
+      "bytes": 3207
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/7-3-r4-local-q2.png",
+      "sha256": "42cf7419258db9ee4c675a80ce738a6b2e8b6b41462edbf6c0eac602019abb30",
+      "bytes": 835411
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第一遍-初始.png",
+      "sha256": "4e55b3d7eb17f4ec7afdcdb5820af5ff846dbf01c748dcc3f8438f9c29016ecd",
+      "bytes": 1314448
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第一遍-纠错.png",
+      "sha256": "5e9371248ca8fabc5a5253b04897872e0b802c8ce2ae1badfabe41d9bf5dfe6a",
+      "bytes": 1307092
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第一遍-结算.png",
+      "sha256": "03af2892c065cdd77904474b5f05f1678fcf00c33b2af417b81eaeb8221a99db",
+      "bytes": 869441
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第一遍-落笔.png",
+      "sha256": "2ff78494a209ffe7ef3c55a6c9952c671436fc68e3bc14e113b6259029da8add",
+      "bytes": 793574
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第一遍.md",
+      "sha256": "5fc22d6c0bce9c0b80909aa7354eac65484cf82bf62d20808f85217f35cbad1d",
+      "bytes": 4720
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第二遍-Q2.png",
+      "sha256": "31b1a67589a9e3e08fab5fe5f0080ceab3883827e7664f64fbdaee0c0d2f2f88",
+      "bytes": 1300760
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第二遍-初始.png",
+      "sha256": "f1db1aff842c37eb02a72d19c511a272db7622c7627a9d15ac31998023ef0fd4",
+      "bytes": 1317786
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第二遍-结算.png",
+      "sha256": "74c88ddab0f80d81da263490c5ae3d56b1f0dfa03193adf400b5f791f20f310d",
+      "bytes": 870649
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第二遍-落笔.png",
+      "sha256": "72d4135b993292803f1c46cdee67f14ae90ce9b1a4186f9e149048947dad3d20",
+      "bytes": 794745
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-1-第二遍.md",
+      "sha256": "60a59463ce9d751c7aaacb78f2809704092b35abe7b9e008dc8b967bfbbd1391",
+      "bytes": 2766
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r1-F4.png",
+      "sha256": "365f1dac5fe4d238d3c170b2a1dc52f3ac6f21d70cddfed3501d1d2a2a73c087",
+      "bytes": 780343
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r1-layer1.png",
+      "sha256": "bfe7f92dbdc059a5c44bb8b4d2043b95c231aa2a86681a6021070d451f49cc75",
+      "bytes": 1300718
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r1-pen.png",
+      "sha256": "afd0b319345057964e116fdd0a8ce216c69c43229acf05c5ecfcdad48e4e311a",
+      "bytes": 815303
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r1-result.png",
+      "sha256": "b4eacda1d97740c6604d2012956b1238cd7135352962fb85069683ce350a218d",
+      "bytes": 872249
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r1-student-b.txt",
+      "sha256": "08f10eaebecfd5cfe166dc64d7c95da6ce6284933d1ab09d8b02ba87b9f1f853",
+      "bytes": 3784
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r2-equipment.png",
+      "sha256": "aebe7fdb09d60a030a0bab840f28dc988f3bc02e22c1f369e0fd8f97a1ffc7c0",
+      "bytes": 754389
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r2-layer1.png",
+      "sha256": "bc9c5f815b76375b9e895a0b8a8e683b6e233fa1cc46cef6ab141ae2983d2d5f",
+      "bytes": 1300628
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r2-pen.png",
+      "sha256": "96576d4fb351dd1d557734826bbd6255e18fcd16f0d11ae9aa2adb986c65da23",
+      "bytes": 807841
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r2-result.png",
+      "sha256": "e7ded5273fe809c33b4c3284a3c1c08be06b637af010312c3749f510e2edc196",
+      "bytes": 864967
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r2-student-b.txt",
+      "sha256": "b9bfef5ed62117b13db0d191f48b75386d824a2567e1accc5bc20fbd686300b6",
+      "bytes": 3602
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-2-r2-tally-local.png",
+      "sha256": "4e214792349849967aa26f2de3a966a7d0ef9e38ed6d37a6247d39f0f843f5c3",
+      "bytes": 1290677
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-3-r1-result.png",
+      "sha256": "513697f3114681c14b959c1d1a00948d880a61e96dd894d41333750cae5f8bac",
+      "bytes": 849595
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-3-r1-start.png",
+      "sha256": "3a1a65c293bbbabd0216b5d671c7a44b26ba1ff113f49830a8b34ebc6af43d90",
+      "bytes": 1312929
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-3-r1-弱基础模拟.md",
+      "sha256": "b350df13889567f5087b0eeb8de687ea9b8bf8e526e3382ef7b5968057506007",
+      "bytes": 2317
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-3-r3-second-result.png",
+      "sha256": "16e5c42466ac9f6856f0eb3b37c41c12d1aeacd8173bac36826b3c9622108330",
+      "bytes": 846779
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/8-3-r3-第二遍弱基础模拟.md",
+      "sha256": "22100cb94a5fb942e5d89d1134d987c942751f09d5b0eaa8ef5509ae3b90f0f6",
+      "bytes": 1952
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第一遍-初始.png",
+      "sha256": "49d9b0b1cf551539fed42fef809e2661d0302e3045326be9ae9eb3eee7e5ce80",
+      "bytes": 1306845
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第一遍-展开.png",
+      "sha256": "aa40d64152d69922f1216aa9638bf7650ca99b532ddbe307c556011b6883d334",
+      "bytes": 853103
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第一遍-纠错.png",
+      "sha256": "42f8d67217d501f2a7c4884790e03d659d650f879a0fd2f230dad0b9ac94cb8f",
+      "bytes": 1308841
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第一遍-结算.png",
+      "sha256": "04deccd2ccd7ed155576a9afa02fbe4ea68f17c797638aee06a06ee24786ee98",
+      "bytes": 858224
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第一遍-落笔.png",
+      "sha256": "d4c9cae956055c25994f63d61be42bb4a8b0497ac246dc1ae72ac138ee95fed7",
+      "bytes": 809653
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第一遍.md",
+      "sha256": "0bf8b990eaa43b8985797e3a76c9fccd848ee8c0a6a7eb4c98ce5d979547af53",
+      "bytes": 4649
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第二遍-塔莉.png",
+      "sha256": "20bc1e84fded9ed85f5059b9bce9aab738d04271a88331a23b70c170a326a09d",
+      "bytes": 1258563
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第二遍-结算.png",
+      "sha256": "ec34159d8e3bc5191a8e7e1a5820bc52b1e7d2a6ea43f8f6492843d650ca510a",
+      "bytes": 853500
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第二遍-落笔.png",
+      "sha256": "ef161410d9c66427ceecd54773558d8dc7ede336ab3379f0a8f22cff2271ae95",
+      "bytes": 799112
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-2-第二遍.md",
+      "sha256": "d5fed037e8bd4e210357f34ddc696fe012bacb927b20cc24937172764eae1823",
+      "bytes": 2047
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r1-layer1.png",
+      "sha256": "51aeb96e968481459be9a0295358f30824c89207c0a3c5f67f924343be440e52",
+      "bytes": 1291908
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r1-pen.png",
+      "sha256": "73a191ff8b2b6c6170b3eeede39409f77bdc2ea6507865cadbf6ef40cfa03229",
+      "bytes": 781215
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r1-result.png",
+      "sha256": "e6a106d78498cc86dad8a2780efc87a761104f9458edc9d6af3ab43e83affaea",
+      "bytes": 825698
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r1-student-b.txt",
+      "sha256": "d36b6ba25bb8d35601d3722830853f802755348a82bbe90051a7de226ad72d43",
+      "bytes": 3615
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r2-pen.png",
+      "sha256": "fc211cf655069d203bbb832d77a03485be2699c86f7e96adee635d90375a96f5",
+      "bytes": 785740
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r2-ratio.png",
+      "sha256": "a7653f0fb1921a997ac5f0a82333dbe4650b8c926dab442a49b0b7b8c94ef7b6",
+      "bytes": 816703
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r2-result.png",
+      "sha256": "1b6a85ca3ae9a56754525cbdfb31786707e7ea70ac753cf28496b53b1d728be5",
+      "bytes": 831756
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r2-student-b.txt",
+      "sha256": "7e6a23b0c9b9159893d400d8bd9e88758457739989dc150ea97df35b8f6c68ff",
+      "bytes": 3677
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r3-q1-local.png",
+      "sha256": "8a884855d9e11a6b2702c8848c38ebd47dcc3a8d8ad999a982ab17a4bbfe45b6",
+      "bytes": 793266
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/9-3-r3-tally-local.png",
+      "sha256": "e17c7119ded089e0914e49d875d417c706156061724a2fbe60fc29ffb69a313c",
+      "bytes": 1256503
+    },
+    {
+      "path": "立绘-GPT/批1R2/走查/student_a-中档模型接续交接.md",
+      "sha256": "826b0bfec816bb8b607ebeca1d6cee35b581e50c824f666f212d146768c71f65",
+      "bytes": 2005
+    },
+    {
+      "path": "立绘-GPT/批1R2/起点哈希.json",
+      "sha256": "87c4f3da07aa5fd054bb288ad5316f8c9274d33ada643fcffc01d89a1c35ee7e",
+      "bytes": 3428
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/10-1-r1.html",
+      "sha256": "46e8a83e8a1fb2c36bbb25c5fdf1fb5d0a773c6c2b2294d988f8faa6e527da96",
+      "bytes": 371264
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/10-1-r2.html",
+      "sha256": "4e6268be2fb02a34e14a2f22eeb1c8598e80e995c10c7209cacebef7dfd2b222",
+      "bytes": 381735
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/10-2-r1.html",
+      "sha256": "46e8a83e8a1fb2c36bbb25c5fdf1fb5d0a773c6c2b2294d988f8faa6e527da96",
+      "bytes": 371264
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/10-3-r1.html",
+      "sha256": "af99cf06a14fff1b240421d441b9d05b9890e1c992ef5b31fb52427e9dd93b5a",
+      "bytes": 371167
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/10-3-r2.html",
+      "sha256": "21ab4a4a92769d1871f18eb5f09480d285030bf657fb840b736f5b72bffa6bf0",
+      "bytes": 382595
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/11-1-r1.html",
+      "sha256": "0672978265f584b8283406e00fedc5ad636b315d01204de713a0c29a56d782c5",
+      "bytes": 373272
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/11-1-r2.html",
+      "sha256": "21ab4a4a92769d1871f18eb5f09480d285030bf657fb840b736f5b72bffa6bf0",
+      "bytes": 382595
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/11-2-r1.html",
+      "sha256": "0672978265f584b8283406e00fedc5ad636b315d01204de713a0c29a56d782c5",
+      "bytes": 373272
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/11-2-r2.html",
+      "sha256": "c0e4a46c32a5184b6d3a86c839807ddde9f2d4f835153fc6e9f63b9ace8bb51c",
+      "bytes": 382887
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/11-3-r1.html",
+      "sha256": "0a00ccd45b769138c6861bdea94053160fd9a8d80284c3b7eaa2110eae2f0651",
+      "bytes": 374442
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/11-3-r2.html",
+      "sha256": "69e45fa6bc947f3128bfd4e9cd734ef75b250b7a190c2fd014fe3f40bd1a0e52",
+      "bytes": 383235
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/12-1-r1.html",
+      "sha256": "fffe30e75203a5ccbc9b26628392ff9e42fbb41661924ba01a2fb6f8bc08f53e",
+      "bytes": 375219
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/12-1-r2.html",
+      "sha256": "ae458ff7c73f8b958c1ebba86e2c0069f73d86bf0e2972d28b92dbb133d95752",
+      "bytes": 376681
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/12-1-r3.html",
+      "sha256": "3ae48c596f301046b6213602bb1880c8948a7ed80106ff73319f246343d2edab",
+      "bytes": 383331
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/12-2-r1.html",
+      "sha256": "ae458ff7c73f8b958c1ebba86e2c0069f73d86bf0e2972d28b92dbb133d95752",
+      "bytes": 376681
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/12-2-r2.html",
+      "sha256": "75e98254c92fc5dded5d0b2e686f7fad2a2a04805f2a4ba5e587c8bef76824f9",
+      "bytes": 383655
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/12-3-r1.html",
+      "sha256": "ae458ff7c73f8b958c1ebba86e2c0069f73d86bf0e2972d28b92dbb133d95752",
+      "bytes": 376681
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/12-3-r2.html",
+      "sha256": "487b2f59bcbb194196c3a9eec86097c2e6eac26dd600370f85dec3409cb9d7d3",
+      "bytes": 383450
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/12-3-r3.html",
+      "sha256": "75e98254c92fc5dded5d0b2e686f7fad2a2a04805f2a4ba5e587c8bef76824f9",
+      "bytes": 383655
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/13-1-r1.html",
+      "sha256": "db0259e02e5408d4e7ea8bdc27aa4e5aaf6b1dcb57a11f4347fa433ffa51a5e0",
+      "bytes": 381381
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/13-2-r1.html",
+      "sha256": "db0259e02e5408d4e7ea8bdc27aa4e5aaf6b1dcb57a11f4347fa433ffa51a5e0",
+      "bytes": 381381
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/13-2-r2.html",
+      "sha256": "24cf1511c4ff98c6e6f2febf4342cdebe392879e0b64f590465a82fb50c90749",
+      "bytes": 382191
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/13-3-r1.html",
+      "sha256": "db0259e02e5408d4e7ea8bdc27aa4e5aaf6b1dcb57a11f4347fa433ffa51a5e0",
+      "bytes": 381381
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-1-r1.html",
+      "sha256": "7f37bd6cb9f78ef718a80991af5ea866d59711cb96d08db741b08573cbff7270",
+      "bytes": 360276
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-1-r2.html",
+      "sha256": "ad81b8f273402ac4d0529c7ffdb9ee69ec1e7648cea6d057d4e439185244acb0",
+      "bytes": 363676
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-1-r3.html",
+      "sha256": "863179076e368b245f9a774561ed60e149eb7bec8cd0f13d1c7df2e000e6d9f4",
+      "bytes": 365320
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-1-r4.html",
+      "sha256": "9c08702c24b55ac852abbf632da0abe8c58ab8650f9c1577047e6c7b9d2d2ebb",
+      "bytes": 367060
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-2-r1.html",
+      "sha256": "dd94d2766818a5c0438efbb676f143fbacc4346239302d0481f2f902acf6747c",
+      "bytes": 360248
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-2-r2.html",
+      "sha256": "0b01ce28cfa5ed99decdcca732d79a28fcb2b1c360013e18cf475ff89f9cd3e2",
+      "bytes": 363853
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-2-r3.html",
+      "sha256": "5a15adab2876bd3f5efc27a5df1d7966165ed773191dd1fc90789b8e776ba76c",
+      "bytes": 367742
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-3-r1.html",
+      "sha256": "dd94d2766818a5c0438efbb676f143fbacc4346239302d0481f2f902acf6747c",
+      "bytes": 360248
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-3-r2.html",
+      "sha256": "b14d011896eb8ebdd5ed3c872fdf5ab4c190e6560e0e1f9ed0ccc625261b414b",
+      "bytes": 364255
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/6-3-r3.html",
+      "sha256": "5a15adab2876bd3f5efc27a5df1d7966165ed773191dd1fc90789b8e776ba76c",
+      "bytes": 367742
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/7-1-r1.html",
+      "sha256": "0b01ce28cfa5ed99decdcca732d79a28fcb2b1c360013e18cf475ff89f9cd3e2",
+      "bytes": 363853
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/7-1-r2.html",
+      "sha256": "12f822098217e4ac1c09af26d851e4070793f66f71dfc4ef49a3a88a355731c8",
+      "bytes": 368627
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/7-1-r3.html",
+      "sha256": "46e8a83e8a1fb2c36bbb25c5fdf1fb5d0a773c6c2b2294d988f8faa6e527da96",
+      "bytes": 371264
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/7-2-r1.html",
+      "sha256": "0b01ce28cfa5ed99decdcca732d79a28fcb2b1c360013e18cf475ff89f9cd3e2",
+      "bytes": 363853
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/7-2-r2.html",
+      "sha256": "12f822098217e4ac1c09af26d851e4070793f66f71dfc4ef49a3a88a355731c8",
+      "bytes": 368627
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/7-3-r1.html",
+      "sha256": "0b01ce28cfa5ed99decdcca732d79a28fcb2b1c360013e18cf475ff89f9cd3e2",
+      "bytes": 363853
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/7-3-r2.html",
+      "sha256": "12f822098217e4ac1c09af26d851e4070793f66f71dfc4ef49a3a88a355731c8",
+      "bytes": 368627
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/7-3-r3.html",
+      "sha256": "46e8a83e8a1fb2c36bbb25c5fdf1fb5d0a773c6c2b2294d988f8faa6e527da96",
+      "bytes": 371264
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/7-3-r4.html",
+      "sha256": "af99cf06a14fff1b240421d441b9d05b9890e1c992ef5b31fb52427e9dd93b5a",
+      "bytes": 371167
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/8-1-r1.html",
+      "sha256": "5a15adab2876bd3f5efc27a5df1d7966165ed773191dd1fc90789b8e776ba76c",
+      "bytes": 367742
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/8-1-r2.html",
+      "sha256": "fffe30e75203a5ccbc9b26628392ff9e42fbb41661924ba01a2fb6f8bc08f53e",
+      "bytes": 375219
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/8-2-r1.html",
+      "sha256": "5a15adab2876bd3f5efc27a5df1d7966165ed773191dd1fc90789b8e776ba76c",
+      "bytes": 367742
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/8-2-r2.html",
+      "sha256": "0672978265f584b8283406e00fedc5ad636b315d01204de713a0c29a56d782c5",
+      "bytes": 373272
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/8-3-r1.html",
+      "sha256": "5a15adab2876bd3f5efc27a5df1d7966165ed773191dd1fc90789b8e776ba76c",
+      "bytes": 367742
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/8-3-r2.html",
+      "sha256": "c643f4b09337e93a167b806c10f2712062c0e423112d3eff4e3e7a19fca22018",
+      "bytes": 374510
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/8-3-r3.html",
+      "sha256": "fffe30e75203a5ccbc9b26628392ff9e42fbb41661924ba01a2fb6f8bc08f53e",
+      "bytes": 375219
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/9-2-r1.html",
+      "sha256": "46e8a83e8a1fb2c36bbb25c5fdf1fb5d0a773c6c2b2294d988f8faa6e527da96",
+      "bytes": 371264
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/9-3-r1.html",
+      "sha256": "46e8a83e8a1fb2c36bbb25c5fdf1fb5d0a773c6c2b2294d988f8faa6e527da96",
+      "bytes": 371264
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/9-3-r2.html",
+      "sha256": "4e6268be2fb02a34e14a2f22eeb1c8598e80e995c10c7209cacebef7dfd2b222",
+      "bytes": 381735
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/9-3-r3.html",
+      "sha256": "ef8b8a708e8d7c2d606b0fa3272707e7eea7c335d8a2847c0e3529f6bb88528f",
+      "bytes": 382240
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/bg-boss.webp",
+      "sha256": "aeb68b4793268a230e635f4d7de6f0f1d368cd0c032f54fe9724432527862308",
+      "bytes": 43854
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/bg-garden.webp",
+      "sha256": "6d6b72b31c78f16f660f26ef28558f04056770b7990e4b605b3c6a2889fab2fb",
+      "bytes": 193120
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/bg-path.webp",
+      "sha256": "eb4d92cd3f6b03f06e7e9295cbf1a30bf9d0b1a6b5dce0bcb2a08ad61ea44050",
+      "bytes": 177930
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/bg-ruins.webp",
+      "sha256": "de0efa2cc4b5a7b84699ca69832e236c24726db226316fe793c680ab069764d8",
+      "bytes": 145626
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-bala.webp",
+      "sha256": "0447d39da62732d1a61a3302ff18296f235abec529ef30f0c6df80aca1c0e3a1",
+      "bytes": 29182
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-certa.webp",
+      "sha256": "52b94384fca021a2f04fb379ebcc317fc9d7ae823b84e4cde06b4ed3fcb0ecf2",
+      "bytes": 32702
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-divi.webp",
+      "sha256": "a1e1b525248912f05ba10460214e976729e9619c79ad1d64725c6a974053d2b2",
+      "bytes": 45858
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-fabia.webp",
+      "sha256": "fb3dda213da9bf39b171fe9776ff70ce51a7ea781efef9f54b3bd211e8a66055",
+      "bytes": 36348
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-flo.webp",
+      "sha256": "2b4fb1c6a6db5b7fb8bb3d55db290182fc99bd276eebc674e42c3497f3dfdd93",
+      "bytes": 62164
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-ilu.webp",
+      "sha256": "8f0816fe96ab480e1cc9cb020d7afc02bca4dfd4259da90bd708486408c836a7",
+      "bytes": 25780
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-marga.webp",
+      "sha256": "8caa53314e16e69d04ab60255d87fbbeb467891008e47e2af3394eb003bfe5a5",
+      "bytes": 28152
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-mira.webp",
+      "sha256": "4da0bb4845437651c9bb3b8751e932160ae598276f164d7a546639d30580c0a1",
+      "bytes": 24072
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-norman.webp",
+      "sha256": "6bef62754210d48cff0c06bd3b0345924f9569f2111978d8fffe2cf3b7e05e77",
+      "bytes": 25008
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-ora.webp",
+      "sha256": "163b1fcc2054fd8be1b241687457bcdf7c86ddb01c8c3b9962082c1a07a76faa",
+      "bytes": 19768
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-quidda.webp",
+      "sha256": "d2cbcaf90810f30d6bd22cba19327fe4e21bd8a1d3f95948783d3c0ff90fc73d",
+      "bytes": 19016
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-tally.webp",
+      "sha256": "0327495a690f54ff9d3a472ffc0b2b0e065c6bb15ce9d002f69c255f123dc79d",
+      "bytes": 38474
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-tess.webp",
+      "sha256": "784b48d265d6e3b34babdad6f8f263e1b0985a7bc0a5a51109e2df4440ecfd8b",
+      "bytes": 34256
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/calm-yana.webp",
+      "sha256": "9b5387d9e7521e9028cd6bd960b43a01478e5b51ac989668742c4c1362275a89",
+      "bytes": 23628
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-bala.webp",
+      "sha256": "5d13e12f73c34b73c1d5532dfebbc32e4e95f1c83ea88588fd23f5edfc6d4984",
+      "bytes": 25078
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-certa.webp",
+      "sha256": "9d186834c1509ea7c72a30144519d841f990d2cbd6ad3de6713199c23c5973a6",
+      "bytes": 33424
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-divi.webp",
+      "sha256": "d8f44190f75e1d2bf517739679634b4d9f6f46bb6a2b86ccc25a911129506825",
+      "bytes": 53654
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-fabia.webp",
+      "sha256": "898e400599bb6c1f8160bc275a5ce8a43956a97e9b2b0157301c07184d162f72",
+      "bytes": 39666
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-flo.webp",
+      "sha256": "b408a3048e778bcc33553e8ad989b8eff6550d10be37987716f819ccc756fd1f",
+      "bytes": 54792
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-ilu.webp",
+      "sha256": "4cbe6debab55c36efb293d25453fa5e9d46ee3019b8b57ea46e47769af53e36a",
+      "bytes": 26904
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-marga.webp",
+      "sha256": "e4d897a841a1f4071ab3c0dcb744a10d1ac49e360546893827984cd9c1dab2b9",
+      "bytes": 28382
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-mira.webp",
+      "sha256": "1d4d09ef1bea2e7663224ef286118d2d7b4b38ecd0f26b447a4a34fbeb26f052",
+      "bytes": 27248
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-ora.webp",
+      "sha256": "a20efb3737aba78baac80b4fa3fc465851172ba396f78de7adba05d4f33c6db7",
+      "bytes": 18028
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-quidda.webp",
+      "sha256": "52cb2dd9c512f54282f84e0a195b913c5f02b52b1354094e34f07d0b429ddff8",
+      "bytes": 19508
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-tally.webp",
+      "sha256": "85db43f6690c62772a6bdefab3c03c0e3ad9aa826148c5ecadf7068d215d879f",
+      "bytes": 53880
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-tess.webp",
+      "sha256": "bf005ec71d9b09ef7fbc53b42a74b830d21d63aaff866409be449f363f4b025c",
+      "bytes": 33264
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/full/ready-yana.webp",
+      "sha256": "eb95cfa747c1fa62115f1239ef3429f08dd9aeb584c5477d9a0ad2fced59a9d9",
+      "bytes": 26280
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/arch-down.webp",
+      "sha256": "7f92552a9394c23067bdefb13e3da56fc9daeb432ae15cfb7072251abe525c77",
+      "bytes": 9990
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/arch-up-float.webp",
+      "sha256": "db5285482b7cc858e804a291d671fb176603dc12197deecfa076065560a713b0",
+      "bytes": 10082
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/arch-up-touch.webp",
+      "sha256": "a99bd6aa3a21891fe6ac8c99a5e7ad6cca19bceb67798ce2f61485180bc1bd55",
+      "bytes": 10090
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/arch-up.webp",
+      "sha256": "77c2c43ddb526c19fe7b6569feb53cacba26adac78e5ca6e3dfd87058ebbc13b",
+      "bytes": 10054
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/axis.webp",
+      "sha256": "33282c8bce697401b3a9ae272ef9a9b3137d84799b12643139a9496895874ae0",
+      "bytes": 2806
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/eyes-down.webp",
+      "sha256": "2006f92831a1bdee4968c25c9cd49d8ce54c754ae14c7b11a58fef5bb7724372",
+      "bytes": 2462
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/eyes-float.webp",
+      "sha256": "c2bbc49de3a3815d49d6edbf24de3b2f737202b747a044438c5aeb4b39d70671",
+      "bytes": 2416
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/eyes-touch.webp",
+      "sha256": "97392f80c878b5983bc2c32f932119b3405a4cb364dad4c1bdcc8310cf2a399e",
+      "bytes": 2450
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/eyes-up.webp",
+      "sha256": "085bb0e937ede0985454932d0a619a031bf5ac253b95362eddc74b4ba8aba453",
+      "bytes": 2418
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/flag-left.webp",
+      "sha256": "56901f03267492228683f8f6c090bf86f891411dddf7fc95b0e387e24d177e29",
+      "bytes": 2382
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/flag-right.webp",
+      "sha256": "8aad7d411c5203cc8f0df3eb7f13f02a3bd609d87718a71c43f1093bdfb39e20",
+      "bytes": 2426
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/shade-between.webp",
+      "sha256": "574587828fa5b9fd2860d3a69963108e05e3673f1075fe2f39996547cf0ec29a",
+      "bytes": 2142
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/arch/shade-outside.webp",
+      "sha256": "cfaf671ad91e548d13b8dbbdf19872694e625cac9825936dfe000257ffa7700e",
+      "bytes": 1946
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b10/arm-long-equal.webp",
+      "sha256": "34761e09d700764866620d19e718b239c15fe88eb002e0e1af94396324722bb8",
+      "bytes": 8088
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b10/arm-long.webp",
+      "sha256": "a880147fdd821761358c31e02a5bdd033d10c50d63a3dd22e249bf6e96707c01",
+      "bytes": 9310
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b10/arm-short-equal.webp",
+      "sha256": "e8db375320636a140433de3af4b7b0c07c7293b0da51ef671f0bff0a117ccc2b",
+      "bytes": 8128
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b10/arm-short.webp",
+      "sha256": "70608a170d298d2dd1a091d55855a468016e43cc2a691c2a3b7fafe1d6ca5a9a",
+      "bytes": 6748
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b10/body.webp",
+      "sha256": "bccc7e4c4edd3ede4df1876aaed6b22f37854a9926ebbde0e1df975d30e0d14f",
+      "bytes": 21914
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b10/eyes.webp",
+      "sha256": "8de51de21d01f7e3d8055f279b4cb1a69015bafdcb4a0f6879b98ec94fc4181f",
+      "bytes": 2856
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b10/prop.webp",
+      "sha256": "b32c675d1cbdf0cda1035576da5b023cad3f23438b83f8035fdc517aad012b65",
+      "bytes": 6648
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b11/arm-long-equal.webp",
+      "sha256": "4d0f954282b8fad27406d8d667a9bf0c24f36540ed218d33a6cd61646d65982f",
+      "bytes": 5676
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b11/arm-long.webp",
+      "sha256": "a8278eeab6a25ded93fc4f63b8d270cc771d5caa44ee99d7f67e6d8ea7425a43",
+      "bytes": 6338
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b11/arm-short-equal.webp",
+      "sha256": "a0a8f5e1c674d6483f2ddec6c0c4f388f6ef89549dc9b96da60227b03ec8076f",
+      "bytes": 5666
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b11/arm-short.webp",
+      "sha256": "8832e1d706ab85e3487cd7f2abe2c31ee738a5c93e00d2ae44e3700b04974064",
+      "bytes": 4810
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b11/body.webp",
+      "sha256": "ebd35fcf235166d60df505cf29bc05782a4c5bb056e26225f149180713da0faa",
+      "bytes": 14468
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b11/eyes.webp",
+      "sha256": "083e37016fcb2708c04ded0d7a652ed2becd965802fa4ac04890a128c2a19884",
+      "bytes": 3268
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b11/prop.webp",
+      "sha256": "94727b526ddd3ca90f13a065c4343297db03fa2fa8ba63e1e9acf2f44d8c5696",
+      "bytes": 8468
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b12/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b12/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b12/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b12/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b12/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b12/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b12/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b12/prop.webp",
+      "sha256": "a78440f9ab0c94e17660899de8698438764fbf7f63a8bc6085ba767e728e7cf9",
+      "bytes": 11116
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b13/arm-long-equal.webp",
+      "sha256": "34761e09d700764866620d19e718b239c15fe88eb002e0e1af94396324722bb8",
+      "bytes": 8088
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b13/arm-long.webp",
+      "sha256": "a880147fdd821761358c31e02a5bdd033d10c50d63a3dd22e249bf6e96707c01",
+      "bytes": 9310
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b13/arm-short-equal.webp",
+      "sha256": "e8db375320636a140433de3af4b7b0c07c7293b0da51ef671f0bff0a117ccc2b",
+      "bytes": 8128
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b13/arm-short.webp",
+      "sha256": "70608a170d298d2dd1a091d55855a468016e43cc2a691c2a3b7fafe1d6ca5a9a",
+      "bytes": 6748
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b13/body.webp",
+      "sha256": "bccc7e4c4edd3ede4df1876aaed6b22f37854a9926ebbde0e1df975d30e0d14f",
+      "bytes": 21914
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b13/eyes.webp",
+      "sha256": "8de51de21d01f7e3d8055f279b4cb1a69015bafdcb4a0f6879b98ec94fc4181f",
+      "bytes": 2856
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b13/prop.webp",
+      "sha256": "f1b53b8c8957e10453c29aabf907ca141b41f22db9c077ac929f8fc07f1a0473",
+      "bytes": 9286
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b6/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b6/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b6/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b6/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b6/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b6/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b6/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b6/prop.webp",
+      "sha256": "f966d8fadc8c741575f11db896590d000dac057da600f53d18015485c09191d1",
+      "bytes": 5952
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b7/arm-long-equal.webp",
+      "sha256": "34761e09d700764866620d19e718b239c15fe88eb002e0e1af94396324722bb8",
+      "bytes": 8088
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b7/arm-long.webp",
+      "sha256": "a880147fdd821761358c31e02a5bdd033d10c50d63a3dd22e249bf6e96707c01",
+      "bytes": 9310
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b7/arm-short-equal.webp",
+      "sha256": "e8db375320636a140433de3af4b7b0c07c7293b0da51ef671f0bff0a117ccc2b",
+      "bytes": 8128
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b7/arm-short.webp",
+      "sha256": "70608a170d298d2dd1a091d55855a468016e43cc2a691c2a3b7fafe1d6ca5a9a",
+      "bytes": 6748
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b7/body.webp",
+      "sha256": "bccc7e4c4edd3ede4df1876aaed6b22f37854a9926ebbde0e1df975d30e0d14f",
+      "bytes": 21914
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b7/eyes.webp",
+      "sha256": "8de51de21d01f7e3d8055f279b4cb1a69015bafdcb4a0f6879b98ec94fc4181f",
+      "bytes": 2856
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b7/prop.webp",
+      "sha256": "9ed71fa16b7256f71f38d447805fc00fbc5f6fc7fe3f1975fc80907b86437210",
+      "bytes": 4152
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b8/arm-long-equal.webp",
+      "sha256": "4d0f954282b8fad27406d8d667a9bf0c24f36540ed218d33a6cd61646d65982f",
+      "bytes": 5676
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b8/arm-long.webp",
+      "sha256": "a8278eeab6a25ded93fc4f63b8d270cc771d5caa44ee99d7f67e6d8ea7425a43",
+      "bytes": 6338
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b8/arm-short-equal.webp",
+      "sha256": "a0a8f5e1c674d6483f2ddec6c0c4f388f6ef89549dc9b96da60227b03ec8076f",
+      "bytes": 5666
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b8/arm-short.webp",
+      "sha256": "8832e1d706ab85e3487cd7f2abe2c31ee738a5c93e00d2ae44e3700b04974064",
+      "bytes": 4810
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b8/body.webp",
+      "sha256": "ebd35fcf235166d60df505cf29bc05782a4c5bb056e26225f149180713da0faa",
+      "bytes": 14468
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b8/eyes.webp",
+      "sha256": "083e37016fcb2708c04ded0d7a652ed2becd965802fa4ac04890a128c2a19884",
+      "bytes": 3268
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b8/prop.webp",
+      "sha256": "a37203273fb5f297480c18257ef16c153391f1f75a17619b8fa225b8949fa12b",
+      "bytes": 9600
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b9/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b9/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b9/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b9/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b9/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b9/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b9/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/b9/prop.webp",
+      "sha256": "21a9b6ef4bdf95b71425ac59373512921f9a4373fceea8b842e1d3ad34971dec",
+      "bytes": 7084
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/balance/body.webp",
+      "sha256": "1fb799ef51f400b04717cea78455613a082377a66151ca3832e052d83e24d52d",
+      "bytes": 19566
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/balance/eyes.webp",
+      "sha256": "a4558e65eedc8a48dc143bd62de3bfbcb2401251a7dce01af8d18435ef8a4849",
+      "bytes": 2758
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/balance/scale-left-down.webp",
+      "sha256": "8c3fb5d0ece0c14e802380dfe5dc0e4a554bf9c9741a80e14a8347d78f504a29",
+      "bytes": 25660
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/balance/scale-level.webp",
+      "sha256": "b55925219341705c014284496661dabf7d805e7e4055368f0168089706cca09c",
+      "bytes": 25126
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/balance/scale-merged.webp",
+      "sha256": "f2afe7841e2cb78a944ab95a3414de5a62a1779a01ed1b1b4c3b8a8a692af60c",
+      "bytes": 21676
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/balance/scale-right-down.webp",
+      "sha256": "707840c3c72a305026149749a16adf46259e750060baa2d17485861d11499754",
+      "bytes": 26310
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-a/body.webp",
+      "sha256": "1fb799ef51f400b04717cea78455613a082377a66151ca3832e052d83e24d52d",
+      "bytes": 19566
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-a/crown.webp",
+      "sha256": "cbbe9142ebb1e5a7c8ccab7f128334dcdbe9b7de81dadaaf3a9dd443ff6882ac",
+      "bytes": 2886
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-a/eyes.webp",
+      "sha256": "a4558e65eedc8a48dc143bd62de3bfbcb2401251a7dce01af8d18435ef8a4849",
+      "bytes": 2758
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-a/scale-left-down.webp",
+      "sha256": "8c3fb5d0ece0c14e802380dfe5dc0e4a554bf9c9741a80e14a8347d78f504a29",
+      "bytes": 25660
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-a/scale-level.webp",
+      "sha256": "b55925219341705c014284496661dabf7d805e7e4055368f0168089706cca09c",
+      "bytes": 25126
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-a/scale-merged.webp",
+      "sha256": "f2afe7841e2cb78a944ab95a3414de5a62a1779a01ed1b1b4c3b8a8a692af60c",
+      "bytes": 21676
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-a/scale-right-down.webp",
+      "sha256": "707840c3c72a305026149749a16adf46259e750060baa2d17485861d11499754",
+      "bytes": 26310
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-b/arm-long.webp",
+      "sha256": "9d3a8b497ee6260254048f13141b8cbd749ff35c369240d3d0ec99e0377d15d3",
+      "bytes": 12624
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-b/arm-short.webp",
+      "sha256": "82fe9abda8219c280d3c10788a0a8154fd3842cf1d46ab382d01173c4370e614",
+      "bytes": 8596
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-b/body.webp",
+      "sha256": "0e3f7f0fba7660c119c3f450a6480c7059a12d5bd3bd786e23244d380ba375df",
+      "bytes": 21628
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-b/cracks.webp",
+      "sha256": "f7f19d2d8b7ac2364b8ce925f3b4d591f2fbc9920ec9e0dfef1101c9668f0445",
+      "bytes": 2372
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-b/crown.webp",
+      "sha256": "75c134e965c6f7482659dc3c11b5f023d9de97a64ebca716840ce4481f9f2a04",
+      "bytes": 4828
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-b/eyes.webp",
+      "sha256": "74351c169e700ecfb1f63074b9801ebb43e88111fac0e594c710f015fc6d11bf",
+      "bytes": 2866
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-b/shadow-a.webp",
+      "sha256": "d3dc342356871fa6d23ac93aa61a045b33abb9a9d464bfcf5b17c6429e57a909",
+      "bytes": 2500
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-b/shadow-b.webp",
+      "sha256": "6759c5ecc85117cf32b18e0514cbcb0f87b04f2724be8ff9e6b856c24a569003",
+      "bytes": 2714
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-b/shadow-c.webp",
+      "sha256": "a2ee3fec0e7f4dbc8a8338ee8831de46df7715aa2e902db7c94a228cf4c45599",
+      "bytes": 2530
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/arch-down.webp",
+      "sha256": "7f92552a9394c23067bdefb13e3da56fc9daeb432ae15cfb7072251abe525c77",
+      "bytes": 9990
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/arch-up-float.webp",
+      "sha256": "db5285482b7cc858e804a291d671fb176603dc12197deecfa076065560a713b0",
+      "bytes": 10082
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/arch-up-touch.webp",
+      "sha256": "a99bd6aa3a21891fe6ac8c99a5e7ad6cca19bceb67798ce2f61485180bc1bd55",
+      "bytes": 10090
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/arch-up.webp",
+      "sha256": "77c2c43ddb526c19fe7b6569feb53cacba26adac78e5ca6e3dfd87058ebbc13b",
+      "bytes": 10054
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/axis.webp",
+      "sha256": "33282c8bce697401b3a9ae272ef9a9b3137d84799b12643139a9496895874ae0",
+      "bytes": 2806
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/crown.webp",
+      "sha256": "72ff87a2b62dc09b6dfdb0f03efc5e6b17882a009adc05679302229120edc787",
+      "bytes": 3944
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/eyes-down.webp",
+      "sha256": "2006f92831a1bdee4968c25c9cd49d8ce54c754ae14c7b11a58fef5bb7724372",
+      "bytes": 2462
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/eyes-float.webp",
+      "sha256": "c2bbc49de3a3815d49d6edbf24de3b2f737202b747a044438c5aeb4b39d70671",
+      "bytes": 2416
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/eyes-touch.webp",
+      "sha256": "97392f80c878b5983bc2c32f932119b3405a4cb364dad4c1bdcc8310cf2a399e",
+      "bytes": 2450
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/eyes-up.webp",
+      "sha256": "085bb0e937ede0985454932d0a619a031bf5ac253b95362eddc74b4ba8aba453",
+      "bytes": 2418
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/flag-left.webp",
+      "sha256": "56901f03267492228683f8f6c090bf86f891411dddf7fc95b0e387e24d177e29",
+      "bytes": 2382
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/flag-right.webp",
+      "sha256": "8aad7d411c5203cc8f0df3eb7f13f02a3bd609d87718a71c43f1093bdfb39e20",
+      "bytes": 2426
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/shade-between.webp",
+      "sha256": "574587828fa5b9fd2860d3a69963108e05e3673f1075fe2f39996547cf0ec29a",
+      "bytes": 2142
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-c/shade-outside.webp",
+      "sha256": "cfaf671ad91e548d13b8dbbdf19872694e625cac9825936dfe000257ffa7700e",
+      "bytes": 1946
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/arm-a.webp",
+      "sha256": "f8a922838505f8006331ad43ffc732b54f7b06373287bb6411812c12321beaf3",
+      "bytes": 10718
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/arm-b.webp",
+      "sha256": "bd88eabcbdc7d46c7ffac87b71dfefecdc75b062da8eeb49b884e1b83bab52fe",
+      "bytes": 10876
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/arm-c.webp",
+      "sha256": "db1a7e779f633e05348db3561e6881d22b02c3a635e865a376ed3fc373cdbb96",
+      "bytes": 14866
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/body.webp",
+      "sha256": "d254858bca657f7dcac0c9b0816408d5badd371b844d514e0219f6bd88a34053",
+      "bytes": 15760
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/crown.webp",
+      "sha256": "10d4cb87d4fc6f0067b395b3ddaa179ba1d039d8b35b19332ce7e1166f29c115",
+      "bytes": 3506
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/eyes.webp",
+      "sha256": "162cf1222ca888a5b5efe8cfaa237f372b50e61b03695649d7397be4f603f2cf",
+      "bytes": 2518
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/flag.webp",
+      "sha256": "19174aead7697a6b20a7e73b8155c93f3d6672cfb1472b8dbcd95b37f22a54d6",
+      "bytes": 2322
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/line.webp",
+      "sha256": "18400db1bcf72045e3de9b63c2194a5b8213b099d3351e2552a38d9caee633de",
+      "bytes": 3104
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/low-gap.webp",
+      "sha256": "5770f5d8632dc3bb5439ed95777ea803cfb5bfeaafd723cbcd8b572bf263bf16",
+      "bytes": 2458
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/wall-raised.webp",
+      "sha256": "d70c1d44003d3cec38ee4e3a18cc32c3b2035a9836d153e497b3ea40cb84ab36",
+      "bytes": 10826
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-d/wall.webp",
+      "sha256": "a8db39aacb52c9eeea25b26597106d3e0fa130cf5ed81b1a8771c3e5107fd142",
+      "bytes": 10790
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-end/body.webp",
+      "sha256": "80cc74d2f990f3f86c8da2bdb3e58e68e32d18313918fe6cb54806d3588b1a8f",
+      "bytes": 29782
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-end/cracks.webp",
+      "sha256": "21080d31b14e02edef277618a458fd697d5d225ac58b1a73305920f28e9c2416",
+      "bytes": 2818
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-end/crown.webp",
+      "sha256": "29d41db132e599ec71ff1b4ab47675a972f1a1de5f37467796b3eafb52947c48",
+      "bytes": 3684
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-end/eyes.webp",
+      "sha256": "9dc851c9f9958f1ce1db0fa7ebd8d56932b33bda78e798e2bf9caf071242fb76",
+      "bytes": 2164
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-end/shade-arch.webp",
+      "sha256": "31129f2ab86d37b427b9f96db348038f216281f626af1f8493d0e5cf18a88166",
+      "bytes": 3518
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-end/shade-balance.webp",
+      "sha256": "9abb89b6d3c61a17d8284d7b97ecda3e4f950939f2bd07a4e450bf163bf48edc",
+      "bytes": 11168
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/boss-end/shade-duo.webp",
+      "sha256": "5ceac9f1ff768ff3c429e6a3a5c9c5b041bc4b02d740a239e11c8d7a6a8cf5ee",
+      "bytes": 5422
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-b/arm-long-equal.webp",
+      "sha256": "34761e09d700764866620d19e718b239c15fe88eb002e0e1af94396324722bb8",
+      "bytes": 8088
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-b/arm-long.webp",
+      "sha256": "a880147fdd821761358c31e02a5bdd033d10c50d63a3dd22e249bf6e96707c01",
+      "bytes": 9310
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-b/arm-short-equal.webp",
+      "sha256": "e8db375320636a140433de3af4b7b0c07c7293b0da51ef671f0bff0a117ccc2b",
+      "bytes": 8128
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-b/arm-short.webp",
+      "sha256": "70608a170d298d2dd1a091d55855a468016e43cc2a691c2a3b7fafe1d6ca5a9a",
+      "bytes": 6748
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-b/body.webp",
+      "sha256": "bccc7e4c4edd3ede4df1876aaed6b22f37854a9926ebbde0e1df975d30e0d14f",
+      "bytes": 21914
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-b/eyes.webp",
+      "sha256": "8de51de21d01f7e3d8055f279b4cb1a69015bafdcb4a0f6879b98ec94fc4181f",
+      "bytes": 2856
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-c/arm-long-equal.webp",
+      "sha256": "4d0f954282b8fad27406d8d667a9bf0c24f36540ed218d33a6cd61646d65982f",
+      "bytes": 5676
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-c/arm-long.webp",
+      "sha256": "a8278eeab6a25ded93fc4f63b8d270cc771d5caa44ee99d7f67e6d8ea7425a43",
+      "bytes": 6338
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-c/arm-short-equal.webp",
+      "sha256": "a0a8f5e1c674d6483f2ddec6c0c4f388f6ef89549dc9b96da60227b03ec8076f",
+      "bytes": 5666
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-c/arm-short.webp",
+      "sha256": "8832e1d706ab85e3487cd7f2abe2c31ee738a5c93e00d2ae44e3700b04974064",
+      "bytes": 4810
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-c/body.webp",
+      "sha256": "ebd35fcf235166d60df505cf29bc05782a4c5bb056e26225f149180713da0faa",
+      "bytes": 14468
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/duo-c/eyes.webp",
+      "sha256": "083e37016fcb2708c04ded0d7a652ed2becd965802fa4ac04890a128c2a19884",
+      "bytes": 3268
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/mirror/arm-left.webp",
+      "sha256": "df99bde9243417edf4e133a625462e49e4df1cc224f01bad88566add3a12390f",
+      "bytes": 8324
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/mirror/arm-right.webp",
+      "sha256": "2a5c133712d31d3e13944f47b7a19ce770fb495b40a435b820be7db30bca8445",
+      "bytes": 6240
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/mirror/body.webp",
+      "sha256": "478fe837957716f13a726cae91e12633516cbee954497c07c06088f94a60830a",
+      "bytes": 21500
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/mirror/crack.webp",
+      "sha256": "55ae181620b3501092ac6e2c0a122711b8022a064f29c1858c81bd3ae15286fc",
+      "bytes": 3270
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/mirror/eyes.webp",
+      "sha256": "d0c25a368bcd15007d864b1d0a7ba5df319b3068cfd6de9bc20e0c51fd457456",
+      "bytes": 2686
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/mirror/mirror-back.webp",
+      "sha256": "e775c13e21af0af78476049c68b94a2edb391954f54321ea61b28c9cc2af5340",
+      "bytes": 14298
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/mirror/mirror-clear.webp",
+      "sha256": "f8c5acd3a85369e86dfce477ed767cd3c53ae234a317f3db59dec8bb309ada1f",
+      "bytes": 12360
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/mirror/mirror-front.webp",
+      "sha256": "c73a5a29da9d1c14f5391ac0d0c24ded53a0f0f613a99e61fed43b7cef746028",
+      "bytes": 11520
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p1/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p1/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p1/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p1/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p1/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p1/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p1/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p2/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p2/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p2/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p2/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p2/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p2/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p2/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p3/arm-long-down.webp",
+      "sha256": "3d32b8fd595435c1a8debf44801f09bc4f9790a6f63b823b9dcd4cb282436ba5",
+      "bytes": 9896
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p3/arm-long-equal.webp",
+      "sha256": "0d23b663a0f1f87a475ea7030b5daddd9527bb2600e76730717549db821fb2c1",
+      "bytes": 7576
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p3/arm-long.webp",
+      "sha256": "53892e9675518fb35d47752e9a2a653637ea5402b97fe54f335a4959025dd3a0",
+      "bytes": 8246
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p3/arm-short-down.webp",
+      "sha256": "fa9238f00d2f0d33856f1c85f9da995f9d1c99d8dc682aa4a61614ce1e00c0fc",
+      "bytes": 6316
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p3/arm-short-equal.webp",
+      "sha256": "9f1a42703028c52e8b2f7184d32324fbcae5915eed9a0c915b1c3e0dc2ae046c",
+      "bytes": 7530
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p3/arm-short.webp",
+      "sha256": "d6e36af025327454368b3ffa2ec860575bdb9fdfb27deaadc00a9bc8c89efe3f",
+      "bytes": 6156
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p3/body.webp",
+      "sha256": "1c8dd867ff07e0bd18d8be186ac40d3ab16d57af41a25bbcdc0557bbdcbc1140",
+      "bytes": 25136
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p3/cloth.webp",
+      "sha256": "bc9eea0567e8e7e5ec67da239334d2a49610a476e129620873d3dcc856d5c8ee",
+      "bytes": 4440
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/p3/eyes.webp",
+      "sha256": "e19cebce15cba0fffbba0c2a434298e905ab3b45e0601995c0eba23ac9f590be",
+      "bytes": 3214
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/arm-a.webp",
+      "sha256": "f8a922838505f8006331ad43ffc732b54f7b06373287bb6411812c12321beaf3",
+      "bytes": 10718
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/arm-b.webp",
+      "sha256": "bd88eabcbdc7d46c7ffac87b71dfefecdc75b062da8eeb49b884e1b83bab52fe",
+      "bytes": 10876
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/arm-c.webp",
+      "sha256": "db1a7e779f633e05348db3561e6881d22b02c3a635e865a376ed3fc373cdbb96",
+      "bytes": 14866
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/body.webp",
+      "sha256": "d254858bca657f7dcac0c9b0816408d5badd371b844d514e0219f6bd88a34053",
+      "bytes": 15760
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/eyes.webp",
+      "sha256": "162cf1222ca888a5b5efe8cfaa237f372b50e61b03695649d7397be4f603f2cf",
+      "bytes": 2518
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/flag.webp",
+      "sha256": "19174aead7697a6b20a7e73b8155c93f3d6672cfb1472b8dbcd95b37f22a54d6",
+      "bytes": 2322
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/line.webp",
+      "sha256": "18400db1bcf72045e3de9b63c2194a5b8213b099d3351e2552a38d9caee633de",
+      "bytes": 3104
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/low-gap.webp",
+      "sha256": "5770f5d8632dc3bb5439ed95777ea803cfb5bfeaafd723cbcd8b572bf263bf16",
+      "bytes": 2458
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/wall-raised.webp",
+      "sha256": "d70c1d44003d3cec38ee4e3a18cc32c3b2035a9836d153e497b3ea40cb84ab36",
+      "bytes": 10826
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/siege/wall.webp",
+      "sha256": "a8db39aacb52c9eeea25b26597106d3e0fa130cf5ed81b1a8771c3e5107fd142",
+      "bytes": 10790
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/zigzag/eyes.webp",
+      "sha256": "16a2d08716798cae3f2ca9a77f0b776632175fc978174fcc0a78f0ec99d892ec",
+      "bytes": 1720
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/zigzag/joint-1.webp",
+      "sha256": "ea3c75e425b52f9e0d43a9484ee29df7fc696b24baa8c1c5b56c61ae099cbc32",
+      "bytes": 1776
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/zigzag/joint-2.webp",
+      "sha256": "63e77da646ac77ed9d23233a49b74f5fde3568daac29bdf30c5bdcc13144fbb8",
+      "bytes": 1794
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/zigzag/numline.webp",
+      "sha256": "e9d428669683a70925a66785f5f31f1c581cd0b7f009222884cbf5d122afc36b",
+      "bytes": 10644
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/zigzag/seg-left.webp",
+      "sha256": "aa0617cc360b6426110d7dec644543d6d87bcb30f78ab08960afcf85bccc958c",
+      "bytes": 5068
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/zigzag/seg-mid-flat.webp",
+      "sha256": "92a26b3aaf4df6cff50ce231750d13ad6cbe992ea4ba16e15f73b23c0c7d5ecc",
+      "bytes": 4594
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/zigzag/seg-mid.webp",
+      "sha256": "7c00d4d8a6849f2b28ba98624a01a222ca6aee3f8c25328269616bdc15e20efb",
+      "bytes": 4740
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/guard/zigzag/seg-right.webp",
+      "sha256": "3259e6554c0ef9d5dff23d40d0bb7f6cc704b0d6adfb5e829a55a82d31d0cb3b",
+      "bytes": 7334
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-bala.webp",
+      "sha256": "7afd2cab2d6be108aeae4f001d2a5288ca300adb5f8845fc1f32b140ffd9f4f9",
+      "bytes": 10298
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-certa.webp",
+      "sha256": "e3480c28b1c309360bd1be46b5e12e2e1474ac0486dbd9c79288a9296d9ad4e3",
+      "bytes": 13484
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-divi.webp",
+      "sha256": "d1be2ca22fd8b9b6a159bb15a6ee0a51df8567b8e515d6e1a417df3a52d1e3ab",
+      "bytes": 16690
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-fabia.webp",
+      "sha256": "5c73a917744cd6e8d7efdb7f114cb2991d703a4ca2618c1d759d66eae4c7ce65",
+      "bytes": 15756
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-flo.webp",
+      "sha256": "bba7e3b48dbc057a49dcaa66078dafc764b923626739223e653700ea709a89c2",
+      "bytes": 17354
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-ilu.webp",
+      "sha256": "a2e03e855ac974205796fabc5a6975d3dc95a3d52f6aa8ee9de3238fa5447122",
+      "bytes": 13140
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-marga.webp",
+      "sha256": "4f94551f70c1b70006a88cce327e666515c11ca757ea1ab4c4205b42961fd0a3",
+      "bytes": 15024
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-mira.webp",
+      "sha256": "6241ef70cc0c4753f136709b9943bec1c25b5da0acde2aa7bdcd464d5c3c5229",
+      "bytes": 15352
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-norman.webp",
+      "sha256": "c563ddbc9eaf73a70f0c679ca1413651bbd36659c6c767883bd10bd1c7527dab",
+      "bytes": 12348
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-ora.webp",
+      "sha256": "4b1a3521c023fb164dd403973b9f3639f1ad40252a288f29000fcfb13da2fb57",
+      "bytes": 8962
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-quidda.webp",
+      "sha256": "b4ec78f5a7e7072b5f7a5f982f4aa3089758dcb03b2eee24920eb37849586682",
+      "bytes": 10890
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-tally.webp",
+      "sha256": "5205735d0670ff11a3201c844e6b54c440a8a5dfc2be0ba7f9968c15f95571b8",
+      "bytes": 16688
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-tess.webp",
+      "sha256": "8df42fe35d0b4872e00df1d8439c88d786529a864f9ddc80efc08763bd85b67a",
+      "bytes": 17236
+    },
+    {
+      "path": "立绘-GPT/批1R2/页面/img/ph-yana.webp",
+      "sha256": "497743874a102ac07a241d7a81b346e356c1252b26558118effea51081896082",
+      "bytes": 11796
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/12-1-layer4-hint.png",
+      "sha256": "0c8e543c8b32e0a8924bc3567f856ca52a674407705b76b5367109af5e3d0db1",
+      "bytes": 1282406
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/12-2-末题修订-作者局部.json",
+      "sha256": "752c839f67976d1b739f4264929c3608ab9308fd452f41bdfed74c8d03d0172e",
+      "bytes": 2068
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/12-2-末题修订-作者局部.png",
+      "sha256": "65eb09b114e8feed987eaabbe1148119403d6e7d6c6a6f6d074b8fd0ee101767",
+      "bytes": 842374
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.context.json",
+      "sha256": "5cd0f77d958ce3ff9719c85b572d070ab8304d95a8f135c37a3eaa6ec911ea5f",
+      "bytes": 836
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.json",
+      "sha256": "4e7f6b2ed4930e16516fe6d4c7a541d0bbe5ed1ea1a05171165ca741800e31dc",
+      "bytes": 356
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151657-clean-6-1,6-2,6-3,7-1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.context.json",
+      "sha256": "0714bff6a71561eea29d82de0fade9a6628ce7490aa43818d7588bebcc0c7530",
+      "bytes": 836
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.json",
+      "sha256": "ef2601a57480bc3d1d4bf562ac43f6956d88a6113f938fb7b4113fedc9474ebc",
+      "bytes": 356
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151657-clean-7-2,7-3,8-1,8-2.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151911-clean-8-3,9-2,9-3,10-1.context.json",
+      "sha256": "dd8eccba01b6f5d6ba43ec01795a6255207850538e7411352c9e83d367c90b19",
+      "bytes": 839
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151911-clean-8-3,9-2,9-3,10-1.json",
+      "sha256": "8f10d7632730ae7426616a8d0cf8d1f57cf218fe2bd2871b7ded2a2214b3bdec",
+      "bytes": 357
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151911-clean-8-3,9-2,9-3,10-1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151912-clean-10-2,10-3,11-1,11-2.context.json",
+      "sha256": "439dbd5e54638cab78f4bafa0f88c1e37a0bc74894c75f321c1de71ca1a5ce54",
+      "bytes": 848
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151912-clean-10-2,10-3,11-1,11-2.json",
+      "sha256": "0c6939450253f5f5654aab42c88ba1d74e3982bb9138ca651b2ac1c8eb69a0e4",
+      "bytes": 360
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-151912-clean-10-2,10-3,11-1,11-2.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152038-check_levels.txt",
+      "sha256": "2ed6bd3e8ea9baf8c9989eab6e85f8300e6a2c084ff1a93d4f02cf5fc1dfd0c6",
+      "bytes": 1707
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152038-check_modes.txt",
+      "sha256": "1a51e08bcb0cf21298e510122b6f4589f464a58ac4cc2fea8998d79c884df5cd",
+      "bytes": 192
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152056-clean-11-3,12-1,12-2,12-3.context.json",
+      "sha256": "8ec20e077fcec115a6ecea3a927aa8adeebe8b1198efbe887bc97cbc930f1011",
+      "bytes": 848
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152056-clean-11-3,12-1,12-2,12-3.json",
+      "sha256": "76d4ace34a7603de77006eea2803093ee3742e0f1775c8ca01355324eadcd751",
+      "bytes": 360
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152056-clean-11-3,12-1,12-2,12-3.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152057-clean-13-1,13-2,13-3.context.json",
+      "sha256": "1d39ed2c35236d08eefbaffd1ab5a2d91c63425871011bb4c3f52d2a8e088b92",
+      "bytes": 738
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152057-clean-13-1,13-2,13-3.json",
+      "sha256": "b3b9270c3009dbb560549855c4a93236e841de5e11dc94568e14fb625970f48c",
+      "bytes": 275
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152057-clean-13-1,13-2,13-3.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.context.json",
+      "sha256": "9019f331c975dfdf3d83701436d206e48458e69fd6ca539c2fb1aa9a34581712",
+      "bytes": 835
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.json",
+      "sha256": "82b31316d7422c84ab058b1080a9fd9834789e76da4e158de7d80ccac4a744b4",
+      "bytes": 714
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152302-trap-6-1,6-2,6-3,7-1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.context.json",
+      "sha256": "213134be00e3a3f8decc8e83365942ee51c787bc442d0e9a14baf866cd41bebf",
+      "bytes": 835
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.json",
+      "sha256": "b6faccb595634b908760b7fa975e3193d6ad03bee1bcc4fe26ee56d823601b4f",
+      "bytes": 736
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152302-trap-7-2,7-3,8-1,8-2.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152544-clean-9-3.context.json",
+      "sha256": "6acf4c8626652089e564fc20e5853cbd935cbae957cc6f24fcde6bc2ade8a9d7",
+      "bytes": 515
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152544-clean-9-3.json",
+      "sha256": "d67bf8ef023b4ed6a1d3aaefa92a65c391824d1be6d808f2574a8ca908ea05c7",
+      "bytes": 104
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152544-clean-9-3.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152546-trap-10-2,10-3,11-1,11-2.context.json",
+      "sha256": "fc6f44410013e75868d6c513d8fdb092a21c93fb7b1d78e9629457f4efcf6389",
+      "bytes": 848
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152546-trap-10-2,10-3,11-1,11-2.json",
+      "sha256": "72c18a93bd172467152b0d15cb296ebc999dd16b5aa13fdc31b56b862ca3bfad",
+      "bytes": 759
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152546-trap-10-2,10-3,11-1,11-2.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.context.json",
+      "sha256": "9b460d362ff0366409a1437252fb654265b9de2083de8922bbc7abcf99fd031c",
+      "bytes": 838
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.json",
+      "sha256": "7839f073ba35ecb644af81719dbf58648bfadfcee18f7c268882020aa5522527",
+      "bytes": 750
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152546-trap-8-3,9-2,9-3,10-1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152901-trap-11-3,12-1,12-2,12-3.context.json",
+      "sha256": "9a2934a3ce1736f4ef4f64faee31e7658bf809441be4287d2ad7d75c22429710",
+      "bytes": 847
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152901-trap-11-3,12-1,12-2,12-3.json",
+      "sha256": "feb8b8b705ad3470150fad01e6b7d97f81393795da3471f7b2ca517912c3abb6",
+      "bytes": 781
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152901-trap-11-3,12-1,12-2,12-3.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152903-trap-13-1,13-2,13-3.context.json",
+      "sha256": "561b5761b49c17af97d0ca004ed40ba8f51e58a7f32cabe60f58eee4ef465917",
+      "bytes": 737
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152903-trap-13-1,13-2,13-3.json",
+      "sha256": "4b3b80256f87bb438977ca7c024006e091ca874b072bba2ee38aa54927da1f2c",
+      "bytes": 593
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-152903-trap-13-1,13-2,13-3.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153439-clean-10-3,11-1.context.json",
+      "sha256": "93bee3e75ff07016d04c8fccecb0bed0bd59e647a753cfe1e5289d807c166167",
+      "bytes": 628
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153439-clean-10-3,11-1.json",
+      "sha256": "b13510205bd8bb9f46dff5520596cda86ee6264b2b56a9c943a056aaee659178",
+      "bytes": 190
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153439-clean-10-3,11-1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153443-trap-10-3,11-1.context.json",
+      "sha256": "c41419d92764de21bb3c5ee8467c41cd973ffd4479b72e9acc0a6c7637fee9ff",
+      "bytes": 627
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153443-trap-10-3,11-1.json",
+      "sha256": "24457faab288fca384f62ba59c12d22e0f4e7a3b2d5f3757e42c27e914a14f6f",
+      "bytes": 380
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153443-trap-10-3,11-1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153748-clean-11-2.context.json",
+      "sha256": "4590e9a8b492dfa01f0aadb4e1f29bd09b33e0cee29aa1c7aaad1a2b3b3f42d8",
+      "bytes": 518
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153748-clean-11-2.json",
+      "sha256": "3da151b557a6e3b41e7623eb81ce6b71b59b1878506d0146c6d9060ade574856",
+      "bytes": 105
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153748-clean-11-2.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153752-trap-11-2.context.json",
+      "sha256": "ee9b7819ac7d6fda7dd7239578f173d2b675d124caac117237fbdfc35a2d8d04",
+      "bytes": 517
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153752-trap-11-2.json",
+      "sha256": "8963226dd4cadeda2d14c5d54fc1467a179a5f2b47ff66a6c25a785e13050397",
+      "bytes": 211
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-153752-trap-11-2.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154102-clean-11-3,12-1.context.json",
+      "sha256": "87bc593ddb6ae9f7b7caa52cc5e27a92146b78786fbc81c29006a6a0deca56e4",
+      "bytes": 628
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154102-clean-11-3,12-1.json",
+      "sha256": "cea4141947e2919dd5b960a5f44b90f13244f54f12e0f3ab11b17169e7d4d14b",
+      "bytes": 190
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154102-clean-11-3,12-1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154105-trap-11-3,12-1.context.json",
+      "sha256": "ed46ee0d5125a44d792d8ae1ea7ff012034dcfb722b63317461524e039df2a76",
+      "bytes": 627
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154105-trap-11-3,12-1.json",
+      "sha256": "a598d92ce245aca902ec047d6283be449536f3224d5a259018aa8b64209bc12b",
+      "bytes": 401
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154105-trap-11-3,12-1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154720-clean-12-3.context.json",
+      "sha256": "28b893971de7e10e4c1185a517843b047b74de2a378bbf1e6547a5f99759d83b",
+      "bytes": 518
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154720-clean-12-3.json",
+      "sha256": "6311e6ae74fb723f7a5d7bec7ae1496bd3304c916090830ecd82b2cf66ce527f",
+      "bytes": 105
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154720-clean-12-3.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154724-trap-12-3.context.json",
+      "sha256": "c9b3a8527eecb2f31b777129eb5c3a6bb8166059cd0d9ef6b28607cacc647399",
+      "bytes": 517
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154724-trap-12-3.json",
+      "sha256": "da17c08d81a7275c3a88e9acd1448ec148747e62a72bea6d3a8e64de701006f7",
+      "bytes": 210
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-154724-trap-12-3.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-155336-clean-12-2,12-3.context.json",
+      "sha256": "9f97679636d903b9c020fcd3cd230594efa4b6ddebbbe92e80af4baae99ab123",
+      "bytes": 628
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-155336-clean-12-2,12-3.json",
+      "sha256": "0c2795b08f2245ef6ad868d1ee0d2b53f106ba6175524a7e75b83b47a0176b76",
+      "bytes": 190
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-155336-clean-12-2,12-3.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-155340-trap-12-2,12-3.context.json",
+      "sha256": "1c7bca70b0a1f4a39e89a3e79c3bd1b47dc3dd3792be2ab55c5d9a7bd7317b24",
+      "bytes": 627
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-155340-trap-12-2,12-3.json",
+      "sha256": "944d1036427c59b35272420745f3045eb3217b0be21e0f02c4703c2e3c548fba",
+      "bytes": 400
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/20261107-155340-trap-12-2,12-3.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/23场冻结内容比对.json",
+      "sha256": "9b300492fe10c7da35ac221fdef07104e8f603b023dbfa1e29cae12c2d086601",
+      "bytes": 7743
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/6-2-layer2-hint.png",
+      "sha256": "28e1123858fa5eb075345d6bb972548c2140b4dcbde828a6b285e701e14fdd82",
+      "bytes": 1221978
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/8-1-layer1-hint.png",
+      "sha256": "ebc5c12c4b6b6a926d36242b6e4cf1424bd3e30f171bee53b85d59ebbb9fb2f3",
+      "bytes": 1277922
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/check_rendered_hints.cjs",
+      "sha256": "85f44aee0eb7984a1827ce8c32924d40a1449b8c9d9cd4704cc60e6c76adbfaa",
+      "bytes": 1423
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/run_autoplay.py",
+      "sha256": "e4864efabeaa356e749f7f02425f520be739ae1213b003e0e874ff8579096915",
+      "bytes": 1362
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/冻结16文件-当前.json",
+      "sha256": "d9d620721654ab7a62df2a4c4ed7f06132dbb09908a77bb51346b6e5823d546b",
+      "bytes": 3732
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/初稿-check_tex.txt",
+      "sha256": "1e3da94754faedfef7bdf35cd3381d85f4a632f4b661573d4530c73154e1a7be",
+      "bytes": 22
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/初稿-clean-9-2-10-1-11-2.json",
+      "sha256": "a6aed53c5d5f954271bb810cbc6a849d5131419899cb386c0546fb9b07e333fc",
+      "bytes": 274
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/初稿-trap-6-1-9-3-12-2.json",
+      "sha256": "e06ba7c3afbe6fdde59b898411553d3abf8c90c6d1971d27eec9ec5fd9668cda",
+      "bytes": 565
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/可写范围-当前.json",
+      "sha256": "6173c26b3a6758ec8e972056af279baa86731f9c76db9cdc5206ac12d8374428",
+      "bytes": 1353
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/可写范围-收尾发现外部新增.json",
+      "sha256": "6173c26b3a6758ec8e972056af279baa86731f9c76db9cdc5206ac12d8374428",
+      "bytes": 1353
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/复制并核对桌面.py",
+      "sha256": "ed057a1801e36b99985ed65ca3b8b06fd5dd49a884f962e8afac196ba2394fab",
+      "bytes": 3250
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/外部新增文件-只读观察.json",
+      "sha256": "c8033a2e8808f7a47b9900266bc74d02c2c9787e8d4d409dd3d43d3a804dd1a3",
+      "bytes": 554
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/提醒逐层真实DOM.json",
+      "sha256": "9a234be44d80e4251c56be80204fa043e09033f1a54b3a1c8bd4a1a0030dd52f",
+      "bytes": 21776
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/改条件与冻结内容-23场.json",
+      "sha256": "b3929b6db21b568f9ba1556c1d2ade52e2b57b6596d9198905aa0f6bcdf7ff35",
+      "bytes": 13392
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/数学恒等式独立抽查.json",
+      "sha256": "c00587f973357501aafd1dafe4deb7d42399d5652155d8e732d78711ada271fd",
+      "bytes": 517
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/最新版23场对战汇总.json",
+      "sha256": "b3ffcfd5cf473c98481cfa5c69dd92929816549984c690e239e47171b716025c",
+      "bytes": 25695
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/最终-check_levels.txt",
+      "sha256": "2ed6bd3e8ea9baf8c9989eab6e85f8300e6a2c084ff1a93d4f02cf5fc1dfd0c6",
+      "bytes": 1707
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/最终-check_modes.txt",
+      "sha256": "1a51e08bcb0cf21298e510122b6f4589f464a58ac4cc2fea8998d79c884df5cd",
+      "bytes": 192
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/最终-check_tex-沙盒启动失败.txt",
+      "sha256": "85646a061584437753a6066e92b49150d4bc2a0c74a977f7a4fe04dc79ac1b3d",
+      "bytes": 662
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/最终-check_tex.txt",
+      "sha256": "1e3da94754faedfef7bdf35cd3381d85f4a632f4b661573d4530c73154e1a7be",
+      "bytes": 22
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/核对冻结内容.py",
+      "sha256": "7aaf022d57009540ea473e6fcc1907eee169ffdc16b95e004548aa1a99d753c8",
+      "bytes": 2194
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/核对可写范围.py",
+      "sha256": "3c5dfb9d54502d45652fb35b44ba8d9fa344d87cb29e2f88084fb731ca4f2b72",
+      "bytes": 1306
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/核对末题呈现.cjs",
+      "sha256": "3c707ff73f13df673637f6cd6754133f20fdf8645ff41c3f026b657ca7ca2fc7",
+      "bytes": 1012
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/汇总最新版对战.py",
+      "sha256": "bc455ce5610bb27274737251382f6fa390df0670f871c68c464eec8a08e2833e",
+      "bytes": 2006
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/金样本-clean.json",
+      "sha256": "a46900984f6cd41bf8fae70e0b634b238f806ad3bb750a63d66ca07dde063fb4",
+      "bytes": 189
+    },
+    {
+      "path": "立绘-GPT/批1R2/验证/金样本-trap.json",
+      "sha256": "ae047bd22229beb4d0aab4d4db7fda51dc2c1643d115e1cf101b164cc0484470",
+      "bytes": 385
+    },
+    {
+      "path": "素材/守卫/siege/arm-c.webp",
+      "sha256": "2e66a2a73581bc679407f370357757cd52f05fd26dbea582b242acd51fa18056",
+      "bytes": 32120
+    },
+    {
+      "path": "素材/守卫/siege/flag.webp",
+      "sha256": "4bb5d316dbc2e273c339a4a01e6b4e6934785753e217fcf2b9b01d275eae8f93",
+      "bytes": 4042
+    },
+    {
+      "path": "素材/守卫/siege/low-gap.webp",
+      "sha256": "6b493700c43632604bcd654e8be8f1242faa4e4b6f22d22c427162281d411718",
+      "bytes": 4210
+    },
+    {
+      "path": "素材/守卫/siege/pivots.json",
+      "sha256": "f3ef225aef8560a26cc4badf29d4c959774b847eb0aec536671cac14fc1870d5",
+      "bytes": 923
+    },
+    {
+      "path": "素材/守卫/siege/wall-raised.webp",
+      "sha256": "d13ca0642534a42143fdf675c57e5cfd62bdd5b8092732724bfe58678a3f7def",
+      "bytes": 75022
+    },
+    {
+      "path": "素材/守卫/siege/wall.webp",
+      "sha256": "0dd7080d1c817fcb198d371c432f2556c400710450c0902604b87c3100196903",
+      "bytes": 75044
+    }
+  ]
+}

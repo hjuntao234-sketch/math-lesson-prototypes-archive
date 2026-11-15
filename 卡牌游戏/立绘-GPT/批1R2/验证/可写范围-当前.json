@@ -1,0 +1,39 @@
+{
+  "baseline_files": 1713,
+  "changed_old": [
+    "素材/守卫/siege/flag.webp",
+    "素材/守卫/siege/pivots.json",
+    "素材/守卫/siege/arm-c.webp",
+    "素材/守卫/siege/wall.webp",
+    "素材/守卫/siege/wall-raised.webp",
+    "素材/守卫/siege/low-gap.webp",
+    "关卡/第一章/战斗/11-1.json",
+    "关卡/第一章/战斗/8-1.json",
+    "关卡/第一章/战斗/6-1.json",
+    "关卡/第一章/战斗/13-1.json",
+    "关卡/第一章/战斗/7-2.json",
+    "关卡/第一章/战斗/9-3.json",
+    "关卡/第一章/战斗/10-3.json",
+    "关卡/第一章/战斗/12-2.json",
+    "关卡/第一章/战斗/12-3.json",
+    "关卡/第一章/战斗/10-2.json",
+    "关卡/第一章/战斗/9-2.json",
+    "关卡/第一章/战斗/7-3.json",
+    "关卡/第一章/战斗/10-1.json",
+    "关卡/第一章/战斗/12-1.json",
+    "关卡/第一章/战斗/7-1.json",
+    "关卡/第一章/战斗/13-2.json",
+    "关卡/第一章/战斗/11-3.json",
+    "关卡/第一章/战斗/8-3.json",
+    "关卡/第一章/战斗/6-2.json",
+    "关卡/第一章/战斗/6-3.json",
+    "关卡/第一章/战斗/8-2.json",
+    "关卡/第一章/战斗/11-2.json",
+    "关卡/第一章/战斗/13-3.json"
+  ],
+  "unexpected_changed_old": [],
+  "new_outside_whitelist": [
+    "配音/check_序章台词.py",
+    "配音/序章-台词.json"
+  ]
+}

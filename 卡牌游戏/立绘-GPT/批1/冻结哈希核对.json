@@ -1,0 +1,93 @@
+[
+  {
+    "path": "设定集/第一章铺开计划.md",
+    "expected": "f07678207c6ec34815c26b9350eb8379b7d04f0a4b552ddc8850bfb4cbe38e09",
+    "start": "PASS (开工时逐项核对)",
+    "end": "f07678207c6ec34815c26b9350eb8379b7d04f0a4b552ddc8850bfb4cbe38e09",
+    "pass": true
+  },
+  {
+    "path": "关卡/格式.md",
+    "expected": "dd23544d62ae31c02336b1e66afff68303b8888d81fa449d60301810db454565",
+    "start": "PASS (开工时逐项核对)",
+    "end": "dd23544d62ae31c02336b1e66afff68303b8888d81fa449d60301810db454565",
+    "pass": true
+  },
+  {
+    "path": "关卡/check_levels.py",
+    "expected": "70b1f98c9e5954bea5084eddfe21512b68236e89f5eb6dc6a33119a2d8f3a4f2",
+    "start": "PASS (开工时逐项核对)",
+    "end": "70b1f98c9e5954bea5084eddfe21512b68236e89f5eb6dc6a33119a2d8f3a4f2",
+    "pass": true
+  },
+  {
+    "path": "关卡/第一章/战斗/p2-1.json",
+    "expected": "98abccee06b1e1bc82a86a532a5863aa4911dcdda1e521d6f1c3c59bfbe82210",
+    "start": "PASS (开工时逐项核对)",
+    "end": "98abccee06b1e1bc82a86a532a5863aa4911dcdda1e521d6f1c3c59bfbe82210",
+    "pass": true
+  },
+  {
+    "path": "v6/engine.js",
+    "expected": "015fcda4547f689262901b65df43db9617a4c1a402222273a9b238ed9786a5ec",
+    "start": "PASS (开工时逐项核对)",
+    "end": "015fcda4547f689262901b65df43db9617a4c1a402222273a9b238ed9786a5ec",
+    "pass": true
+  },
+  {
+    "path": "v6/build.py",
+    "expected": "6249751f6e60ed5910d27465f44559722f536d7407c317169562bd5585bbaecd",
+    "start": "PASS (开工时逐项核对)",
+    "end": "6249751f6e60ed5910d27465f44559722f536d7407c317169562bd5585bbaecd",
+    "pass": true
+  },
+  {
+    "path": "v6/tools/check_tex.cjs",
+    "expected": "2bcd6eb1480ccf3352ec880a5b12b817372daa739e61511d4a0b4d02ac537e93",
+    "start": "PASS (开工时逐项核对)",
+    "end": "2bcd6eb1480ccf3352ec880a5b12b817372daa739e61511d4a0b4d02ac537e93",
+    "pass": true
+  },
+  {
+    "path": "v4/data-inequality.json",
+    "expected": "61bc43aef999ddb4f7eb92dab9b6110cbee71ff80ef569411d304a5afc618990",
+    "start": "PASS (开工时逐项核对)",
+    "end": "61bc43aef999ddb4f7eb92dab9b6110cbee71ff80ef569411d304a5afc618990",
+    "pass": true
+  },
+  {
+    "path": "设定集/人物.md",
+    "expected": "d42d0612015aea9a13d2c037e2b49dd1c8c98837951022a9242473ba6d476c15",
+    "start": "PASS (开工时逐项核对)",
+    "end": "d42d0612015aea9a13d2c037e2b49dd1c8c98837951022a9242473ba6d476c15",
+    "pass": true
+  },
+  {
+    "path": "设定集/语言指南.md",
+    "expected": "b4959f2402c61ebedd6f7db97a2675e8bc8442f9312c37b69827326286b9bc52",
+    "start": "PASS (开工时逐项核对)",
+    "end": "b4959f2402c61ebedd6f7db97a2675e8bc8442f9312c37b69827326286b9bc52",
+    "pass": true
+  },
+  {
+    "path": "设定集/立绘设计.md",
+    "expected": "bf93adb3555bd5529b50cc998fbabf035babac426c63d036bf1d0ad5db14bb42",
+    "start": "PASS (开工时逐项核对)",
+    "end": "bf93adb3555bd5529b50cc998fbabf035babac426c63d036bf1d0ad5db14bb42",
+    "pass": true
+  },
+  {
+    "path": "素材/守卫/p2/pivots.json",
+    "expected": "6deed7953519e76ee00ec6b0ab195ceef6794b9e3313b886b1184eae947b9675",
+    "start": "PASS (开工时逐项核对)",
+    "end": "6deed7953519e76ee00ec6b0ab195ceef6794b9e3313b886b1184eae947b9675",
+    "pass": true
+  },
+  {
+    "path": "素材/守卫/p2/guard.json",
+    "expected": "df9902d5d464b901701eb0fe6104abf01090d40f7fe50eaac2c1678a2fe61f53",
+    "start": "PASS (开工时逐项核对)",
+    "end": "df9902d5d464b901701eb0fe6104abf01090d40f7fe50eaac2c1678a2fe61f53",
+    "pass": true
+  }
+]
