@@ -1,0 +1,290 @@
+{
+  "baseline_match_at_start": 8,
+  "baseline_match_at_finish": 7,
+  "source_drift": {
+    "path": "设定集/战斗规则-v2.md",
+    "start_sha256": "966805905e62bec6bcdd3f1580e16f3c88602a232932dc82137a5663962b8a47",
+    "final_sha256": "fb689ae8db229a15e5afc15401d7b2ac1a05acee3c8a9002bb753656dacc8966",
+    "start_check_passed": true,
+    "reason": "开工后被外部更新：第8节扩写领主裂开，新增9.5探究玩法；本次第5节、第6.6节及图像任务稿要求未改变。本任务未写此文件；不还原、不覆盖，仅记录。其余7个起点及原有503个立绘包文件不变。",
+    "decision": "按开工已通过的图像任务完成交付。桌面复制对象为立绘-GPT，规则文件不在复制对象内。"
+  },
+  "old_files_unchanged": 503,
+  "guard_png_count": 7,
+  "ready_png_count": 3,
+  "png_checks": {
+    "守卫-p2/body.png": {
+      "size": [
+        1200,
+        1100
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        415,
+        145,
+        1166,
+        941
+      ]
+    },
+    "守卫-p2/eyes.png": {
+      "size": [
+        1200,
+        1100
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        707,
+        286,
+        870,
+        354
+      ]
+    },
+    "守卫-p2/arm-long.png": {
+      "size": [
+        1200,
+        1100
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        115,
+        430,
+        782,
+        555
+      ]
+    },
+    "守卫-p2/arm-short.png": {
+      "size": [
+        1200,
+        1100
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        404,
+        635,
+        782,
+        759
+      ]
+    },
+    "守卫-p2/cloth.png": {
+      "size": [
+        1200,
+        1100
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        488,
+        674,
+        689,
+        828
+      ]
+    },
+    "守卫-p2/arm-long-equal.png": {
+      "size": [
+        1200,
+        1100
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        239,
+        431,
+        782,
+        556
+      ]
+    },
+    "守卫-p2/arm-short-equal.png": {
+      "size": [
+        1200,
+        1100
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        239,
+        644,
+        782,
+        769
+      ]
+    },
+    "预备姿势/ready-yana.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        108,
+        52,
+        857,
+        1523
+      ]
+    },
+    "预备姿势/ready-tally.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        13,
+        9,
+        947,
+        1531
+      ]
+    },
+    "预备姿势/ready-fabia.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "transparent_rgb_nonzero": 0,
+      "bbox_alpha_gt8": [
+        8,
+        15,
+        1017,
+        1528
+      ]
+    }
+  },
+  "arm_lengths": {
+    "arm-long": 555.0,
+    "arm-short": 268.00186566514793,
+    "arm-long-equal": 432.0,
+    "arm-short-equal": 432.0
+  },
+  "equal_difference_percent": 0.0,
+  "shoulder_overlap_pixels": {
+    "arm-long": 4872,
+    "arm-long-rotated15": 4836,
+    "arm-short": 4869,
+    "arm-long-equal": 4902,
+    "arm-short-equal": 4902
+  },
+  "pose_measurements": {
+    "yana": {
+      "calm_head_box": [
+        349,
+        8,
+        630,
+        224
+      ],
+      "raw_head_box": [
+        382,
+        31,
+        646,
+        251
+      ],
+      "final_head_box": [
+        382,
+        52,
+        646,
+        272
+      ],
+      "calm_head_height": 216,
+      "ready_head_height": 220,
+      "head_height_difference_percent": 1.852,
+      "calm_foot_y": 1522,
+      "raw_foot_y": 1501,
+      "translation": [
+        0,
+        21
+      ],
+      "ready_foot_y": 1522,
+      "foot_difference": 0
+    },
+    "tally": {
+      "calm_head_box": [
+        340,
+        88,
+        640,
+        350
+      ],
+      "raw_head_box": [
+        568,
+        130,
+        851,
+        394
+      ],
+      "final_head_box": [
+        568,
+        129,
+        851,
+        393
+      ],
+      "calm_head_height": 262,
+      "ready_head_height": 264,
+      "head_height_difference_percent": 0.763,
+      "calm_foot_y": 1530,
+      "raw_foot_y": 1531,
+      "translation": [
+        0,
+        -1
+      ],
+      "ready_foot_y": 1530,
+      "foot_difference": 0
+    },
+    "fabia": {
+      "calm_head_box": [
+        419,
+        6,
+        685,
+        247
+      ],
+      "raw_head_box": [
+        326,
+        18,
+        620,
+        258
+      ],
+      "final_head_box": [
+        326,
+        18,
+        620,
+        258
+      ],
+      "calm_head_height": 241,
+      "ready_head_height": 240,
+      "head_height_difference_percent": 0.415,
+      "calm_foot_y": 1527,
+      "raw_foot_y": 1527,
+      "translation": [
+        0,
+        0
+      ],
+      "ready_foot_y": 1527,
+      "foot_difference": 0
+    }
+  },
+  "sha256": {
+    "守卫-p2/body.png": "a3e8e66dc5473281ef5e9e7bddacc3b36a23415aacbc5e1a2f736c9cb5d60fe1",
+    "守卫-p2/eyes.png": "4a533f5d7ffd894f172e85cb2cc33fa33bb855f12e04cfa64b29f2bf66ad220b",
+    "守卫-p2/arm-long.png": "d0d6ae149d6d31190ec3a3399f46cb845bfc14156e2e26d192c0560c718c58c7",
+    "守卫-p2/arm-short.png": "7f4bbe2d8c05ee44c3fecfe594765f23785560b3820c2aa2440b12153d1f1b38",
+    "守卫-p2/cloth.png": "e0ad1d9f0d78b9f8f8cf73c99a17c713f9595ad8fc45ce25c72666f91fc9ce69",
+    "守卫-p2/arm-long-equal.png": "27b6277128813d264140f01d7d1be640fcd11135adfb0a71dc48552b93b16fc5",
+    "守卫-p2/arm-short-equal.png": "1c8e053b280e9de299d3666a76b26c11dc11790ecd6643b677a43c6a68ac3824",
+    "守卫-p2/pivots.json": "6deed7953519e76ee00ec6b0ab195ceef6794b9e3313b886b1184eae947b9675",
+    "预备姿势/ready-yana.png": "01bd14d420c10183a2b4e613b7a881ff2c03be9d029e0b97310c2f3056891cc2",
+    "预备姿势/ready-tally.png": "f54210b9dc4af563ceb5d0aeecf573e13fad8bc245749752752058c1a8ba5368",
+    "预备姿势/ready-fabia.png": "caf24c0860d9b99433a69a43cd52cd51e1d90cc0494aae673cadd7bc8fdde32f"
+  },
+  "visual_review": [
+    "7层各自透明且无字",
+    "三态直接叠层",
+    "长手转15度",
+    "布下移100像素",
+    "短手无布完整",
+    "三人眼睛4倍",
+    "衣着及记号",
+    "浅色和深色背景"
+  ],
+  "limits": "本地合成预览与人工标点测量；未接入游戏引擎，未自动证明审美或眼神正确。"
+}

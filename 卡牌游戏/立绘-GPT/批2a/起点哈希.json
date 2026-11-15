@@ -1,0 +1,62 @@
+[
+  {
+    "path": "设定集/第一章铺开计划.md",
+    "expected": "f07678207c6ec34815c26b9350eb8379b7d04f0a4b552ddc8850bfb4cbe38e09",
+    "start": "f07678207c6ec34815c26b9350eb8379b7d04f0a4b552ddc8850bfb4cbe38e09"
+  },
+  {
+    "path": "设定集/战斗规则-v3.md",
+    "expected": "b2b3a4f76397e9ebc180c4f91af70c34d9573edb67284fc659b2884bb5dfb28c",
+    "start": "b2b3a4f76397e9ebc180c4f91af70c34d9573edb67284fc659b2884bb5dfb28c"
+  },
+  {
+    "path": "设定集/立绘设计.md",
+    "expected": "bf93adb3555bd5529b50cc998fbabf035babac426c63d036bf1d0ad5db14bb42",
+    "start": "bf93adb3555bd5529b50cc998fbabf035babac426c63d036bf1d0ad5db14bb42"
+  },
+  {
+    "path": "设定集/人物.md",
+    "expected": "d42d0612015aea9a13d2c037e2b49dd1c8c98837951022a9242473ba6d476c15",
+    "start": "d42d0612015aea9a13d2c037e2b49dd1c8c98837951022a9242473ba6d476c15"
+  },
+  {
+    "path": "素材/守卫/p2/pivots.json",
+    "expected": "6deed7953519e76ee00ec6b0ab195ceef6794b9e3313b886b1184eae947b9675",
+    "start": "6deed7953519e76ee00ec6b0ab195ceef6794b9e3313b886b1184eae947b9675"
+  },
+  {
+    "path": "素材/守卫/p2/guard.json",
+    "expected": "df9902d5d464b901701eb0fe6104abf01090d40f7fe50eaac2c1678a2fe61f53",
+    "start": "df9902d5d464b901701eb0fe6104abf01090d40f7fe50eaac2c1678a2fe61f53"
+  },
+  {
+    "path": "素材/守卫/p3/guard.json",
+    "expected": "315114b664b09f1b77904401ef33b15b3ea67607224e144ba954d09abcc2ccc6",
+    "start": "315114b664b09f1b77904401ef33b15b3ea67607224e144ba954d09abcc2ccc6"
+  },
+  {
+    "path": "素材/守卫/p3/pivots.json",
+    "expected": "6deed7953519e76ee00ec6b0ab195ceef6794b9e3313b886b1184eae947b9675",
+    "start": "6deed7953519e76ee00ec6b0ab195ceef6794b9e3313b886b1184eae947b9675"
+  },
+  {
+    "path": "关卡/第一章/领主/b.json",
+    "expected": "a5435fa90d472e16f4d4a67692f3f48563ee9379facf597c0e4ef5b985b11850",
+    "start": "a5435fa90d472e16f4d4a67692f3f48563ee9379facf597c0e4ef5b985b11850"
+  },
+  {
+    "path": "立绘-GPT/出图记录-守卫与预备.md",
+    "expected": "f8bd715cf99ead666a8791bddd6d4640ad41204c39c76c968d9cf3aecef0b74f",
+    "start": "f8bd715cf99ead666a8791bddd6d4640ad41204c39c76c968d9cf3aecef0b74f"
+  },
+  {
+    "path": "立绘-GPT/审读-守卫与预备.md",
+    "expected": "294b1dfdb954baf8ffda8ee9b7441ebe427f67cadc254b3d2e7219f180b3b642",
+    "start": "294b1dfdb954baf8ffda8ee9b7441ebe427f67cadc254b3d2e7219f180b3b642"
+  },
+  {
+    "path": "v6/build.py",
+    "expected": "6249751f6e60ed5910d27465f44559722f536d7407c317169562bd5585bbaecd",
+    "start": "6249751f6e60ed5910d27465f44559722f536d7407c317169562bd5585bbaecd"
+  }
+]

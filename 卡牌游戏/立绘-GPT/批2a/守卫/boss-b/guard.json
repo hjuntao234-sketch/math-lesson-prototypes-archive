@@ -1,0 +1,21 @@
+{
+  "名": "铜冠守卫",
+  "原型": "双手领主",
+  "order": [
+    "body",
+    "eyes",
+    "arm-long",
+    "arm-short",
+    "crown",
+    "cracks",
+    "shadow-a",
+    "shadow-b",
+    "shadow-c"
+  ],
+  "hidden": [
+    "cracks",
+    "shadow-a",
+    "shadow-b",
+    "shadow-c"
+  ]
+}

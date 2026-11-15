@@ -1,0 +1,19 @@
+{
+  "名": "砝码冠守卫",
+  "原型": "天平领主",
+  "base": "balance",
+  "order": [
+    "body",
+    "eyes",
+    "scale-level",
+    "scale-left-down",
+    "scale-right-down",
+    "scale-merged",
+    "crown"
+  ],
+  "hidden": [
+    "scale-left-down",
+    "scale-right-down",
+    "scale-merged"
+  ]
+}

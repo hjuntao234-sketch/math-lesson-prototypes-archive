@@ -1,0 +1,12 @@
+{
+  "id": "fabia",
+  "expression": "思考",
+  "prompt": "Edit this exact square close-up of Fabia. Give her a natural thoughtful expression: lift her gaze from looking down to looking mildly diagonally upward to the viewer's left, both eyes focused on the same nearby point, eyes comfortably open, irises mostly visible and never rolled to an extreme. Keep her downturned outer eye corners, warm dark brown iris color, original eye spacing and facial anatomy. Gently knit the brows. Keep lips naturally closed with a slight asymmetric thoughtful press, no pout or hooked corner. In this intermediate face layer render smooth cheek skin without freckles; the original freckles will be composited later. Preserve the nose, face outline, hair, pencil, pose, exact head position, crop, lighting and dimensional rendering. Same 1024x1024 framing. No eye bags, extra eyelid outlines, symbols or text. True transparency where the input is transparent.",
+  "reference": "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/tools-第2b阶段/fabia-face-reference.png",
+  "crop": [
+    330,
+    230,
+    730,
+    630
+  ]
+}

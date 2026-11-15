@@ -1,0 +1,92 @@
+{
+  "canvas": [
+    1200,
+    1100
+  ],
+  "arm-long": {
+    "shoulder": [
+      720,
+      500
+    ],
+    "fist": [
+      165,
+      500
+    ]
+  },
+  "arm-short": {
+    "shoulder": [
+      720,
+      700
+    ],
+    "fist": [
+      452,
+      701
+    ]
+  },
+  "arm-long-equal": {
+    "shoulder": [
+      720,
+      500
+    ],
+    "fist": [
+      288,
+      500
+    ]
+  },
+  "arm-short-equal": {
+    "shoulder": [
+      720,
+      700
+    ],
+    "fist": [
+      288,
+      700
+    ]
+  },
+  "cloth": {
+    "center": [
+      588,
+      745
+    ]
+  },
+  "eyes": {
+    "left": [
+      740,
+      320
+    ],
+    "right": [
+      840,
+      320
+    ]
+  },
+  "head": {
+    "center": [
+      784,
+      310
+    ],
+    "r": 140
+  },
+  "ground": {
+    "y": 940
+  },
+  "arm-long-down": {
+    "shoulder": [
+      720,
+      500
+    ],
+    "fist": [
+      479,
+      918
+    ]
+  },
+  "arm-short-down": {
+    "shoulder": [
+      720,
+      700
+    ],
+    "fist": [
+      641,
+      918
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "tool": "image_gen.imagegen",
+  "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET, an exact character close-up. Image 2 is a skin-texture reference cropped ONLY below the eyes of the same character in another expression. Restore the target's freckles and natural warm rosy blush to match image 2: many small softly edged irregular round reddish-brown freckles densely scattered across both cheeks and nose bridge, with continuous natural rosy cheeks and nose tip. Freckles should look like natural tiny dots, not vertical streaks, not dirt, not makeup stripes. Keep the skin's existing three-dimensional light and shade. Keep exactly the target expression, gaze, eyes, eyelids, eyebrows, nose shape, nostrils, mouth, facial contour, hair and framing. Do not copy any nose contour from reference 2; use it only for freckle density/color and blush. Do not add gray eyelash remnants at the outside eye corner; that area remains clean skin. Same square close-up composition. No text, no new objects.",
+  "references": [
+    "generated-clean-skin.png",
+    "freckle-reference-y418.png"
+  ],
+  "transparent_background": false
+}

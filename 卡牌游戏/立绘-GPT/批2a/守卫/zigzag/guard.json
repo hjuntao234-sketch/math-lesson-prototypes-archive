@@ -1,0 +1,17 @@
+{
+  "名": "折线守卫",
+  "原型": "折线",
+  "order": [
+    "numline",
+    "seg-left",
+    "seg-mid",
+    "seg-right",
+    "seg-mid-flat",
+    "joint-1",
+    "joint-2",
+    "eyes"
+  ],
+  "hidden": [
+    "seg-mid-flat"
+  ]
+}

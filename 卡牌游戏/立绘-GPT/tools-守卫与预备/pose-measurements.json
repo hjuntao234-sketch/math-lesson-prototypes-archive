@@ -1,0 +1,95 @@
+{
+  "yana": {
+    "calm_head_box": [
+      349,
+      8,
+      630,
+      224
+    ],
+    "raw_head_box": [
+      382,
+      31,
+      646,
+      251
+    ],
+    "final_head_box": [
+      382,
+      52,
+      646,
+      272
+    ],
+    "calm_head_height": 216,
+    "ready_head_height": 220,
+    "head_height_difference_percent": 1.852,
+    "calm_foot_y": 1522,
+    "raw_foot_y": 1501,
+    "translation": [
+      0,
+      21
+    ],
+    "ready_foot_y": 1522,
+    "foot_difference": 0
+  },
+  "tally": {
+    "calm_head_box": [
+      340,
+      88,
+      640,
+      350
+    ],
+    "raw_head_box": [
+      568,
+      130,
+      851,
+      394
+    ],
+    "final_head_box": [
+      568,
+      129,
+      851,
+      393
+    ],
+    "calm_head_height": 262,
+    "ready_head_height": 264,
+    "head_height_difference_percent": 0.763,
+    "calm_foot_y": 1530,
+    "raw_foot_y": 1531,
+    "translation": [
+      0,
+      -1
+    ],
+    "ready_foot_y": 1530,
+    "foot_difference": 0
+  },
+  "fabia": {
+    "calm_head_box": [
+      419,
+      6,
+      685,
+      247
+    ],
+    "raw_head_box": [
+      326,
+      18,
+      620,
+      258
+    ],
+    "final_head_box": [
+      326,
+      18,
+      620,
+      258
+    ],
+    "calm_head_height": 241,
+    "ready_head_height": 240,
+    "head_height_difference_percent": 0.415,
+    "calm_foot_y": 1527,
+    "raw_foot_y": 1527,
+    "translation": [
+      0,
+      0
+    ],
+    "ready_foot_y": 1527,
+    "foot_difference": 0
+  }
+}

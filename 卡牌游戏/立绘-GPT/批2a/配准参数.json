@@ -1,0 +1,41 @@
+{
+  "arch-touch-shift": 379,
+  "visible-center-adjustments": [
+    {
+      "guard": "boss-b",
+      "layer": "cracks",
+      "from": [
+        780,
+        650
+      ],
+      "to": [
+        851,
+        624
+      ]
+    },
+    {
+      "guard": "boss-end",
+      "layer": "shade-arch",
+      "from": [
+        755,
+        675
+      ],
+      "to": [
+        760,
+        654
+      ]
+    },
+    {
+      "guard": "boss-c",
+      "layer": "crown",
+      "from": [
+        700,
+        247
+      ],
+      "to": [
+        700,
+        223
+      ]
+    }
+  ]
+}

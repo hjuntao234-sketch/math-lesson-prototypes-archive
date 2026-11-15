@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ready-tally-r2",
+    "refs": [
+      "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/tools-守卫与预备/raw/ready-tally.png",
+      "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/全身透明/tally-平静.png"
+    ],
+    "prompt": "Use case: identity-preserve. IMAGE1 is the ready pose to correct, IMAGE2 is original scale/identity reference. Keep image1's dynamic ready stance, leaning torso, arms, amber bundle swung backward to screen left, paper tag held in front, clothes, satchel, legs and boot positions exactly. Correct the too-large head: shrink her entire head and associated hair volume by about15%, preserving its attachment to the neck and the backward-flowing high ponytail. Main skull-hair crown (EXCLUDING the high ponytail and loose antenna) to chin must be about260pixels on1024x1536 canvas, NOT current306pixels. Do not shrink body or limbs or change boot baseline. Same round face identity, warm-brown coordinated eyes looking screen right, excited toothy grin, EXACTLY one small bandage on same anatomical cheek as image1. Ponytail remains large but proportionate, not an oversized head. Neck naturally supports smaller head, no seams or double outlines. Full1024x1536 canvas, transparent background, modest age15–17 nonsexualized original anime style, polished volumetric cel-shading, no text or symbols or backdrop. Keep all feet and bundle inside canvas.",
+    "source": "~/.codex/generated_images/01a1ab12-e453-7723-a7e4-bc17aab1a141/exec-61cfde36-733f-4a33-92ce-9cd1082d444c.png"
+  },
+  {
+    "id": "ready-fabia-r2",
+    "refs": [
+      "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/tools-守卫与预备/raw/ready-fabia.png",
+      "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/全身透明/fabia-平静.png"
+    ],
+    "prompt": "Use case: identity-preserve. IMAGE1 is the ready pose to correct; IMAGE2 is the original identity and scale reference. Preserve image1's exact torso and leg pose, slightly bent knees, both hands gripping the same horizontal wide wooden plank at waist, full boots and baseline. Make entire head including braided bun about7% smaller: top of attached hair/bun to chin about242pixels on1024x1536 instead of current261pixels. Keep same natural neck connection and focused face; do not shrink body or distort long limbs. Brown eyes look toward screen right with coordinated gaze, gentle downturned lids, thick brows, quiet closed lips. Preserve visible freckles and blush, braided auburn bun, pencil behind ear, original brick-red overalls and all props. No new expression, no text or numbers or symbols. Full-body1024x1536 transparent canvas, no shadow backdrop. Modest age15–17 original anime style, polished soft-gradient cel shading.",
+    "source": "~/.codex/generated_images/01a1ab12-e453-7723-a7e4-bc17aab1a141/exec-2ac06920-ba50-4a75-b3b6-dfa20dffdb06.png"
+  }
+]

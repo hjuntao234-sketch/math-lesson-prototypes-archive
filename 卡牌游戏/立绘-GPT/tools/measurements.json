@@ -1,0 +1,184 @@
+{
+  "yana": {
+    "name": "雅娜",
+    "height": 166,
+    "head_top": 15,
+    "sole": 1521,
+    "body_x": 500,
+    "head_box": [
+      335,
+      10,
+      650,
+      360
+    ]
+  },
+  "tally": {
+    "name": "塔莉",
+    "height": 157,
+    "head_top": 89,
+    "sole": 1530,
+    "body_x": 510,
+    "head_box": [
+      345,
+      80,
+      680,
+      450
+    ]
+  },
+  "fabia": {
+    "name": "法比娅",
+    "height": 174,
+    "head_top": 8,
+    "sole": 1526,
+    "body_x": 544,
+    "head_box": [
+      395,
+      40,
+      720,
+      400
+    ]
+  },
+  "norman": {
+    "name": "诺曼",
+    "height": 178,
+    "head_top": 12,
+    "sole": 1532,
+    "body_x": 490,
+    "head_box": [
+      345,
+      5,
+      610,
+      305
+    ]
+  },
+  "bala": {
+    "name": "芭兰",
+    "height": 164,
+    "head_top": 8,
+    "sole": 1530,
+    "body_x": 512,
+    "head_box": [
+      355,
+      5,
+      670,
+      360
+    ]
+  },
+  "tess": {
+    "name": "苔丝",
+    "height": 147,
+    "head_top": 76,
+    "sole": 1527,
+    "body_x": 510,
+    "head_box": [
+      300,
+      55,
+      705,
+      455
+    ]
+  },
+  "ilu": {
+    "name": "伊露",
+    "height": 162,
+    "head_top": 80,
+    "sole": 1531,
+    "body_x": 510,
+    "head_box": [
+      270,
+      0,
+      635,
+      395
+    ]
+  },
+  "certa": {
+    "name": "瑟塔",
+    "height": 165,
+    "head_top": 109,
+    "sole": 1530,
+    "body_x": 510,
+    "head_box": [
+      380,
+      90,
+      700,
+      425
+    ]
+  },
+  "flo": {
+    "name": "芙洛",
+    "height": 170,
+    "head_top": 20,
+    "sole": 1520,
+    "body_x": 465,
+    "head_box": [
+      300,
+      5,
+      620,
+      365
+    ]
+  },
+  "marga": {
+    "name": "玛尔嘉",
+    "height": 168,
+    "head_top": 15,
+    "sole": 1532,
+    "body_x": 510,
+    "head_box": [
+      305,
+      0,
+      720,
+      445
+    ]
+  },
+  "divi": {
+    "name": "迪薇",
+    "height": 158,
+    "head_top": 34,
+    "sole": 1530,
+    "body_x": 510,
+    "head_box": [
+      355,
+      15,
+      680,
+      365
+    ]
+  },
+  "ora": {
+    "name": "奥菈",
+    "height": 172,
+    "head_top": 170,
+    "sole": 1530,
+    "body_x": 490,
+    "head_box": [
+      340,
+      90,
+      645,
+      420
+    ]
+  },
+  "quidda": {
+    "name": "奎妲",
+    "height": 152,
+    "head_top": 15,
+    "sole": 1528,
+    "body_x": 510,
+    "head_box": [
+      315,
+      10,
+      685,
+      415
+    ]
+  },
+  "mira": {
+    "name": "米拉",
+    "height": 160,
+    "head_top": 23,
+    "sole": 1517,
+    "body_x": 492,
+    "head_box": [
+      345,
+      15,
+      640,
+      330
+    ]
+  }
+}

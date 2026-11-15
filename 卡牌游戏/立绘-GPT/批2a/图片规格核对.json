@@ -1,0 +1,926 @@
+[
+  {
+    "id": "balance",
+    "layer": "scale-merged",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "balance",
+    "layer": "body",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "balance",
+    "layer": "scale-level",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "balance",
+    "layer": "scale-left-down",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "balance",
+    "layer": "eyes",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "balance",
+    "layer": "scale-right-down",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "eyes-touch",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "arch-up-float",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "shade-outside",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "eyes-down",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "arch-up-touch",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "eyes-float",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "eyes-up",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "flag-left",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "shade-between",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "flag-right",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "arch-up",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "arch-down",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "arch",
+    "layer": "axis",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "low-gap",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "flag",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "wall-raised",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "arm-a",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "body",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "arm-c",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "arm-b",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "wall",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "eyes",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "siege",
+    "layer": "line",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "zigzag",
+    "layer": "seg-left",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "zigzag",
+    "layer": "numline",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "zigzag",
+    "layer": "joint-2",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "zigzag",
+    "layer": "joint-1",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "zigzag",
+    "layer": "seg-mid-flat",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "zigzag",
+    "layer": "seg-right",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "zigzag",
+    "layer": "eyes",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "zigzag",
+    "layer": "seg-mid",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "mirror",
+    "layer": "crack",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "mirror",
+    "layer": "arm-left",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "mirror",
+    "layer": "mirror-front",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "mirror",
+    "layer": "mirror-back",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "mirror",
+    "layer": "body",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "mirror",
+    "layer": "arm-right",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "mirror",
+    "layer": "eyes",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "mirror",
+    "layer": "mirror-clear",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-b",
+    "layer": "shadow-a",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-b",
+    "layer": "shadow-c",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-b",
+    "layer": "shadow-b",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-b",
+    "layer": "arm-short",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-b",
+    "layer": "cracks",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-b",
+    "layer": "body",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-b",
+    "layer": "arm-long",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-b",
+    "layer": "eyes",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-b",
+    "layer": "crown",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-end",
+    "layer": "shade-duo",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-end",
+    "layer": "cracks",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-end",
+    "layer": "body",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-end",
+    "layer": "shade-arch",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-end",
+    "layer": "shade-balance",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-end",
+    "layer": "eyes",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-end",
+    "layer": "crown",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-a",
+    "layer": "crown",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-c",
+    "layer": "crown",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "boss-d",
+    "layer": "crown",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "p3",
+    "layer": "arm-long-down",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  },
+  {
+    "id": "p3",
+    "layer": "arm-short-down",
+    "PNG": [
+      1200,
+      1100
+    ],
+    "WebP": [
+      600,
+      550
+    ],
+    "透明像素RGB为0": true,
+    "边界alpha_max": 0
+  }
+]

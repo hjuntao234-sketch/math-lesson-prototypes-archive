@@ -1,0 +1,9 @@
+交付校验：PASS
+日期：2026-11-05（Asia/Tokyo）
+桌面目录：~/Desktop/罗盘指挥官_立绘GPT_第1阶段_2026-11-05
+项目目录：~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT
+复制的文件数（不含本校验文件）：110
+逐文件SHA-256：项目与桌面完全一致。
+成品19张、全身透明19张、原图19张；指定检查图和报告齐全。
+文件/几何/像素验证PASS，美术审阅状态仍为待Claude审阅，偏差详见进度-第1阶段.md。
+第1阶段结束，不进入第2阶段。

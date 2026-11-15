@@ -1,0 +1,23 @@
+{
+  "名": "城垛冠守卫",
+  "原型": "攻城领主",
+  "base": "siege",
+  "order": [
+    "body",
+    "eyes",
+    "wall",
+    "wall-raised",
+    "arm-a",
+    "arm-b",
+    "arm-c",
+    "low-gap",
+    "line",
+    "flag",
+    "crown"
+  ],
+  "hidden": [
+    "wall-raised",
+    "low-gap",
+    "flag"
+  ]
+}

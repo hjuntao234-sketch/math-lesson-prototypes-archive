@@ -1,0 +1,40 @@
+{
+  "出神": {
+    "reference_HSV_median": [
+      128.0,
+      73.0,
+      170.0
+    ],
+    "before_HSV_median": [
+      125.0,
+      72.0,
+      169.0
+    ],
+    "after_HSV_median": [
+      128.0,
+      72.0,
+      169.0
+    ],
+    "iris_pixels_adjusted": 443,
+    "catchlight_pixels_softened": 3
+  },
+  "惊讶": {
+    "reference_HSV_median": [
+      128.0,
+      73.0,
+      170.0
+    ],
+    "before_HSV_median": [
+      126.0,
+      107.0,
+      153.0
+    ],
+    "after_HSV_median": [
+      127.0,
+      73.0,
+      153.0
+    ],
+    "iris_pixels_adjusted": 648,
+    "catchlight_pixels_softened": 0
+  }
+}

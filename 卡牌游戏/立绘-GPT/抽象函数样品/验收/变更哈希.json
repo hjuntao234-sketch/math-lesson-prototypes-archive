@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-13",
+  "status": "program_verified_user_play_pending",
+  "changes": [
+    {
+      "path": "v6/abstract-core.js",
+      "before": null,
+      "after": "cb41096ee4d761c8e96d18e9652f1bcd6f4167590251b49a72453a901e5006b5"
+    },
+    {
+      "path": "v6/build.py",
+      "before": "a07223136f6bbae6f167372d21f8a42d75ce8888fc2cd8af1bd5a769e33e657e",
+      "after": "d5987f9180fada5b4e219bbd0c287fb04174201be32add96e69659da2bdf3112"
+    },
+    {
+      "path": "v6/dark.js",
+      "before": "2c385952976fe1a1b94b1f7ed607dc3936869ddd2ab5d4902ce8dec48b924096",
+      "after": "3a3874b4e22f06614081c4fe9f887b93c1f579a4f081c2479ca98188ca46a945"
+    },
+    {
+      "path": "v6/deck.js",
+      "before": "b0cf0e4a25fc9fcbf9a13b81e7ac3713c7bea47e08e809ba1ed22dae027c4ed6",
+      "after": "e3492281cb416d440548328dfe28acb7e488cba623fb6f15f35b6b401281abac"
+    },
+    {
+      "path": "v6/dist/game.html",
+      "before": "0155b7b5c71397016c042a09c65a612f63d73022293e88be033a4f81beb21564",
+      "after": "75cb67e0a437f0945da51d3decac85b96b379ac076480f07bab57b9ee1736fdb"
+    },
+    {
+      "path": "v6/dist/index.html",
+      "before": "fae26c5636c7a722bb4ddaffda81308d5c276b98ba3137332fd5fac0ac868f70",
+      "after": "ef3a6df272c9722c1dab208314ca5236f05012b5e98940c0b2f2084f4fdd16e2"
+    },
+    {
+      "path": "v6/dist/teacher.html",
+      "before": "978e449287a61321e1737b07eb3e31db624f3c665937b499161bad19eb4a1317",
+      "after": "fb9c176f56504e2797cc2768e077a2c8e7614d1022cee495966a88145a9eb481"
+    },
+    {
+      "path": "v6/juice.js",
+      "before": "697b6195eaae7803f368469ec05c783e49b5732fa4df3bf5a50e120cf0aa830d",
+      "after": "bc7ef96a27fab396f9ef564bddea7109709e547d9d036a80caf1ea72bf358200"
+    },
+    {
+      "path": "v6/notes.js",
+      "before": "5e4500855b20abc090997065bb31bb1a004d4fe04f28d6a4f1a12397f2ed8286",
+      "after": "95fd2d91b59e9182284d2b578e9cef6108aaba03f7e4393836248c7081c12988"
+    },
+    {
+      "path": "v6/paper-abstract.js",
+      "before": null,
+      "after": "2bdb3ae5c0f0306a16d295883b9f4931eca57a4b3982728dc17efcaff5ce2456"
+    },
+    {
+      "path": "v6/paper-ellipse.js",
+      "before": null,
+      "after": "33fd78ac20e5fdfcee9255165c9d250d507ffa9c73ddcdca5156334e16bbe31a"
+    },
+    {
+      "path": "v6/tools/screen_notes.py",
+      "before": "0752a4cd7c3ceee3c5c7051d57fb3a2b182e4c3bfd409fc5c19468ee7cfb79e5",
+      "after": "4c6754e65c4597c9aff9b7238fd53bbff986c632b32370fcf6baefa225938ec9"
+    },
+    {
+      "path": "v6/tools/test/abstract_core_t.cjs",
+      "before": null,
+      "after": "7036e0cca754587fa427819941678f8bbf1f465f9cc8972793eb7405c7d0edb5"
+    },
+    {
+      "path": "v6/tools/test/abstract_math.py",
+      "before": null,
+      "after": "21f5f4bfa0b80bbc88b5df4a934a8fc0ca54784f8e35ae5230ee39179df4d36b"
+    },
+    {
+      "path": "v6/tools/test/abstract_t.cjs",
+      "before": null,
+      "after": "fe04774df4cb5dfb5d6e0b2d3d2810a9e60ef2c8daf2df36f02b642a4267eed1"
+    },
+    {
+      "path": "v6/tools/test/paper_draw_t.cjs",
+      "before": null,
+      "after": "d032fcd1dcf6e1f69fd52e4b9cda5532d19b300038fac0c4aded9c22a5620251"
+    },
+    {
+      "path": "v6/tools/test/paper_flow_t.cjs",
+      "before": null,
+      "after": "96c33b83a673268022f709d423519537ee3ffe916d28da7f889bdfc11ff71ea6"
+    },
+    {
+      "path": "v6/tools/test/run_all.sh",
+      "before": "63bbf31cd4dc6148d5f1ca5f5e6a17f0940462345150769bd6f0abb7a9c36a03",
+      "after": "9d00ddd462b11ce29fb434e53eeb80e8b911b1f5c5368c503285de438062cecf"
+    },
+    {
+      "path": "v6/v6.css",
+      "before": "b62561ad92531263418b8bf9cfd158fe1f3eea7e8b89659e21cc6709fecdc36f",
+      "after": "9436611f707865cce725b8a4eb40640c92d92a88d4ec87a303719f774cb73db1"
+    },
+    {
+      "path": "关卡/卡牌/抽象函数.json",
+      "before": null,
+      "after": "469c0964585fd716130165293e1466e79d117127f958f6e2eb1a0db679f45e2b"
+    },
+    {
+      "path": "关卡/卡牌/章.json",
+      "before": "24d8e2d821017f6828973698d48332996e940466527ad4aa6066e42fefe0db66",
+      "after": "86d320b50ec5a974d42a06110592a8f62867fe2d247cead4f45107ef83845649"
+    }
+  ]
+}

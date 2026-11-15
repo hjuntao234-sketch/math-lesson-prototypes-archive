@@ -1,0 +1,23 @@
+{
+  "名": "翻面守卫",
+  "原型": "双手",
+  "base": "p2",
+  "order": [
+    "body",
+    "eyes",
+    "arm-long",
+    "arm-long-equal",
+    "arm-short",
+    "arm-short-equal",
+    "arm-long-down",
+    "arm-short-down"
+  ],
+  "hidden": [
+    "arm-long-equal",
+    "arm-short-equal",
+    "arm-long",
+    "arm-short"
+  ],
+  "tint": "hue-rotate(185deg) saturate(.75) brightness(.92)",
+  "_说明": "序章第 3 关：p2 的底子换个冷色，表示“两只手都是负的”。正式版可请 GPT 画翻面姿势。Claude 2026-11-06。"
+}

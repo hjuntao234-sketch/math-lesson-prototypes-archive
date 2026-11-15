@@ -1,0 +1,16 @@
+{
+  "名": "三影守卫",
+  "原型": "章末领主",
+  "order": [
+    "body",
+    "shade-balance",
+    "shade-arch",
+    "shade-duo",
+    "cracks",
+    "eyes",
+    "crown"
+  ],
+  "hidden": [
+    "cracks"
+  ]
+}

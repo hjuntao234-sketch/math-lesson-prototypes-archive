@@ -1,0 +1,37 @@
+  <!-- ===== 领主裂开（读 关卡/第一章/领主/*.json） ===== -->
+  <div class="scr" data-s="boss" hidden>
+    <div class="abs bsbg"></div>
+    <div class="abs bsgrade"></div>
+    <div class="abs bboard" id="bboard">
+      <h3>题板<small id="bsname"></small></h3>
+      <p class="q" id="bsq"></p>
+      <div class="bslots" id="bslots" hidden></div>
+      <div class="btray" id="btray" hidden></div>
+    </div>
+    <svg class="abs boss" id="boss" viewBox="0 0 460 460" role="img" aria-label="领主">
+      <defs>
+        <radialGradient id="bb" cx="55%" cy="45%" r="58%"><stop offset="0" stop-color="#f3f0f6"/><stop offset=".5" stop-color="#d6d2e0" stop-opacity=".92"/><stop offset="1" stop-color="#9c97ad" stop-opacity="0"/></radialGradient>
+        <filter id="bwisp" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="9"><animate attributeName="baseFrequency" dur="18s" values=".018;.024;.018" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="34" xChannelSelector="R" yChannelSelector="G"/><feGaussianBlur stdDeviation="1.2"/></filter>
+        <filter id="bsoft"><feGaussianBlur stdDeviation="14"/></filter>
+        <filter id="bglow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <g id="bAll">
+        <ellipse cx="236" cy="270" rx="190" ry="170" fill="#5b5470" opacity=".25" filter="url(#bsoft)"/>
+        <g filter="url(#bwisp)">
+          <path d="M236 450c-70-10-130-80-132-180-2-90 50-150 132-156 86-6 140 60 140 150 0 100-56 176-140 186Z" fill="url(#bb)"/>
+          <circle cx="236" cy="120" r="80" fill="url(#bb)"/>
+          <path d="M120 250c-40 10-70 40-92 70M352 250c40 10 70 40 92 70" fill="none" stroke="#dcd8e4" stroke-width="28" stroke-linecap="round" opacity=".9"/>
+        </g>
+        <path d="M176 64 188 22 210 52 236 8 262 52 284 22 296 64Z" fill="#c49a4c" stroke="#2a1a12" stroke-width="3" stroke-linejoin="round"/>
+        <g id="shadows" opacity=".55"></g>
+        <g filter="url(#bglow)"><ellipse cx="206" cy="120" rx="10" ry="12" fill="#ff8a5c"/><ellipse cx="266" cy="116" rx="10" ry="12" fill="#ff8a5c"/></g>
+        <g id="cracks" fill="none" stroke="#1a1220" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M236 160 220 220 246 260 214 320 236 380" pathLength="1"/><path d="M220 220 170 250 150 300" pathLength="1"/><path d="M246 260 300 280 320 330" pathLength="1"/>
+        </g>
+      </g>
+    </svg>
+    <div id="minions"></div>
+    <div class="abs bpanel" id="bpanel"></div>
+    <div class="abs bflash" id="bflash"></div>
+    <div class="abs xtalk btalk" id="btalk"></div>
+  </div>

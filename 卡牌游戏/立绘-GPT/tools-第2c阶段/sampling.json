@@ -1,0 +1,12 @@
+[
+  {
+    "reference_box": [
+      444,
+      418,
+      569,
+      445
+    ],
+    "method": "imagegen texture reference; final skin-only compositing",
+    "calm_eye_pixels_used": false
+  }
+]

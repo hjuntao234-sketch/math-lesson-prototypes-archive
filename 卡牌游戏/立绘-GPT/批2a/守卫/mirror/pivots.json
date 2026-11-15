@@ -1,0 +1,70 @@
+{
+  "canvas": [
+    1200,
+    1100
+  ],
+  "head": {
+    "center": [
+      850,
+      300
+    ],
+    "r": 140
+  },
+  "ground": {
+    "y": 940
+  },
+  "eyes": {
+    "left": [
+      808,
+      300
+    ],
+    "right": [
+      892,
+      300
+    ]
+  },
+  "arm-left": {
+    "shoulder": [
+      815,
+      510
+    ],
+    "fist": [
+      370,
+      580
+    ]
+  },
+  "arm-right": {
+    "shoulder": [
+      860,
+      660
+    ],
+    "fist": [
+      685,
+      790
+    ]
+  },
+  "crack": {
+    "center": [
+      520,
+      675
+    ]
+  },
+  "mirror-front": {
+    "center": [
+      525,
+      675
+    ]
+  },
+  "mirror-back": {
+    "center": [
+      525,
+      675
+    ]
+  },
+  "mirror-clear": {
+    "center": [
+      525,
+      675
+    ]
+  }
+}

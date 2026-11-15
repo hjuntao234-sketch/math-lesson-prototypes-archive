@@ -1,0 +1,31 @@
+{
+  "名": "拱桥守卫",
+  "原型": "拱桥",
+  "order": [
+    "axis",
+    "arch-down",
+    "arch-up",
+    "arch-up-touch",
+    "arch-up-float",
+    "eyes-down",
+    "eyes-up",
+    "eyes-touch",
+    "eyes-float",
+    "flag-left",
+    "flag-right",
+    "shade-between",
+    "shade-outside"
+  ],
+  "hidden": [
+    "arch-up",
+    "arch-up-touch",
+    "arch-up-float",
+    "eyes-up",
+    "eyes-touch",
+    "eyes-float",
+    "flag-left",
+    "flag-right",
+    "shade-between",
+    "shade-outside"
+  ]
+}

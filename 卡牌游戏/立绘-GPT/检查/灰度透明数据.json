@@ -1,0 +1,72 @@
+{
+  "yana": {
+    "mean_luma": 56.91,
+    "empty_pixels": 1085337,
+    "hidden_nonzero_RGB": 0
+  },
+  "tally": {
+    "mean_luma": 110.1,
+    "empty_pixels": 802358,
+    "hidden_nonzero_RGB": 0
+  },
+  "fabia": {
+    "mean_luma": 96.77,
+    "empty_pixels": 741396,
+    "hidden_nonzero_RGB": 0
+  },
+  "norman": {
+    "mean_luma": 157.56,
+    "empty_pixels": 1014431,
+    "hidden_nonzero_RGB": 0
+  },
+  "bala": {
+    "mean_luma": 72.57,
+    "empty_pixels": 1003581,
+    "hidden_nonzero_RGB": 0
+  },
+  "tess": {
+    "mean_luma": 160.23,
+    "empty_pixels": 975656,
+    "hidden_nonzero_RGB": 0
+  },
+  "ilu": {
+    "mean_luma": 147.74,
+    "empty_pixels": 878682,
+    "hidden_nonzero_RGB": 0
+  },
+  "certa": {
+    "mean_luma": 79.45,
+    "empty_pixels": 959345,
+    "hidden_nonzero_RGB": 0
+  },
+  "flo": {
+    "mean_luma": 188.58,
+    "empty_pixels": 830930,
+    "hidden_nonzero_RGB": 0
+  },
+  "marga": {
+    "mean_luma": 77.06,
+    "empty_pixels": 684321,
+    "hidden_nonzero_RGB": 0
+  },
+  "divi": {
+    "mean_luma": 95.42,
+    "empty_pixels": 817410,
+    "hidden_nonzero_RGB": 0
+  },
+  "ora": {
+    "mean_luma": 44.15,
+    "empty_pixels": 885705,
+    "hidden_nonzero_RGB": 0
+  },
+  "quidda": {
+    "mean_luma": 70.69,
+    "empty_pixels": 1164089,
+    "hidden_nonzero_RGB": 0
+  },
+  "mira": {
+    "mean_luma": 151.82,
+    "empty_pixels": 1180706,
+    "hidden_nonzero_RGB": 0
+  }
+}

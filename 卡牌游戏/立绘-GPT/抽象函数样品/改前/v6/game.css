@@ -1,0 +1,62 @@
+/* 游戏层附加样式（Claude 写）。战斗样式在 style.css、v6.css，不动 */
+.dev h5.devh{margin:14px 0 8px;font-family:var(--f-title);font-weight:900;font-size:15px;color:#b0853a;letter-spacing:.06em}
+.dev{max-height:820px;overflow:auto}
+.gdtask,.gdgraph{box-sizing:border-box}
+.gdgraph .ttl{text-shadow:none;font-weight:400;letter-spacing:0}
+.xplot .xttl{font-family:"ZCOOL XiaoWei",var(--f-title);font-size:16px;fill:#4a4334}
+/* ---- 剧情：右边一页手账当黑板 ---- */
+.scr[data-s="story"] .vnbg{transition:opacity .5s}.scr[data-s="story"] .vnbg.in{animation:vbgin .6s ease}
+@keyframes vbgin{from{opacity:.2}to{opacity:1}}
+.vboard{right:44px;top:96px;width:640px;max-height:540px;overflow:auto;box-sizing:border-box;z-index:15;background:#efe6cf;color:#2a2620;border-radius:3px;padding:18px 24px 20px;box-shadow:0 0 0 2px #2a2f2a,0 14px 30px rgba(0,0,0,.45);background-image:repeating-linear-gradient(0deg,transparent 0 33px,rgba(76,92,82,.12) 33px 34px)}
+.vboard::before{content:"";position:absolute;left:50%;top:-10px;width:110px;height:22px;margin-left:-55px;background:repeating-linear-gradient(45deg,rgba(92,150,56,.55) 0 7px,rgba(92,150,56,.38) 7px 14px);transform:rotate(-2deg)}
+.vboard .eb{margin:0 0 4px;font-family:var(--f-title);font-weight:900;font-size:13px;letter-spacing:.08em;color:#b23a2c}
+.vboard .bline{font-family:var(--f-title);font-weight:700;font-size:18px;line-height:1.85;margin:6px 0;animation:vfade .4s ease}
+.vboard .q{font-family:var(--f-title);font-weight:700;font-size:18px;line-height:1.85}
+.vboard .bq{border-bottom:1.5px dashed rgba(42,37,28,.35);padding-bottom:6px;margin:0 0 8px}
+.vboard .bfig{margin:8px 0}.vboard .bfig svg{width:100%;max-width:460px;height:auto;display:block;margin:0 auto}
+.vboard .bstep{margin:8px 0;padding:6px 10px;background:rgba(255,255,255,.4);border-left:4px solid #b0853a}
+.vboard dl{display:grid;grid-template-columns:34px 1fr;gap:3px 8px;margin:0;font-size:15.5px;line-height:1.6}
+.vboard dt{font-family:var(--f-title);font-weight:900;color:#a3412f}.vboard dd{margin:0}
+.vboard .m{color:#7a6e58;font-size:14px}
+.vboard .introblk,.vboard .gcard{margin:10px 0;padding:12px 14px;background:#fff8e6;border:2px solid #2a2f2a;box-shadow:4px 4px 0 rgba(42,47,42,.6);animation:vfade .4s ease}
+.vboard .introblk .mate{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:start}
+.vboard .introblk img{width:72px;height:72px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #2a2f2a}
+.vboard .gcard .gn{font-family:var(--f-title);font-weight:900;font-size:20px;margin:2px 0 6px}
+.vboard .gcard p{margin:4px 0;font-size:15.5px;line-height:1.6}.vboard .gcard p b{display:inline-block;min-width:86px;color:#a3412f;font-family:var(--f-title)}
+@keyframes vfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.scr.vhasb .opts{right:auto;left:70px;top:150px}
+.vcap{left:50%;top:80px;transform:translateX(-50%);z-index:30;font-family:var(--f-title);font-weight:900;font-size:16px;color:#2a2620;background:#ffe08a;border:2px solid #2a2f2a;padding:4px 14px;opacity:0;pointer-events:none}
+.vcap.go{animation:vcap 2.2s ease}
+@keyframes vcap{0%{opacity:0;transform:translate(-50%,-6px)}12%,80%{opacity:1;transform:translate(-50%,0)}100%{opacity:0}}
+.vfx{inset:0;pointer-events:none;z-index:12;opacity:0}
+.vfx.fx-fog.go{background:radial-gradient(circle at 50% 50%,rgba(220,226,222,.15),rgba(220,226,222,.85));animation:vfx 2.4s ease}
+.vfx.fx-clear.go{background:radial-gradient(circle at 50% 45%,rgba(255,255,255,0),rgba(214,222,226,.95) 70%);animation:vfx 2s ease reverse}
+.vfx.fx-flash.go{background:#fff;animation:vfx .6s ease}
+.vfx.fx-glow.go{background:radial-gradient(circle at 50% 45%,rgba(246,210,122,.45),transparent 60%);animation:vfx 1.4s ease}
+@keyframes vfx{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+.scr.vshake{animation:vshake .45s ease}
+@keyframes vshake{0%,100%{transform:none}20%{transform:translate(-8px,2px)}40%{transform:translate(7px,-3px)}60%{transform:translate(-5px,2px)}80%{transform:translate(3px,-1px)}}
+.opt[disabled]{opacity:.45;cursor:default}
+.scr[data-s="story"] .chap{top:96px}
+/* ---- 地图 ---- */
+.node.wip .ico{opacity:.55}
+.mside{left:1336px;top:470px;width:244px;display:grid;gap:8px;z-index:20}
+.mside .qbtn{width:100%;font-size:15px}
+.mpanel{left:50%;top:110px;transform:translateX(-50%);width:820px;max-height:740px;overflow:auto;box-sizing:border-box;z-index:85;background:var(--paper);color:var(--paper-ink);border-radius:6px;padding:20px 26px 22px;box-shadow:0 0 0 2px #2a251c,0 0 0 5px var(--brass),0 24px 60px rgba(0,0,0,.6)}
+.mpanel h4{margin:0 0 8px;font-family:var(--f-title);font-weight:900;font-size:24px;display:flex;gap:10px;align-items:baseline}
+.mpanel h4 small{font-family:var(--f-body);font-weight:500;font-size:14px;color:#7a6e58}
+.mpanel h5{margin:14px 0 6px;font-family:var(--f-title);font-weight:900;font-size:17px}
+.mpanel p{margin:4px 0 8px;font-size:15.5px;line-height:1.6}.mpanel .m{color:#7a6e58;font-size:14px}
+.mpanel .mrow{padding:10px 0;border-top:1.5px solid rgba(42,37,28,.25)}.mpanel .mrow h5{margin:0 0 8px}
+.mpanel .qbtns{display:flex;flex-wrap:wrap;gap:8px}.mpanel .qbtn{font-size:15px;padding:6px 12px}
+.mclose{position:absolute;right:12px;top:10px;width:36px;height:36px;border:2px solid #2a251c;border-radius:50%;background:#f7efd9;font-size:22px;line-height:1;cursor:pointer}
+.mtab{width:100%;border-collapse:collapse;font-size:13.5px;color:#2a2620}.mtab th,.mtab td{border-bottom:1px solid rgba(42,37,28,.25);padding:4px 6px;text-align:left}.mtab th{font-family:var(--f-title);color:#6b604c}
+.mtitle{inset:0;z-index:95;display:grid;place-content:center;justify-items:center;gap:6px;background:radial-gradient(ellipse at 50% 45%,rgba(16,22,19,.75),rgba(11,16,14,.96));color:var(--text);text-align:center}
+.mtitle h1{margin:0;font-family:"Long Cang","ZCOOL XiaoWei",var(--f-title);font-weight:400;font-size:96px;letter-spacing:.1em;color:var(--glow);text-shadow:0 4px 0 #000}
+.mtitle p{margin:0 0 18px;font-family:var(--f-title);font-weight:700;font-size:24px;letter-spacing:.3em}
+.mtitle .qbtn{font-size:20px;padding:10px 28px}.mtitle .mnote{margin-top:30px;font-size:13px;letter-spacing:0;font-weight:500;color:var(--text-dim)}
+.mquit{left:24px;top:84px;z-index:60;font-family:var(--f-title);font-weight:700;font-size:13px;color:#d7cfbd;background:rgba(12,17,15,.7);border:1px solid #4b5c54;border-radius:14px;padding:4px 12px;cursor:pointer}
+/* ---- 牌组 ---- */
+.dback{right:30px;bottom:24px;z-index:20}
+.dgrid .dnone{color:var(--text-dim);margin:0 0 10px}
+.gdnote{display:inline-block;margin-top:6px;font-size:14.5px;color:#5b5446}

@@ -1,0 +1,9 @@
+{
+  "v6/abstract-core.js": "16abdd30be75dee4b22dbdbb511a017504ada518941dbf3d61aab3e60df66a99",
+  "v6/paper-abstract.js": "590cbf22d9a8f1a71677a3732911e1268455fa3f032116add29eb0e139c1ed97",
+  "v6/tools/test/abstract_core_t.cjs": "c52a12529820aa05622f11b92ad803948d92b44ad70b86d6659e5c9c195e3b98",
+  "v6/tools/test/paper_flow_t.cjs": "6c6fa2f5c8eaa2121155b374321f0a1c3e4209f765264e7023a37a47d6518f18",
+  "v6/tools/test/abstract_t.cjs": "f30ab87ad63c726dc0f51e393d65a76a0e54fcbe4f9d5a629abc509cfa190ae3",
+  "v6/dist/index.html": "7d402b0209fed3613c77420b346103e4a90a2cb87f578f60a69f56938c1de11e",
+  "v6/dist/game.html": "8e3f2f4a8aa2400fd9c60e22b2e3a267fb8bc5805a3818fb736cd906a82654f2"
+}

@@ -1,0 +1,51 @@
+{
+  "tally-大笑": {
+    "left_eye": 0,
+    "right_eye": 0,
+    "mouth": 0
+  },
+  "tally-思考": {
+    "left_eye": 0,
+    "right_eye": 0,
+    "mouth": 0
+  },
+  "tally-惊讶": {
+    "left_eye": 0,
+    "right_eye": 0,
+    "mouth": 0
+  },
+  "tally-着急": {
+    "left_eye": 0,
+    "right_eye": 0,
+    "mouth": 0
+  },
+  "tally-低落": {
+    "left_eye": 0,
+    "right_eye": 0,
+    "mouth": 0
+  },
+  "ilu-平静": {
+    "left_eye": 0,
+    "right_eye": 0,
+    "mouth": 0,
+    "mole": 0
+  },
+  "ilu-微笑": {
+    "left_eye": 0,
+    "right_eye": 0,
+    "mouth": 0,
+    "mole": 0
+  },
+  "ilu-惊讶": {
+    "left_eye": 0,
+    "right_eye": 0,
+    "mouth": 0,
+    "mole": 0
+  },
+  "ilu-专注": {
+    "left_eye": 0,
+    "right_eye": 0,
+    "mouth": 0,
+    "mole": 0
+  }
+}

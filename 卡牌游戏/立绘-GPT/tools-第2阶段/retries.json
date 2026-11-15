@@ -1,0 +1,16 @@
+[
+  {
+    "id": "yana",
+    "expression": "微笑",
+    "prompt": "Use case: identity-preserve.\nInput image 1 is the EDIT TARGET: the already-approved yana character sprite, 1024x1536.\nChange ONLY the facial expression to: A genuine warm gentle smile, BOTH eyes softly closed into relaxed shallow curved arcs, relaxed brows, closed lips curved upward. Not laughing. Make this clearly different from her neutral half-lidded knowing look.\nPreserve the exact character identity, face shape, eye color, nose, skin color, dimensional anime cel shading, head size and angle. Keep ALL hair, ears, neck, body, clothing, pose, props, position, framing and scale unchanged. Do not beautify or redesign. Facial fixed marks (freckles, scars, beauty marks, charcoal, bandage, monocle or glasses) stay precisely at original coordinates; frames and chains must not move. Bangs unchanged except the tiny area directly above eyes if essential.\nOutput the SAME complete portrait canvas, not a close-up, no crop or zoom. True transparent background, no backdrop, no pattern, no text, numbers, watermarks or symbols. One image, one expression only.",
+    "reference": "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/成品/yana-平静.png",
+    "n": 0
+  },
+  {
+    "id": "tally",
+    "expression": "低落",
+    "prompt": "Use case: identity-preserve.\nInput image 1 is the EDIT TARGET: the already-approved tally character sprite, 1024x1536.\nChange ONLY the facial expression to: Clearly sad and discouraged, NOT disdainful: inner ends of both eyebrows raised, eyes looking DOWN, mouth corners visibly turned down. NO blush or redness. Keep eyes open enough to read sorrow, not sleepy.\nPreserve the exact character identity, face shape, eye color, nose, skin color, dimensional anime cel shading, head size and angle. Keep ALL hair, ears, neck, body, clothing, pose, props, position, framing and scale unchanged. Do not beautify or redesign. For this intermediate face layer, remove the adhesive cheek bandage and render clean bare cheek skin; no new cheek marks or stickers. The original bandage will be restored at its exact coordinates by the compositor. This is the only change besides expression. Bangs unchanged except the tiny area directly above eyes if essential.\nOutput the SAME complete portrait canvas, not a close-up, no crop or zoom. True transparent background, no backdrop, no pattern, no text, numbers, watermarks or symbols. One image, one expression only.",
+    "reference": "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/成品/tally-平静.png",
+    "n": 6
+  }
+]

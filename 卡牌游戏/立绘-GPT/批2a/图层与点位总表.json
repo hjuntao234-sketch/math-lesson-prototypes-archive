@@ -1,0 +1,1727 @@
+{
+  "balance": {
+    "guard": {
+      "名": "天平守卫",
+      "原型": "天平",
+      "order": [
+        "body",
+        "eyes",
+        "scale-level",
+        "scale-left-down",
+        "scale-right-down",
+        "scale-merged"
+      ],
+      "hidden": [
+        "scale-left-down",
+        "scale-right-down",
+        "scale-merged"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          700,
+          395
+        ],
+        "r": 117
+      },
+      "ground": {
+        "y": 940
+      },
+      "eyes": {
+        "left": [
+          658,
+          395
+        ],
+        "right": [
+          742,
+          395
+        ]
+      },
+      "body": {
+        "post": [
+          700,
+          680
+        ]
+      },
+      "scale-level": {
+        "pan-left": [
+          425,
+          618
+        ],
+        "pan-right": [
+          969,
+          618
+        ]
+      },
+      "scale-left-down": {
+        "pan-left": [
+          426,
+          653
+        ],
+        "pan-right": [
+          969,
+          550
+        ]
+      },
+      "scale-right-down": {
+        "pan-left": [
+          421,
+          584
+        ],
+        "pan-right": [
+          975,
+          681
+        ]
+      },
+      "scale-merged": {
+        "pan": [
+          697,
+          703
+        ]
+      }
+    },
+    "states": [
+      [
+        "scale-level",
+        [
+          "body",
+          "eyes",
+          "scale-level"
+        ]
+      ],
+      [
+        "scale-left-down",
+        [
+          "body",
+          "eyes",
+          "scale-left-down"
+        ]
+      ],
+      [
+        "scale-right-down",
+        [
+          "body",
+          "eyes",
+          "scale-right-down"
+        ]
+      ],
+      [
+        "scale-merged",
+        [
+          "body",
+          "eyes",
+          "scale-merged"
+        ]
+      ]
+    ]
+  },
+  "arch": {
+    "guard": {
+      "名": "拱桥守卫",
+      "原型": "拱桥",
+      "order": [
+        "axis",
+        "arch-down",
+        "arch-up",
+        "arch-up-touch",
+        "arch-up-float",
+        "eyes-down",
+        "eyes-up",
+        "eyes-touch",
+        "eyes-float",
+        "flag-left",
+        "flag-right",
+        "shade-between",
+        "shade-outside"
+      ],
+      "hidden": [
+        "arch-up",
+        "arch-up-touch",
+        "arch-up-float",
+        "eyes-up",
+        "eyes-touch",
+        "eyes-float",
+        "flag-left",
+        "flag-right",
+        "shade-between",
+        "shade-outside"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          700,
+          320
+        ],
+        "r": 90
+      },
+      "ground": {
+        "y": 630
+      },
+      "eyes": {
+        "left": [
+          662,
+          320
+        ],
+        "right": [
+          738,
+          320
+        ]
+      },
+      "axis": {
+        "center": [
+          670,
+          630
+        ]
+      },
+      "arch-down": {
+        "foot-left": [
+          425,
+          630
+        ],
+        "foot-right": [
+          973,
+          630
+        ],
+        "top": [
+          700,
+          320
+        ]
+      },
+      "arch-up": {
+        "foot-left": [
+          425,
+          630
+        ],
+        "foot-right": [
+          973,
+          630
+        ],
+        "top": [
+          700,
+          940
+        ]
+      },
+      "arch-up-touch": {
+        "touch": [
+          700,
+          630
+        ]
+      },
+      "arch-up-float": {
+        "bottom": [
+          700,
+          550
+        ]
+      },
+      "flag-left": {
+        "center": [
+          400,
+          560
+        ]
+      },
+      "flag-right": {
+        "center": [
+          948,
+          560
+        ]
+      },
+      "shade-between": {
+        "center": [
+          699,
+          630
+        ]
+      },
+      "shade-outside": {
+        "center": [
+          320,
+          630
+        ]
+      },
+      "eyes-down": {
+        "left": [
+          662,
+          320
+        ],
+        "right": [
+          738,
+          320
+        ]
+      },
+      "eyes-up": {
+        "left": [
+          662,
+          940
+        ],
+        "right": [
+          738,
+          940
+        ]
+      },
+      "eyes-touch": {
+        "left": [
+          662,
+          561
+        ],
+        "right": [
+          738,
+          561
+        ]
+      },
+      "eyes-float": {
+        "left": [
+          662,
+          481
+        ],
+        "right": [
+          738,
+          481
+        ]
+      }
+    },
+    "states": [
+      [
+        "arch-down",
+        [
+          "axis",
+          "arch-down",
+          "eyes-down"
+        ]
+      ],
+      [
+        "arch-up",
+        [
+          "axis",
+          "arch-up",
+          "eyes-up"
+        ]
+      ],
+      [
+        "arch-up-touch",
+        [
+          "axis",
+          "arch-up-touch",
+          "eyes-touch"
+        ]
+      ],
+      [
+        "arch-up-float",
+        [
+          "axis",
+          "arch-up-float",
+          "eyes-float"
+        ]
+      ],
+      [
+        "between",
+        [
+          "axis",
+          "arch-down",
+          "eyes-down",
+          "flag-left",
+          "flag-right",
+          "shade-between"
+        ]
+      ],
+      [
+        "outside",
+        [
+          "axis",
+          "arch-down",
+          "eyes-down",
+          "flag-left",
+          "flag-right",
+          "shade-outside"
+        ]
+      ]
+    ]
+  },
+  "siege": {
+    "guard": {
+      "名": "攻城守卫",
+      "原型": "攻城",
+      "order": [
+        "body",
+        "eyes",
+        "wall",
+        "wall-raised",
+        "arm-a",
+        "arm-b",
+        "arm-c",
+        "low-gap",
+        "line",
+        "flag"
+      ],
+      "hidden": [
+        "wall-raised",
+        "low-gap",
+        "flag"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          850,
+          350
+        ],
+        "r": 100
+      },
+      "ground": {
+        "y": 950
+      },
+      "eyes": {
+        "left": [
+          810,
+          350
+        ],
+        "right": [
+          890,
+          350
+        ]
+      },
+      "wall": {
+        "low": [
+          640,
+          757
+        ],
+        "left": [
+          250,
+          650
+        ],
+        "right": [
+          1030,
+          650
+        ]
+      },
+      "wall-raised": {
+        "low": [
+          640,
+          597
+        ]
+      },
+      "line": {
+        "y": 710
+      },
+      "arm-a": {
+        "shoulder": [
+          800,
+          500
+        ],
+        "fist": [
+          280,
+          345
+        ]
+      },
+      "arm-b": {
+        "shoulder": [
+          800,
+          590
+        ],
+        "fist": [
+          200,
+          590
+        ]
+      },
+      "arm-c": {
+        "shoulder": [
+          800,
+          680
+        ],
+        "fist": [
+          120,
+          850
+        ]
+      },
+      "low-gap": {
+        "center": [
+          640,
+          757
+        ]
+      },
+      "flag": {
+        "center": [
+          610,
+          527
+        ]
+      }
+    },
+    "states": [
+      [
+        "wall",
+        [
+          "body",
+          "eyes",
+          "wall",
+          "arm-a",
+          "arm-b",
+          "arm-c",
+          "line"
+        ]
+      ],
+      [
+        "lowest",
+        [
+          "body",
+          "eyes",
+          "wall",
+          "arm-a",
+          "arm-b",
+          "arm-c",
+          "low-gap",
+          "line"
+        ]
+      ],
+      [
+        "raised",
+        [
+          "body",
+          "eyes",
+          "wall-raised",
+          "arm-a",
+          "arm-b",
+          "arm-c",
+          "line",
+          "flag"
+        ]
+      ]
+    ]
+  },
+  "zigzag": {
+    "guard": {
+      "名": "折线守卫",
+      "原型": "折线",
+      "order": [
+        "numline",
+        "seg-left",
+        "seg-mid",
+        "seg-right",
+        "seg-mid-flat",
+        "joint-1",
+        "joint-2",
+        "eyes"
+      ],
+      "hidden": [
+        "seg-mid-flat"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          970,
+          380
+        ],
+        "r": 85
+      },
+      "ground": {
+        "y": 930
+      },
+      "eyes": {
+        "left": [
+          948,
+          380
+        ],
+        "right": [
+          992,
+          380
+        ]
+      },
+      "numline": {
+        "center": [
+          520,
+          930
+        ]
+      },
+      "seg-left": {
+        "center": [
+          270,
+          560
+        ]
+      },
+      "seg-mid": {
+        "center": [
+          530,
+          702
+        ]
+      },
+      "seg-right": {
+        "center": [
+          825,
+          535
+        ]
+      },
+      "seg-mid-flat": {
+        "center": [
+          530,
+          690
+        ]
+      },
+      "joint-1": {
+        "center": [
+          380,
+          690
+        ]
+      },
+      "joint-2": {
+        "center": [
+          680,
+          690
+        ]
+      }
+    },
+    "states": [
+      [
+        "bent",
+        [
+          "numline",
+          "seg-left",
+          "seg-mid",
+          "seg-right",
+          "joint-1",
+          "joint-2",
+          "eyes"
+        ]
+      ],
+      [
+        "flat",
+        [
+          "numline",
+          "seg-left",
+          "seg-right",
+          "seg-mid-flat",
+          "joint-1",
+          "joint-2",
+          "eyes"
+        ]
+      ]
+    ]
+  },
+  "mirror": {
+    "guard": {
+      "名": "镜子守卫",
+      "原型": "镜子",
+      "order": [
+        "body",
+        "eyes",
+        "mirror-front",
+        "mirror-back",
+        "mirror-clear",
+        "crack",
+        "arm-left",
+        "arm-right"
+      ],
+      "hidden": [
+        "mirror-back",
+        "mirror-clear",
+        "crack"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          850,
+          300
+        ],
+        "r": 140
+      },
+      "ground": {
+        "y": 940
+      },
+      "eyes": {
+        "left": [
+          808,
+          300
+        ],
+        "right": [
+          892,
+          300
+        ]
+      },
+      "arm-left": {
+        "shoulder": [
+          815,
+          510
+        ],
+        "fist": [
+          370,
+          580
+        ]
+      },
+      "arm-right": {
+        "shoulder": [
+          860,
+          660
+        ],
+        "fist": [
+          685,
+          790
+        ]
+      },
+      "crack": {
+        "center": [
+          520,
+          675
+        ]
+      },
+      "mirror-front": {
+        "center": [
+          525,
+          675
+        ]
+      },
+      "mirror-back": {
+        "center": [
+          525,
+          675
+        ]
+      },
+      "mirror-clear": {
+        "center": [
+          525,
+          675
+        ]
+      }
+    },
+    "states": [
+      [
+        "mirror-front",
+        [
+          "body",
+          "eyes",
+          "mirror-front",
+          "arm-left",
+          "arm-right"
+        ]
+      ],
+      [
+        "mirror-back",
+        [
+          "body",
+          "eyes",
+          "mirror-back",
+          "arm-left",
+          "arm-right"
+        ]
+      ],
+      [
+        "mirror-clear",
+        [
+          "body",
+          "eyes",
+          "mirror-clear",
+          "arm-left",
+          "arm-right"
+        ]
+      ],
+      [
+        "counterexample",
+        [
+          "body",
+          "eyes",
+          "mirror-front",
+          "crack",
+          "arm-left",
+          "arm-right"
+        ]
+      ]
+    ]
+  },
+  "boss-b": {
+    "guard": {
+      "名": "铜冠守卫",
+      "原型": "双手领主",
+      "order": [
+        "body",
+        "eyes",
+        "arm-long",
+        "arm-short",
+        "crown",
+        "cracks",
+        "shadow-a",
+        "shadow-b",
+        "shadow-c"
+      ],
+      "hidden": [
+        "cracks",
+        "shadow-a",
+        "shadow-b",
+        "shadow-c"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          820,
+          310
+        ],
+        "r": 100
+      },
+      "ground": {
+        "y": 970
+      },
+      "eyes": {
+        "left": [
+          775,
+          310
+        ],
+        "right": [
+          865,
+          310
+        ]
+      },
+      "arm-long": {
+        "shoulder": [
+          800,
+          490
+        ],
+        "fist": [
+          135,
+          490
+        ]
+      },
+      "arm-short": {
+        "shoulder": [
+          800,
+          710
+        ],
+        "fist": [
+          480,
+          710
+        ]
+      },
+      "crown": {
+        "center": [
+          820,
+          200
+        ]
+      },
+      "cracks": {
+        "center": [
+          851,
+          624
+        ]
+      },
+      "shadow-a": {
+        "center": [
+          680,
+          560
+        ]
+      },
+      "shadow-b": {
+        "center": [
+          880,
+          620
+        ]
+      },
+      "shadow-c": {
+        "center": [
+          780,
+          800
+        ]
+      }
+    },
+    "states": [
+      [
+        "full",
+        [
+          "body",
+          "eyes",
+          "arm-long",
+          "arm-short",
+          "crown"
+        ]
+      ],
+      [
+        "cracks",
+        [
+          "body",
+          "eyes",
+          "arm-long",
+          "arm-short",
+          "crown",
+          "cracks"
+        ]
+      ],
+      [
+        "three-shadows",
+        [
+          "body",
+          "eyes",
+          "arm-long",
+          "arm-short",
+          "crown",
+          "cracks",
+          "shadow-a",
+          "shadow-b",
+          "shadow-c"
+        ]
+      ],
+      [
+        "shadow-a",
+        [
+          "body",
+          "eyes",
+          "arm-long",
+          "arm-short",
+          "crown",
+          "shadow-a"
+        ]
+      ],
+      [
+        "shadow-b",
+        [
+          "body",
+          "eyes",
+          "arm-long",
+          "arm-short",
+          "crown",
+          "shadow-b"
+        ]
+      ],
+      [
+        "shadow-c",
+        [
+          "body",
+          "eyes",
+          "arm-long",
+          "arm-short",
+          "crown",
+          "shadow-c"
+        ]
+      ]
+    ]
+  },
+  "boss-end": {
+    "guard": {
+      "名": "三影守卫",
+      "原型": "章末领主",
+      "order": [
+        "body",
+        "shade-balance",
+        "shade-arch",
+        "shade-duo",
+        "cracks",
+        "eyes",
+        "crown"
+      ],
+      "hidden": [
+        "cracks"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          633,
+          165
+        ],
+        "r": 75
+      },
+      "ground": {
+        "y": 980
+      },
+      "eyes": {
+        "left": [
+          600,
+          165
+        ],
+        "right": [
+          666,
+          165
+        ]
+      },
+      "crown": {
+        "center": [
+          630,
+          66
+        ]
+      },
+      "shade-balance": {
+        "center": [
+          765,
+          535
+        ]
+      },
+      "shade-arch": {
+        "center": [
+          760,
+          654
+        ]
+      },
+      "shade-duo": {
+        "center": [
+          795,
+          775
+        ]
+      },
+      "cracks": {
+        "center": [
+          765,
+          595
+        ]
+      }
+    },
+    "states": [
+      [
+        "three",
+        [
+          "body",
+          "shade-balance",
+          "shade-arch",
+          "shade-duo",
+          "eyes",
+          "crown"
+        ]
+      ],
+      [
+        "shade-balance",
+        [
+          "body",
+          "shade-balance",
+          "eyes",
+          "crown"
+        ]
+      ],
+      [
+        "shade-arch",
+        [
+          "body",
+          "shade-arch",
+          "eyes",
+          "crown"
+        ]
+      ],
+      [
+        "shade-duo",
+        [
+          "body",
+          "shade-duo",
+          "eyes",
+          "crown"
+        ]
+      ],
+      [
+        "cracked",
+        [
+          "body",
+          "shade-balance",
+          "shade-arch",
+          "shade-duo",
+          "cracks",
+          "eyes",
+          "crown"
+        ]
+      ]
+    ]
+  },
+  "boss-a": {
+    "guard": {
+      "名": "砝码冠守卫",
+      "原型": "天平领主",
+      "base": "balance",
+      "order": [
+        "body",
+        "eyes",
+        "scale-level",
+        "scale-left-down",
+        "scale-right-down",
+        "scale-merged",
+        "crown"
+      ],
+      "hidden": [
+        "scale-left-down",
+        "scale-right-down",
+        "scale-merged"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          700,
+          395
+        ],
+        "r": 117
+      },
+      "ground": {
+        "y": 940
+      },
+      "eyes": {
+        "left": [
+          658,
+          395
+        ],
+        "right": [
+          742,
+          395
+        ]
+      },
+      "body": {
+        "post": [
+          700,
+          680
+        ]
+      },
+      "scale-level": {
+        "pan-left": [
+          425,
+          618
+        ],
+        "pan-right": [
+          969,
+          618
+        ]
+      },
+      "scale-left-down": {
+        "pan-left": [
+          426,
+          653
+        ],
+        "pan-right": [
+          969,
+          550
+        ]
+      },
+      "scale-right-down": {
+        "pan-left": [
+          421,
+          584
+        ],
+        "pan-right": [
+          975,
+          681
+        ]
+      },
+      "scale-merged": {
+        "pan": [
+          697,
+          703
+        ]
+      },
+      "crown": {
+        "center": [
+          700,
+          227
+        ]
+      }
+    },
+    "states": [
+      [
+        "scale-level",
+        [
+          "body",
+          "eyes",
+          "scale-level",
+          "crown"
+        ]
+      ],
+      [
+        "scale-left-down",
+        [
+          "body",
+          "eyes",
+          "scale-left-down",
+          "crown"
+        ]
+      ],
+      [
+        "scale-right-down",
+        [
+          "body",
+          "eyes",
+          "scale-right-down",
+          "crown"
+        ]
+      ],
+      [
+        "scale-merged",
+        [
+          "body",
+          "eyes",
+          "scale-merged",
+          "crown"
+        ]
+      ]
+    ]
+  },
+  "boss-c": {
+    "guard": {
+      "名": "拱门冠守卫",
+      "原型": "拱桥领主",
+      "base": "arch",
+      "order": [
+        "axis",
+        "arch-down",
+        "arch-up",
+        "arch-up-touch",
+        "arch-up-float",
+        "eyes-down",
+        "eyes-up",
+        "eyes-touch",
+        "eyes-float",
+        "flag-left",
+        "flag-right",
+        "shade-between",
+        "shade-outside",
+        "crown"
+      ],
+      "hidden": [
+        "arch-up",
+        "arch-up-touch",
+        "arch-up-float",
+        "eyes-up",
+        "eyes-touch",
+        "eyes-float",
+        "flag-left",
+        "flag-right",
+        "shade-between",
+        "shade-outside"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          700,
+          320
+        ],
+        "r": 90
+      },
+      "ground": {
+        "y": 630
+      },
+      "eyes": {
+        "left": [
+          662,
+          320
+        ],
+        "right": [
+          738,
+          320
+        ]
+      },
+      "axis": {
+        "center": [
+          670,
+          630
+        ]
+      },
+      "arch-down": {
+        "foot-left": [
+          425,
+          630
+        ],
+        "foot-right": [
+          973,
+          630
+        ],
+        "top": [
+          700,
+          320
+        ]
+      },
+      "arch-up": {
+        "foot-left": [
+          425,
+          630
+        ],
+        "foot-right": [
+          973,
+          630
+        ],
+        "top": [
+          700,
+          940
+        ]
+      },
+      "arch-up-touch": {
+        "touch": [
+          700,
+          630
+        ]
+      },
+      "arch-up-float": {
+        "bottom": [
+          700,
+          550
+        ]
+      },
+      "flag-left": {
+        "center": [
+          400,
+          560
+        ]
+      },
+      "flag-right": {
+        "center": [
+          948,
+          560
+        ]
+      },
+      "shade-between": {
+        "center": [
+          699,
+          630
+        ]
+      },
+      "shade-outside": {
+        "center": [
+          320,
+          630
+        ]
+      },
+      "eyes-down": {
+        "left": [
+          662,
+          320
+        ],
+        "right": [
+          738,
+          320
+        ]
+      },
+      "eyes-up": {
+        "left": [
+          662,
+          940
+        ],
+        "right": [
+          738,
+          940
+        ]
+      },
+      "eyes-touch": {
+        "left": [
+          662,
+          561
+        ],
+        "right": [
+          738,
+          561
+        ]
+      },
+      "eyes-float": {
+        "left": [
+          662,
+          481
+        ],
+        "right": [
+          738,
+          481
+        ]
+      },
+      "crown": {
+        "center": [
+          700,
+          223
+        ]
+      }
+    },
+    "states": [
+      [
+        "arch-down",
+        [
+          "axis",
+          "arch-down",
+          "eyes-down",
+          "crown"
+        ]
+      ],
+      [
+        "arch-up",
+        [
+          "axis",
+          "arch-up",
+          "eyes-up",
+          "crown"
+        ]
+      ],
+      [
+        "arch-up-touch",
+        [
+          "axis",
+          "arch-up-touch",
+          "eyes-touch",
+          "crown"
+        ]
+      ],
+      [
+        "arch-up-float",
+        [
+          "axis",
+          "arch-up-float",
+          "eyes-float",
+          "crown"
+        ]
+      ],
+      [
+        "between",
+        [
+          "axis",
+          "arch-down",
+          "eyes-down",
+          "flag-left",
+          "flag-right",
+          "shade-between",
+          "crown"
+        ]
+      ],
+      [
+        "outside",
+        [
+          "axis",
+          "arch-down",
+          "eyes-down",
+          "flag-left",
+          "flag-right",
+          "shade-outside",
+          "crown"
+        ]
+      ]
+    ]
+  },
+  "boss-d": {
+    "guard": {
+      "名": "城垛冠守卫",
+      "原型": "攻城领主",
+      "base": "siege",
+      "order": [
+        "body",
+        "eyes",
+        "wall",
+        "wall-raised",
+        "arm-a",
+        "arm-b",
+        "arm-c",
+        "low-gap",
+        "line",
+        "flag",
+        "crown"
+      ],
+      "hidden": [
+        "wall-raised",
+        "low-gap",
+        "flag"
+      ]
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "head": {
+        "center": [
+          850,
+          350
+        ],
+        "r": 100
+      },
+      "ground": {
+        "y": 950
+      },
+      "eyes": {
+        "left": [
+          810,
+          350
+        ],
+        "right": [
+          890,
+          350
+        ]
+      },
+      "wall": {
+        "low": [
+          640,
+          757
+        ],
+        "left": [
+          250,
+          650
+        ],
+        "right": [
+          1030,
+          650
+        ]
+      },
+      "wall-raised": {
+        "low": [
+          640,
+          597
+        ]
+      },
+      "line": {
+        "y": 710
+      },
+      "arm-a": {
+        "shoulder": [
+          800,
+          500
+        ],
+        "fist": [
+          280,
+          345
+        ]
+      },
+      "arm-b": {
+        "shoulder": [
+          800,
+          590
+        ],
+        "fist": [
+          200,
+          590
+        ]
+      },
+      "arm-c": {
+        "shoulder": [
+          800,
+          680
+        ],
+        "fist": [
+          120,
+          850
+        ]
+      },
+      "low-gap": {
+        "center": [
+          640,
+          757
+        ]
+      },
+      "flag": {
+        "center": [
+          610,
+          527
+        ]
+      },
+      "crown": {
+        "center": [
+          850,
+          245
+        ]
+      }
+    },
+    "states": [
+      [
+        "wall",
+        [
+          "body",
+          "eyes",
+          "wall",
+          "arm-a",
+          "arm-b",
+          "arm-c",
+          "line",
+          "crown"
+        ]
+      ],
+      [
+        "lowest",
+        [
+          "body",
+          "eyes",
+          "wall",
+          "arm-a",
+          "arm-b",
+          "arm-c",
+          "low-gap",
+          "line",
+          "crown"
+        ]
+      ],
+      [
+        "raised",
+        [
+          "body",
+          "eyes",
+          "wall-raised",
+          "arm-a",
+          "arm-b",
+          "arm-c",
+          "line",
+          "flag",
+          "crown"
+        ]
+      ]
+    ]
+  },
+  "p3": {
+    "guard": {
+      "名": "翻面守卫",
+      "原型": "双手",
+      "base": "p2",
+      "order": [
+        "body",
+        "eyes",
+        "arm-long",
+        "arm-long-equal",
+        "arm-short",
+        "arm-short-equal",
+        "arm-long-down",
+        "arm-short-down"
+      ],
+      "hidden": [
+        "arm-long-equal",
+        "arm-short-equal",
+        "arm-long",
+        "arm-short"
+      ],
+      "tint": "hue-rotate(185deg) saturate(.75) brightness(.92)",
+      "_说明": "序章第 3 关：p2 的底子换个冷色，表示“两只手都是负的”。正式版可请 GPT 画翻面姿势。Claude 2026-11-06。"
+    },
+    "pivots": {
+      "canvas": [
+        1200,
+        1100
+      ],
+      "arm-long": {
+        "shoulder": [
+          720,
+          500
+        ],
+        "fist": [
+          165,
+          500
+        ]
+      },
+      "arm-short": {
+        "shoulder": [
+          720,
+          700
+        ],
+        "fist": [
+          452,
+          701
+        ]
+      },
+      "arm-long-equal": {
+        "shoulder": [
+          720,
+          500
+        ],
+        "fist": [
+          288,
+          500
+        ]
+      },
+      "arm-short-equal": {
+        "shoulder": [
+          720,
+          700
+        ],
+        "fist": [
+          288,
+          700
+        ]
+      },
+      "cloth": {
+        "center": [
+          588,
+          745
+        ]
+      },
+      "eyes": {
+        "left": [
+          740,
+          320
+        ],
+        "right": [
+          840,
+          320
+        ]
+      },
+      "head": {
+        "center": [
+          784,
+          310
+        ],
+        "r": 140
+      },
+      "ground": {
+        "y": 940
+      },
+      "arm-long-down": {
+        "shoulder": [
+          720,
+          500
+        ],
+        "fist": [
+          479,
+          918
+        ]
+      },
+      "arm-short-down": {
+        "shoulder": [
+          720,
+          700
+        ],
+        "fist": [
+          641,
+          918
+        ]
+      }
+    },
+    "states": [
+      [
+        "down",
+        [
+          "body",
+          "eyes",
+          "arm-long-down",
+          "arm-short-down"
+        ]
+      ],
+      [
+        "flipped",
+        [
+          "body",
+          "eyes",
+          "arm-long",
+          "arm-short"
+        ]
+      ],
+      [
+        "equal",
+        [
+          "body",
+          "eyes",
+          "arm-long-equal",
+          "arm-short-equal"
+        ]
+      ]
+    ]
+  }
+}

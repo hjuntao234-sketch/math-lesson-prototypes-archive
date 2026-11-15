@@ -1,0 +1,10 @@
+后期重建（不调用生成工具）：
+1. 在项目外新建 Python 环境，并安装 tools/requirements.txt。
+2. 在立绘-GPT目录运行：PYTHONDONTWRITEBYTECODE=1 python tools/build_assets.py
+3. 运行：PYTHONDONTWRITEBYTECODE=1 python tools/verify_delivery.py
+
+本批依赖：Pillow 13.0.0、NumPy 2.5.4。Mac检查图标签使用 /System/Library/Fonts/STHeiti Medium.ttc；换系统需要改为可用中文字体。
+
+write_reports.py用于原项目内生成交回报告，需读取父目录的7个只读基线；桌面副本没有这些项目基线文件，因此不要直接在桌面副本运行该报告脚本。交付中的报告和哈希是本次已验证的静态记录。若修改图像，请从原项目重新生成报告与交付包。
+
+当前临时环境：/private/tmp/adventure-sprites-20261105-venv。它未放入交付包，文件重建不依赖该固定路径。

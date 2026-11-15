@@ -1,0 +1,17 @@
+{
+  "名": "天平守卫",
+  "原型": "天平",
+  "order": [
+    "body",
+    "eyes",
+    "scale-level",
+    "scale-left-down",
+    "scale-right-down",
+    "scale-merged"
+  ],
+  "hidden": [
+    "scale-left-down",
+    "scale-right-down",
+    "scale-merged"
+  ]
+}

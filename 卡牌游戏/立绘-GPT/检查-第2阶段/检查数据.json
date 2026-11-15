@@ -1,0 +1,547 @@
+{
+  "new_count": 45,
+  "combined_count": 62,
+  "new_checks": {
+    "yana-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 16638,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "yana-思考.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 17313,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "yana-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 16872,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "yana-得意.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 16721,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "yana-动摇.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 17337,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "tally-平静.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 39711,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "tally-低落.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 40199,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "fabia-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13090,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "fabia-思考.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13391,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "fabia-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13421,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "fabia-害羞.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13490,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "norman-不屑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 11473,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "norman-动摇.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 12513,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "norman-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 12110,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "norman-不服.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 12276,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "bala-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13612,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "bala-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 14051,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "bala-皱眉.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13674,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "tess-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 23638,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "tess-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 23897,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "tess-兴奋.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 23704,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "ilu-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 16894,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "ilu-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 16985,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "ilu-专注.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 17368,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "certa-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 19117,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "certa-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 19011,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "certa-怀疑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 19252,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "flo-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 15033,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "flo-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 15013,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "flo-出神.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 14786,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "marga-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 23002,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "marga-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 23623,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "marga-认真.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 23332,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "divi-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 22675,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "divi-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 22550,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "divi-大笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 23067,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "ora-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 12382,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "ora-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 11861,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "ora-警觉.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 12270,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "quidda-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 14292,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "quidda-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 14132,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "quidda-较真.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13985,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "mira-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13501,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "mira-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13506,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "mira-坏笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 0,
+      "changed_pixels": 13390,
+      "zero_alpha_rgb_nonzero": 0
+    }
+  },
+  "legacy_checks": {
+    "tally-大笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 1577,
+      "changed_pixels": 55498,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "tally-思考.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 1577,
+      "changed_pixels": 55713,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "tally-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 1577,
+      "changed_pixels": 55707,
+      "zero_alpha_rgb_nonzero": 0
+    },
+    "tally-着急.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "outside_face_pixels": 0,
+      "fixed_mark_pixels_changed": 1575,
+      "changed_pixels": 55669,
+      "zero_alpha_rgb_nonzero": 0
+    }
+  }
+}

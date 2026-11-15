@@ -1,0 +1,18 @@
+[
+  {
+    "id": "body",
+    "prompt": "Use case: stylized-concept. Create an original layered-game character asset: ONLY the torso and head of a friendly mysterious fog guardian, absolutely NO arms, hands, eyes, eye sockets, mouth, face marks, cloth, accessories or legs. Rounded smooth head seamlessly merges into a pear-shaped mist torso and a wide low mist skirt dragging on the ground. The face is completely blank mist, rounded like a friendly marshmallow. Pale ivory white with subtle sage-gray shading, soft luminous volume and fine drifting wisps; genuine semi-transparent vapor edges. Clean anime-compatible painted fantasy illustration with softly cel-shaded 3D form, compatible with the attached misty path's palette, not photorealistic, not scary. Head occupies upper 35% of body, fairly broad. Continuous torso provides generous broad shoulders for separate arm layers to overlap. Full body silhouette from top to ground mist, isolated centered, generous empty margin; no scene or ground plane or shadow card. TRANSPARENT background, alpha mist edges. No text, symbols, logos. Only one head-and-torso cloud body. Portrait canvas.",
+    "refs": [
+      "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/../v3/assets/bg-path.webp"
+    ],
+    "source": "~/.codex/generated_images/01a1ab12-e453-7723-a7e4-bc17aab1a141/exec-c1f5f722-e483-4e7d-ba50-b3a330cc2ff1.png"
+  },
+  {
+    "id": "ready-yana",
+    "prompt": "Use case: identity-preserve. Edit this exact Yana full-body sprite into a ready-to-act pose, facing SCREEN RIGHT, retaining her exact face identity, slim mature-natural proportions and detailed volumetric cel-shading. Full body with both boot soles fully visible. Same 1024x1536 canvas, same head size (hair crown to chin about 220px) and boot baseline around y1520 as reference; no big head. Her head and torso turn naturally together 30–45 degrees right; narrow gray-teal eyes focus calmly toward screen right, two eyes coordinated with normal pupils inside lids. One half-step forward toward screen right, slight forward weight shift, not extreme crouch. Her RIGHT hand in the existing fingerless glove holds the ornate bow of the SAME long brass KEY at her hip and lifts it halfway from its hanging position; key looks like a real antique key, not a weapon. Key shaft diagonal forward, same key design and size, chain still visible. Other gloved hand balanced near waist. Short slate-teal reversible cloak with sandy lining lifts one corner back toward screen left. Keep charcoal tunic, crossed belts, trousers, tall lace-up boots, black curly bob, brass clasp and original colors exactly. Quiet focused slightly narrowed eyes, closed relaxed mouth, no shouting. Original character for an anime-style visual novel; clean confident lineart, cel shading with soft gradients, rich harmonious colors. High-school age 15–17, modest clothing, non-sexualized natural pose. No text, letters, numbers, symbols, logos or watermarks. True transparent background, no ground shadow, no background blocks. Keep generous margin so nothing is cut off.",
+    "refs": [
+      "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/全身透明/yana-平静.png"
+    ],
+    "source": "~/.codex/generated_images/01a1ab12-e453-7723-a7e4-bc17aab1a141/exec-d1dc54ad-6c96-4cbf-ad9a-d8350eb6ff88.png"
+  }
+]

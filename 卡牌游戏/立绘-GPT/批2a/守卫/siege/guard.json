@@ -1,0 +1,21 @@
+{
+  "名": "攻城守卫",
+  "原型": "攻城",
+  "order": [
+    "body",
+    "eyes",
+    "wall",
+    "wall-raised",
+    "arm-a",
+    "arm-b",
+    "arm-c",
+    "low-gap",
+    "line",
+    "flag"
+  ],
+  "hidden": [
+    "wall-raised",
+    "low-gap",
+    "flag"
+  ]
+}

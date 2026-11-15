@@ -1,0 +1,6 @@
+{
+  "tool": "image_gen.imagegen",
+  "prompt": "Use case: precise-object-edit. Edit this exact close-up illustration. Remove ONLY the small gray curved smudge just below and outside the eye on the viewer's RIGHT, beside the hair edge (approximately x632–696 y288–360 on the 1024-square reference). It is a leftover old eyelash, not a beauty mark. Replace it with clean warm peach skin smoothly matching the immediately adjacent lighting and skin texture. Preserve the actual eye above it, eyelashes, lower lid, gaze, eyebrow, freckles, nose, mouth, hair, ear, pencil and clothing exactly. No new crease or gray shadow here. Do not redraw expression, do not shift facial landmarks or crop/zoom. Output same square composition, no text. Leave everything else unchanged.",
+  "reference": "~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104-adventure-cardgame/立绘-GPT/tools-第2c阶段/edit-reference.png",
+  "transparent_background": false
+}

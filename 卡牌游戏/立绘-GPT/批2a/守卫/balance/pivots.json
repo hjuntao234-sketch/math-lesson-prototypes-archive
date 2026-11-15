@@ -1,0 +1,68 @@
+{
+  "canvas": [
+    1200,
+    1100
+  ],
+  "head": {
+    "center": [
+      700,
+      395
+    ],
+    "r": 117
+  },
+  "ground": {
+    "y": 940
+  },
+  "eyes": {
+    "left": [
+      658,
+      395
+    ],
+    "right": [
+      742,
+      395
+    ]
+  },
+  "body": {
+    "post": [
+      700,
+      680
+    ]
+  },
+  "scale-level": {
+    "pan-left": [
+      425,
+      618
+    ],
+    "pan-right": [
+      969,
+      618
+    ]
+  },
+  "scale-left-down": {
+    "pan-left": [
+      426,
+      653
+    ],
+    "pan-right": [
+      969,
+      550
+    ]
+  },
+  "scale-right-down": {
+    "pan-left": [
+      421,
+      584
+    ],
+    "pan-right": [
+      975,
+      681
+    ]
+  },
+  "scale-merged": {
+    "pan": [
+      697,
+      703
+    ]
+  }
+}

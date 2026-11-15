@@ -1,0 +1,159 @@
+{
+  "count": 19,
+  "scale": {
+    "yana": {
+      "scale": 1.256573705179283,
+      "tx": -116.2868525896414,
+      "ty": 251.7513944223108,
+      "head_y": 270.6,
+      "expected_y": 274,
+      "error": -3.3999999999999773
+    },
+    "tally": {
+      "scale": 1.2420541290770297,
+      "tx": -121.44760582928518,
+      "ty": 262.6571825121446,
+      "head_y": 373.2000000000002,
+      "expected_y": 376,
+      "error": -2.799999999999784
+    },
+    "fabia": {
+      "scale": 1.3067193675889328,
+      "tx": -198.85533596837945,
+      "ty": 168.94624505928846,
+      "head_y": 179.39999999999992,
+      "expected_y": 182,
+      "error": -2.6000000000000796
+    },
+    "norman": {
+      "scale": 1.335,
+      "tx": -142.14999999999998,
+      "ty": 117.77999999999997,
+      "head_y": 133.79999999999998,
+      "expected_y": 137,
+      "error": -3.200000000000017
+    },
+    "bala": {
+      "scale": 1.22838370565046,
+      "tx": -116.93245729303555,
+      "ty": 283.5729303547962,
+      "head_y": 293.39999999999986,
+      "expected_y": 296,
+      "error": -2.6000000000001364
+    },
+    "tess": {
+      "scale": 1.1549276361130254,
+      "tx": -77.01309441764295,
+      "ty": 399.42549965541025,
+      "head_y": 487.20000000000016,
+      "expected_y": 490,
+      "error": -2.799999999999841
+    },
+    "ilu": {
+      "scale": 1.272777394900069,
+      "tx": -137.11647139903516,
+      "ty": 214.3778084079945,
+      "head_y": 316.20000000000005,
+      "expected_y": 319,
+      "error": -2.7999999999999545
+    },
+    "certa": {
+      "scale": 1.3237156931738212,
+      "tx": -163.0950035186488,
+      "ty": 137.71498944405357,
+      "head_y": 282.0000000000001,
+      "expected_y": 285,
+      "error": -2.9999999999998863
+    },
+    "flo": {
+      "scale": 1.292,
+      "tx": -88.77999999999997,
+      "ty": 199.15999999999985,
+      "head_y": 224.99999999999986,
+      "expected_y": 228,
+      "error": -3.000000000000142
+    },
+    "marga": {
+      "scale": 1.2624917600527357,
+      "tx": -131.87079762689518,
+      "ty": 228.86262359920897,
+      "head_y": 247.8,
+      "expected_y": 251,
+      "error": -3.1999999999999886
+    },
+    "divi": {
+      "scale": 1.2040106951871659,
+      "tx": -102.04545454545462,
+      "ty": 320.86363636363626,
+      "head_y": 361.7999999999999,
+      "expected_y": 365,
+      "error": -3.2000000000001023
+    },
+    "ora": {
+      "scale": 1.4417647058823528,
+      "tx": -194.46470588235286,
+      "ty": -42.899999999999636,
+      "head_y": 202.20000000000036,
+      "expected_y": 205,
+      "error": -2.799999999999642
+    },
+    "quidda": {
+      "scale": 1.1452742894910772,
+      "tx": -72.08988764044943,
+      "ty": 413.0208856576339,
+      "head_y": 430.2000000000001,
+      "expected_y": 433,
+      "error": -2.7999999999998977
+    },
+    "mira": {
+      "scale": 1.2208835341365463,
+      "tx": -88.6746987951808,
+      "ty": 310.9196787148594,
+      "head_y": 338.99999999999994,
+      "expected_y": 342,
+      "error": -3.000000000000057
+    }
+  },
+  "expression_diff": {
+    "大笑": {
+      "final_changed_pixels": 55498,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 893895,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    },
+    "思考": {
+      "final_changed_pixels": 55713,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 768766,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    },
+    "惊讶": {
+      "final_changed_pixels": 55707,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 697817,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    },
+    "着急": {
+      "final_changed_pixels": 55669,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 1218080,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    },
+    "低落": {
+      "final_changed_pixels": 55811,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 862914,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    }
+  }
+}

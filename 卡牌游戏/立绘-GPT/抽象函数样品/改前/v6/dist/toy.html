@@ -1,0 +1,350 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>拖一个数</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* 原型（Claude 2026-11-08）：一个动作——拖一个数。横轴是水面：泡水里 y<0，干的 y>0，踩水面 y=0。守卫的身体按公式实时画。 */
+:root{--paper:#f1e8d2;--ink:#2a251c;--brass:#c49a4c;--wet:#3f9bd6;--dry:#e8964a;--red:#c0392b;--f:'Noto Serif SC',Georgia,serif;--b:'Noto Sans SC',system-ui,sans-serif}
+html,body{height:100%;margin:0;overflow:hidden;background:#0b0f0d}
+#fit{position:relative;width:100%;height:100%}
+#stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:50% 50%;overflow:hidden;background:linear-gradient(#54706b,#2c3f3a);user-select:none;-webkit-user-select:none;touch-action:none;font-family:var(--b);color:var(--ink)}
+#bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.82) saturate(.8)}
+#cv{position:absolute;inset:0;width:1600px;height:900px;cursor:grab}
+#cv.drag{cursor:grabbing}
+#gb,#read,#cards,#hud,#liesb{pointer-events:none}
+.pill{position:absolute;background:rgba(14,20,18,.86);color:#f4eddc;border:1px solid #4d5f57;border-radius:14px}
+#hud{left:24px;top:20px;padding:8px 16px;font:700 15px var(--b);display:flex;align-items:center;gap:10px}
+#hearts{font-size:27px;letter-spacing:3px;color:#ff6a55;line-height:1}
+#hearts i{font-style:normal;color:#55433f}
+#liesb{right:24px;top:20px;padding:8px 16px;font:700 15px var(--b);display:flex;gap:8px;align-items:center}
+#liesb b{display:inline-block;width:18px;height:18px;border-radius:50%;background:#ff8a5c;box-shadow:0 0 8px #ff8a5c}
+#liesb b.off{background:#3a4640;box-shadow:none}
+#snd{right:24px;top:70px;padding:3px 12px;font:500 13px var(--b);cursor:pointer}
+#read{left:50%;top:20px;transform:translateX(-50%);padding:7px 20px;font:700 27px var(--f);white-space:nowrap;display:flex;gap:16px;align-items:center;min-height:44px;transition:top .3s}
+#read small{font:500 16px var(--b);color:#c6d2cb}
+.chip{font:900 18px var(--b);padding:3px 13px;border-radius:12px;color:#10201c;white-space:nowrap}
+.chip.wet{background:#7cc8f5}.chip.dry{background:#f5b878}.chip.zero{background:#fff}
+#gb{position:absolute;left:560px;top:190px;width:480px;box-sizing:border-box;padding:15px 20px;background:#231412;color:#ffefe9;border:3px solid var(--red);border-radius:18px;font:700 25px/1.5 var(--f);box-shadow:0 12px 30px rgba(0,0,0,.5);transition:opacity .25s,transform .25s}
+#gb small{display:block;font:700 13px var(--b);letter-spacing:.14em;color:#ff9f8c;margin-bottom:2px}
+#gb.pop{animation:gpop .4s cubic-bezier(.3,1.5,.5,1)}
+@keyframes gpop{from{transform:scale(.6);opacity:0}}
+#gb.shatter{animation:shat .6s forwards}
+@keyframes shat{20%{transform:scale(1.12) rotate(-3deg);filter:brightness(2)}100%{transform:scale(1.5) rotate(7deg);opacity:0;filter:blur(6px)}}
+#tess{position:absolute;left:0;bottom:0;width:560px;height:280px;pointer-events:none}
+#tess img{position:absolute;left:-10px;bottom:-250px;height:540px;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5))}
+#tess.hurt img{animation:tflinch .55s}
+@keyframes tflinch{20%{transform:translateX(-24px) rotate(-4deg);filter:brightness(1.4) sepia(1) saturate(4) hue-rotate(170deg)}}
+#tb{position:absolute;left:206px;bottom:118px;width:330px;box-sizing:border-box;padding:11px 15px;background:var(--paper);border-radius:15px;font:700 18px/1.55 var(--f);box-shadow:0 0 0 2px var(--ink),0 8px 16px rgba(0,0,0,.4)}
+#tb small{display:block;font:500 12px var(--b);color:#7a6e58}
+#acts{position:absolute;right:30px;bottom:26px;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.btn{font:900 28px var(--f);padding:14px 38px;border-radius:12px;border:3px solid #2a0f0b;background:linear-gradient(#e0553f,#a82c1e);color:#fff;cursor:pointer;box-shadow:0 5px 0 #2a0f0b,0 10px 22px rgba(0,0,0,.45);text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #2a0f0b}
+.btn.ok{background:linear-gradient(#5fb47a,#2f7d4a);border-color:#10301c;box-shadow:0 5px 0 #10301c,0 10px 22px rgba(0,0,0,.45);font-size:22px;padding:10px 26px}
+.btn.gold{background:linear-gradient(#e8bd5f,#b4832a);border-color:#3a2a0b;color:#1e1505;text-shadow:none;box-shadow:0 5px 0 #3a2a0b,0 10px 22px rgba(0,0,0,.45)}
+.lnk{font:500 15px var(--b);padding:6px 14px;border-radius:12px;border:1px solid #4d5f57;background:rgba(14,20,18,.86);color:#e6dfcc;cursor:pointer}
+#lever{position:absolute;left:390px;right:390px;bottom:22px;height:76px;display:flex;align-items:center;gap:14px;padding:0 20px;background:rgba(14,20,18,.9);border:2px solid var(--brass);border-radius:18px;color:#f6edd8;font:900 30px var(--f)}
+#lever input{flex:1;height:34px;accent-color:var(--brass);cursor:pointer}
+#lever>span:first-child{width:26px}
+#lever .v{width:150px;flex:none;text-align:right}
+#lever .sc{position:absolute;left:72px;right:192px;bottom:3px;display:flex;justify-content:space-between;font:500 13px var(--b);color:#a9b4ad}
+#lever.lock{opacity:.6;filter:saturate(.4)}
+#cards{position:absolute;left:50%;top:10px;transform:translateX(-50%);display:flex;gap:10px}
+.fc{position:relative;width:176px;height:104px;border-radius:10px;background:#1b2521;border:2px solid #4d5f57;color:#f6edd8;overflow:hidden;box-sizing:border-box;text-align:center}
+.fc canvas{position:absolute;left:0;top:0;width:172px;height:60px}
+.fc .q{position:absolute;inset:0;display:grid;place-items:center;font:900 44px var(--f);color:#56665f}
+.fc .n{position:absolute;left:0;right:0;bottom:3px;font:700 14px/1.25 var(--b);padding:0 4px}
+.fc .n em{display:block;font:500 12.5px var(--f);color:#ffd98c}
+.fc.rare{border-color:#d9a93c;box-shadow:0 0 12px rgba(217,169,60,.55)}
+.fc.got{animation:fcflip .6s}
+.fc.now{outline:3px solid #fff;outline-offset:2px}
+.fc.cap{background:#29452f;border-color:#8fd19f}
+@keyframes fcflip{0%{transform:rotateY(90deg)}100%{transform:none}}
+#modal{position:absolute;inset:0;display:grid;place-items:center;background:rgba(8,12,10,.62);z-index:9}
+#modal .box{width:860px;box-sizing:border-box;background:var(--paper);border-radius:10px;padding:28px 36px;box-shadow:0 0 0 2px var(--ink),0 0 0 6px var(--brass),0 30px 70px rgba(0,0,0,.7)}
+#modal h2{margin:0 0 8px;font:900 34px var(--f)}
+#modal p{font:500 19px/1.7 var(--f);margin:8px 0}
+#modal .pen{padding:12px 18px;border-left:5px solid var(--brass);background:rgba(42,37,28,.07);font:700 22px/1.9 var(--f)}
+#modal .row{display:flex;gap:12px;margin-top:16px}
+#marks{position:absolute;left:0;top:0;right:0;height:0}
+.mk{position:absolute;top:-16px;transform:translateX(-50%);width:32px;height:32px;padding:0;border-radius:50%;border:2px solid #fff;background:var(--red);color:#fff;font-size:15px;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.5)}
+#prev{left:50%;top:14px;transform:translateX(-50%);padding:9px 22px;font:700 20px var(--f);white-space:nowrap;pointer-events:none}
+#cutbar{position:absolute;left:390px;right:390px;bottom:22px;min-height:76px;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:10px 18px;background:rgba(14,20,18,.92);border:2px solid var(--brass);border-radius:18px;color:#f6edd8;font:900 27px var(--f)}
+#ci{width:120px;font:700 26px var(--f);text-align:center;padding:5px 8px;border-radius:8px;border:2px solid var(--brass);background:#fffaf0;color:#2a251c}
+#cutbar .btn{font-size:20px;padding:8px 20px}
+#cil{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font:500 16px var(--b);color:#d8d2c0;min-height:24px}
+.mk2{font:700 15px var(--b);padding:3px 11px;border-radius:12px;border:1px solid #ff9f8c;background:#3a1a15;color:#ffd9cf;cursor:pointer}
+.fc.tx{height:auto;min-height:84px;min-width:150px;width:auto;padding:0 8px}
+#stage.dark #bg{filter:brightness(.34) saturate(.4)}
+[hidden]{display:none!important}
+</style>
+<div id="fit"><div id="stage">
+  <img id="bg" src="img/bg-river.webp" alt="" onerror="this.remove()">
+  <canvas id="cv" width="1600" height="900"></canvas>
+  <div class="pill" id="hud"><span>血量</span><span id="hearts"></span></div>
+  <div class="pill" id="read"></div>
+  <div class="pill" id="liesb"></div>
+  <button class="pill" id="snd" type="button">音效：开</button>
+  <div id="cards" hidden></div>
+  <div class="pill" id="prev" hidden></div>
+  <div id="cutbar" hidden><span>a =</span><input id="ci" autocomplete="off" aria-label="输入 a 的值"><button class="btn gold" id="cib" type="button">切一刀</button><div id="cil"></div></div>
+  <div id="gb"></div>
+  <div id="tess"><img id="ti" src="img/full/calm-tess.webp" alt="苔丝" onerror="this.remove()"><div id="tb"></div></div>
+  <div id="lever" hidden><span>m</span><input id="mi" type="range" min="-3" max="3" step="0.1" value="0.5" aria-label="拖动 m"><span class="v" id="mv"></span><div id="marks"></div><div class="sc"><span>−3</span><span>−2</span><span>−1</span><span>0</span><span>1</span><span>2</span><span>3</span></div></div>
+  <div id="acts"><button class="lnk" id="hintb" type="button">想不出来？（提示不限）</button><button class="btn ok" id="okb" type="button">它说对了</button><button class="btn gold" id="cutb" type="button" hidden>在这儿切一刀</button><button class="btn" id="hitb" type="button">打它！</button></div>
+  <div id="modal" hidden></div>
+</div></div>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const stage=$('stage'),cv=$('cv'),ctx=cv.getContext('2d'),oc=document.createElement('canvas');oc.width=1600;oc.height=900;const oct=oc.getContext('2d');
+(function(){const fit=()=>{const s=Math.min(innerWidth/1600,innerHeight/900);stage.style.transform=`translate(-50%,-50%) scale(${s})`;stage._s=s;};addEventListener('resize',fit);fit();})();
+const nz=v=>Math.abs(v)<1e-9?0:v;
+const fmt=v=>{const r=Math.round(nz(v)*100)/100;return String(r).replace('-','−');};
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+/* ---------- 声音：拖的时候音高跟着 y 走，穿过水面“叮咚”一声 ---------- */
+const A=(()=>{let c=null,hum=null,hg=null,on=true;const C=()=>{if(!c){const K=window.AudioContext||window.webkitAudioContext;if(!K)return null;c=new K();}if(c.state==='suspended')c.resume();return c;};
+  const tone=(f,d,type,g,slide,dl)=>{if(!on)return;const a=C();if(!a)return;try{const t=a.currentTime+(dl||0),o=a.createOscillator(),v=a.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f,t);if(slide)o.frequency.exponentialRampToValueAtTime(Math.max(30,f+slide),t+d);v.gain.setValueAtTime(g||.1,t);v.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(v).connect(a.destination);o.start(t);o.stop(t+d+.03);}catch(e){}};
+  const noise=(d,g,hp,dl)=>{if(!on)return;const a=C();if(!a)return;try{const t=a.currentTime+(dl||0),n=Math.floor(a.sampleRate*d),b=a.createBuffer(1,n,a.sampleRate),q=b.getChannelData(0);for(let i=0;i<n;i++)q[i]=(Math.random()*2-1)*(1-i/n);const s=a.createBufferSource(),fl=a.createBiquadFilter(),v=a.createGain();s.buffer=b;fl.type='highpass';fl.frequency.value=hp||600;v.gain.value=g||.2;s.connect(fl).connect(v).connect(a.destination);s.start(t);}catch(e){}};
+  return {humOn(){if(!on)return;const a=C();if(!a||hum)return;hum=a.createOscillator();hg=a.createGain();hum.type='triangle';hg.gain.value=0;hum.connect(hg).connect(a.destination);hum.start();hg.gain.setTargetAtTime(.035,a.currentTime,.05);},
+    humOff(){if(hum&&c){hg.gain.setTargetAtTime(0,c.currentTime,.04);const h=hum;setTimeout(()=>{try{h.stop();}catch(e){}},200);hum=null;}},
+    humY(y){if(hum&&c)hum.frequency.setTargetAtTime(240*Math.pow(2,clamp(y,-3,6)/4),c.currentTime,.03);},
+    plip(){tone(1100,.14,'sine',.14,-800);tone(1600,.1,'sine',.07,-900,.05);},tick(){tone(700,.03,'triangle',.025);},
+    flag(){tone(660,.1,'triangle',.1);tone(990,.16,'triangle',.1,0,.08);},hit(){noise(.2,.25,1200);tone(130,.28,'sine',.28,-70);},
+    lie(){noise(.4,.28,1800);[784,988,1175,1568].forEach((f,i)=>tone(f,.28,'triangle',.08,0,.08+i*.07));},hurt(){noise(.3,.3,250);tone(95,.4,'square',.1,-45);},laugh(){[392,330,392,330].forEach((f,i)=>tone(f,.1,'square',.04,0,i*.11));},
+    morph(){tone(300,.25,'sine',.08,500);},find(){[659,880,1175].forEach((f,i)=>tone(f,.25,'triangle',.09,0,i*.07));},rare(){[784,988,1318,1760,2093].forEach((f,i)=>tone(f,.35,'triangle',.09,0,i*.08));},win(){[523,659,784,1046,1318,1568].forEach((f,i)=>tone(f,.5,'triangle',.09,0,i*.1));},
+    toggle(){on=!on;if(!on)this.humOff();return on;}};})();
+
+/* ---------- 状态 ---------- */
+const S={lastCell:null,fade:0,act:1,hp:5,x:0,drag:false,dragged:false,t:0,m:.5,mS:.5,trail:new Map(),flags:[],lies:0,liesLeft:0,beat:0,busy:false,sel:new Set(),capturing:false,face:'smug',wob:0,shake:0,fx:0,fy:0,lastY:null,lastCell:null,blink:0,lockM:false,cards:[],card:-1,found:0,done:false,notes:[],faceSeen:new Set()};
+const V={cx:460,ux:170,uy:90,y0:600,R:18};
+const parts=[],ripples=[],balls=[];
+const F1=x=>x*x-4*x+3;
+const Fm=(x,m)=>m*x*x-(m+1)*x+1;
+const F=x=>S.act===1?F1(x):S.act===3?S.ex.F(x,S.m):Fm(x,S.m);       // 判定用真值
+const FD=x=>S.act===1?F1(x):S.act===3?S.ex.F(x,S.mS):Fm(x,S.mS);     // 画身体用平滑值
+const px=x=>V.cx+x*V.ux,py=y=>V.y0-y*V.uy;
+const xMin=()=>(40-V.cx)/V.ux,xMax=()=>(1560-V.cx)/V.ux;
+const rootsAt=m=>{if(S.act===1)return S.flags.slice().sort((a,b)=>a-b);const r=[1];if(Math.abs(m)>1e-9){const q=1/m;if(Math.abs(q-1)>1e-9)r.push(q);}return r.sort((a,b)=>a-b);};
+function nice(a,b){if(a===null)return Math.floor(b)-(Number.isInteger(b)?1:0);if(b===null)return Math.ceil(a)+(Number.isInteger(a)?1:0);const mid=(a+b)/2;let best=null;for(let k=Math.floor(a)+1;k<b;k++)if(k>a&&(best===null||Math.abs(k-mid)<Math.abs(best-mid)))best=k;if(best!==null)return best;const v=Math.round(mid*10)/10;return v>a&&v<b?v:mid;}
+function segs(m){const r=rootsAt(m),o=[];for(let i=0;i<=r.length;i++)o.push({a:i?r[i-1]:null,b:i<r.length?r[i]:null});return o;}
+
+/* ---------- 说话 ---------- */
+function G(text,cls){const g=$('gb');g.hidden=false;g.className='';void g.offsetWidth;g.innerHTML='<small>守卫</small>'+esc(text);g.className=cls||'pop';}
+function T(text){$('tb').innerHTML='<small>苔丝</small>'+esc(text);$('tb').hidden=false;S.idle=0;}
+const hearts=()=>{$('hearts').innerHTML='♥'.repeat(Math.max(0,S.hp))+'<i>'+'♥'.repeat(Math.max(0,(S.hpMax||5)-S.hp))+'</i>';};
+const lies=()=>{$('liesb').innerHTML='<span>破绽</span>'+Array.from({length:S.lies},(_,i)=>`<b class="${i<S.lies-S.liesLeft?'off':''}"></b>`).join('');};
+
+/* ---------- 第一幕：拆谎。y=x²−4x+3 ---------- */
+const A1=[
+ {k:'lie',say:'我 y = x²−4x+3，全身干干净净，一滴水都没沾。不信你找。',wit:x=>F1(x)<-1e-9,demo:2,hint:'它中间那段是不是矮下去了？把浮标拖过去看看。',
+  hit:(x,y)=>`x=${fmt(x)}，y=${fmt(y)}。这不是泡在水里吗！`,react:'……！谁让你往那儿看的！',miss:(x,y)=>`x=${fmt(x)}，y=${fmt(y)}，${y===0?'正好踩在水面上，也没泡水':'干得很'}。打空了！`},
+ {k:'flags',say:'行，沾了一点。可我只有一只脚踩在水面上，绝对只有一只。',hint:'y 正好等于 0 的地方，就是脚。停在那儿，点“在这儿插旗”。找找看有几个。',react:'……那只是我的影子。'},
+ {k:'lie',say:'那我换个说法：只要 x 是负数，我就泡在水里。',dom:x=>x<0,domMsg:'我说的是负数。你那个 x 不是负数，打不着我。',wit:x=>x<0&&F1(x)>1e-9,demo:-1,hint:'把浮标拖到 0 左边，随便挑一个负数，看 y 是正是负。',
+  hit:(x,y)=>`x=${fmt(x)}，y=${fmt(y)}。干得不能再干了！`,react:'……你倒挺会代负数。',miss:(x,y)=>`打空了！`},
+ {k:'truth',say:'这回真不骗你：x 在 1 和 3 中间，我确实泡在水里。',hint:'它也可能说真话。在 1 和 3 中间多拖几遍，有没有干的地方？',miss:(x,y)=>`x=${fmt(x)}，y=${fmt(y)}。${x>1&&x<3?'确实泡在水里呀':'我说的是 1 和 3 中间'}。这句是真的，打空了！`,note:'1<x<3 时，y<0',react:'……你倒不傻。'},
+ {k:'wet',say:'那你说：x²−4x+3<0，解集是什么？点水面，把泡水的那段标出来。',hint:'两面旗把水面分成三段。点你觉得泡在水里的那段，再点“打它”。',react:'……'}
+];
+function startAct1(){Object.assign(S,{hpMax:5,lastCell:null,fade:0,act:1,hp:5,x:0,trail:new Map(),flags:[],beat:0,busy:false,sel:new Set(),capturing:false,face:'smug',lastY:null,lies:A1.length,liesLeft:A1.length,done:false,notes:[],card:-1,lockM:false});
+  Object.assign(V,{cx:460,ux:170,uy:90,y0:600,R:18});S.fx=px(2);S.fy=py(F1(2));$('cards').hidden=true;$('lever').hidden=true;$('cutbar').hidden=true;$('prev').hidden=true;$('cutb').hidden=true;$('liesb').hidden=false;$('modal').hidden=true;$('gb').style.cssText='';$('read').style.top='20px';$('read').style.left='50%';hearts();lies();T('拖水面上的小浮标。它到哪，就把那个 x 代进去。');setBeat(0);}
+function setBeat(i){S.beat=i;const b=A1[i];S.face='smug';G(b.say);S.capturing=b.k==='wet';S.sel=new Set();
+  $('okb').hidden=!(b.k==='lie'||b.k==='truth');$('hitb').textContent=b.k==='flags'?'在这儿插旗':'打它！';$('hitb').hidden=false;$('hitb').className='btn'+(b.k==='flags'?' gold':'');S.idle=0;}
+function strike1(){const b=A1[S.beat],x=S.x,y=F1(x);
+  if(b.k==='flags'){if(nz(y)!==0){T(`这儿 y=${fmt(y)}，不是 0，脚还没踩到水面。`);return;}if(S.flags.some(f=>Math.abs(f-x)<1e-9)){T('这儿已经插过旗了。还有别的地方吗？');return;}S.flags.push(x);A.flag();burst(px(x),V.y0,'#ffe7a8',12);S.wob=.5;T(S.flags.length===1?'一只脚！它说就这一只。再找找？':'两只脚！它撒谎。');if(S.flags.length>=2)breakLie(b,'两面旗都插上了：y=0 的地方有两个。');return;}
+  if(b.k==='lie'){if(b.dom&&!b.dom(x)){G(b.domMsg);return;}if(b.wit(x))return breakLie(b,b.hit(x,y));return missHit(b.miss(x,y));}
+  if(b.k==='truth')return missHit(b.miss(x,y));
+  if(b.k==='wet')return commitWet();}
+function accept1(){const b=A1[S.beat];if(b.k==='truth'){S.notes.push(b.note);A.flag();T('记下来了：'+b.note+'。');S.liesLeft--;lies();G(b.react);S.face='annoyed';S.busy=true;setTimeout(()=>{S.busy=false;setBeat(S.beat+1);},1800);return;}
+  if(b.k==='lie'){const d=b.demo;slideX(d,()=>{const y=F1(d);missHit(`哈哈，信了？看 x=${fmt(d)}：y=${fmt(y)}。我骗你的！`);});}}
+function commitWet(){const m=S.m,ss=segs(m);let bad=null;ss.forEach((g,i)=>{if(bad)return;const s=nice(g.a,g.b),wet=F(s)<-1e-9,cl=S.sel.has(i);if(wet!==cl)bad={s,wet};});
+  if(bad){return slideX(bad.s,()=>{const y=F(bad.s);missHit(`x=${fmt(bad.s)}，y=${fmt(y)}。${bad.wet?'这儿泡在水里，你漏了！':'这儿是干的，你说错了！'}`);});}
+  if(S.act===1)return breakLie(A1[S.beat],'x²−4x+3<0 的解集：1<x<3。');captureOk();}
+function breakLie(b,msg){S.busy=true;A.hit();A.lie();S.face='shock';S.wob=1;S.shake=14;S.liesLeft--;lies();const g=$('gb');G(msg,'pop');burst(S.fx,S.fy,'#ffd27a',26);
+  setTimeout(()=>{G(b.react||'……');S.face='annoyed';},1300);setTimeout(()=>{$('gb').className='shatter';burst(800,290,'#ff9f8c',18);},2500);
+  setTimeout(()=>{S.busy=false;if(S.beat+1<A1.length)setBeat(S.beat+1);else endAct1();},3000);}
+function missHit(msg){S.busy=true;G(msg);S.face='laugh';A.laugh();S.wob=.4;balls.push({x:S.fx,y:S.fy-20,tx:210,ty:680,t:0,done(){S.hp--;hearts();A.hurt();const t=$('tess');t.classList.remove('hurt');void t.offsetWidth;t.classList.add('hurt');splash(210,680,26);S.shake=10;}});
+  setTimeout(()=>{S.busy=false;if(S.hp<=0)return lose();S.face='smug';if(S.act===1){const r=A1[S.beat];G(r.say);if(r.hint)T(r.hint);}else if(S.act===3){T(S.phase==='cut3'?'看它掀开的那两个 a。这中间发生了什么？':'看它掀开的那个 a。再想想。');}else if(S.card>=0){G(FACES[S.card].say);T('看它代的那个数。那一段再想想。');}else if(S.phase==='cut'){T('看到了吧？这两个 m 中间肯定有什么变了。');}},2300);}
+function lose(){showModal(`<h2>这一场它赢了</h2><p>${S.act===3?'灯还关着，数字换了，再来一次。先在纸上问那三句话。':'没关系。挨过的每个数，下次你都知道往哪儿拖了。'}</p><div class="row"><button class="btn gold" id="m1">再来一次</button></div>`,()=>{$('m1').onclick=()=>S.act===1?startAct1():S.act===2?startAct2():startAct3(S.ex.i,S.ex.kI+1);});}
+function endAct1(){tellParent(1);S.done=true;A.win();S.face='dizzy';splash(800,V.y0,60);$('gb').hidden=true;
+  setTimeout(()=>showModal(`<h2>它散了</h2><p>你刚才做的，就是解一元二次不等式：看它在哪儿泡水。</p><div class="pen">x²−4x+3&lt;0，即 (x−1)(x−3)&lt;0，<br>解集为 {x | 1&lt;x&lt;3}。</div><p>把这两行抄到纸上。脚（x=1、x=3）踩在水面上，y=0，不算泡水，所以不带等号。</p><div class="row"><button class="btn gold" id="m1">第二幕：它会变脸</button></div>`,()=>{$('m1').onclick=startAct2;}),1400);}
+
+/* ---------- 第二幕：五张脸。y=mx²−(m+1)x+1 ---------- */
+const FACES=[
+ {id:'neg',yell:'……你把我翻过来干嘛！',test:m=>m<0,name:'翻过去了',cond:'m<0',rep:-1,sweep:[-1,-.5,-2,-1],say:'脸翻了算什么？还是两只脚中间泡水里！',ans:'x<1/m 或 x>1',found:'翻过去了！那面 1/m 的旗，从左边回来了。'},
+ {id:'zero',yell:'喂！我的 x² 呢！！',test:m=>Math.abs(m)<1e-9,rare:true,name:'压成一条线',cond:'m=0',rep:0,sweep:[0],say:'没有两只脚了，那就没解！你拿我没办法！',ans:'x>1',found:'x² 没了！它不是二次的了，就是一条直线。'},
+ {id:'small',yell:'别拽我的脚！',test:m=>m>0&&m<1,name:'1/m 在右边',cond:'0<m<1',rep:.5,sweep:[.5,.25,.8,.5],say:'带 m 的写左边，这是规矩：1/m<x<1！',ans:'1<x<1/m',found:'m 越小，1/m 这只脚跑得越远。'},
+ {id:'one',yell:'哎哟！脚撞了！',test:m=>Math.abs(m-1)<1e-9,rare:true,name:'两脚并拢',cond:'m=1',rep:1,sweep:[1],say:'脚并拢了，脚缝里总还有点水吧！',ans:'无解',found:'两只脚撞到一起了：(x−1)²。'},
+ {id:'big',yell:'……换个位置你就不认识我了吧。',test:m=>m>1,name:'1/m 在左边',cond:'m>1',rep:2,sweep:[2,3,1.4,2],say:'这回我学乖了：1<x<1/m！',ans:'1/m<x<1',found:'过了 1，两只脚换了位置！'}
+];
+function startAct2(){Object.assign(S,{hpMax:5,phase:'cut',cuts:[],lastFace:-1,lastCell:null,fade:0,act:2,hp:5,x:0,trail:new Map(),flags:[],busy:false,sel:new Set(),capturing:false,face:'smug',lastY:null,m:.5,mS:.5,found:0,card:-1,done:false,lockM:false,cards:FACES.map(()=>({found:false,cap:false})),faceSeen:new Set()});
+  Object.assign(V,{cx:800,ux:220,uy:270,y0:560,R:13});S.fx=px(1.5);S.fy=py(Fm(1.5,.5));$('modal').hidden=true;$('liesb').hidden=true;$('cards').hidden=true;$('cutbar').hidden=true;$('lever').hidden=false;$('lever').classList.remove('lock');$('mi').disabled=false;$('mi').value=.5;$('okb').hidden=true;$('cutb').hidden=false;$('hitb').hidden=false;$('hitb').className='btn';$('hitb').textContent='切好了，交给守卫';
+  const g=$('gb');g.style.cssText='left:1100px;top:122px;width:476px;font-size:21px';const rd=$('read');rd.style.top='120px';rd.style.left='43%';hearts();renderCuts();G('这回我是 y = mx²−(m+1)x+1。m 一动，我就换张脸。你说，我有几张脸？在哪儿变的？切给我看。');T('拖下面的 m，看它怎么变。觉得从这儿开始不一样了，就点“在这儿切一刀”。');S.lastFace=-1;checkFace();clearTimeout(S.gt);S.gt=setTimeout(()=>{if(!S.capturing&&S.found<5)$('gb').hidden=true;},7000);}
+function renderCards(){$('cards').innerHTML=FACES.map((f,i)=>{const c=S.cards[i];return `<div class="fc${f.rare?' rare':''}${c.found?'':' lock'}${c.cap?' cap':''}${i===S.card?' now':''}" id="fc${i}">${c.found?`<canvas width="172" height="60" id="fcc${i}"></canvas><div class="n">${f.name}<em>${esc(c.cap?f.cond+'：'+f.ans:f.cond)}</em></div>`:`<div class="q">?</div>${f.rare?'<div class="n" style="color:#d9a93c">稀有</div>':''}`}</div>`;}).join('');
+  FACES.forEach((f,i)=>{if(!S.cards[i].found)return;const c=$('fcc'+i),q=c.getContext('2d');q.strokeStyle='rgba(124,200,245,.8)';q.lineWidth=2;q.beginPath();q.moveTo(0,32);q.lineTo(172,32);q.stroke();q.strokeStyle='#efe9d8';q.lineWidth=4;q.lineCap='round';q.beginPath();for(let p=0;p<=172;p+=2){const x=(p-86)/30,y=Fm(x,f.rep);const yy=32-y*15;p===0?q.moveTo(p,yy):q.lineTo(p,yy);}q.stroke();});}
+function checkFace(){const m=S.m,i=FACES.findIndex(f=>f.test(m));if(i<0)return;if(S.lastFace!==i){S.lastFace=i;S.wob=Math.max(S.wob,.5);A.morph();}
+  if(S.phase==='cut'&&!S.faceSeen.has(i)){const first=S.faceSeen.size===0;S.faceSeen.add(i);if(first)return;const f=FACES[i];f.rare?A.rare():A.find();G(f.yell);S.face=f.rare?'shock':'annoyed';T(f.found);clearTimeout(S.gt);S.gt=setTimeout(()=>{if(S.phase==='cut'){$('gb').hidden=true;S.face='smug';}},2600);}}
+function nextCard(){const i=S.cards.findIndex(c=>!c.cap);if(i<0)return endAct2();S.card=i;const f=FACES[i];S.capturing=true;S.lockM=true;S.sel=new Set();S.m=f.rep;$('mi').value=f.rep;$('mi').disabled=true;$('lever').classList.add('lock');S.trail=new Map();S.lastCell=null;S.face='smug';renderCards();G(f.say);$('hitb').hidden=false;updateHitLabel();S.idle=0;}
+function updateHitLabel(){if(S.act===2&&S.capturing)$('hitb').textContent=S.sel.size?'就这几段，打它！':'哪儿都没泡水，打它！';}
+function captureOk(){S.busy=true;const f=FACES[S.card];A.hit();A.lie();S.face='shock';S.wob=1;S.shake=14;burst(S.fx,S.fy,'#ffd27a',26);G(`${f.cond} 时：${f.ans}。`,'pop');$('hitb').hidden=true;
+  const sw=f.sweep;let k=0;const step=()=>{if(k<sw.length){S.m=sw[k++];$('mi').value=S.m;setTimeout(step,520);}else done();};
+  const done=()=>{S.cards[S.card].cap=true;S.card=-1;renderCards();S.capturing=false;S.busy=false;S.sel=new Set();setTimeout(nextCard,250);};
+  if(sw.length>1)T('换几个 m 再看：这一张脸里，答案都不变。');setTimeout(step,900);}
+function endAct2(){tellParent(2);S.done=true;A.win();S.face='dizzy';S.capturing=false;$('gb').hidden=true;$('hitb').hidden=true;splash(800,V.y0,70);T('这就是那道题的答案。五种情况，是你一张一张找出来的。');
+  setTimeout(()=>showModal(`<h2>五张脸，是你切出来的</h2><div class="pen">${FACES.map(f=>`当 ${esc(f.cond)} 时，${f.ans==='无解'?'无解':'解集为 {x | '+esc(f.ans)+'}'}；`).join('<br>')}</div><p><b>为什么切在 0 和 1？记住这三句话：</b><br>① 它还是二次吗？（二次项系数等于 0 的地方，切一刀，单独看）<br>② 开口朝哪？（看二次项系数的正负）<br>③ 两只脚谁在左？（两根相等的地方，切一刀）</p><p>下一幕关灯：不给图，不给滑杆，只有这三句话。</p><div class="row"><button class="btn gold" id="m1">第三幕：关灯</button></div>`,()=>{$('m1').onclick=()=>startAct3(0,0);}),1800);}
+function tellParent(n){try{if(window.parent!==window)window.parent.postMessage({toy:n},'*');}catch(e){}}
+function showModal(h,after){const d=$('modal');d.innerHTML='<div class="box">'+h+'</div>';d.hidden=false;after&&after();}
+
+
+/* ---------- 第二幕的“切”：学生自己判断在哪儿切，不再给五个空槽 ---------- */
+const nearly=(a,b)=>Math.abs(a-b)<1e-9;
+function parseNum(s){s=String(s??'').trim().replace(/[−－]/g,'-').replace(/／/g,'/');if(!s)return NaN;const f=/^([+-]?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/.exec(s);if(f)return +f[1]/+f[2];return /^[+-]?\d+(?:\.\d+)?$/.test(s)?+s:NaN;}
+const labV=v=>nearly(v,.5)?'1/2':nearly(v,-.5)?'−1/2':fmt(v);
+function casesFrom(cuts){const v=[...cuts].sort((a,b)=>a-b),o=[];for(let i=0;i<=v.length;i++){o.push({lo:i?v[i-1]:null,hi:i<v.length?v[i]:null});if(i<v.length)o.push({pt:v[i]});}return o;}
+function labCase(c,n){n=n||'m';if(c.pt!==undefined)return `${n}=${labV(c.pt)}`;if(c.lo===null&&c.hi===null)return `${n} 取什么都一样`;if(c.lo===null)return `${n}<${labV(c.hi)}`;if(c.hi===null)return `${n}>${labV(c.lo)}`;return `${labV(c.lo)}<${n}<${labV(c.hi)}`;}
+function sampM(c){if(c.pt!==undefined)return [c.pt];if(c.lo===null&&c.hi===null)return [-2,-.5,.5,1.5,3];if(c.lo===null)return [c.hi-.5,c.hi-1,c.hi-2.5];if(c.hi===null)return [c.lo+.5,c.lo+1,c.lo+2.5];const d=c.hi-c.lo;return [c.lo+d/2,c.lo+d/4,c.lo+3*d/4];}
+const sigM=m=>{const s=v=>Math.abs(v)<1e-9?0:Math.sign(v);return s(m)+','+s(1/m-1);};
+function renderCuts(){const inp=$('mi'),box=$('marks');if(!box)return;const x0=inp.offsetLeft+9,w=inp.offsetWidth-18;box.innerHTML=S.cuts.map(c=>`<button type="button" class="mk" style="left:${x0+w*(c+3)/6}px" data-c="${c}" title="再点一下收回">✂</button>`).join('');
+  box.querySelectorAll('.mk').forEach(b=>b.onclick=()=>{S.cuts=S.cuts.filter(v=>v!==+b.dataset.c);A.tick();renderCuts();});
+  const cs=casesFrom(S.cuts).map(c=>labCase(c));const p=$('prev');p.hidden=false;p.textContent=S.cuts.length?`你切了 ${S.cuts.length} 刀，分成 ${cs.length} 种：${cs.join('｜')}`:'还没切：现在所有的 m 算成一种';}
+function cutHere(){if(S.busy||S.done||S.phase!=='cut')return;if(S.cuts.some(c=>nearly(c,S.m))){T('这儿已经切过了。点那把小剪刀可以收回。');return;}if(S.cuts.length>=4){T('最多切 4 刀。先收回一刀。');return;}S.cuts.push(S.m);A.flag();drops(800,6);renderCuts();}
+function submitCuts(){const red=S.cuts.find(c=>{const e=.05;return sigM(c-e)===sigM(c)&&sigM(c)===sigM(c+e);});
+  if(red!==undefined){S.cuts=S.cuts.filter(c=>c!==red);renderCuts();S.face='laugh';A.laugh();G(`m=${labV(red)} 这一刀白切了：左右两边长得一样。收回去！`);T('切的地方，两边得真的不一样。');return;}
+  let bad=null;for(const c of casesFrom(S.cuts)){const ms=sampM(c),sg=ms.map(sigM),j=sg.findIndex(x=>x!==sg[0]);if(j>0){bad={m1:ms[0],m2:ms[j]};break;}}
+  if(bad){S.busy=true;S.lockM=true;const setM=v=>{S.m=v;$('mi').value=v;S.lastFace=-1;};G(`m=${labV(bad.m1)} 和 m=${labV(bad.m2)}，你算成一种？掀开给你看！`);setM(bad.m1);setTimeout(()=>setM(bad.m2),1300);
+    setTimeout(()=>{S.lockM=false;missHit('长得根本不一样！这中间还得切一刀。');},2600);return;}
+  S.phase='capture';S.cards=FACES.map(()=>({found:true,cap:false}));S.found=5;$('prev').hidden=true;$('cards').hidden=false;$('cutb').hidden=true;$('hitb').hidden=true;renderCards();A.rare();S.face='shock';S.wob=1;burst(800,130,'#ffe08a',30);S.busy=true;
+  G('……切对了。可我每张脸都还有一句话等着你。');T('这就是分类讨论的第一步：找出 m 在哪儿一过，题就变样。');setTimeout(()=>{S.busy=false;nextCard();},3200);}
+
+/* ---------- 第三幕：关灯。没有图、没有滑杆、没有浮标，分界点靠键盘输入 ---------- */
+const QS='三句话：它还是二次吗？开口朝哪？两只脚谁在左？';
+const EXAMS=[
+ {show:k=>`(x−a)(x−${k})<0`,ks:[2,3,1],sign:'<',F:k=>(x,a)=>(x-a)*(x-k),A:k=>({lab:String(k),f:()=>k}),B:()=>({lab:'a',f:a=>a}),cuts:k=>[k],
+  hints:[QS,'二次项系数是 1，一直是正的：这题第一句、第二句都不用切。','两根是 a 和另一个数。它们什么时候相等？解这个方程。']},
+ {show:k=>`(ax−${k})(x−1)<0`,ks:[2,3],sign:'<',F:k=>(x,a)=>(a*x-k)*(x-1),A:()=>({lab:'1',f:()=>1}),B:k=>({lab:`${k}/a`,f:a=>k/a}),cuts:k=>[0,k],
+  hints:[QS,'拆开看二次项系数：它什么时候是 0？','令 ax−□=0 解出一个根，另一个根是 1。这两个根什么时候相等？']},
+ {show:k=>`(ax−1)(x−${k})>0`,ks:[2],sign:'>',F:k=>(x,a)=>(a*x-1)*(x-k),A:k=>({lab:String(k),f:()=>k}),B:()=>({lab:'1/a',f:a=>1/a}),cuts:k=>[0,1/k],
+  hints:[QS,'这回要的是大于 0：标干的那几段。先想二次项系数什么时候是 0。','1/a 和另一个根什么时候相等？可以填分数，例如 1/3。']}
+];
+function exBuild(i,kI){const T0=EXAMS[i],k=T0.ks[kI%T0.ks.length];return {i,kI,k,show:T0.show(k),sign:T0.sign,F:T0.F(k),A:T0.A(k),B:T0.B(k),cuts:T0.cuts(k),hints:T0.hints};}
+function exSamples(c){return sampM(c);}
+const exTrue=(e,x,a)=>{const v=e.F(x,a);return e.sign==='<'?v<-1e-9:v>1e-9;};
+function exOrder(e,a){const rA=e.A.f(a),rB=e.B.f(a);if(!isFinite(rB))return 'noB';if(nearly(rA,rB))return 'merged';return rA<rB?'AB':'BA';}
+function exPred(e,order,sel){return (x,a)=>{const rA=e.A.f(a),rB=e.B.f(a),E=1e-9;if(order==='merged'||order==='noB')return (sel.has(0)&&x<rA-E)||(sel.has(1)&&x>rA+E);const L=order==='AB'?rA:rB,R=order==='AB'?rB:rA;return (sel.has(0)&&x<L-E)||(sel.has(1)&&x>L+E&&x<R-E)||(sel.has(2)&&x>R+E);};}
+function exCheck(e,c,order,sel){for(const a of exSamples(c)){const to=exOrder(e,a);if(to!==order)return {type:'order',a,to};const rs=[e.A.f(a),e.B.f(a)].filter(isFinite).sort((p,q)=>p-q),u=rs.filter((v,i)=>!i||!nearly(v,rs[i-1])),xs=[...u];for(let i=0;i<=u.length;i++)xs.push(nice(i?u[i-1]:null,i<u.length?u[i]:null));const pr=exPred(e,order,sel);for(const x of xs){const t=exTrue(e,x,a),p=!!pr(x,a);if(t!==p)return {type:'seg',a,x,t,p};}}return null;}
+function exCutsCheck(e,cuts){return {missing:e.cuts.filter(c=>!cuts.some(v=>nearly(v,c))),redundant:cuts.filter(v=>!e.cuts.some(c=>nearly(v,c)))};}
+function exAns(e,order,sel){const A0=e.A.lab,B0=e.B.lab;if(!sel.size)return '无解';if(order==='merged'||order==='noB'){if(sel.size===2)return `x≠${A0}`;return sel.has(0)?`x<${A0}`:`x>${A0}`;}const L=order==='AB'?A0:B0,R=order==='AB'?B0:A0,p=[];if(sel.has(0))p.push(`x<${L}`);if(sel.has(1))p.push(`${L}<x<${R}`);if(sel.has(2))p.push(`x>${R}`);return p.join(' 或 ');}
+function repOf(e,c){if(c.pt!==undefined)return c.pt;const ok=a=>(c.lo===null||a>c.lo)&&(c.hi===null||a<c.hi)&&[e.A.f(a),e.B.f(a)].every(r=>Math.abs(r)<=3.2);for(const a of [-1,1,3,.4,-.5,4,1.5,2.5,.25,-2,2,5])if(ok(a))return a;return sampM(c)[0];}
+function startAct3(i,kI){i=i||0;kI=kI||0;const e=exBuild(i,kI);Object.assign(S,{act:3,hpMax:4,hp:4,ex:e,phase:'cut3',cuts3:[],exCases:[],caseI:0,order:'AB',sel:new Set(),exDone:[],reveal:false,fogA:1,showX:null,capturing:false,done:false,busy:false,lockM:true,face:'smug',fade:0,m:1,mS:1,dragFlag:null,trail:new Map()});
+  S.ansAll=S.ansAll&&i>0?S.ansAll:[];Object.assign(V,{cx:800,ux:220,uy:270,y0:560,R:13});S.fx=800;S.fy=400;$('modal').hidden=true;$('lever').hidden=true;$('cards').hidden=true;$('prev').hidden=true;$('liesb').hidden=true;$('okb').hidden=true;$('cutb').hidden=true;$('hitb').hidden=false;$('hitb').className='btn';$('hitb').textContent='切好了，交给守卫';$('cutbar').hidden=false;$('ci').value='';
+  const g=$('gb');g.hidden=false;g.style.cssText='left:1100px;top:122px;width:476px;font-size:21px';const rd=$('read');rd.style.top='20px';rd.style.left='50%';S.hintI=0;hearts();renderCuts3();
+  G(i===0?'我把灯关了。看不见我，看你还怎么猜！':`第 ${i+1} 题。灯还是关着的。`);T(`解关于 x 的不等式 ${e.show}。先想：a 在哪儿切？输入 a 的值。`);setTimeout(()=>{try{$('ci').focus({preventScroll:true});}catch(err){}},50);}
+function renderCuts3(){const cs=casesFrom(S.cuts3).map(c=>labCase(c,'a'));$('cil').innerHTML=S.cuts3.map(v=>`<button type="button" class="mk2" data-v="${v}">a=${esc(labV(v))} ✕</button>`).join('')+`<span class="cs">${esc(S.cuts3.length?'分成：'+cs.join('｜'):'还没切')}</span>`;$('cil').querySelectorAll('.mk2').forEach(b=>b.onclick=()=>{S.cuts3=S.cuts3.filter(v=>v!==+b.dataset.v);renderCuts3();});}
+function addCut3(){if(S.busy||S.done)return;const v=parseNum($('ci').value);if(isNaN(v)){T('输入一个数，比如 2、−1、1/2。');return;}$('ci').value='';if(S.cuts3.some(c=>nearly(c,v)))return;if(S.cuts3.length>=4){T('最多切 4 刀。');return;}S.cuts3.push(v);A.flag();renderCuts3();$('ci').focus();}
+function revealAt(a,x){S.reveal=true;S.m=a;if(x!==undefined&&x!==null){S.showX=x;S.x=x;}else S.showX=null;}
+function hideFog(){S.reveal=false;S.showX=null;}
+function submitCuts3(){const e=S.ex;if($('ci').value.trim())addCut3();const r=exCutsCheck(e,S.cuts3);
+  if(r.redundant.length){const v=r.redundant[0];S.cuts3=S.cuts3.filter(c=>!nearly(c,v));renderCuts3();let d=.5;while(e.cuts.some(c=>Math.abs(c-v)<=d))d/=2;S.busy=true;logEx('cutExtra');G(`a=${labV(v)} 这一刀白切了！掀开给你看：左右两边长得一样。`);A.morph();revealAt(v-d);setTimeout(()=>{A.morph();revealAt(v+d);},1400);setTimeout(()=>{hideFog();missHit('瞎切一刀，打你！');},2800);return;}
+  if(r.missing.length){const c=r.missing[0];let d=.5;const others=S.cuts3.map(v=>Math.abs(v-c));while(others.some(o=>o<=d))d/=2;const a1=c-d,a2=c+d;S.busy=true;logEx('cutMiss');G(`a=${labV(a1)} 和 a=${labV(a2)}，你算成一种？掀开给你看！`);A.morph();revealAt(a1);setTimeout(()=>{A.morph();revealAt(a2);},1400);setTimeout(()=>{hideFog();missHit('长得不一样！这中间还得切。');},2800);return;}
+  S.exCases=casesFrom(S.cuts3).map(c=>Object.assign(c,{lab:labCase(c,'a')}));S.exDone=[];$('cutbar').hidden=true;A.find();S.face='shock';S.wob=.7;renderExCards();$('cards').hidden=false;$('read').style.top='98px';G('……切对了。可灯还关着呢。');setCase(0);}
+function logEx(k){try{S.exLog=(S.exLog||[]);S.exLog.push(k);}catch(e){}}
+function renderExCards(){$('cards').innerHTML=S.exCases.map((c,i)=>`<div class="fc tx${S.exDone[i]?' cap':''}${i===S.caseI&&S.phase==='case'?' now':''}"><div class="n" style="position:static;padding:10px 4px 2px;font-size:16px">${esc(c.lab)}</div><div class="n" style="position:static"><em style="font-size:15px">${esc(S.exDone[i]||'？')}</em></div></div>`).join('');}
+function setCase(i){S.caseI=i;S.phase='case';S.order='AB';S.sel=new Set();S.reveal=false;S.showX=null;S.dragFlag=null;$('hitb').hidden=false;$('hitb').textContent='定了，掀开看！';renderExCards();
+  const want=S.ex.sign==='<'?'泡水':'干';if(!S.toldFlags){S.toldFlags=true;T(`当 ${S.exCases[i].lab} 时呢？拖旗排好谁在左；撞在一起的拖到一块；没意义的旗拖进水里沉掉。再点水面，标出${want}的那几段。`);}else if(i===0&&S.ex.sign==='>')T(`这回要的是大于 0：标干的那几段。当 ${S.exCases[i].lab} 时呢？`);else T(`当 ${S.exCases[i].lab} 时呢？`);}
+function commitCase(){const e=S.ex,c=S.exCases[S.caseI],bad=exCheck(e,c,S.order,S.sel);
+  if(!bad){S.busy=true;const ans=exAns(e,S.order,S.sel);S.exDone[S.caseI]=ans;revealAt(repOf(e,c));A.hit();A.lie();S.face='shock';S.wob=1;S.shake=12;burst(800,420,'#ffd27a',24);G(`${c.lab}：${ans}。`);renderExCards();$('hitb').hidden=true;
+    setTimeout(()=>{hideFog();S.busy=false;if(S.caseI+1<S.exCases.length)setCase(S.caseI+1);else endExam();},2000);return;}
+  S.busy=true;const a=bad.a,rA=e.A.f(a),rB=e.B.f(a);let msg;if(bad.type==='order'){msg=bad.to==='noB'?`a=${labV(a)} 时，${e.B.lab} 没有意义：分母是 0。这面旗该沉进水里。`:bad.to==='merged'?`a=${labV(a)} 时，两只脚撞在一起，两面旗该拖到一块儿。`:`取 a=${fmt(a)}：${e.A.lab}=${fmt(rA)}，${e.B.lab}=${fmt(rB)}。左边的该是 ${bad.to==='AB'?e.A.lab:e.B.lab}。`;revealAt(a);}
+  else{const v=e.F(bad.x,a);msg=`取 a=${fmt(a)}，x=${fmt(bad.x)}：算出来是 ${fmt(v)}，${bad.t?'满足':'不满足'} ${e.sign}0。${bad.p?'可你说它满足':'可你漏了它'}！`;revealAt(a,bad.x);}
+  setTimeout(()=>{missHit(msg);setTimeout(hideFog,1900);},600);}
+function endExam(){const e=S.ex;(S.ansAll=S.ansAll||[]).push({show:e.show,lines:S.exCases.map((c,i)=>`当 ${c.lab} 时，${S.exDone[i]==='无解'?'无解':'解集为 {x | '+S.exDone[i]+'}'}`)});
+  if(e.i+1<EXAMS.length){S.busy=true;G('……这也行？！');S.face='shock';A.win();$('hitb').hidden=true;setTimeout(()=>{S.busy=false;startAct3(e.i+1,0);},2000);return;}
+  S.done=true;A.win();S.face='dizzy';S.reveal=true;S.m=1;$('gb').hidden=true;$('hitb').hidden=true;$('cards').hidden=true;splash(800,V.y0,70);T('关着灯，你也切对了。这才是你自己的本事。');
+  const last=S.ansAll[S.ansAll.length-1];setTimeout(()=>showModal(`<h2>关着灯，你也切对了</h2><p>三道题，切的地方、切几刀都不一样。挑最后一道抄到纸上：</p><div class="pen">解 ${esc(last.show)}：<br>${last.lines.map(esc).join('；<br>')}。</div><p>以后见到带字母的题，就问三句：它还是二次吗？开口朝哪？两只脚谁在左？</p><div class="row"><button class="btn gold" id="m1">再玩一次</button></div>`,()=>{$('m1').onclick=startAct1;}),1800);}
+/* 第三幕的旗：拖动排序、撞到一块、沉进水里 */
+const slotP=()=>{const o=S.order;return o==='AB'?{A:560,B:1040}:o==='BA'?{A:1040,B:560}:o==='merged'?{A:800,B:800}:{A:800,B:null};};
+function exSegBounds(){const s=slotP();if(S.order==='merged'||S.order==='noB')return [[40,800],[800,1560]];const L=Math.min(s.A,s.B),R=Math.max(s.A,s.B);return [[40,L],[L,R],[R,1560]];}
+function exDown(x,y){if(S.phase!=='case'||S.busy)return false;const s=slotP();const hit=p=>p!==null&&Math.abs(x-p)<58&&y>V.y0-132&&y<V.y0+20;if(S.order==='noB'&&x>1230&&x<1470&&y>V.y0+90&&y<V.y0+210){S.dragFlag={w:'B',x,y};return true;}if(hit(s.B)&&S.order!=='merged'){S.dragFlag={w:'B',x,y};return true;}if(hit(s.A)){S.dragFlag={w:S.order==='merged'?'B':'A',x,y};return true;}return false;}
+function exUp(){const d=S.dragFlag;S.dragFlag=null;if(!d)return;const s=slotP(),prevN=S.order==='merged'||S.order==='noB'?2:3;let o=S.order;if(d.w==='B'&&d.y>V.y0+80)o='noB';else{const other=d.w==='A'?(s.B===null?800:s.B):s.A;if(s.B===null&&d.w==='A')o='noB';else if(Math.abs(d.x-other)<70)o='merged';else if(d.w==='B')o=d.x<other?'BA':'AB';else o=d.x<other?'AB':'BA';}S.order=o;const n=o==='merged'||o==='noB'?2:3;if(n!==prevN)S.sel=new Set();A.flag();drops(d.x,5);}
+function exTap(x){const b=exSegBounds(),i=b.findIndex(([l,r])=>x>l&&x<r);if(i<0)return;S.sel.has(i)?S.sel.delete(i):S.sel.add(i);A.tick();A.flag();}
+function drawExam(t){const y0=V.y0;if(S.fogA<.98){}if(S.reveal){const e=S.ex,a=S.mS,rA=e.A.f(a),rB=e.B.f(a);const same=isFinite(rB)&&nearly(rA,rB);if(Math.abs(rA)<3.5)drawFlag(rA,e.A.lab,'='+fmt(rA),'#e8b44f');if(isFinite(rB)&&!same&&Math.abs(rB)<3.5)drawFlag(rB,e.B.lab,'='+fmt(rB),'#ff9a6a');return;}
+  if(S.phase!=='case')return;const s=slotP(),d=S.dragFlag;
+  const put=(w,p,lab,col)=>{let q=p,dy=0;if(d&&d.w===w){q=d.x;dy=Math.max(-20,d.y-(y0-40));}ctx.save();ctx.translate(0,dy);drawFlag((q-V.cx)/V.ux,lab,null,col);ctx.restore();};
+  exSegBounds().forEach(([l,r],i)=>{const on=S.sel.has(i);ctx.fillStyle=on?(S.ex.sign==='<'?'rgba(47,168,255,.6)':'rgba(255,170,80,.6)'):'rgba(255,255,255,.06)';ctx.fillRect(l+6,y0+32,r-l-12,30);ctx.strokeStyle=on?'#fff':'rgba(255,255,255,.5)';ctx.lineWidth=2;ctx.setLineDash(on?[]:[6,6]);ctx.strokeRect(l+6,y0+32,r-l-12,30);ctx.setLineDash([]);ctx.fillStyle='#fff';ctx.font='700 15px "Noto Sans SC",sans-serif';ctx.textAlign='center';ctx.fillText(on?'我说这段满足':'点这段',(l+r)/2,y0+53);ctx.textAlign='left';});
+  if(S.order==='noB'&&!(d&&d.w==='B')){ctx.fillStyle='rgba(10,30,50,.75)';ctx.fillRect(1240,y0+100,220,96);ctx.strokeStyle='#7cc8f5';ctx.lineWidth=2;ctx.strokeRect(1240,y0+100,220,96);ctx.fillStyle='#d5efff';ctx.font='700 17px "Noto Sans SC",sans-serif';ctx.textAlign='center';ctx.fillText(`${S.ex.B.lab} 沉了`,1350,y0+140);ctx.font='500 13px "Noto Sans SC",sans-serif';ctx.fillText('拖出来可以捞回',1350,y0+168);ctx.textAlign='left';}
+  if(S.order!=='noB'||(d&&d.w==='B'))put('B',s.B===null?800:s.B,S.ex.B.lab,'#ff9a6a');put('A',s.A,S.ex.A.lab,'#e8b44f');}
+function drawFog(t){S.fogA+=((S.reveal?0:1)-S.fogA)*(S.reveal?.14:.3);if(S.fogA<.01)return;ctx.save();ctx.globalAlpha=S.fogA;ctx.fillStyle='rgba(16,24,28,.93)';ctx.fillRect(0,0,1600,V.y0);for(let i=0;i<7;i++){const x=(i*260+t*(14+i*3))%1900-150,y=120+((i*97)%380),r=190+i*14,g=ctx.createRadialGradient(x,y,10,x,y,r);g.addColorStop(0,'rgba(160,175,172,.20)');g.addColorStop(1,'rgba(160,175,172,0)');ctx.fillStyle=g;ctx.fillRect(x-r,y-r,r*2,r*2);}ctx.restore();}
+
+/* ---------- 输入 ---------- */
+function setX(x){const nx=clamp(Math.round(x*10)/10,Math.ceil(xMin()*10)/10,Math.floor(xMax()*10)/10);if(nx===S.x&&S.lastY!==null)return;S.x=nz(nx);const y=F(S.x);
+  if(S.lastY!==null){if(nz(y)===0||(S.lastY>1e-9&&y<-1e-9)||(S.lastY<-1e-9&&y>1e-9)){A.plip();ripples.push({x:px(S.x),r:6,a:.9});drops(px(S.x),4);}else A.tick();}S.lastY=y;A.humY(y);{const k1=Math.round(S.x*10),k0=S.lastCell===null?k1:S.lastCell,lo=Math.min(k0,k1),hi=Math.max(k0,k1);for(let k=lo;k<=hi;k++){const v=F(k/10);S.trail.set(k,v<-1e-9?-1:v>1e-9?1:0);}S.lastCell=k1;}ripples.length<14&&Math.random()<.35&&ripples.push({x:px(S.x),r:4,a:.45});}
+function slideX(to,then){S.busy=true;const from=S.x,t0=performance.now();const go=now=>{const k=clamp((now-t0)/650,0,1),e=k*k*(3-2*k);S.lastY=null;setX(from+(to-from)*e);if(k<1)requestAnimationFrame(go);else{S.x=to;S.busy=false;then&&then();}};requestAnimationFrame(go);}
+const toStage=e=>{const r=stage.getBoundingClientRect(),s=stage._s||1;return [(e.clientX-r.left)/s,(e.clientY-r.top)/s];};
+let pd=null;
+cv.addEventListener('pointerdown',e=>{if(S.done||S.busy)return;const [x,y]=toStage(e);if(S.act===3){if(exDown(x,y)){try{cv.setPointerCapture(e.pointerId);}catch(err){}}else pd={x,y,moved:false,ex:true};return;}pd={x,y,moved:false};S.drag=true;cv.classList.add('drag');try{cv.setPointerCapture(e.pointerId);}catch(err){}A.humOn();
+  if(!S.capturing||Math.abs(y-V.y0)>70){setX((x-V.cx)/V.ux);pd.moved=true;S.dragged=true;}});
+cv.addEventListener('pointermove',e=>{const [x,y]=toStage(e);if(S.act===3){if(S.dragFlag){S.dragFlag.x=x;S.dragFlag.y=y;}else if(pd&&Math.hypot(x-pd.x,y-pd.y)>9)pd.moved=true;return;}if(!S.drag||!pd)return;if(!pd.moved&&Math.hypot(x-pd.x,y-pd.y)<9)return;pd.moved=true;S.dragged=true;setX((x-V.cx)/V.ux);});
+cv.addEventListener('pointerup',e=>{if(S.act===3){if(S.dragFlag){exUp();}else if(pd&&!pd.moved&&S.phase==='case'&&!S.busy&&Math.abs(pd.y-V.y0)<90)exTap(pd.x);pd=null;return;}S.drag=false;cv.classList.remove('drag');A.humOff();if(pd&&!pd.moved&&S.capturing)tapSeg((pd.x-V.cx)/V.ux);pd=null;});
+cv.addEventListener('pointercancel',()=>{S.drag=false;cv.classList.remove('drag');A.humOff();pd=null;});
+function tapSeg(x){const ss=segs(S.m),i=ss.findIndex(g=>(g.a===null||x>g.a)&&(g.b===null||x<g.b));if(i<0)return;S.sel.has(i)?S.sel.delete(i):S.sel.add(i);A.tick();A.flag();updateHitLabel();}
+$('hitb').onclick=()=>{if(S.busy||S.done)return;if(S.act===1)return strike1();if(S.act===3)return S.phase==='cut3'?submitCuts3():commitCase();if(S.phase==='cut')return submitCuts();commitWet();};
+$('cutb').onclick=cutHere;$('cib').onclick=addCut3;$('ci').addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Enter')addCut3();});
+$('okb').onclick=()=>{if(S.busy||S.done)return;accept1();};
+$('hintb').onclick=()=>{if(S.done)return;if(S.act===1)return T(A1[S.beat].hint);
+  if(S.act===3){const h=S.ex.hints;if(S.phase==='cut3'){T(h[Math.min(S.hintI||0,h.length-1)]);S.hintI=((S.hintI||0)+1)%h.length;return;}return T(`先问：当 ${S.exCases[S.caseI].lab} 时，它还是二次吗？开口朝哪？在这个范围里随便取一个 a，算算两只脚谁在左。这些算在纸上。`);}
+  if(S.capturing)return T(S.card>=0&&FACES[S.card].id==='one'?'两只脚并到一起了。拖浮标走一遍：有没有哪儿泡水？':S.card>=0&&FACES[S.card].id==='zero'?'它现在是 y=−x+1。x 大到什么程度，它才泡进水里？拖拖看。':'先拖浮标走一遍，看哪几段泡在水里，再点水面标出来。');
+  const has=v=>S.cuts.some(c=>nearly(c,v));T(!S.faceSeen.has(1)&&!has(0)?'把 m 慢慢往左拖，拖过 0。正好停在 0 上，看看它成了什么样。':!has(0)?'m=0 时它成了一条直线，和两边都不一样。在那儿切一刀。':!has(1)?'两面旗越走越近……撞上的时候也和两边不一样。':'都切了？点“切好了”。');};
+$('snd').onclick=()=>{$('snd').textContent='音效：'+(A.toggle()?'开':'关');};
+$('mi').addEventListener('input',e=>{if(S.lockM||S.busy)return;S.m=nz(Math.round(+e.target.value*10)/10);S.trail=new Map();S.lastY=null;S.lastCell=null;setX(S.x);S.dragged=true;checkFace();drops(px(1),2);});
+addEventListener('keydown',e=>{if(S.done||!$('modal').hidden||S.act===3)return;if(e.key==='ArrowLeft'){setX(S.x-(e.shiftKey?1:.1));e.preventDefault();}else if(e.key==='ArrowRight'){setX(S.x+(e.shiftKey?1:.1));e.preventDefault();}else if(e.key===' '&&!$('hitb').hidden){$('hitb').click();e.preventDefault();}});
+
+/* ---------- 粒子 ---------- */
+function burst(x,y,c,n){for(let i=0;i<n;i++){const a=Math.random()*6.28,v=2+Math.random()*7;parts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-2,g:.18,l:1,d:.018+Math.random()*.02,r:2+Math.random()*4,c});}}
+function drops(x,n){for(let i=0;i<n;i++)parts.push({x:x+(Math.random()-.5)*30,y:V.y0,vx:(Math.random()-.5)*3,vy:-2-Math.random()*5,g:.25,l:1,d:.03,r:1.5+Math.random()*2.5,c:'#bfe7ff'});}
+function splash(x,y,n){for(let i=0;i<n;i++){const a=-Math.random()*3.14,v=2+Math.random()*9;parts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,g:.3,l:1,d:.02,r:2+Math.random()*4,c:'#9ad6ff'});}for(let k=0;k<3;k++)ripples.push({x,r:8+k*14,a:.8});}
+
+/* ---------- 画 ---------- */
+function bodyPath(c,fn,wobY){const runs=[];let cur=null;for(let p=-40;p<=1640;p+=4){const x=(p-V.cx)/V.ux,y=fn(x),q=V.y0-y*V.uy*wobY;if(q<-160||q>1060){cur=null;continue;}if(!cur){cur=[];runs.push(cur);}cur.push([p,q]);}return runs;}
+function drawBody(t){const wobY=1+Math.sin(t*12)*S.wob*.07,runs=bodyPath(oct,FD,wobY),R=V.R;oct.clearRect(0,0,1600,900);oct.lineJoin='round';oct.lineCap='round';
+  const puffs=[];runs.forEach(run=>{let arc=0,i=0;for(let k=1;k<run.length;k++){const [a,b]=run[k-1],[c,d]=run[k],dx=c-a,dy=d-b,L=Math.hypot(dx,dy);arc+=L;if(arc>R*.95){arc=0;i++;const nx=-dy/(L||1),ny=dx/(L||1),sd=i%2?1:-1,pr=R*(.62+.2*Math.sin(i*1.3+t*1.6));puffs.push([c+nx*sd*R*.72,d+ny*sd*R*.72,pr]);}}});
+  oct.fillStyle='#1b2a26';puffs.forEach(([x,y,r])=>{oct.beginPath();oct.arc(x,y,r+3.5,0,6.29);oct.fill();});
+  const line=(w,col,al)=>{oct.strokeStyle=col;oct.globalAlpha=al||1;oct.lineWidth=w;runs.forEach(run=>{oct.beginPath();run.forEach(([x,y],k)=>k?oct.lineTo(x,y):oct.moveTo(x,y));oct.stroke();});oct.globalAlpha=1;};
+  line(R*2+7,'#1b2a26');oct.fillStyle='#e8ece0';puffs.forEach(([x,y,r])=>{oct.beginPath();oct.arc(x,y,r,0,6.29);oct.fill();});line(R*2,'#e8ece0');line(R*.8,'#fbfdf6',.75);
+  oct.globalCompositeOperation='source-atop';oct.fillStyle='rgba(38,108,170,.62)';oct.fillRect(0,V.y0,1600,900-V.y0);oct.fillStyle='rgba(255,226,170,.14)';oct.fillRect(0,0,1600,V.y0);oct.globalCompositeOperation='source-over';ctx.globalAlpha=1-S.fade;ctx.drawImage(oc,0,S.fade*120);ctx.globalAlpha=1;}
+function drawWater(t){const y0=V.y0;const g=ctx.createLinearGradient(0,y0,0,900);g.addColorStop(0,'rgba(60,150,210,.42)');g.addColorStop(1,'rgba(14,50,90,.72)');ctx.fillStyle=g;ctx.beginPath();ctx.moveTo(0,900);for(let p=0;p<=1600;p+=12)ctx.lineTo(p,y0+Math.sin(p*.02+t*2)*2.2);ctx.lineTo(1600,900);ctx.fill();
+  ctx.strokeStyle='rgba(225,245,255,.9)';ctx.lineWidth=2.5;ctx.beginPath();for(let p=0;p<=1600;p+=12){const q=y0+Math.sin(p*.02+t*2)*2.2;p?ctx.lineTo(p,q):ctx.moveTo(p,q);}ctx.stroke();
+  ctx.fillStyle='rgba(225,245,255,.8)';ctx.font='500 15px "Noto Sans SC",sans-serif';ctx.textAlign='center';if(!(S.act===3&&!S.reveal))for(let k=Math.ceil(xMin());k<=Math.floor(xMax());k++){const p=px(k);ctx.fillRect(p-1,y0-6,2,12);ctx.fillText(String(k).replace('-','−'),p,y0+26);}
+  ctx.textAlign='left';ctx.fillText('水面：y=0',1458,y0-12);}
+function drawTrail(){const u=V.ux*.1;S.trail.forEach((s,k)=>{const p=px(k/10);ctx.fillStyle=s<0?'#2fa8ff':s>0?'#ff9a3c':'#fff';ctx.fillRect(p-u/2,V.y0-4,u+.6,8);});}
+function drawSel(){if(!S.capturing)return;const ss=segs(S.mS),L=40,R=1560;ss.forEach((g,i)=>{const a=g.a===null?L:clamp(px(g.a),L,R),b=g.b===null?R:clamp(px(g.b),L,R),on=S.sel.has(i);ctx.fillStyle=on?'rgba(47,168,255,.55)':'rgba(255,255,255,.05)';ctx.fillRect(a+6,V.y0+32,Math.max(0,b-a-12),30);ctx.strokeStyle=on?'#bfe7ff':'rgba(255,255,255,.45)';ctx.lineWidth=2;ctx.setLineDash(on?[]:[6,6]);ctx.strokeRect(a+6,V.y0+32,Math.max(0,b-a-12),30);ctx.setLineDash([]);ctx.fillStyle=on?'#fff':'rgba(255,255,255,.75)';ctx.font='700 15px "Noto Sans SC",sans-serif';ctx.textAlign='center';ctx.fillText(on?'我说这段泡水':'点这段',(a+b)/2,V.y0+53);});ctx.textAlign='left';}
+function drawFlag(x,label,sub,col){const p=px(x),y=V.y0;ctx.strokeStyle='#3a2a15';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(p,y);ctx.lineTo(p,y-78);ctx.stroke();ctx.fillStyle=col||'#e8b44f';ctx.beginPath();ctx.moveTo(p,y-78);ctx.lineTo(p-42,y-64);ctx.lineTo(p,y-48);ctx.fill();ctx.strokeStyle='#3a2a15';ctx.lineWidth=2;ctx.stroke();
+  ctx.font='900 22px "Noto Serif SC",serif';const w=ctx.measureText(label).width+18;ctx.fillStyle='#f1e8d2';ctx.fillRect(p-w/2,y-112,w,30);ctx.strokeStyle='#2a251c';ctx.strokeRect(p-w/2,y-112,w,30);ctx.fillStyle='#2a251c';ctx.textAlign='center';ctx.fillText(label,p,y-90);if(sub){ctx.font='500 14px "Noto Sans SC",sans-serif';ctx.fillStyle='#fff';ctx.fillText(sub,p,y-120);}ctx.textAlign='left';}
+function drawFlags(){if(S.act===1){S.flags.forEach(x=>drawFlag(x,'x='+fmt(x)));return;}const m=S.mS;drawFlag(1,'1',null,'#e8b44f');if(Math.abs(m)<.004)return;const q=1/m,p=px(q);if(p>=40&&p<=1560)drawFlag(q,'1/m','='+fmt(q),'#ff9a6a');else{const right=p>1560,ex=right?1490:110;ctx.fillStyle='rgba(20,30,28,.9)';ctx.fillRect(ex-90,V.y0-72,180,44);ctx.strokeStyle='#ff9a6a';ctx.strokeRect(ex-90,V.y0-72,180,44);ctx.fillStyle='#ffd9c7';ctx.font='700 17px "Noto Sans SC",sans-serif';ctx.textAlign='center';ctx.fillText((right?'1/m='+fmt(q)+' 跑远了 →':'← 1/m='+fmt(q)+' 跑远了'),ex,V.y0-44);ctx.textAlign='left';}}
+function drawBuoy(t){const p=px(S.x),y=F(S.x),q=clamp(py(FD(S.x)),-30,930),bob=Math.sin(t*3)*3,yb=V.y0+bob;ctx.setLineDash([7,6]);ctx.strokeStyle=y<-1e-9?'#7cc8f5':y>1e-9?'#ffc58a':'#fff';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(p,yb);ctx.lineTo(p,q);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle=ctx.strokeStyle;ctx.beginPath();ctx.arc(p,q,8,0,6.29);ctx.fill();
+  ctx.fillStyle='#fff';ctx.strokeStyle='#2a251c';ctx.lineWidth=3;ctx.beginPath();ctx.arc(p,yb,20,0,6.29);ctx.fill();ctx.stroke();ctx.fillStyle='#e0553f';ctx.beginPath();ctx.arc(p,yb,20,Math.PI,0);ctx.fill();ctx.stroke();ctx.fillStyle='#2a251c';ctx.font='900 15px "Noto Serif SC",serif';ctx.textAlign='center';ctx.fillText(fmt(S.x),p,yb+16);ctx.textAlign='left';
+  if(!S.dragged){const r=30+Math.sin(t*4)*8;ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=3;ctx.beginPath();ctx.arc(p,yb,r,0,6.29);ctx.stroke();ctx.fillStyle='#fff';ctx.font='900 24px "Noto Serif SC",serif';ctx.textAlign='center';ctx.fillText('← 拖我 →',p,yb+70);ctx.textAlign='left';}}
+function drawFace(t){if(S.fade>=1)return;const m=S.mS;let vx,vy;if(S.act===1){vx=2;vy=F1(2);}else{const f0=FD(0),f1=FD(1),fn=FD(-1),a2=(f1+fn-2*f0)/2,b1=(f1-fn)/2;vx=Math.abs(a2)<.02?-1.2:clamp(-b1/(2*a2),-2.8,2.8);const ok=x=>{const q=py(FD(x));return q>=205&&q<=745;};for(let k=0;k<60&&!ok(vx);k++)vx+=(1-vx)*.08;vy=FD(vx);}
+  let tx=px(vx),ty=clamp(py(vy),190,770);if(S.act===3&&!S.reveal){tx=800;ty=330;}S.fx+=(tx-S.fx)*.18;S.fy+=(ty-S.fy)*.18;const fx=S.fx,fy=S.fy,gap=26,er=15,dx=clamp(px(S.x)-fx,-200,200)/200*5.5,dy=clamp(V.y0-fy,-200,200)/200*3;
+  const shut=(t%4.3)<.12;ctx.save();ctx.globalAlpha=1-S.fade;ctx.translate(fx,fy+S.fade*120+Math.sin(t*12)*S.wob*5);for(const s of [-1,1]){const ex=s*gap;ctx.fillStyle='#160e06';ctx.beginPath();ctx.arc(ex,0,er+3,0,6.29);ctx.fill();if(shut){ctx.strokeStyle='#ffd27a';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(ex-er,0);ctx.lineTo(ex+er,0);ctx.stroke();continue;}const g=ctx.createRadialGradient(ex,0,2,ex,0,er);g.addColorStop(0,'#fff0b8');g.addColorStop(1,S.face==='laugh'||S.face==='smug'?'#ff9a2e':'#ffb84a');ctx.fillStyle=g;ctx.beginPath();ctx.arc(ex,0,S.face==='shock'?er+2:er,0,6.29);ctx.fill();ctx.fillStyle='#160e06';ctx.beginPath();ctx.arc(ex+dx,dy,S.face==='shock'?3.5:S.face==='dizzy'?2:6,0,6.29);ctx.fill();}
+  ctx.strokeStyle='#160e06';ctx.lineWidth=5;ctx.lineCap='round';const bw=S.face==='shock'?-8:S.face==='annoyed'?7:S.face==='smug'||S.face==='laugh'?4:0;for(const s of [-1,1]){ctx.beginPath();ctx.moveTo(s*(gap+er),-er-6+(S.face==='shock'?-6:0));ctx.lineTo(s*(gap-er+3),-er-6+bw+(S.face==='shock'?-6:0));ctx.stroke();}
+  ctx.lineWidth=4;ctx.beginPath();if(S.face==='shock'||S.face==='dizzy'){ctx.arc(0,er+10,7,0,6.29);}else if(S.face==='laugh'){ctx.arc(0,er+4,12,.1,3.04);}else if(S.face==='annoyed'){ctx.moveTo(-10,er+10);ctx.lineTo(10,er+7);}else{ctx.moveTo(-12,er+7);ctx.quadraticCurveTo(2,er+14,14,er+3);}ctx.stroke();ctx.restore();
+  if(S.fy>V.y0+14&&Math.random()<.04)parts.push({x:fx+(Math.random()-.5)*14,y:fy-14,vx:(Math.random()-.5)*.4,vy:-1.4,g:-.01,l:1,d:.012,r:2+Math.random()*3,c:'rgba(210,240,255,.85)'});}
+function drawOverlay(){const list=[...ripples];list.forEach(r=>{ctx.strokeStyle=`rgba(225,245,255,${r.a})`;ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(r.x,V.y0,r.r,r.r*.26,0,0,6.29);ctx.stroke();r.r+=1.6;r.a-=.02;});for(let i=ripples.length-1;i>=0;i--)if(ripples[i].a<=0)ripples.splice(i,1);
+  for(let i=balls.length-1;i>=0;i--){const b=balls[i];b.t+=.032;const k=Math.min(1,b.t),x=b.x+(b.tx-b.x)*k,y=b.y+(b.ty-b.y)*k-Math.sin(k*3.14)*170;ctx.fillStyle='#4db0ff';ctx.beginPath();ctx.arc(x,y,20,0,6.29);ctx.fill();ctx.fillStyle='rgba(255,255,255,.7)';ctx.beginPath();ctx.arc(x-6,y-6,6,0,6.29);ctx.fill();parts.push({x,y,vx:0,vy:.5,g:.1,l:.7,d:.04,r:4,c:'#9ad6ff'});if(k>=1){b.done();balls.splice(i,1);}}
+  for(let i=parts.length-1;i>=0;i--){const q=parts[i];q.vy+=q.g;q.x+=q.vx;q.y+=q.vy;q.l-=q.d;if(q.l<=0){parts.splice(i,1);continue;}ctx.globalAlpha=Math.max(0,q.l);ctx.fillStyle=q.c;ctx.beginPath();ctx.arc(q.x,q.y,q.r,0,6.29);ctx.fill();}ctx.globalAlpha=1;}
+let lastRead='';
+function updateRead(){let h='';if(S.act===3){const e=S.ex,c=S.exCases&&S.exCases[S.caseI];h=`<span>${esc(e.show)}</span>`+(S.phase==='case'&&c?`<small>当 ${esc(c.lab)} 时</small><span>${esc(S.reveal?S.exDone[S.caseI]||exAns(e,S.order,S.sel):exAns(e,S.order,S.sel))}</span>`:'<small>解关于 x 的不等式</small>');if(h!==lastRead){$('read').innerHTML=h;lastRead=h;}return;}const x=S.x,y=F(x),xs=x<0?`(${fmt(x)})`:fmt(x),chip=y<-1e-9?'<span class="chip wet">泡在水里 y&lt;0</span>':y>1e-9?'<span class="chip dry">干的 y&gt;0</span>':'<span class="chip zero">踩在水面上 y=0</span>';
+  if(S.act===1)h=`<span>${xs}² − 4×${xs} + 3 = ${fmt(y)}</span>${chip}`;
+  else{const m=S.m,a=fmt(m),b=fmt(-(m+1)),t=m===0?(`y = ${fmt(-1)==='−1'?'−':''}x + 1`):`y = ${m===1?'':m===-1?'−':a}x² ${-(m+1)<0?'−':'+'} ${Math.abs(m+1)===1?'':fmt(Math.abs(m+1))}x + 1`;h=`<small>m=${fmt(m)}</small><span>${m===-1?'y = −x² + 1':t}</span><small>x=${fmt(x)} 时</small><span>y=${fmt(y)}</span>${chip}`;}
+  if(h!==lastRead){$('read').innerHTML=h;lastRead=h;}
+  $('mv').textContent='m = '+fmt(S.m);}
+function frame(now){const t=now/1000;S.t=t;stage.classList.toggle('dark',S.act===3&&!S.done);ctx.clearRect(0,0,1600,900);S.mS+=(S.m-S.mS)*.16;if(Math.abs(S.m-S.mS)<.002)S.mS=S.m;S.wob*=.94;S.shake*=.88;if(S.done)S.fade=Math.min(1,S.fade+.012);ctx.save();if(S.shake>.5)ctx.translate((Math.random()-.5)*S.shake,(Math.random()-.5)*S.shake);
+  if(S.act===3){if(S.reveal||S.fogA<.6)drawBody(t);drawWater(t);drawFog(t);drawExam(t);if(S.reveal&&S.showX!==null)drawBuoy(t);drawFace(t);drawOverlay();}else{drawBody(t);drawWater(t);drawTrail();drawSel();drawFlags();drawBuoy(t);drawFace(t);drawOverlay();}ctx.restore();updateRead();
+  if(!S.busy&&!S.done&&$('modal').hidden){S.idle=(S.idle||0)+1/60;if(S.idle>(S.act===2&&!S.capturing?14:24)){S.idle=0;$('hintb').click();}}
+  requestAnimationFrame(frame);}
+window.TOY={S,setX,tapSeg,strike:()=>$('hitb').click(),accept:()=>$('okb').click(),setM:v=>{const i=$('mi');i.value=v;i.dispatchEvent(new Event('input'));},startAct1,startAct2,startAct3,FACES,F,EXAMS,exBuild,exCheck,exCutsCheck,casesFrom,labCase,cutHere,submitCuts,submitCuts3,commitCase,exTap,addCut3};
+if(location.hash==='#2')startAct2();else if(location.hash==='#3')startAct3(0,0);else startAct1();
+requestAnimationFrame(frame);
+</script>

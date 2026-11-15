@@ -1,0 +1,52 @@
+'use strict';
+// Pure proof-kernel tests. No browser / UI claim.
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const V=path.resolve(__dirname,'../..'),A=require(V+'/abstract-core.js'),D=JSON.parse(fs.readFileSync(V+'/../关卡/卡牌/抽象函数.json','utf8'));
+function route(C){return [
+ ['f(0)=f(0)+f(0)','x=0;y=0'],['f(0)=0','移项'],['f(x)+f(-x)=f(0)=0','y=-x'],['f为奇函数','定义域R关于原点对称;f(-x)=-f(x)'],['任意a<b','a,b属于R'],['f(b)-f(a)=f(b-a)>0','加法性;b-a>0;正数条件'],['f在R上单调递增','单调性定义'],[`f(${C.target})=${C.target}f(1)=${C.rhs}`,`加法性;f(1)=${C.c}`],['f(x^2)+f(2x)=f(x^2+2x)','加法性'],[`x^2+2x<${C.target}`,`单调递增;f(${C.target})=${C.rhs}`],[`${C.lo}<x<${C.hi}`,`(x+${-C.lo})(x-${C.hi})<0`],[String(C.hi),String(C.rhs)]];}
+let n=0;const test=(f)=>{f();n++;};
+for(const p of [D.参数,...D.关灯]){const C=A.config(p.c,p.target),vs=route(C),pr=[];
+ vs.forEach((v,i)=>test(()=>{assert.equal(A.check(i,v,C,pr).ok,true,JSON.stringify([i,A.check(i,v,C,pr)]));pr.push(i);}));
+ const check=(i,v)=>A.check(i,v,C,pr.slice(0,i));
+ test(()=>assert.ok(check(0,['f(0)=1','x=0;y=0']).bad));
+ test(()=>assert.ok(check(0,['f(0)=0',`f(1)=${C.c}`]).model));
+ test(()=>assert.equal(check(0,['f(0)=0','加法性']).model,undefined));
+ test(()=>assert.equal(check(0,['f(0)=0','']).model,undefined));
+ test(()=>assert.ok(check(1,['f(0)=0','f(1)=2']).gap));
+ test(()=>assert.ok(check(3,['f为奇函数','f(-x)=-f(x)']).gap));
+ test(()=>assert.ok(check(4,['a<b','a,b属于R']).ok));
+ test(()=>assert.ok(check(4,['1<2','a,b属于R']).err));
+ test(()=>assert.ok(check(5,['f(b)-f(a)=f(a-b)>0','加法性;b-a>0;正数条件']).bad));
+ test(()=>assert.ok(check(5,[vs[5][0],'加法性;b-a>0']).gap));
+ test(()=>assert.ok(check(5,[vs[5][0],'不满足加法性;b-a>0;正数条件']).err));
+ test(()=>assert.ok(check(6,[vs[6][0],'奇函数']).gap));
+ test(()=>assert.ok(check(9,[vs[9][0],'加法性']).model));
+ test(()=>assert.equal(check(9,[vs[9][0],'单调递增']).model,undefined));
+ test(()=>assert.ok(check(9,[vs[9][0],`f(${C.target})=${C.rhs}`]).gap));
+ test(()=>assert.ok(check(9,[`${C.target}>2x+x^2`,vs[9][1]]).ok));
+ test(()=>assert.ok(check(10,[`${C.lo}<=x<=${C.hi}`,vs[10][1]]).bad));
+ test(()=>assert.ok(check(10,[vs[10][0],`(x^2+2x-${C.target})<0`]).gap));
+ test(()=>assert.ok(check(10,[vs[10][0],`1*(x^2+2x-${C.target})<0`]).gap));
+ test(()=>assert.ok(check(10,[vs[10][0],`(x+${-C.lo})(x-${C.hi+1})<0`]).gap));
+ test(()=>assert.ok(check(11,['x^0',String(C.rhs)]).err));
+ test(()=>assert.ok(check(11,['(1/0)^0',String(C.rhs)]).err));
+ test(()=>assert.ok(check(11,[String(C.lo),String(C.rhs+1)]).bad));
+ test(()=>assert.ok(check(11,[String(C.lo),String(C.rhs)]).ok));
+ test(()=>assert.ok(A.check(9,vs[9],C,[0,1,2]).err));
+}
+test(()=>assert.equal(A.witness('0.1+0.2<=0.3',2),null));
+test(()=>assert.equal(A.witness('f(x)+f(-x)=0',2),null));
+test(()=>assert.ok(A.eq('x²+2x','x^2+2*x')));
+test(()=>assert.equal(A.eq('2.00000000001x','2x'),false));
+test(()=>assert.ok(A.check(0,['f(0)=f(0)+f(0);alert(1)','x=0;y=0'],A.config(),[]).err));
+test(()=>assert.ok(A.check(8,['f(x²)+f(2x)=f(x²+2x)','加法性'],A.config(),Array.from({length:8},(_,i)=>i)).ok));
+test(()=>assert.throws(()=>A.parse('1/2x'),/分母/));
+test(()=>assert.ok(A.eq('(1/2)x','x/2')));
+test(()=>assert.ok(A.check(11,['1+1/(1000000000*1000000000)','6'],A.config(),Array.from({length:11},(_,i)=>i)).err));
+test(()=>assert.ok(A.check(11,['1','6+1/(1000000000*1000000000)'],A.config(),Array.from({length:11},(_,i)=>i)).bad));
+test(()=>assert.ok(A.check(0,['f(0)=2f(0)','加法性;x=0;y=0'],A.config(),[]).ok));
+test(()=>assert.ok(A.check(9,['x^2+2x>3','单调递增;f(3)=6'],A.config(),Array.from({length:9},(_,i)=>i)).bad));
+test(()=>assert.ok(A.check(3,['f为奇函数','不知道'],A.config(),[0,1,2]).err));
+test(()=>assert.ok(A.check(3,['f为奇函数','定义域R关于原点对称;f(-x)=f(x)'],A.config(),[0,1,2]).bad));
+console.log(`PASS abstract proof kernel: ${n} assertions; both variants, exact arithmetic, gap/false/unknown separated`);
+module.exports={route};

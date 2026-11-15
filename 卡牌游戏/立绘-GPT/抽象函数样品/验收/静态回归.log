@@ -1,0 +1,34 @@
+2026-11-13 最终版本；命令：bash v6/tools/test/run_all.sh --static-only
+退出码：0
+注意：日志中的“截图放在”是旧脚本统一提示；本次静态模式没有生成浏览器截图。
+
+截图放在 /var/folders/q4/18vzz_pj0cbcpmx4bzr2sdn00000gn/T/tmp.cKpXUPPx4W
+
+-- 数据和数学
+前情 椭圆-内点: 约 451 字
+名录 椭圆-外点: 3 张（样例 3）
+名录 椭圆-内点: 3 张（样例 3）
+卡牌版数据检查通过
+
+-- 构建
+built ~/Documents/Codex/2026-08-31/hatch-pet-users-user-codex-skills-2/handoff/claude_to_codex/MOCKUP-20261104
+
+-- 筛选脚本（假 API）
+通过 401 退出且抹掉密钥
+通过 拒绝明文外部地址
+全部通过
+
+-- 抽象函数独立验算
+PASS 亮灯: f(0)=0; f(3)=6; f(3)=6; solution=(-3,1); endpoints excluded
+PASS 关灯: f(0)=0; f(3)=9; f(8)=24; solution=(-4,2); endpoints excluded
+模型依据：加法性 + 正性 → 严格递增 → 有理数取值 + 有理数夹逼 → 唯一 f(x)=c*x。
+
+-- 抽象函数证明核
+PASS abstract proof kernel: 88 assertions; both variants, exact arithmetic, gap/false/unknown separated
+
+-- 纸面事件逻辑（模拟 DOM，不是浏览器）
+PASS shared paper event flow: probe/guess, keys/preview, two lenses, counter/gap, 12 written rows, dark loss/resume/win; mock DOM+Canvas only
+
+-- 椭圆画布指令回归（模拟 Canvas，不是截图）
+椭圆渲染回归通过：24 种帧的画布指令与改前一致（非浏览器截图）。
+STATIC PASS；浏览器/真实鼠标键盘/旧关回放未运行，不代表 run_all 全部通过。

@@ -1,0 +1,56 @@
+{
+  "canvas": [
+    1200,
+    1100
+  ],
+  "head": {
+    "center": [
+      633,
+      165
+    ],
+    "r": 75
+  },
+  "ground": {
+    "y": 980
+  },
+  "eyes": {
+    "left": [
+      600,
+      165
+    ],
+    "right": [
+      666,
+      165
+    ]
+  },
+  "crown": {
+    "center": [
+      630,
+      66
+    ]
+  },
+  "shade-balance": {
+    "center": [
+      765,
+      535
+    ]
+  },
+  "shade-arch": {
+    "center": [
+      760,
+      654
+    ]
+  },
+  "shade-duo": {
+    "center": [
+      795,
+      775
+    ]
+  },
+  "cracks": {
+    "center": [
+      765,
+      595
+    ]
+  }
+}

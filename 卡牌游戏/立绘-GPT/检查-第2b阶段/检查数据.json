@@ -1,0 +1,171 @@
+{
+  "count": 14,
+  "items": {
+    "tally-大笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 2433,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "6cb6c526a2248dac9e373c8e887c0fbdbfe370b26bda1cdd099c3f691ef8bbfd"
+    },
+    "tally-思考.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 2494,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "7e6cc19afa3f296e1c78a25577cd059d790ca5ad54f077163e26ab5c0bd83b17"
+    },
+    "tally-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 2389,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "c27e076b03aeaccccb5062339a1165e3b438a6f28bf4da243e9840e7cb477836"
+    },
+    "tally-着急.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 2691,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "757af2761539ead2c78093fcf8858f3a7fd74c99cd65bc46f093de291b4f7f34"
+    },
+    "tally-低落.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 373,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "4989ac4402508d137d5d23f3c816c9ce6f2052367df2eb5ac04a73910dff3ddf"
+    },
+    "ilu-平静.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 2921,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "a74025df7aba14886389917ff276bd642aaf70d7cfbd72f1ce6948d8f1190847"
+    },
+    "ilu-微笑.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 2818,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "47c18512dd6cf7f332b8ba8afeeb1005a0f1ec54622a4ef50704c12f71a189aa"
+    },
+    "ilu-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 2747,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "4d695771e46ff3763cf4f55c8b82093ac19f03971f4d416032fa0de11de38bfc"
+    },
+    "ilu-专注.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 2911,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "9b8ad7e75fa4d49276d956cb69065bc32fac10b960c9d9b6159de6a157efad25"
+    },
+    "fabia-思考.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 16082,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "6b47d8ec52409e682171a5b571076a0c9c801ae4c8eaa59a8c6fe8ae45047b29"
+    },
+    "fabia-害羞.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 16138,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "a66210176a789bd5987ec6d2ac254903df1889dfe77d445f30d315f7e5187c60"
+    },
+    "fabia-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 16575,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "07d8d073cf2aa116faf598fef2a88db79c1cc840a0b7c58c25f8fe2ce946a357"
+    },
+    "flo-出神.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 15044,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "63a5787faec33f461a76bc1c6803680e06042c3dee3e8ff970dab8b2ba4f44c5"
+    },
+    "flo-惊讶.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_identical": true,
+      "changed_pixels": 15085,
+      "outside_allowed_region": 0,
+      "transparent_rgb_nonzero": 0,
+      "sha256": "39fd449eb11949d145ed33cff3a222648a7a9ea5078d8c585f978cad112cf0fb"
+    }
+  },
+  "mark_differences": {
+    "tally-平静": 0,
+    "tally-大笑": 0,
+    "tally-思考": 0,
+    "tally-惊讶": 0,
+    "tally-着急": 0,
+    "tally-低落": 0,
+    "ilu-平静": 0,
+    "ilu-微笑": 0,
+    "ilu-惊讶": 0,
+    "ilu-专注": 0
+  }
+}

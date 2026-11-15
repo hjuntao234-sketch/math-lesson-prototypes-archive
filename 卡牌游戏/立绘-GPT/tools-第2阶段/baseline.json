@@ -1,0 +1,323 @@
+{
+  "checks": [
+    {
+      "path": "设定集/立绘设计.md",
+      "expected": "f1b3dee5cd6669887df01c6ab8057a5381f6139f753647516d8fb68cdc238d4c",
+      "actual": "f1b3dee5cd6669887df01c6ab8057a5381f6139f753647516d8fb68cdc238d4c"
+    },
+    {
+      "path": "立绘-GPT/审读-第1阶段.md",
+      "expected": "a570e34c59757b98d173224730f4c052506c4eacbfeaeaf2d9f292a4e75c654c",
+      "actual": "a570e34c59757b98d173224730f4c052506c4eacbfeaeaf2d9f292a4e75c654c"
+    },
+    {
+      "path": "设定集/人物.md",
+      "expected": "d42d0612015aea9a13d2c037e2b49dd1c8c98837951022a9242473ba6d476c15",
+      "actual": "d42d0612015aea9a13d2c037e2b49dd1c8c98837951022a9242473ba6d476c15"
+    },
+    {
+      "path": "设定集/check_episode.py",
+      "expected": "89133711b0c52b3dfd7c57ad714e43337a25e29e542ec372223cc1373e0abce5",
+      "actual": "89133711b0c52b3dfd7c57ad714e43337a25e29e542ec372223cc1373e0abce5"
+    },
+    {
+      "path": "v4/game.html",
+      "expected": "e9f2ded49b3bb4d9b3ffc49fbf067cc2a8c4a2693dfa98183d0b23189376132d",
+      "actual": "e9f2ded49b3bb4d9b3ffc49fbf067cc2a8c4a2693dfa98183d0b23189376132d"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L01-修订.json",
+      "expected": "b202cf0675c2f46652f9964f0298b91d4e30531aa69fcbb46a7dc86b809e9391",
+      "actual": "b202cf0675c2f46652f9964f0298b91d4e30531aa69fcbb46a7dc86b809e9391"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L02-修订.json",
+      "expected": "f186d085e60c7b67b6d4b20e4ab0770375264ee81ade2e0ffd65b4af3abe33c1",
+      "actual": "f186d085e60c7b67b6d4b20e4ab0770375264ee81ade2e0ffd65b4af3abe33c1"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L03-修订.json",
+      "expected": "377906ecbaacbc500565eef7a904ace9bd548a3d214fdaf700a2562ce894978b",
+      "actual": "377906ecbaacbc500565eef7a904ace9bd548a3d214fdaf700a2562ce894978b"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L04-修订.json",
+      "expected": "d33820e4a82498604c1ae2c0b2d8b6bf1cac7a94eaa7330d7563bfec5d688095",
+      "actual": "d33820e4a82498604c1ae2c0b2d8b6bf1cac7a94eaa7330d7563bfec5d688095"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L05-修订.json",
+      "expected": "451b4f7876d7ae643b2c495377076eec935e62176ecb498bba9a68b74356538c",
+      "actual": "451b4f7876d7ae643b2c495377076eec935e62176ecb498bba9a68b74356538c"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L06-修订.json",
+      "expected": "da7fbd59fad62c3f750a1c5148045d2bf330827f49a838fa27e61205b7e99a9c",
+      "actual": "da7fbd59fad62c3f750a1c5148045d2bf330827f49a838fa27e61205b7e99a9c"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L07-修订.json",
+      "expected": "8ce5fbb759647307afbbb1ad02b7f11b958a299f7f16aacde50600b1bd3b08fa",
+      "actual": "8ce5fbb759647307afbbb1ad02b7f11b958a299f7f16aacde50600b1bd3b08fa"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L08-修订.json",
+      "expected": "d5687ba33dd75cc34d8ae4d1ca73b4547fc2f1981f2f48259777684f47db3bc6",
+      "actual": "d5687ba33dd75cc34d8ae4d1ca73b4547fc2f1981f2f48259777684f47db3bc6"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L09-修订.json",
+      "expected": "338f4edb051eda7a7a24b7298606f780744b048cc7bd12a30c29d0672f0c4f1a",
+      "actual": "338f4edb051eda7a7a24b7298606f780744b048cc7bd12a30c29d0672f0c4f1a"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L09b-修订.json",
+      "expected": "eabf0821aed7ec130533833c9f0af9f300ebcc03f8eaa702ecaa8e135d54769e",
+      "actual": "eabf0821aed7ec130533833c9f0af9f300ebcc03f8eaa702ecaa8e135d54769e"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L10-修订.json",
+      "expected": "4f297c8562d355299db8527fbeed5fb9b45de309a5b1d923ba0c5fd11531ba31",
+      "actual": "4f297c8562d355299db8527fbeed5fb9b45de309a5b1d923ba0c5fd11531ba31"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L11-修订.json",
+      "expected": "f0d06597fdab0b4b834ab40cb83675b9efe09395c71fb7486aa914a5b38ec169",
+      "actual": "f0d06597fdab0b4b834ab40cb83675b9efe09395c71fb7486aa914a5b38ec169"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L12-修订.json",
+      "expected": "94ab0beffe7035f48840a8a3d389e4e4e62bd0f6972766c840cbd50bc352875b",
+      "actual": "94ab0beffe7035f48840a8a3d389e4e4e62bd0f6972766c840cbd50bc352875b"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L13-修订.json",
+      "expected": "6b15e94f3420c2392d8f0ef4587b80439276e1d2016b5b9ce23921d6cd7c461f",
+      "actual": "6b15e94f3420c2392d8f0ef4587b80439276e1d2016b5b9ce23921d6cd7c461f"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L14-修订.json",
+      "expected": "f040958a399ff588bd9c3224c6db2d03025a33ee4f1f5bed365abed2495964f8",
+      "actual": "f040958a399ff588bd9c3224c6db2d03025a33ee4f1f5bed365abed2495964f8"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L15-修订.json",
+      "expected": "6c97ac1b82715db72f9fbfe41339a59e80e383f6539670d55f465dd5f68f3d7a",
+      "actual": "6c97ac1b82715db72f9fbfe41339a59e80e383f6539670d55f465dd5f68f3d7a"
+    },
+    {
+      "path": "gemini/学习剧情材料-R3/回收-L16-修订.json",
+      "expected": "b74e71e0bd1d9b01e01d50a21cec19100e0749a84d7ee866f5014f3a64b65cd6",
+      "actual": "b74e71e0bd1d9b01e01d50a21cec19100e0749a84d7ee866f5014f3a64b65cd6"
+    },
+    {
+      "path": "立绘-GPT/成品/bala-平静.png",
+      "expected": "c93c67d53eaa684bd312689ca6027f6fa8169bde5fb91dbde9c67f7f8bec0ed2",
+      "actual": "c93c67d53eaa684bd312689ca6027f6fa8169bde5fb91dbde9c67f7f8bec0ed2"
+    },
+    {
+      "path": "立绘-GPT/成品/certa-平静.png",
+      "expected": "2d1466d8267d78f339c24216eb9cdd88f77c5c8c03f6c4ae5ad42285c7182bdd",
+      "actual": "2d1466d8267d78f339c24216eb9cdd88f77c5c8c03f6c4ae5ad42285c7182bdd"
+    },
+    {
+      "path": "立绘-GPT/成品/divi-平静.png",
+      "expected": "b1ea92eb9097a3a8f39e6fc716b57dab9ffcedc2b64b235ce161932131d9aa0b",
+      "actual": "b1ea92eb9097a3a8f39e6fc716b57dab9ffcedc2b64b235ce161932131d9aa0b"
+    },
+    {
+      "path": "立绘-GPT/成品/fabia-平静.png",
+      "expected": "df9d6ae5f2a4eb571a82c2b9c9e2a1105cbee0d3b21eeec61579d6618001182a",
+      "actual": "df9d6ae5f2a4eb571a82c2b9c9e2a1105cbee0d3b21eeec61579d6618001182a"
+    },
+    {
+      "path": "立绘-GPT/成品/flo-平静.png",
+      "expected": "cd10ae0381f45ffb8de01f764009d69d259e9792373e5ddd20e8db20730aa987",
+      "actual": "cd10ae0381f45ffb8de01f764009d69d259e9792373e5ddd20e8db20730aa987"
+    },
+    {
+      "path": "立绘-GPT/成品/ilu-平静.png",
+      "expected": "a6cef81a8921a5ff923bc578e5751208f007de634d32d9b051f44f2cae201d87",
+      "actual": "a6cef81a8921a5ff923bc578e5751208f007de634d32d9b051f44f2cae201d87"
+    },
+    {
+      "path": "立绘-GPT/成品/marga-平静.png",
+      "expected": "2a7252dc7a1db40f2217a2a6450c8ff52b9f5a1ac7f5d9f7c37ea56699cf347c",
+      "actual": "2a7252dc7a1db40f2217a2a6450c8ff52b9f5a1ac7f5d9f7c37ea56699cf347c"
+    },
+    {
+      "path": "立绘-GPT/成品/mira-平静.png",
+      "expected": "7591fe1926633cfa63d2e29ca5b7659ca97da3b5540b0d83714d3a9fe2a3d744",
+      "actual": "7591fe1926633cfa63d2e29ca5b7659ca97da3b5540b0d83714d3a9fe2a3d744"
+    },
+    {
+      "path": "立绘-GPT/成品/norman-平静.png",
+      "expected": "ed895df60e8096675ff300ccf1acc324ddfc5786e5c458017fd94fc709262b50",
+      "actual": "ed895df60e8096675ff300ccf1acc324ddfc5786e5c458017fd94fc709262b50"
+    },
+    {
+      "path": "立绘-GPT/成品/ora-平静.png",
+      "expected": "eb3418f2f7dc88a4308edb868710022316e8c859c0cd4a93a27bff1f41426bfa",
+      "actual": "eb3418f2f7dc88a4308edb868710022316e8c859c0cd4a93a27bff1f41426bfa"
+    },
+    {
+      "path": "立绘-GPT/成品/quidda-平静.png",
+      "expected": "defdb1cf901999a3f2fb4b0337de14d1fe2f2d1c133fdfb1310c44f0be3e8fbb",
+      "actual": "defdb1cf901999a3f2fb4b0337de14d1fe2f2d1c133fdfb1310c44f0be3e8fbb"
+    },
+    {
+      "path": "立绘-GPT/成品/tally-低落.png",
+      "expected": "b08e6bfba283644077f839145db4294c7e17624c3cf6398041bb399d990ca821",
+      "actual": "b08e6bfba283644077f839145db4294c7e17624c3cf6398041bb399d990ca821"
+    },
+    {
+      "path": "立绘-GPT/成品/tally-大笑.png",
+      "expected": "241628f55af68b8d2b083d1040dadccd978c74d658caf4a784809c83f40732c2",
+      "actual": "241628f55af68b8d2b083d1040dadccd978c74d658caf4a784809c83f40732c2"
+    },
+    {
+      "path": "立绘-GPT/成品/tally-平静.png",
+      "expected": "421c739f066b2e40f8bd4cef6d39a1728c35b01be48b700fe1599d7370669866",
+      "actual": "421c739f066b2e40f8bd4cef6d39a1728c35b01be48b700fe1599d7370669866"
+    },
+    {
+      "path": "立绘-GPT/成品/tally-思考.png",
+      "expected": "f6fd757ec77460c7d2dc15bd57eefda9639b874ca3ddd10bce256bde406e0a4b",
+      "actual": "f6fd757ec77460c7d2dc15bd57eefda9639b874ca3ddd10bce256bde406e0a4b"
+    },
+    {
+      "path": "立绘-GPT/成品/tally-惊讶.png",
+      "expected": "2dfb381b765cc16b4ee3227021f55d8a0ea412bbbb56f8243904d6c5a1a13b62",
+      "actual": "2dfb381b765cc16b4ee3227021f55d8a0ea412bbbb56f8243904d6c5a1a13b62"
+    },
+    {
+      "path": "立绘-GPT/成品/tally-着急.png",
+      "expected": "1a080df6b321ef4f243261fe7e99f31bf7f9eca4a6d3ccef0f6f0059364f7a52",
+      "actual": "1a080df6b321ef4f243261fe7e99f31bf7f9eca4a6d3ccef0f6f0059364f7a52"
+    },
+    {
+      "path": "立绘-GPT/成品/tess-平静.png",
+      "expected": "dad3e93108cbe8762030e71582b2d216d9c45408fa56d710a6b86d3267f0f744",
+      "actual": "dad3e93108cbe8762030e71582b2d216d9c45408fa56d710a6b86d3267f0f744"
+    },
+    {
+      "path": "立绘-GPT/成品/yana-平静.png",
+      "expected": "78d9eac19927ce491e0585d8f412455c21cbb5188bad9338627b413d64c560f9",
+      "actual": "78d9eac19927ce491e0585d8f412455c21cbb5188bad9338627b413d64c560f9"
+    }
+  ],
+  "stage1_files": {
+    "交付校验.txt": "ca199618d19c175754c607a4d505f989af9201ae1af3be9407ba0fe34de566c9",
+    "审读-第1阶段.md": "a570e34c59757b98d173224730f4c052506c4eacbfeaeaf2d9f292a4e75c654c",
+    "进度-第1阶段.md": "fa7f2ad83ddbb5bc73932939a91c306ca360a4d2419701ba9f460488f921a486",
+    "出图记录.md": "335a9b761efb727077a773ac8a23a9a056d64c570d08364f9e307c03e236badb",
+    "先看这里.txt": "ef46a84ab7cfb26b4ecc500d36d9bd86ef38cb344c3c77c658fed9c9297ced0f",
+    "检查/塔莉表情.png": "bc54532ba2765ca6e5420b5803e1afeb69057a583e3782c96ec320851c8f871a",
+    "检查/检查数据.json": "96dee52c0af042e7d49d7d59c86791ae3df54d1fb13867a0b6b7c1e5ec6f898f",
+    "检查/阵容.png": "6a8bfdd8be0df5a1a422acd593f96f6447e0392e02977366e556ea058d2d3714",
+    "检查/小头像-盲测.png": "562b557ec96a8bc60d0456004c3e9314166bff9370af0a537d2da49e904b86db",
+    "检查/比例尺-原图测量.jpg": "15402be9c4c68e31920029f40662a3f480a5481a93a17a5b2ba01b3a02af7953",
+    "检查/透明边缘-全员白底深底.jpg": "ae73f8fc930264d45ed6a12f172c476a6c6c2efcfec07855c2496ad5c5ea88f9",
+    "检查/灰度透明数据.json": "8e815926d1362ce4eeb7f7954f5b8105aefef70d422ddb159d894c1e5684c91a",
+    "检查/灰度.png": "eb45783bf787c5370ce341e0c758750a9c22a4ec8521a4cf4ad4ac278597dbe2",
+    "检查/塔莉表情-脸部.jpg": "7a8ea895f4daee1eb7b3c27ef1b56b568824f7e5e8ea4acd88965db6138fc69e",
+    "检查/盲测答案.md": "ca161715186b71cbd2a0d97e64def7324acfe97d1f46212b52bf896f64c643ba",
+    "检查/最终文件验证.json": "1254db30f66792383c72e9c54ceb9f3b05b160f32236f947b4007bc531fee909",
+    "检查/塔莉叠图.png": "6619765b841732562177cf4b250d9d92017b59a3a06787832db2e248cc333ab6",
+    "检查/剪影-盲测.png": "575af5519846fa9410bf0d1ffd0063aa8fba63c97b841f892316c278b81d6203",
+    "检查/阵容-两排预览.jpg": "94397280b4d398c9c19b8b7432eabb9e8f061c7be3f65517d1d4ff9f94429f5b",
+    "tools/requirements.txt": "cf3854f0756890279eede94ca624ec6ad224e6c5b044331060548799f44de09a",
+    "tools/build_assets.py": "2c630d9c05b061dadf70079723519b380f45787ac2f239dd41041d20aac37d22",
+    "tools/measurements.json": "2fee6e8b8f7d334920e9c3044f571dcba238e0fba1534dc12c82a8f64ed397a2",
+    "tools/matte.py": "521f83b31ac364b0d87be8a0701fec5dbfac30bb4d549ecfcb887312a410f3f6",
+    "tools/write_reports.py": "d10bc7041d98fc45281bd4631dba3c96c0a55737f330617a124a8a0d1634294c",
+    "tools/tally-expression-source-original.png": "519c29cf2568e38286864dcb3a67e63448acec7734aa8a29f424ce4d55b2d71c",
+    "tools/运行说明.txt": "5d292488d33d6962cdf77982c2743b118729c60fe4814cb2f0bc980036e7dcff",
+    "tools/prompts.json": "903d15b942b431a9ef1bd20988dec41975db7dc3fd96a7c29b4687d5158f8317",
+    "tools/expression_patch.py": "9abaebbd1171f7d8541eeacefdb75c3d0226a6ea24133136115b0ac1b3e76247",
+    "tools/verify_delivery.py": "a0f260ecc1611f3e84eb8eb1bad37d62dfbccca9d45b44195e3e955df839bca4",
+    "tools/build-log.txt": "752eb80733b1ab60e8cbcecf2b6abaf3c7dcf980ad476e769ad1c9b957ea63d8",
+    "tools/generation-log.json": "545ea00e3be4b7c410cf7444a75d2f4663c03ba9a5e75d450f7cbf56bae81a43",
+    "成品/tally-大笑.png": "241628f55af68b8d2b083d1040dadccd978c74d658caf4a784809c83f40732c2",
+    "成品/tally-思考.png": "f6fd757ec77460c7d2dc15bd57eefda9639b874ca3ddd10bce256bde406e0a4b",
+    "成品/divi-平静.png": "b1ea92eb9097a3a8f39e6fc716b57dab9ffcedc2b64b235ce161932131d9aa0b",
+    "成品/mira-平静.png": "7591fe1926633cfa63d2e29ca5b7659ca97da3b5540b0d83714d3a9fe2a3d744",
+    "成品/norman-平静.png": "ed895df60e8096675ff300ccf1acc324ddfc5786e5c458017fd94fc709262b50",
+    "成品/flo-平静.png": "cd10ae0381f45ffb8de01f764009d69d259e9792373e5ddd20e8db20730aa987",
+    "成品/tally-平静.png": "421c739f066b2e40f8bd4cef6d39a1728c35b01be48b700fe1599d7370669866",
+    "成品/bala-平静.png": "c93c67d53eaa684bd312689ca6027f6fa8169bde5fb91dbde9c67f7f8bec0ed2",
+    "成品/tess-平静.png": "dad3e93108cbe8762030e71582b2d216d9c45408fa56d710a6b86d3267f0f744",
+    "成品/tally-着急.png": "1a080df6b321ef4f243261fe7e99f31bf7f9eca4a6d3ccef0f6f0059364f7a52",
+    "成品/marga-平静.png": "2a7252dc7a1db40f2217a2a6450c8ff52b9f5a1ac7f5d9f7c37ea56699cf347c",
+    "成品/quidda-平静.png": "defdb1cf901999a3f2fb4b0337de14d1fe2f2d1c133fdfb1310c44f0be3e8fbb",
+    "成品/certa-平静.png": "2d1466d8267d78f339c24216eb9cdd88f77c5c8c03f6c4ae5ad42285c7182bdd",
+    "成品/fabia-平静.png": "df9d6ae5f2a4eb571a82c2b9c9e2a1105cbee0d3b21eeec61579d6618001182a",
+    "成品/tally-惊讶.png": "2dfb381b765cc16b4ee3227021f55d8a0ea412bbbb56f8243904d6c5a1a13b62",
+    "成品/ilu-平静.png": "a6cef81a8921a5ff923bc578e5751208f007de634d32d9b051f44f2cae201d87",
+    "成品/ora-平静.png": "eb3418f2f7dc88a4308edb868710022316e8c859c0cd4a93a27bff1f41426bfa",
+    "成品/tally-低落.png": "b08e6bfba283644077f839145db4294c7e17624c3cf6398041bb399d990ca821",
+    "成品/yana-平静.png": "78d9eac19927ce491e0585d8f412455c21cbb5188bad9338627b413d64c560f9",
+    "全身透明/tally-大笑.png": "ef191ed64d5be578e35b65f5fc8af2a81d51127343c18ed988415b5861d6c909",
+    "全身透明/tally-思考.png": "8e67511da7ca1110d58ad01bceccf054429e4160f0d4a863f318e6b2d6a2fd90",
+    "全身透明/divi-平静.png": "a6706cb5c36c30bb06def940dc653a3149b5e98439ccd37b2ec3fd2227eda3cd",
+    "全身透明/mira-平静.png": "3153f5b5fd972288003596d67071f6b7046307cbb3ec1161137178d70b7ad689",
+    "全身透明/norman-平静.png": "bf63e4761bb9673697fb0b0a29e2da04cbc08aaaa4f493517c0c072956b81b80",
+    "全身透明/flo-平静.png": "c04e5df990af1110ab255dc40a85afbbfbb017fbaf36a77fb346a425b1f14fcf",
+    "全身透明/tally-平静.png": "3892d2cd4fc032b57a19161a04eef20e8051d7e7bd17300ee6bd89733ba0fc69",
+    "全身透明/bala-平静.png": "03f37403fa229cdbb1343f7fc8eb6e5669b9e6a229b3cbc0b703cd3303e0f170",
+    "全身透明/tess-平静.png": "4e85ca4fbbc30db56e9f441a767a226c871cb63e2154a6c3f7a6dfbbf83ee572",
+    "全身透明/tally-着急.png": "02ca8df1c68610182a6c95f23228dbe604f539320b28084ba033ee995e2cb8e4",
+    "全身透明/marga-平静.png": "e3c65524e812afffaaf959b172cebd99b50e8f5ac8298a086ce3da27ea6e3b7a",
+    "全身透明/quidda-平静.png": "eafee4d715d637cc2127c3705d5d89d0d0257dfa985ff510c81a6cf5389d737f",
+    "全身透明/certa-平静.png": "6c35efcf95e965fd5e26f7ec9fe6dce9bb209e350afd2cf9556d765f1da1fe65",
+    "全身透明/fabia-平静.png": "a6ebe1b551134b57a29bbdb21a4c74262c9556837cdfbde59deb75f630b3ab1b",
+    "全身透明/tally-惊讶.png": "df7f7793e2cb00676e5ba26c5394c8a79ecc94421292fc7e3a64a2ec12b585de",
+    "全身透明/ilu-平静.png": "e81f41ccce693321821d5046654c4d6efd639dcbe4c686a8724de015a9f3840d",
+    "全身透明/ora-平静.png": "82c81526ec97daa92dae3c1f11dd10e9e961c849342604651524978ba3aa7f9a",
+    "全身透明/tally-低落.png": "8887c03e9b1f8b0e9585824e920a56aa109ac672c0d203250dd6cbe803da3ceb",
+    "全身透明/yana-平静.png": "b6c59cf770eb214db8abb761dc3adef965ba83a2df9c598ee52ae9a863daec6b",
+    "原图/tally-大笑.png": "9704be2e2dad27dcbfbcf864e638c487c4fc8df205b7dbc7a9b50c555abf8cfb",
+    "原图/tally-思考.png": "e6c88861efe8466e0cac9012994e7011e02f69ada4657549c2f244bee63f923c",
+    "原图/divi-平静.png": "02c50cc652f4946f964c8bcb89991a60659acb031bd4f7feee3ac77657dee57c",
+    "原图/mira-平静.png": "ffda1f0195801c52ddcdedbc44ee5ba4e70dc2d52ced46405c26c73bf9be3ba8",
+    "原图/norman-平静.png": "63ce169042fc242c043d2acb6db29a4ad8680c2630bf0159116248c88d986c65",
+    "原图/flo-平静.png": "ea012f38100bb02c2e2772dad54b87e5222642cfcaccf33a51901e02ac0b35af",
+    "原图/tally-平静.png": "a8c9e5f9c11f41e26c03c6abbf8ec45956e0c906a8c67f4e512cc37da2d2fb3c",
+    "原图/bala-平静.png": "8e057ee351f6d3eb04d5e6c8df4ee550c5ec3bc3137d3cf5abc14062ca85566e",
+    "原图/tess-平静.png": "d72b273e7870ca05322aa5ec961deca17b5a2de7d3c39588dd19be4df8171538",
+    "原图/tally-着急.png": "c6f40c0e55ceabf4e86daf5b486cc724200a818d0b1a2758cb26097aa4efafa9",
+    "原图/marga-平静.png": "2faf44a44436aa668677cd51516abe721fc223f54d2a091283625528168934ee",
+    "原图/quidda-平静.png": "6a59dd70bddd9155682512e842c468830723f1f3689828e61eaba3bcc71c994a",
+    "原图/certa-平静.png": "9a9dde9748d95f8bd5abbd362446b651859dbea744ffb990c1ed4dbc2383f704",
+    "原图/fabia-平静.png": "f670ecaae6692fb9c118f6618ab11513a4cf1a628dd7bb9ceceaa4f413420823",
+    "原图/tally-惊讶.png": "4327f826e3605f65e35a7a568710252637f97ed6ba71cb81398dee29ac029452",
+    "原图/ilu-平静.png": "7f223098525d7bf3edf097b208f3f677a4db02e7fde4da11fc3ca51a01758e7c",
+    "原图/ora-平静.png": "d9932ebb73782d05de741f3e7a517c440d8ba25c6e4c5188df3c1e61c21456be",
+    "原图/tally-低落.png": "dce773e58e845f8cee979e6f649ab8b9ff44dbbceced446e57182697c113216a",
+    "原图/yana-平静.png": "61b5ae289bf27cba70a111e89c6b691e42ba5ef3d05e5b5cb5063b08bfb30cc8",
+    "tools/references/参考说明.md": "4de74b4d846a9f8d30875d4fa34e84c7b423c1cea70d2ac2eb60feec0e191383",
+    "tools/references/yakushiji.png": "1d428b5ef2b60ae6bcb3136be12c323ba96ce80698e5ae8518000a4e6a24f9e7",
+    "tools/references/takamiya.png": "63f81aa9a469ceedddadb23a584d7ba4b130c88cf2156115cc439a9fe927d666",
+    "tools/references/fuyusaka.png": "d8dd0baf302ecdc882898aea9fc7bf2302800908d6a1fbcc33e8cfadacdc1bff",
+    "tools/normalized/divi-平静.png": "a6706cb5c36c30bb06def940dc653a3149b5e98439ccd37b2ec3fd2227eda3cd",
+    "tools/normalized/mira-平静.png": "3153f5b5fd972288003596d67071f6b7046307cbb3ec1161137178d70b7ad689",
+    "tools/normalized/norman-平静.png": "bf63e4761bb9673697fb0b0a29e2da04cbc08aaaa4f493517c0c072956b81b80",
+    "tools/normalized/flo-平静.png": "c04e5df990af1110ab255dc40a85afbbfbb017fbaf36a77fb346a425b1f14fcf",
+    "tools/normalized/tally-平静.png": "3892d2cd4fc032b57a19161a04eef20e8051d7e7bd17300ee6bd89733ba0fc69",
+    "tools/normalized/bala-平静.png": "03f37403fa229cdbb1343f7fc8eb6e5669b9e6a229b3cbc0b703cd3303e0f170",
+    "tools/normalized/tess-平静.png": "4e85ca4fbbc30db56e9f441a767a226c871cb63e2154a6c3f7a6dfbbf83ee572",
+    "tools/normalized/marga-平静.png": "e3c65524e812afffaaf959b172cebd99b50e8f5ac8298a086ce3da27ea6e3b7a",
+    "tools/normalized/quidda-平静.png": "eafee4d715d637cc2127c3705d5d89d0d0257dfa985ff510c81a6cf5389d737f",
+    "tools/normalized/certa-平静.png": "6c35efcf95e965fd5e26f7ec9fe6dce9bb209e350afd2cf9556d765f1da1fe65",
+    "tools/normalized/fabia-平静.png": "a6ebe1b551134b57a29bbdb21a4c74262c9556837cdfbde59deb75f630b3ab1b",
+    "tools/normalized/ilu-平静.png": "e81f41ccce693321821d5046654c4d6efd639dcbe4c686a8724de015a9f3840d",
+    "tools/normalized/ora-平静.png": "82c81526ec97daa92dae3c1f11dd10e9e961c849342604651524978ba3aa7f9a",
+    "tools/normalized/yana-平静.png": "b6c59cf770eb214db8abb761dc3adef965ba83a2df9c598ee52ae9a863daec6b",
+    "tools/processed/tally-大笑.png": "ef191ed64d5be578e35b65f5fc8af2a81d51127343c18ed988415b5861d6c909",
+    "tools/processed/tally-思考.png": "8e67511da7ca1110d58ad01bceccf054429e4160f0d4a863f318e6b2d6a2fd90",
+    "tools/processed/tally-平静.png": "3892d2cd4fc032b57a19161a04eef20e8051d7e7bd17300ee6bd89733ba0fc69",
+    "tools/processed/tally-着急.png": "02ca8df1c68610182a6c95f23228dbe604f539320b28084ba033ee995e2cb8e4",
+    "tools/processed/tally-惊讶.png": "df7f7793e2cb00676e5ba26c5394c8a79ecc94421292fc7e3a64a2ec12b585de",
+    "tools/processed/tally-低落.png": "8887c03e9b1f8b0e9585824e920a56aa109ac672c0d203250dd6cbe803da3ceb"
+  }
+}

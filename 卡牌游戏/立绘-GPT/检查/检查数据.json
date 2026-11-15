@@ -1,0 +1,186 @@
+{
+  "count": 19,
+  "measurements": {
+    "yana": {
+      "scale": 1.256573705179283,
+      "tx": -116.2868525896414,
+      "ty": 251.7513944223108,
+      "head_y": 270.6,
+      "expected_y": 274,
+      "error": -3.3999999999999773
+    },
+    "tally": {
+      "scale": 1.2420541290770297,
+      "tx": -121.44760582928518,
+      "ty": 262.6571825121446,
+      "head_y": 373.2000000000002,
+      "expected_y": 376,
+      "error": -2.799999999999784
+    },
+    "fabia": {
+      "scale": 1.3067193675889328,
+      "tx": -198.85533596837945,
+      "ty": 168.94624505928846,
+      "head_y": 179.39999999999992,
+      "expected_y": 182,
+      "error": -2.6000000000000796
+    },
+    "norman": {
+      "scale": 1.335,
+      "tx": -142.14999999999998,
+      "ty": 117.77999999999997,
+      "head_y": 133.79999999999998,
+      "expected_y": 137,
+      "error": -3.200000000000017
+    },
+    "bala": {
+      "scale": 1.22838370565046,
+      "tx": -116.93245729303555,
+      "ty": 283.5729303547962,
+      "head_y": 293.39999999999986,
+      "expected_y": 296,
+      "error": -2.6000000000001364
+    },
+    "tess": {
+      "scale": 1.1549276361130254,
+      "tx": -77.01309441764295,
+      "ty": 399.42549965541025,
+      "head_y": 487.20000000000016,
+      "expected_y": 490,
+      "error": -2.799999999999841
+    },
+    "ilu": {
+      "scale": 1.272777394900069,
+      "tx": -137.11647139903516,
+      "ty": 214.3778084079945,
+      "head_y": 316.20000000000005,
+      "expected_y": 319,
+      "error": -2.7999999999999545
+    },
+    "certa": {
+      "scale": 1.3237156931738212,
+      "tx": -163.0950035186488,
+      "ty": 137.71498944405357,
+      "head_y": 282.0000000000001,
+      "expected_y": 285,
+      "error": -2.9999999999998863
+    },
+    "flo": {
+      "scale": 1.292,
+      "tx": -88.77999999999997,
+      "ty": 199.15999999999985,
+      "head_y": 224.99999999999986,
+      "expected_y": 228,
+      "error": -3.000000000000142
+    },
+    "marga": {
+      "scale": 1.2624917600527357,
+      "tx": -131.87079762689518,
+      "ty": 228.86262359920897,
+      "head_y": 247.8,
+      "expected_y": 251,
+      "error": -3.1999999999999886
+    },
+    "divi": {
+      "scale": 1.2040106951871659,
+      "tx": -102.04545454545462,
+      "ty": 320.86363636363626,
+      "head_y": 361.7999999999999,
+      "expected_y": 365,
+      "error": -3.2000000000001023
+    },
+    "ora": {
+      "scale": 1.4417647058823528,
+      "tx": -194.46470588235286,
+      "ty": -42.899999999999636,
+      "head_y": 202.20000000000036,
+      "expected_y": 205,
+      "error": -2.799999999999642
+    },
+    "quidda": {
+      "scale": 1.1452742894910772,
+      "tx": -72.08988764044943,
+      "ty": 413.0208856576339,
+      "head_y": 430.2000000000001,
+      "expected_y": 433,
+      "error": -2.7999999999998977
+    },
+    "mira": {
+      "scale": 1.2208835341365463,
+      "tx": -88.6746987951808,
+      "ty": 310.9196787148594,
+      "head_y": 338.99999999999994,
+      "expected_y": 342,
+      "error": -3.000000000000057
+    }
+  },
+  "expression_diff": {
+    "大笑": {
+      "final_changed_pixels": 55498,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 893895,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    },
+    "思考": {
+      "final_changed_pixels": 55713,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 768766,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    },
+    "惊讶": {
+      "final_changed_pixels": 55707,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 697817,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    },
+    "着急": {
+      "final_changed_pixels": 55669,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 1218080,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    },
+    "低落": {
+      "final_changed_pixels": 55811,
+      "final_outside_face_changed_pixels": 0,
+      "final_character_pixels": 766954,
+      "final_outside_face_ratio": 0.0,
+      "raw_outside_face_changed_pixels": 862914,
+      "raw_note": "原始编辑含背景/像素漂移，不能将最终0%当作生成器原样稳定性证明"
+    }
+  },
+  "hashes": {
+    "bala-平静.png": "c93c67d53eaa684bd312689ca6027f6fa8169bde5fb91dbde9c67f7f8bec0ed2",
+    "certa-平静.png": "2d1466d8267d78f339c24216eb9cdd88f77c5c8c03f6c4ae5ad42285c7182bdd",
+    "divi-平静.png": "b1ea92eb9097a3a8f39e6fc716b57dab9ffcedc2b64b235ce161932131d9aa0b",
+    "fabia-平静.png": "df9d6ae5f2a4eb571a82c2b9c9e2a1105cbee0d3b21eeec61579d6618001182a",
+    "flo-平静.png": "cd10ae0381f45ffb8de01f764009d69d259e9792373e5ddd20e8db20730aa987",
+    "ilu-平静.png": "a6cef81a8921a5ff923bc578e5751208f007de634d32d9b051f44f2cae201d87",
+    "marga-平静.png": "2a7252dc7a1db40f2217a2a6450c8ff52b9f5a1ac7f5d9f7c37ea56699cf347c",
+    "mira-平静.png": "7591fe1926633cfa63d2e29ca5b7659ca97da3b5540b0d83714d3a9fe2a3d744",
+    "norman-平静.png": "ed895df60e8096675ff300ccf1acc324ddfc5786e5c458017fd94fc709262b50",
+    "ora-平静.png": "eb3418f2f7dc88a4308edb868710022316e8c859c0cd4a93a27bff1f41426bfa",
+    "quidda-平静.png": "defdb1cf901999a3f2fb4b0337de14d1fe2f2d1c133fdfb1310c44f0be3e8fbb",
+    "tally-低落.png": "b08e6bfba283644077f839145db4294c7e17624c3cf6398041bb399d990ca821",
+    "tally-大笑.png": "241628f55af68b8d2b083d1040dadccd978c74d658caf4a784809c83f40732c2",
+    "tally-平静.png": "421c739f066b2e40f8bd4cef6d39a1728c35b01be48b700fe1599d7370669866",
+    "tally-思考.png": "f6fd757ec77460c7d2dc15bd57eefda9639b874ca3ddd10bce256bde406e0a4b",
+    "tally-惊讶.png": "2dfb381b765cc16b4ee3227021f55d8a0ea412bbbb56f8243904d6c5a1a13b62",
+    "tally-着急.png": "1a080df6b321ef4f243261fe7e99f31bf7f9eca4a6d3ccef0f6f0059364f7a52",
+    "tess-平静.png": "dad3e93108cbe8762030e71582b2d216d9c45408fa56d710a6b86d3267f0f744",
+    "yana-平静.png": "78d9eac19927ce491e0585d8f412455c21cbb5188bad9338627b413d64c560f9"
+  },
+  "facebox_final": [
+    362,
+    455,
+    668,
+    723
+  ]
+}
