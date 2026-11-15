@@ -1,0 +1,122 @@
+{
+  "natsumi": {
+    "height_cm": 168,
+    "raw_crown_y": 53,
+    "raw_sole_y": 1525,
+    "scale": 0.924592,
+    "x_offset": 45,
+    "y_offset": 90,
+    "target_crown_y": 139,
+    "hair_sample_median_gray": 93,
+    "eye_line_avatar_y": 215,
+    "final_crown_y": 139,
+    "final_sole_y": 1500,
+    "expressions": {
+      "平静": {
+        "source_sha256": "89010ac6d46bfdd0929f045dfb8cbed2cea36094e337411e0351e99672b8f894",
+        "full_sha256": "a77caa1917f59d967d45044a0d7496d1e43cdcd74cc5593e98bb2618ba6ef074",
+        "avatar_sha256": "7fee6fcf8c7c9577ae56ff9aed85765b9837337a57e99e6336e86a883bfef446"
+      },
+      "笑": {
+        "source_sha256": "f16115604c966c284edfa35a716c96406ce745fa2298a20e2e8b2437213a3c96",
+        "full_sha256": "7f303c476cb0f36a5031f8cba16fb008353ae1e843c16890850207e15011ff51",
+        "avatar_sha256": "37297292f22b994edfe4b7f6f0db3b31fe5e187c14673b22456658041059ce65"
+      },
+      "困惑": {
+        "source_sha256": "2814e1775c44872b3d91068dcfa656685fd63cf499857fae8778dc6b4a2dcb89",
+        "full_sha256": "9caa06e8c3da51a19af84a375d5b8a950c602f6c1b80e84cd37ca2b1b7c3e2a0",
+        "avatar_sha256": "8d9516408618b465d9e9c79373a78da0d58c7d0c172cd5e0c73c21bad47c68c9"
+      },
+      "惊讶": {
+        "source_sha256": "e06e3beee1014ac9ba47d65206758e436d9c7c6503619545eaa8c2e7e50b2f19",
+        "full_sha256": "2bc6862f20ca65cb0b28ebc83e1ebf5a9e8c3e9d52c41275cb48a5781d436895",
+        "avatar_sha256": "840e5ac91947f65d4650a96f575fcb844d56a45b0503f503b2233dc7bff65430"
+      },
+      "着急": {
+        "source_sha256": "ef6cff9d80c43786eb36f90ea5e19da38b6e8c0a3927dba6e1f3ce9536ba925b",
+        "full_sha256": "fa50cab8644c2920abeb6463f8ff43818652af546b95c577f3bfaed6c69073fc",
+        "avatar_sha256": "87d28542705f46873eef7baf0319f013aa20924be629051781a94a0988372cef"
+      }
+    }
+  },
+  "shizuka": {
+    "height_cm": 165,
+    "raw_crown_y": 15,
+    "raw_sole_y": 1524,
+    "scale": 0.885355,
+    "x_offset": 57,
+    "y_offset": 150,
+    "target_crown_y": 164,
+    "hair_sample_median_gray": 66,
+    "eye_line_avatar_y": 215,
+    "final_crown_y": 163,
+    "final_sole_y": 1500,
+    "expressions": {
+      "平静": {
+        "source_sha256": "19672a3545c957f123b51a0bb6667181336ce6b5e343bd8e74c4c9ca9e444fc5",
+        "full_sha256": "06de73579d372ba5840ce06167805c3038a5428e1448de2de9645e14db526a7c",
+        "avatar_sha256": "5ff97c7d2930686f4560bed6394ec4b1daaa4f10fb9544c843f89c1b91333cfc"
+      }
+    }
+  },
+  "miu": {
+    "height_cm": 160,
+    "raw_crown_y": 13,
+    "raw_sole_y": 1525,
+    "scale": 0.857143,
+    "x_offset": 80,
+    "y_offset": 193,
+    "target_crown_y": 204,
+    "hair_sample_median_gray": 163,
+    "eye_line_avatar_y": 215,
+    "final_crown_y": 204,
+    "final_sole_y": 1500,
+    "expressions": {
+      "平静": {
+        "source_sha256": "17286029ee2e1b2dba091ab2e0a0f0168176665c9fd0071bde970ec00703d73b",
+        "full_sha256": "833465e83d3493844e3363f43585c5a5278f218e0418c8b35d8c0e26fc1515bc",
+        "avatar_sha256": "f5601f107f5a88e455275ad819adce38a376104b2a85143d535ca3e514332004"
+      }
+    }
+  },
+  "akari": {
+    "height_cm": 157,
+    "raw_crown_y": 50,
+    "raw_sole_y": 1528,
+    "scale": 0.860622,
+    "x_offset": 72,
+    "y_offset": 185,
+    "target_crown_y": 228,
+    "hair_sample_median_gray": 214,
+    "eye_line_avatar_y": 215,
+    "final_crown_y": 228,
+    "final_sole_y": 1500,
+    "expressions": {
+      "平静": {
+        "source_sha256": "8ea7692a460c34f2bdcaed8517010cb2005eae70d585fa63b6e097ba7f98e3ec",
+        "full_sha256": "1d3b6d971c3c27dfe5aeab088ea053cdc7fcd43cf3b74f25dde4cc13c248bae4",
+        "avatar_sha256": "dc468f7a6a9e04ddc6afb64663dc52a9166cfdff4ddb5244e965a6bec691480b"
+      }
+    }
+  },
+  "shiori": {
+    "height_cm": 154,
+    "raw_crown_y": 10,
+    "raw_sole_y": 1525,
+    "scale": 0.823102,
+    "x_offset": 99,
+    "y_offset": 245,
+    "target_crown_y": 253,
+    "hair_sample_median_gray": 85,
+    "eye_line_avatar_y": 215,
+    "final_crown_y": 253,
+    "final_sole_y": 1500,
+    "expressions": {
+      "平静": {
+        "source_sha256": "e3dca714cc6ee5624e8f60ec11e014514fd61bff7bd36a08ae7fc78757772c2c",
+        "full_sha256": "2d8905d29e1d244369c0c4f6b07ea71de11b9a75297e2040d35b33a9426dfb70",
+        "avatar_sha256": "9a093ecb466b2971618abb220d119832760b6ae35c1d55bca5bbd1db34e7df35"
+      }
+    }
+  }
+}
